@@ -2,6 +2,7 @@
   <div class="todo-item">
     <h2 :class="{ completed: todo?.isComplete }">{{ todo?.title }}</h2>
     <span>⏱ {{ todo?.duration }} min</span>
+    <span>👩‍💻 {{ todo?.proprio }}</span>
     <span>{{ todo?.isComplete ? 'Terminé ✅' : 'À faire 🚨' }}</span>
     <div class="todo-btn">
       <button @click="toggleComplete" class="button status-button">
@@ -56,7 +57,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #ffffff;
+  background-color: #f4e4e4;
   color: #818181;
   border: 1px solid #93c5fd;
   padding: 0.5rem;

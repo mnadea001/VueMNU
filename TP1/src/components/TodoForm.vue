@@ -11,6 +11,12 @@
         <input v-model.number="duration" type="number" required />
       </div>
       <div>
+        <label>Responsable:</label>
+        <select v-model="proprio" required>
+          <option v-for="name in responsableNames" :key="name" :value="name">{{ name }}</option>
+        </select>
+      </div>
+      <div>
         <button class="button add-button" type="submit">{{ editingTodo ? 'Modifier' : 'Ajouter' }}</button>
         <button class="cancel-button" type="button" @click="close">Annuler</button>
       </div>
@@ -31,11 +37,15 @@ export default defineComponent({
   setup(props, { emit }) {
     const title = ref('');
     const duration = ref('');
+    const proprio = ref('');
+
+    const responsableNames = ref(['UX designer', 'Developer', 'Commercial']);
 
     watch(() => props.todo, (newTodo) => {
       if (newTodo) {
         title.value = newTodo.title || '';
         duration.value = newTodo.duration?.toString() || '';
+        proprio.value = newTodo.proprio || '';
       }
     });
 
@@ -44,6 +54,7 @@ export default defineComponent({
         emit('submit', {
           title: title.value,
           duration: parseInt(duration.value),
+          proprio: proprio.value,
           isComplete: props.todo ? props.todo.isComplete : false,
         });
         resetForm();
@@ -58,13 +69,16 @@ export default defineComponent({
     const resetForm = () => {
       title.value = '';
       duration.value = '';
+      proprio.value = '';
     };
 
     return {
       title,
       duration,
+      proprio,
       submitForm,
       close,
+      responsableNames,
     };
   },
 });
