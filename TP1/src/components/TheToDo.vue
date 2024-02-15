@@ -1,7 +1,7 @@
 <template>
   <div class="todo-app-container">
     <h1>TODO PAGE</h1>
-    <button class="add-todo-btn" @click="showAddTodoForm = true">Add Todo</button>
+    <button class="add-todo-btn" @click="showAddTodoForm = true">Ajouter Todo</button>
 
     <TodoForm
       v-if="showAddTodoForm || editingTodo"
@@ -15,9 +15,13 @@
       <h2> 👉 {{todos.length }} Todos !!</h2>
       <h2> {{ incompleteTodosCount }} Todos à faire 🤓</h2>
       <h2>{{ completedTodosCount }} Todos terminées 🥳</h2>
-      <button @click="removeAllTodos" class="delete-all-btn">Delete All Todos</button>
+      <button @click="toggleIncompleteOnly" class="toggle-incomplete-btn">
+        {{ showIncompleteOnly ? "Montrer tous les todos" : "Montrer que les todos à faire" }}
+      </button>
+      <button @click="removeAllTodos" class="delete-all-btn">Supprimer tout</button>
+
       <TodoItem
-        v-for="(todo, index) in todos"
+      v-for="(todo, index) in filteredTodos"
         :key="index"
         :todo="todo"
         :edit="editTodo"
@@ -56,6 +60,7 @@ export default {
     const todos = ref<Todo[]>([]);
     const showAddTodoForm = ref(false);
     const editingTodo = ref<Todo | null>(null);
+      const showIncompleteOnly = ref(false);
 
     const addOrUpdateTodo = (todo: Todo): void => {
       if (editingTodo.value) {
@@ -91,7 +96,10 @@ export default {
       todos.value = [];
     };
 
-  
+    const toggleIncompleteOnly = (): void => {
+  showIncompleteOnly.value = !showIncompleteOnly.value;
+};
+
     const incompleteTodosCount = computed(() => {
       return todos.value.filter(todo => !todo.isComplete).length;
     });
@@ -100,7 +108,12 @@ export default {
       return todos.value.filter(todo => todo.isComplete).length;
     });
 
-    
+    const filteredTodos = computed(() => {
+  const filtered = showIncompleteOnly.value
+    ? todos.value.filter(todo => !todo.isComplete)
+    : todos.value;
+  return filtered;
+});
 
     return {
       todos,
@@ -112,7 +125,10 @@ export default {
       editTodo,
       incompleteTodosCount,
       completedTodosCount,
-      removeAllTodos
+      removeAllTodos,
+      showIncompleteOnly,
+      filteredTodos,
+      toggleIncompleteOnly
     };
   },
 };
@@ -151,5 +167,18 @@ export default {
   border-radius: 5px;
   cursor: pointer;
   margin-right: 10px;
+}
+
+.toggle-incomplete-btn {
+  background-color: #32f058; /* Set your desired background color */
+  color: black;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.toggle-incomplete-btn:hover {
+  background-color: #1c993a; /* Set your desired hover background color */
 }
 </style>
