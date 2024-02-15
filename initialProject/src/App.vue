@@ -18,6 +18,12 @@ import TheTitle from './components/TheTitle.vue'
 </template>
 
 <style scoped>
+
+.wrapper {
+  width: 100%;
+  justify-content: space-between;
+}
+
 header {
   line-height: 1.5;
   max-height: 100vh;

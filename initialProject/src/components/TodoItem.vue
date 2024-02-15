@@ -1,20 +1,27 @@
 <template>
   <div class="todo-item">
-
-      <h2 :class="{ completed: todo.isComplete }">{{ todo.title }}</h2>
-      <span>⏱ {{ todo.duration }} min </span>
-      <span>{{ todo.isComplete ? 'Terminé ✅' : 'À faire 🚨' }}</span>
-        <div class="todo-btn">
-      <button @click="toggleComplete" class="button status-button">{{ todo.isComplete ? 'Modifier statut' : 'Todo terminé  ✅' }}</button>
+    <h2 :class="{ completed: todo?.isComplete }">{{ todo?.title }}</h2>
+    <span>⏱ {{ todo?.duration }} min</span>
+    <span>{{ todo?.isComplete ? 'Terminé ✅' : 'À faire 🚨' }}</span>
+    <div class="todo-btn">
+      <button @click="toggleComplete" class="button status-button">
+        {{ todo?.isComplete ? 'Modifier statut' : 'Todo terminé  ✅' }}
+      </button>
       <button @click="editTodo" class="button action-button">Modifier</button>
       <button @click="removeTodo" class="button delete-button">Supprimer</button>
-      </div>
     </div>
-  </template>
+  </div>
+</template>
   
   <script lang="ts">
-  import { ref, defineComponent } from 'vue';
+  import { defineComponent } from 'vue';
   
+  interface Todo {
+  title: string;
+  duration: number;
+  isComplete: boolean;
+}
+
   export default defineComponent({
     props: {
       todo: Object,
@@ -24,16 +31,16 @@
     },
     setup(props) {
       const editTodo = () => {
-        props.edit(props.todo);
-      };
-  
-      const removeTodo = () => {
-        props.remove();
-      };
+      props.edit?.(props.todo);
+    };
+
+    const removeTodo = () => {
+      props.remove?.();
+    };
   
       const toggleComplete = () => {
-        props.toggleComplete(props.todo);
-      };
+      props.toggleComplete?.(props.todo);
+    };
   
       return {
         editTodo,
@@ -49,8 +56,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #d6e4ff;
-  color: #3b82f6;
+  background-color: #ffffff;
+  color: #818181;
   border: 1px solid #93c5fd;
   padding: 0.5rem;
   margin: 0.5rem 0;

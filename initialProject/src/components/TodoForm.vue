@@ -19,23 +19,23 @@
 </template>
 
 <script lang="ts">
-import { ref, watch } from 'vue';
+import { ref, watch, defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
   props: {
     show: Boolean,
     todo: Object,
+    editingTodo: Object,
   },
   emits: ['submit', 'close'],
   setup(props, { emit }) {
     const title = ref('');
     const duration = ref('');
 
-    // Watch for changes in the todo prop and update the form fields
     watch(() => props.todo, (newTodo) => {
       if (newTodo) {
         title.value = newTodo.title || '';
-        duration.value = newTodo.duration || '';
+        duration.value = newTodo.duration?.toString() || '';
       }
     });
 
@@ -67,7 +67,7 @@ export default {
       close,
     };
   },
-};
+});
 </script>
 
 

@@ -39,17 +39,24 @@ import { ref, computed } from 'vue';
 import TodoForm from '../components/TodoForm.vue';
 import TodoItem from '../components/TodoItem.vue';
 
+interface Todo {
+  title: string;
+  duration: number;
+  isComplete: boolean;
+}
+
 export default {
+  
   components: {
     TodoForm,
     TodoItem,
   },
   setup() {
-    const todos = ref([]);
+    const todos = ref<Todo[]>([]);
     const showAddTodoForm = ref(false);
-    const editingTodo = ref(null);
+    const editingTodo = ref<Todo | null>(null);
 
-    const addOrUpdateTodo = (todo) => {
+    const addOrUpdateTodo = (todo: Todo): void => {
       if (editingTodo.value) {
         // Modifier un todo item
         Object.assign(editingTodo.value, todo);
@@ -62,20 +69,20 @@ export default {
       closeForm();
     };
 
-    const editTodo = (todo) => {
+    const editTodo = (todo: Todo): void => {
       editingTodo.value = todo;
       showAddTodoForm.value = true;
     };
 
-    const closeForm = () => {
+    const closeForm = (): void => {
       showAddTodoForm.value = false;
     };
 
-    const removeTodo = (index) => {
+    const removeTodo = (index: number): void => {
       todos.value.splice(index, 1);
     };
 
-    const toggleComplete = (todo) => {
+    const toggleComplete = (todo: Todo) => {
       todo.isComplete = !todo.isComplete;
     };
 

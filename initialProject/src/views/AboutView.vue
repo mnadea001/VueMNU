@@ -29,7 +29,7 @@
         <li>Si un de ces cas se produit, un message d'erreur doit apparaitre</li>
       </ul>
     </span>
-    <p>Made with ❤️ by Mathilde Nadeau</p>
+    <p>Fait avec ❤️ par Mathilde Nadeau</p>
   </div>
 </template>
 
