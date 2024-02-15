@@ -12,6 +12,9 @@
     />
 
     <div v-if="todos.length > 0">
+      <h2> 👉 {{todos.length }} Todos !!</h2>
+      <h2> {{ incompleteTodosCount }} Todos à faire 🤓</h2>
+      <h2>{{ completedTodosCount }} Todos terminées 🥳</h2>
       <TodoItem
         v-for="(todo, index) in todos"
         :key="index"
@@ -23,14 +26,14 @@
     </div>
 
     <div v-else>
-      <p>No todos for now! 😞</p>
+      <p>Pas de todos pour le moment! 😞</p>
     </div>
 
   </div>
 </template>
 
 <script lang="ts">
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import TodoForm from '../components/TodoForm.vue';
 import TodoItem from '../components/TodoItem.vue';
 
@@ -74,6 +77,14 @@ export default {
       todo.isComplete = !todo.isComplete;
     };
 
+    const incompleteTodosCount = computed(() => {
+      return todos.value.filter(todo => !todo.isComplete).length;
+    });
+
+    const completedTodosCount = computed(() => {
+      return todos.value.filter(todo => todo.isComplete).length;
+    });
+
     return {
       todos,
       showAddTodoForm,
@@ -82,6 +93,8 @@ export default {
       toggleComplete,
       addOrUpdateTodo,
       editTodo,
+      incompleteTodosCount,
+      completedTodosCount,
     };
   },
 };
