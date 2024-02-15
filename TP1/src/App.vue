@@ -1,27 +1,32 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import TheTitle from './components/TheTitle.vue'
 </script>
 
 <template>
-  <header>
-    <div class="wrapper">
-      <TheTitle msg="To Do List" />
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <div class="app-wrapper">
+    <header>
+      <div class="wrapper">
+        <nav>
+          <RouterLink to="/">Accueil</RouterLink>
+          <RouterLink to="/about">A propos</RouterLink>
+        </nav>
+      </div>
+    </header>
+    <RouterView />
+  </div>
 </template>
 
 <style scoped>
-
-.wrapper {
+.app-wrapper {
   width: 100%;
-  justify-content: space-between;
+  height: 100vh;
+  display: flex;
+flex-direction: column;
+}
+.wrapper {
+  width: 100vw;
+  display: flex;
+flex-direction: row;
 }
 
 header {
@@ -66,11 +71,11 @@ nav a:first-of-type {
     margin: 0 2rem 0 0;
   }
 
-  header .wrapper {
+  /* header .wrapper {
     display: flex;
     place-items: flex-start;
     flex-wrap: wrap;
-  }
+  } */
 
   nav {
     text-align: left;

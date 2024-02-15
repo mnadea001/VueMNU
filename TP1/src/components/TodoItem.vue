@@ -8,8 +8,8 @@
       <button @click="toggleComplete" class="button status-button">
         {{ todo?.isComplete ? 'Modifier statut' : 'Todo terminé  ✅' }}
       </button>
-      <button @click="editTodo" class="button action-button">Modifier</button>
-      <button @click="removeTodo" class="button delete-button">Supprimer</button>
+      <button @click="editTodo" class="button status-button">Modifier 🖊</button>
+      <button @click="removeTodo" class="button status-button">Supprimer ✂️</button>
     </div>
   </div>
 </template>
@@ -53,6 +53,12 @@
   </script>
   
 <style scoped>
+
+h2 {
+  font-size: 2em;
+  color: black;
+  font-weight: bold;
+}
 .todo-item {
   display: flex;
   flex-direction: column;

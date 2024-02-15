@@ -1,6 +1,10 @@
 <template>
   <div class="add-todo-modal">
-    <h3>Add Todo</h3>
+    <h2>
+      <strong>
+        Ajouter un Todo
+      </strong>
+      </h2>
     <form @submit.prevent="submitForm">
       <div>
         <label>Titre:</label>
@@ -112,14 +116,15 @@ label {
   display: block;
 }
 
-input {
+input, select {
   width: 100%;
   margin-bottom: 10px;
-  padding: 8px;
+  padding: 8px !important;
+  height: 25px !important
 }
 
 .cancel-button {
-  background-color: #f06b32 !important;
+  background-color: #ffffff !important;
   color: black;
   padding: 10px;
   border: none !important;

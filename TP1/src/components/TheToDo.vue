@@ -1,7 +1,7 @@
 <template>
   <div class="todo-app-container">
-    <h1>TODO PAGE</h1>
-    <button class="add-todo-btn" @click="showAddTodoForm = true">Ajouter Todo</button>
+    <h1>👉  TODO LISTE</h1>
+    <button class="add-todo-btn" @click="showAddTodoForm = true">🗒 Ajouter Todo</button>
 
     <TodoForm
       v-if="showAddTodoForm || editingTodo"
@@ -12,7 +12,7 @@
     />
 
     <div v-if="todos.length > 0">
-      <h2> 👉 {{todos.length }} Todos !!</h2>
+      <h2> {{todos.length }} Todos !!</h2>
       <h2> {{ incompleteTodosCount }} Todos à faire 🤓</h2>
       <h2>{{ completedTodosCount }} Todos terminées 🥳</h2>
       <button @click="toggleIncompleteOnly" class="toggle-incomplete-btn">
@@ -170,7 +170,7 @@ export default {
 }
 
 .toggle-incomplete-btn {
-  background-color: #32f058; /* Set your desired background color */
+  background-color: #32f058; 
   color: black;
   padding: 10px;
   border: none;
@@ -179,6 +179,6 @@ export default {
   margin-right: 10px;
 }
 .toggle-incomplete-btn:hover {
-  background-color: #1c993a; /* Set your desired hover background color */
+  background-color: #1c993a; 
 }
 </style>
