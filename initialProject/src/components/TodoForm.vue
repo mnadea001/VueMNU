@@ -3,16 +3,16 @@
     <h3>Add Todo</h3>
     <form @submit.prevent="submitForm">
       <div>
-        <label>Title:</label>
+        <label>Titre:</label>
         <input v-model="title" type="text" required />
       </div>
       <div>
-        <label>Duration (min):</label>
+        <label>Durée de la tâche (min):</label>
         <input v-model.number="duration" type="number" required />
       </div>
       <div>
-        <button type="submit">{{ editingTodo ? 'Update Todo' : 'Add Todo' }}</button>
-        <button type="button" @click="close">Cancel</button>
+        <button class="button add-button" type="submit">{{ editingTodo ? 'Modifier' : 'Ajouter' }}</button>
+        <button class="cancel-button" type="button" @click="close">Annuler</button>
       </div>
     </form>
   </div>
@@ -104,10 +104,21 @@ input {
   padding: 8px;
 }
 
+.cancel-button {
+  background-color: #f06b32 !important;
+  color: black;
+  padding: 10px;
+  border: none !important;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
 button {
   background-color: #32f058;
   color: black;
   padding: 10px;
+  border: none !important;
   border-radius: 5px;
   cursor: pointer;
   margin-right: 10px;

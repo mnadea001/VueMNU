@@ -1,7 +1,7 @@
 <template>
   <div class="todo-app-container">
     <h1>Todo Application</h1>
-    <button @click="showAddTodoForm = true">Add Todo</button>
+    <button class="add-todo-btn" @click="showAddTodoForm = true">Add Todo</button>
 
     <TodoForm
       v-if="showAddTodoForm || editingTodo"
@@ -26,7 +26,9 @@
     </div>
 
     <div v-else>
-      <p>Pas de todos pour le moment! 😞</p>
+      <span class="no-todo">
+      <h2>Pas de todos pour le moment ! 😞</h2>
+    </span>
     </div>
 
   </div>
@@ -104,5 +106,24 @@ export default {
 .completed {
   text-decoration: line-through;
   color: #6b7280;
+}
+
+.no-todo {
+  display: block;
+  padding: 15px; 
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.add-todo-btn{
+  background-color: pink;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 1.5em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.add-todo-btn:hover{
+  background-color: rgb(246, 139, 157);
 }
 </style>
