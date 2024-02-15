@@ -1,6 +1,6 @@
 <template>
   <div class="todo-app-container">
-    <h1>Todo Application</h1>
+    <h1>TODO PAGE</h1>
     <button class="add-todo-btn" @click="showAddTodoForm = true">Add Todo</button>
 
     <TodoForm
@@ -15,6 +15,7 @@
       <h2> 👉 {{todos.length }} Todos !!</h2>
       <h2> {{ incompleteTodosCount }} Todos à faire 🤓</h2>
       <h2>{{ completedTodosCount }} Todos terminées 🥳</h2>
+      <button @click="removeAllTodos" class="delete-all-btn">Delete All Todos</button>
       <TodoItem
         v-for="(todo, index) in todos"
         :key="index"
@@ -86,6 +87,11 @@ export default {
       todo.isComplete = !todo.isComplete;
     };
 
+    const removeAllTodos = (): void => {
+      todos.value = [];
+    };
+
+  
     const incompleteTodosCount = computed(() => {
       return todos.value.filter(todo => !todo.isComplete).length;
     });
@@ -93,6 +99,8 @@ export default {
     const completedTodosCount = computed(() => {
       return todos.value.filter(todo => todo.isComplete).length;
     });
+
+    
 
     return {
       todos,
@@ -104,6 +112,7 @@ export default {
       editTodo,
       incompleteTodosCount,
       completedTodosCount,
+      removeAllTodos
     };
   },
 };
@@ -132,5 +141,15 @@ export default {
 }
 .add-todo-btn:hover{
   background-color: rgb(246, 139, 157);
+}
+
+.delete-all-btn {
+  background-color: #f06b32 !important;
+  color: black;
+  padding: 10px;
+  border: none !important;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
 }
 </style>
