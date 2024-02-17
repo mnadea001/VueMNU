@@ -4,7 +4,7 @@
     class="p-6 m-2 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4"
   >
     <div class="flex-shrink-0">
-      <!-- <img class="h-12 w-12" src="{{product.image }} alt="ChitChat Logo" /> -->
+      <img class="h-12 w-12" :src="product.image" alt="Product Image" />
     </div>
     <div>
       <div class="text-xl font-medium text-black">
