@@ -1,27 +1,23 @@
 <template>
-      <div class="product-card">
-        <img :src=props.img alt=""> 
-        <h3><slot name="title"></slot></h3>
-        <p><slot name="price"></slot></p>
+  <div class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4">
+    <div class="flex-shrink-0">
+      <img class="h-12 w-12" :src="props.img" alt="ChitChat Logo" />
+    </div>
+    <div>
+      <div class="text-xl font-medium text-black">
+        <slot name="title"></slot>
       </div>
-  </template>
-  
-  <script setup lang="ts">
-import {defineProps } from 'vue';
+      <p class="text-gray-500"><slot name="price"></slot></p>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { defineProps } from 'vue';
 
 const props = defineProps({
-    img: String
-    // title: String
-})
-  
+  img: String,
+});
+</script>
 
-  </script>
-
-  <style scoped>
-
-.product-card img {
-/* max-width: 400px; */
-max-height: 100px !important;
-}
-</style>
-  
+<style scoped></style>
