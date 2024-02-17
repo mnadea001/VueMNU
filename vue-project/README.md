@@ -1,10 +1,6 @@
 # vue-project
 
- cd vue-project
-  yarn
-  yarn format
-  yarn dev
-  
+npm create vue@latest
 
 ## Recommended IDE Setup
 
@@ -28,23 +24,17 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 ## Project Setup
 
 ```sh
-yarn
+npm install
 ```
 
 ### Compile and Hot-Reload for Development
 
 ```sh
-yarn dev
+npm run dev
 ```
 
 ### Type-Check, Compile and Minify for Production
 
 ```sh
-yarn build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-yarn lint
+npm run build
 ```
