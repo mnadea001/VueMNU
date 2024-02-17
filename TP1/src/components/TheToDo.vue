@@ -60,7 +60,7 @@ export default {
     const todos = ref<Todo[]>([]);
     const showAddTodoForm = ref(false);
     const editingTodo = ref<Todo | null>(null);
-      const showIncompleteOnly = ref(false);
+    const showIncompleteOnly = ref(false);
 
     const addOrUpdateTodo = (todo: Todo): void => {
       if (editingTodo.value) {

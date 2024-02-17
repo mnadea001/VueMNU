@@ -1,6 +1,10 @@
-# initialProject
+# vue-project
 
-This template should help get you started developing with Vue 3 in Vite.
+ cd vue-project
+  yarn
+  yarn format
+  yarn dev
+  
 
 ## Recommended IDE Setup
 
@@ -44,6 +48,3 @@ yarn build
 ```sh
 yarn lint
 ```
-
-----
-desactiver vetur (pas compatible avec vue 3) ==> installer volar (pour vue3)
