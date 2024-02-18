@@ -1,35 +1,35 @@
 <template>
   <main>
-    <p>Home</p>
-    <RouterLink v-for="(product, index) in products" :key="index" :to="`/product/${product.id}`">
-      <ProductCard
-        :img="product?.image"
+    <p>VEGGIE IS GOOD</p>
+    <RouterLink v-for="(meal, index) in meals" :key="index" :to="`/meal/${meal.idMeal}`">
+      <MealCard
+        :img="meal?.strMealThumb"
       >
-        <template #title>{{ product?.title }}</template>
-        <template #price>{{ product?.price }}</template>
-      </ProductCard>
+        <template #title>{{ meal?.strMeal }}</template>
+        <template #id>{{ meal?.idMeal }}</template>
+      </MealCard>
     </RouterLink>
   </main>
 </template>
 
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
-import ProductCard from "../components/ProductCard.vue";
+import MealCard from "../components/MealCard.vue";
 
-interface Product {
-  image: string;
-  title: string;
-  price: number;
+interface Meal {
+  idMeal: string;
+  strMeal: string;
+  strMealThumb: string;
 }
 
-const products = ref<Product[]>([]); 
+const meals = ref<Meal[]>([]);
 
 onMounted(() => {
-  fetch("https://fakestoreapi.com/products")
-    .then((res) => res.json() as Promise<Product[]>)
+  fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Vegetarian")
+    .then((res) => res.json() as Promise<Meal[]>)
     .then((data) => {
       console.log(data);
-      products.value = data;
+      meals.value = data.meals;
     });
 });
 </script>

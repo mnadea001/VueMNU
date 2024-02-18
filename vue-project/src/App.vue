@@ -3,32 +3,37 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
+    <div class="app-wrapper">
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
     <div class="wrapper">
-
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>
-    </div>
-  </header>
-
-  <RouterView />
+      </div>
+    </header>
+    <RouterView />
+  </div>
 </template>
 
 <style scoped>
+.app-wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+flex-direction: column;
+}
+.wrapper {
+  width: 100vw;
+  display: flex;
+flex-direction: row;
+}
+
 header {
   line-height: 1.5;
   max-height: 100vh;
+  width: 30vw;
 }
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
 nav {
   width: 100%;
   font-size: 12px;
