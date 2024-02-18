@@ -1,33 +1,27 @@
 <template>
     <div>
-      <p>Meal Page</p>
-      <div v-if="meal" class="p-6 m-2 max-w-sm mx-auto bg-white rounded-xl shadow-md items-center space-x-4">
-        <div class="flex-shrink-0">
-          <img class="h-12 w-12" :src="meal.strMealThumb" alt="Meal Image" />
+      <div v-if="meal" class="p-6 m-2 max-w-4xl mx-auto bg-white rounded-xl shadow-md">
+        <div class="flex items-center space-x-4">
+          <img class="h-24 w-24 rounded-full" :src="meal.strMealThumb" alt="Meal Image" />
+          <div>
+            <div class="text-xl font-medium text-black">{{ meal.strMeal }}</div>
+            <div class="text-gray-500">{{ meal.strCategory }} | {{ meal.strArea }}</div>
+          </div>
         </div>
-        <div>
-          <div class="text-xl font-medium text-black">
-            {{ meal.strMeal }}
-          </div>
-          <div class="text-xl font-medium text-black">
-            {{ meal.strTags }}
-          </div>
-          <div class="text-xl font-medium text-black">
-            {{ meal.strCategory }}
-          </div>
-          <div class="text-xl font-medium text-black">
-            {{ meal.strArea }}
-          </div>
-          <div class="text-xl font-medium text-black">
-            {{ meal.strInstructions }}
-          </div>
-          <div class="text-xl font-medium text-black">
-            <a :href="meal.strYoutube" target="_blank">Watch on YouTube</a>
-          </div>
+        <div class="mt-4">
+          <div class="text-lg font-medium text-black">Tags:</div>
+          <div class="text-gray-500">{{ meal.strTags }}</div>
+        </div>
+        <div class="mt-4">
+          <div class="text-lg font-medium text-black">Instructions:</div>
+          <div class="text-gray-500">{{ meal.strInstructions }}</div>
+        </div>
+        <div class="mt-4">
+          <a :href="meal.strYoutube" target="_blank" class="text-lg font-medium text-blue-500 hover:underline">Watch on YouTube</a>
         </div>
       </div>
-      <p v-else>Loading...</p>
-      <p v-if="error">{{ error }}</p>
+      <p v-else class="text-center">Loading...</p>
+      <p v-if="error" class="text-center text-red-500">{{ error }}</p>
     </div>
   </template>
   
@@ -39,6 +33,10 @@
     idMeal: string;
     strMeal: string;
     strMealThumb: string;
+    strTags: string;
+    strCategory: string;
+    strArea: string;
+    strInstructions: string;
     strYoutube: string;
   }
   
@@ -65,5 +63,6 @@
     });
   </script>
   
-  <style scoped></style>
+  <style scoped>
+  </style>
   
