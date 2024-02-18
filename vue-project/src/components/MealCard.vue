@@ -1,5 +1,5 @@
 <template>
-    <div class="p-2 m-2 mx-auto bg-white rounded-xl shadow-md relative">
+    <div class="p-2 m-2 mx-auto bg-white rounded-xl shadow-md relative items-center">
       <div class="meal-image">
         <img class="h-50 w-50 object-cover" :src="props.img" alt="Meal Thumbnail" />
       </div>
