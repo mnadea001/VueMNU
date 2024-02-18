@@ -1,9 +1,9 @@
 <template>
-  <main class="py-8">
+  <main>
     <h1 class="text-3xl font-semibold text-center mb-4">VEGGIE IS GOOD</h1>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+    <div class="">
       <RouterLink v-for="(meal, index) in meals" :key="index" :to="`/meal/${meal.idMeal}`">
-        <MealCard :img="meal.strMealThumb" :title="meal.strMeal" />
+        <MealCard :img="meal.strMealThumb" :strMeal="meal.strMeal" />
       </RouterLink>
     </div>
   </main>
