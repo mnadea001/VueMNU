@@ -19,6 +19,8 @@
   </script>
   
   <style scoped>
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
   .meal-image {
     position: relative;
     overflow: hidden;
@@ -30,7 +32,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(253, 149, 59, 0.5);
+    background-color: rgb(253, 149, 59);
     color: white;
     opacity: 0;
     transition: opacity 0.3s;
@@ -38,14 +40,17 @@
     align-items: center;
     justify-content: center;
   }
+
   
   .overlay:hover {
     opacity: 1;
   }
   
   .text {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     font-weight: bold;
+    font-family: "Anton", sans-serif;
+    color: #28390f;
   }
   </style>
   
