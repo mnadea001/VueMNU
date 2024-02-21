@@ -1,14 +1,27 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
+import { useDark, useToggle } from "@vueuse/core";
+
+const isDark = useDark();
+const toggleDark = useToggle(isDark);
 </script>
 
 <template>
-    <div class="app-wrapper">
+    <div class="app-wrapper dark:bg-white">
   <header>
     <div class="wrapper">
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
+        <span class="dark:text-white">
+          {{ isDark ? "Dark" : "Light" }} Mode
+        </span>
+        <button
+        @click="toggleDark()"
+        class="py-2 px-4 bg-black text-white rounded-md dark:bg-white dark:text-black"
+      >
+        Learn More!
+      </button>
       </nav>
       </div>
     </header>
@@ -22,6 +35,7 @@ import { RouterLink, RouterView } from 'vue-router'
   height: 100vh;
   display: flex;
 flex-direction: column;
+padding: 5rem;
 }
 .wrapper {
   width: 100vw;
@@ -39,6 +53,7 @@ nav {
   font-size: 12px;
   text-align: center;
   margin-top: 2rem;
+  padding: 5rem;
 }
 
 nav a.router-link-exact-active {

@@ -4,6 +4,7 @@ npm create vue@latest
 
 
 npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
+npm i @vueuse/core
 
 ## Recommended IDE Setup
 

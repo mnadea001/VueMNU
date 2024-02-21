@@ -17,6 +17,7 @@ import MealCard from "../components/MealCard.vue";
 
 import AboutView from "../views/AboutView.vue";
 
+
 interface Meal {
   idMeal: string;
   strMeal: string;
