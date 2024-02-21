@@ -1,45 +1,11 @@
 <template>
   <main>
-    <h1 class="text-3xl font-semibold text-center my-4">VEGGIE IS GOOD</h1>
-    <div class="container-card my-4">
-      <RouterLink
-        v-for="(meal, index) in meals"
-        :key="index"
-        :to="`/meal/${meal.idMeal}`"
-      >
-        <MealCard :img="meal.strMealThumb" :strMeal="meal.strMeal" />
-      </RouterLink>
-    </div>
-    <AboutView />
+    <h1 class="text-3xl font-semibold text-center my-4">WELCOME</h1>
   </main>
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
-import { RouterLink } from "vue-router";
-import MealCard from "../components/MealCard.vue";
 
-import AboutView from "../views/AboutView.vue";
-
-interface Meal {
-  idMeal: string;
-  strMeal: string;
-  strMealThumb: string;
-}
-
-const meals = ref<Meal[]>([]);
-
-onMounted(() => {
-  fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Vegetarian")
-    .then((res: Meal[]) => res.json() as Promise<{ meals: Meal[] }>)
-    .then((data: Meal[]) => {
-      console.log(data);
-      meals.value = data.meals;
-    })
-    .catch((error) => {
-      console.error("Error fetching meals:", error);
-    });
-});
 </script>
 
 <style scoped>
@@ -47,6 +13,7 @@ onMounted(() => {
 
 main {
   width: 100vw;
+  height: 100vh;
 }
 h1 {
   font-family: "Anton", sans-serif;

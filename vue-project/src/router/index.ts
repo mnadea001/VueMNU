@@ -6,6 +6,7 @@ import CategoryView from '../views/CategoryView.vue'
 import PoseView from '../views/PoseView.vue'
 import AboutView from '../views/AboutView.vue'
 import QuotesView from '../views/QuotesView.vue'
+import FoodView from '../views/FoodView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,6 +15,11 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView
+    },
+    {
+      path: '/food',
+      name: 'food',
+      component: FoodView
     },
     {
       path: '/meal/:idMeal',
