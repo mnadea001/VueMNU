@@ -1,22 +1,18 @@
 <template>
-  <main>
-    <div class="about dark:bg-white">
-      <h1>Yoga</h1>
-      <div v-for="yoga in yogas" :key="yoga.id" class="yoga-categories">
-        <span>
-          <h2>{{ yoga.category_name }}</h2>
-          <p>{{ yoga.category_description }}</p>
-          <ul>
-            <li v-for="(pose, index) in yoga.poses" :key="index">{{ pose.pose_name }}</li>
-          </ul>
-        </span>
-      </div>
+  <main class="dark:bg-white">
+    <h1 class="text-3xl font-semibold text-center my-4">YOGA IS GOOD</h1>
+    <div class="category-card my-4">
+      <RouterLink v-for="(yoga, index) in yogas" :key="index" :to="`/category/${yoga.id}`">
+        <CategoryCard :categoryName="yoga.category_name" />
+      </RouterLink>
     </div>
   </main>
 </template>
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
+import { RouterLink } from "vue-router";
+import CategoryCard from "../components/CategoryCard.vue";
 
 interface Pose {
   pose_name: string;
@@ -33,8 +29,9 @@ const yogas = ref<Yoga[]>([]);
 
 onMounted(() => {
   fetch("https://yoga-api-nzy4.onrender.com/v1/categories")
-    .then((res) => res.json())
+    .then((res: Yoga[]) => res.json() as Promise<{ meals: Yoga[] }>)
     .then((data: Yoga[]) => {
+      console.log(data);
       yogas.value = data;
     })
     .catch((error) => {
@@ -43,27 +40,19 @@ onMounted(() => {
 });
 </script>
 
-<style>
+<style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 
-.about {
-  display: flex;
-  flex-direction: column !important;
-
-}
 main {
   width: 100vw;
 }
 
-.yoga-categories {
-  margin-bottom: 20px;
-  display: flex;
-  flex-direction: column !important;
-  justify-content: center;
-  align-items: center;
+h1 {
+  font-family: "Anton", sans-serif;
 }
 
-.yoga-categories span {
-  margin-right: 20px;
+.category-card {
 
 }
+
 </style>
