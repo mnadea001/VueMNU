@@ -1,3 +1,51 @@
+<script setup lang="ts">
+import { ref } from "vue";
+import { useRoute, useRouter } from "vue-router";
+
+interface Meal {
+  idMeal: string;
+  strMeal: string;
+  strMealThumb: string;
+  strTags: string;
+  strCategory: string;
+  strArea: string;
+  strInstructions: string;
+  strYoutube: string;
+}
+
+const meal = ref<Meal | null>(null);
+const error = ref<string | null>(null);
+const route = useRoute();
+
+const router = useRouter();
+
+function goBack() {
+  router.go(-1); 
+}
+
+fetch(
+  `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${route.params.idMeal}`
+)
+  .then((res) => {
+    if (!res.ok) {
+      throw new Error("Network response was not ok");
+    }
+    return res.json() as Promise<{ meals: Meal[] }>;
+  })
+  .then((data) => {
+    if (data.meals && data.meals.length > 0) {
+      meal.value = data.meals[0];
+    } else {
+      error.value = "Meal not found";
+    }
+  })
+  .catch((err) => {
+    error.value = `Fetch error: ${err.message}`;
+  });
+</script>
+
+
+
 <template>
   <main>
     <div>
@@ -5,6 +53,8 @@
         v-if="meal"
         class="p-6 m-2 max-w-4xl mx-auto bg-white rounded-xl shadow-md"
       >
+      <button @click="goBack" class="text-lg font-medium text-blue-500 hover:underline mb-4">Back</button>
+
         <div class="flex items-center space-x-4">
           <img
             class="h-24 w-24 rounded-full"
@@ -41,45 +91,6 @@
   </main>
 </template>
 
-<script setup lang="ts">
-import { ref } from "vue";
-import { useRoute } from "vue-router";
-
-interface Meal {
-  idMeal: string;
-  strMeal: string;
-  strMealThumb: string;
-  strTags: string;
-  strCategory: string;
-  strArea: string;
-  strInstructions: string;
-  strYoutube: string;
-}
-
-const meal = ref<Meal | null>(null);
-const error = ref<string | null>(null);
-const route = useRoute();
-
-fetch(
-  `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${route.params.idMeal}`
-)
-  .then((res) => {
-    if (!res.ok) {
-      throw new Error("Network response was not ok");
-    }
-    return res.json() as Promise<{ meals: Meal[] }>;
-  })
-  .then((data) => {
-    if (data.meals && data.meals.length > 0) {
-      meal.value = data.meals[0];
-    } else {
-      error.value = "Meal not found";
-    }
-  })
-  .catch((err) => {
-    error.value = `Fetch error: ${err.message}`;
-  });
-</script>
 
 <style scoped>
 main {

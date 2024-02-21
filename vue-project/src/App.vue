@@ -35,7 +35,7 @@ const toggleDark = useToggle(isDark);
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 5rem;
+  padding-top: 2rem;
 }
 .wrapper {
   width: 100vw;
@@ -47,6 +47,7 @@ header {
   line-height: 1.5;
   max-height: 100vh;
   width: 30vw;
+  padding: 5rem;
 }
 nav {
   width: 100%;
