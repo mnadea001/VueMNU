@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
+import { onMounted, ref } from 'vue';
 import { RouterLink } from "vue-router";
 import MealCard from "../components/MealCard.vue";
 
