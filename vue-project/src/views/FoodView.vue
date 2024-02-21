@@ -44,6 +44,7 @@ onMounted(() => {
 
 main {
   width: 100vw;
+  height: 100vh;
 }
 h1 {
   font-family: "Anton", sans-serif;

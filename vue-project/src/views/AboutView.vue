@@ -1,20 +1,71 @@
 <template>
   <main>
-    <div class="about dark:bg-white">
-      <h1>This is an about page</h1>
+    <div class="dark:bg-white">
+      <div class="content">
+        <h1>This is an about page</h1>
+        <h2>Introduction to Yoga</h2>
+        <p>
+          Yoga is an ancient practice that originated in India thousands of
+          years ago. It is a holistic system that encompasses physical postures
+          (asanas), breath control (pranayama), meditation, and ethical
+          principles aimed at achieving harmony between mind, body, and spirit.
+        </p>
+
+        <h2>Origin</h2>
+        <p>
+          The origins of yoga can be traced back to ancient texts known as the
+          Vedas, particularly the Rigveda, which dates back over 5,000 years.
+          Yoga evolved over centuries, with the systematic compilation of yoga
+          teachings found in the Yoga Sutras of Patanjali, written around 400
+          CE. Over time, various schools of yoga emerged, each emphasizing
+          different aspects of the practice.
+        </p>
+        <h2>Definition</h2>
+        <p>
+          Yoga, derived from the Sanskrit word "yuj," means to unite or join. At
+          its core, yoga is about the union of individual consciousness with the
+          universal consciousness. It involves the integration of physical,
+          mental, and spiritual practices to achieve a state of balance and
+          inner peace.
+        </p>
+        <h2>Benefits</h2>
+        <p>
+          The practice of yoga offers a myriad of benefits for both the body and
+          mind. Physically, yoga improves flexibility, strength, and balance. It
+          helps to alleviate tension in the muscles and promotes overall
+          relaxation. Mentally, yoga cultivates mindfulness and reduces stress,
+          anxiety, and depression. It enhances concentration, clarity of
+          thought, and emotional well-being. Additionally, regular yoga practice
+          can boost immune function, improve sleep quality, and contribute to
+          overall health and longevity.
+        </p>
+        <p>
+          In summary, yoga is a profound and transformative practice that
+          promotes physical health, mental clarity, and spiritual growth. Its
+          rich history, diverse teachings, and numerous benefits make it a
+          valuable tool for holistic well-being in today's fast-paced world.
+        </p>
+      </div>
     </div>
   </main>
 </template>
 
-<style>
+<style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
 main {
   width: 100vw;
+  height: 100vh;
 }
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
+
+h1, h2 {
+  font-family: "Anton", sans-serif;
+}
+.content {
+  width: 70%;
+  padding: 15px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50px;
 }
 </style>
