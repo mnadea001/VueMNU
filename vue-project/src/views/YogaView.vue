@@ -1,6 +1,6 @@
 <template>
   <main class="dark:bg-white">
-    <h1 class="text-3xl font-semibold text-center my-4">YOGA IS GOOD</h1>
+    <h1 class="text-3xl font-semibold text-center my-4">YOGA IS ART</h1>
     <div class="category-card my-4">
       <RouterLink v-for="(yoga, index) in yogas" :key="index" :to="`/category/${yoga.id}`">
         <CategoryCard :categoryName="yoga.category_name" />

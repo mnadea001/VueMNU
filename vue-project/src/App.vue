@@ -49,7 +49,7 @@ const toggleDark = useToggle(isDark);
 header {
   line-height: 1.5;
   max-height: 100vh;
-  width: 30vw;
+  width: 100vw;
   padding: 5rem;
 }
 nav {
