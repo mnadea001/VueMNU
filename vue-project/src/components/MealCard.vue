@@ -1,7 +1,7 @@
 <template>
     <div class="p-2 m-2 mx-auto bg-white rounded-xl shadow-md relative items-center meal-card">
       <div class="meal-image">
-        <img class="h-50 w-50 object-cover" :src="props.img" alt="Meal Thumbnail" />
+        <img class="h-25 w-25 object-cover" :src="props.img" alt="Meal Thumbnail" />
       </div>
       <div class="overlay">
         <div class="text">{{ props.strMeal }}</div>

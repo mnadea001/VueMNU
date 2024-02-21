@@ -48,10 +48,10 @@ h1 {
 .container-card {
   width: 100%;
   margin: auto;
-  border: solid black 2px;
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
+  object-fit: contain;
   scroll-snap-type: x mandatory;
 }
 
