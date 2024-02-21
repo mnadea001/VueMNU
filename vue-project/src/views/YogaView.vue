@@ -45,6 +45,7 @@ onMounted(() => {
 
 main {
   width: 100vw;
+  display: block;
 }
 
 h1 {
@@ -52,7 +53,10 @@ h1 {
 }
 
 .category-card {
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+justify-content: center;
 }
 
 </style>

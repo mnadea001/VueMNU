@@ -5,6 +5,7 @@ import YogaView from '../views/YogaView.vue'
 import CategoryView from '../views/CategoryView.vue'
 import PoseView from '../views/PoseView.vue'
 import AboutView from '../views/AboutView.vue'
+import QuotesView from '../views/QuotesView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -28,6 +29,11 @@ const router = createRouter({
       path: '/yoga',
       name: 'yoga',
       component: YogaView
+    },
+    {
+      path: '/quote',
+      name: 'quote',
+      component: QuotesView
     },
     {
       path: '/category/:id',

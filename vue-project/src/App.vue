@@ -14,6 +14,7 @@ const toggleDark = useToggle(isDark);
           <RouterLink to="/">Home</RouterLink>
           <RouterLink to="/about">About</RouterLink>
           <RouterLink to="/yoga">Yoga</RouterLink>
+          <RouterLink to="/quote">Mental</RouterLink>
           <span class="dark:text-white">
             {{ isDark ? "Dark" : "Light" }} Mode
           </span>
