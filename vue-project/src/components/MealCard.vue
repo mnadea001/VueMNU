@@ -1,5 +1,5 @@
 <template>
-    <div class="p-2 m-2 mx-auto bg-white rounded-xl shadow-md relative items-center">
+    <div class="p-2 m-2 mx-auto bg-white rounded-xl shadow-md relative items-center meal-card">
       <div class="meal-image">
         <img class="h-50 w-50 object-cover" :src="props.img" alt="Meal Thumbnail" />
       </div>
@@ -26,6 +26,9 @@
     overflow: hidden;
   }
   
+  .meal-card {
+    display: inline-block;
+  }
   .overlay {
     position: absolute;
     top: 0;
@@ -51,6 +54,7 @@
     font-weight: bold;
     font-family: "Anton", sans-serif;
     color: #28390f;
+    word-wrap: break-word !important;
   }
   </style>
   
