@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView } from "vue-router";
 import { useDark, useToggle } from "@vueuse/core";
 
 const isDark = useDark();
@@ -7,22 +7,22 @@ const toggleDark = useToggle(isDark);
 </script>
 
 <template>
-    <div class="app-wrapper dark:bg-white">
-  <header>
-    <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <span class="dark:text-white">
-          {{ isDark ? "Dark" : "Light" }} Mode
-        </span>
-        <button
-        @click="toggleDark()"
-        class="py-2 px-4 bg-black text-white rounded-md dark:bg-white dark:text-black"
-      >
-        Learn More!
-      </button>
-      </nav>
+  <div class="app-wrapper dark:bg-white  dark:text-black">
+    <header>
+      <div class="wrapper">
+        <nav>
+          <RouterLink to="/">Home</RouterLink>
+          <RouterLink to="/about">About</RouterLink>
+          <span class="dark:text-white">
+            {{ isDark ? "Dark" : "Light" }} Mode
+          </span>
+          <button
+            @click="toggleDark()"
+            class="py-2 px-4 bg-black text-white rounded-md dark:bg-white dark:text-black"
+          >
+            Switch Mode!
+          </button>
+        </nav>
       </div>
     </header>
     <RouterView />
@@ -32,15 +32,15 @@ const toggleDark = useToggle(isDark);
 <style scoped>
 .app-wrapper {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
-flex-direction: column;
-padding: 5rem;
+  flex-direction: column;
+  padding: 5rem;
 }
 .wrapper {
   width: 100vw;
   display: flex;
-flex-direction: row;
+  flex-direction: row;
 }
 
 header {
