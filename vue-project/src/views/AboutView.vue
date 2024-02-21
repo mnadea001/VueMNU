@@ -1,10 +1,15 @@
 <template>
-  <div class="about dark:bg-white">
-    <h1>This is an about page</h1>
-  </div>
+  <main>
+    <div class="about dark:bg-white">
+      <h1>This is an about page</h1>
+    </div>
+  </main>
 </template>
 
 <style>
+main {
+  width: 100vw;
+}
 @media (min-width: 1024px) {
   .about {
     min-height: 100vh;
