@@ -20,6 +20,10 @@
           <div class="text-lg font-medium text-black">Description:</div>
           <div class="text-gray-500">{{ yoga.category_description }}</div>
         </div>
+        <div class="content">
+   
+    <img :src="childPoseImageSrc" class="h-80 rounded-full mt-4" />
+  </div>
         <div class="mt-4">
           <PoseCard
             v-for="(pose, index) in yoga.poses"
@@ -39,6 +43,9 @@ import { ref, onMounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import PoseCard from "../components/PoseCard.vue";
 import backIcon from "../assets/back.svg";
+import childPoseImg from "../assets/childpose.gif";
+
+const childPoseImageSrc: string = childPoseImg;
 
 interface Pose {
   english_name: string;
@@ -94,5 +101,12 @@ h1 {
 main {
   width: 100vw;
   height: 100%;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 50px;
+  align-items: center;
 }
 </style>
