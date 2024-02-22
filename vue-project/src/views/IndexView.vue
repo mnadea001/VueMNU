@@ -1,3 +1,22 @@
+<script setup lang="ts">
+import { VueFlip } from "vue-flip";
+import ModalComponent from "../components/ModalComponent.vue";
+import { ref } from "vue";
+
+const isModalOpened = ref(false);
+
+const openModal = () => {
+  isModalOpened.value = true;
+};
+const closeModal = () => {
+  isModalOpened.value = false;
+};
+
+const submitHandler = () => {
+ 
+};
+</script>
+
 <template>
   <main>
     <div class="home-box">
@@ -7,41 +26,35 @@
       </div>
       <div class="image-btn">
         <vue-flip active-hover height="240px" width="240px">
-          <template v-slot:front>  
+          <template v-slot:front>
             <img src="../assets/noisyimg.png" class="pl-3 pr-3 rounded-full" />
           </template>
-          <template v-slot:back>  
+          <template v-slot:back>
             <span class="back-body-btn">
-            <button>BODY</button>
-          </span>    
+              <button @click="openModal">BODY</button>
+            </span>
           </template>
         </vue-flip>
         <vue-flip active-hover height="240px" width="240px">
-          <template v-slot:front>  
+          <template v-slot:front>
             <img src="../assets/unsplash.png" class="pl-3 pr-3 rounded-full" />
           </template>
           <template v-slot:back>
-          <span class="back-mind-btn">
-            <button>MIND</button>
-          </span>  
+            <span class="back-mind-btn">
+              <button>MIND</button>
+            </span>
           </template>
         </vue-flip>
       </div>
+      <ModalComponent
+        :isOpen="isModalOpened"
+        @modal-close="closeModal"
+        @submit="submitHandler"
+        name="first-modal"
+      />
     </div>
   </main>
 </template>
-
-<script lang="ts">
-import { VueFlip } from "vue-flip";
-
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  components: {
-    VueFlip
-  },
-});
-</script>
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
