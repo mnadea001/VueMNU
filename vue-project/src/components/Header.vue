@@ -3,11 +3,11 @@
     <div class="wrapper">
       <nav>
         <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/food">Food</RouterLink>
         <RouterLink to="/index">Index</RouterLink>
         <RouterLink to="/about">Philosophy</RouterLink>
+        <RouterLink to="/quote">Inspiration</RouterLink>
+        <RouterLink to="/food">Food</RouterLink>
         <RouterLink to="/yoga">Yoga</RouterLink>
-        <RouterLink to="/quote">Mental</RouterLink>
         <RouterLink to="/animate">Animate</RouterLink>
         <RouterLink to="/source">Source</RouterLink>
         <button
