@@ -13,9 +13,7 @@
         </button>
         <div class="flex items-center space-x-4">
           <div>
-            <div class="text-xl font-medium text-black">
-              {{ yoga.category_name }}
-            </div>
+            <h1 class="text-gray-500">  {{ yoga.category_name }}</h1>
           </div>
         </div>
         <div class="mt-4">
@@ -79,7 +77,14 @@ fetch(`https://yoga-api-nzy4.onrender.com/v1/categories?id=${route.params.id}`)
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+h1 {
+  font-family: "Anton", sans-serif;
+  font-size: 2rem;
+}
 main {
   width: 100vw;
+  height: 100%;
 }
 </style>
