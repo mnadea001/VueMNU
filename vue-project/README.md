@@ -15,6 +15,8 @@ npm install three@0.134 troisjs
 
 npm install vue-typical : https://github.com/Turkyden/vue-typical
 
+npm i vue-flip
+
 ## Project Setup
 
 ```sh
