@@ -8,6 +8,7 @@ import AboutView from '../views/AboutView.vue'
 import QuotesView from '../views/QuotesView.vue'
 import FoodView from '../views/FoodView.vue'
 import AnimateView from '../views/AnimateView.vue'
+import IndexView from '../views/IndexView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -21,6 +22,11 @@ const router = createRouter({
       path: '/food',
       name: 'food',
       component: FoodView
+    },
+    {
+      path: '/index',
+      name: 'index',
+      component: IndexView
     },
     {
       path: '/meal/:idMeal',
