@@ -12,9 +12,6 @@ const closeModal = () => {
   isModalOpened.value = false;
 };
 
-const submitHandler = () => {
- 
-};
 </script>
 
 <template>
@@ -49,7 +46,6 @@ const submitHandler = () => {
       <ModalComponent
         :isOpen="isModalOpened"
         @modal-close="closeModal"
-        @submit="submitHandler"
         name="first-modal"
       />
     </div>
