@@ -8,6 +8,8 @@ import meditateImg from "../assets/meditation.gif";
       <h1 class="text-3xl font-semibold text-center my-4">WELCOME NEW YOGI</h1>
       <div class="image-container">
         <img :src="meditateImg" class="w-80 h-80" />
+
+      <h2>YOGA IS THE UNION OF BODY AND MIND</h2>
       </div>
     </div>
   </main>
@@ -23,7 +25,7 @@ main {
   height: 100vh;
 }
 
-h1 {
+h1, h2 {
   font-family: "Anton", sans-serif;
 }
 
