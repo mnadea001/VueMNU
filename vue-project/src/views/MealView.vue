@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
-
+import backIcon from "../assets/back.svg";
 
 interface Meal {
   idMeal: string;
@@ -20,7 +20,7 @@ const route = useRoute();
 const router = useRouter();
 
 function goBack() {
-  router.go(-1); 
+  router.go(-1);
 }
 
 const fetchMealData = () => {
@@ -45,11 +45,9 @@ const fetchMealData = () => {
     });
 };
 
-
 onMounted(() => {
   fetchMealData();
 });
-
 </script>
 
 <template>
@@ -57,11 +55,16 @@ onMounted(() => {
     <div>
       <div
         v-if="meal"
-        class="p-6 m-2 max-w-4xl mx-auto bg-white rounded-xl shadow-md"
+        class="m-2 max-w-4xl mx-auto bg-white rounded-xl shadow-md card"
       >
-      <button @click="goBack" class="text-lg font-medium text-blue-500 hover:underline mb-4">Back</button>
+        <button
+          @click="goBack"
+          class="text-lg font-medium text-black-500 hover:underline mb-4 flex"
+        >
+          <img :src="backIcon" class="w-10 h-10" /> Back
+        </button>
 
-        <div class="flex items-center space-x-4">
+        <div class="flex items-center space-y-4 space-x-4">
           <img
             class="img-meal rounded-full"
             :src="meal.strMealThumb"
@@ -74,7 +77,7 @@ onMounted(() => {
             </div>
           </div>
         </div>
-        <div class="mt-4">
+        <div v-if="meal.strTags">
           <div class="text-lg font-medium text-black">Tags:</div>
           <div class="text-gray-500">{{ meal.strTags }}</div>
         </div>
@@ -97,7 +100,6 @@ onMounted(() => {
   </main>
 </template>
 
-
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 
@@ -105,6 +107,9 @@ main {
   width: 100vw;
 }
 
+.card {
+  padding: 50px;
+}
 .title {
   font-family: "Anton", sans-serif;
   font-size: 3rem;
@@ -112,7 +117,5 @@ main {
 
 .img-meal {
   height: 150px;
-
 }
-
 </style>
