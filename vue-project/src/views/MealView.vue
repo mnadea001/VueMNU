@@ -63,12 +63,12 @@ onMounted(() => {
 
         <div class="flex items-center space-x-4">
           <img
-            class="h-24 w-24 rounded-full"
+            class="img-meal rounded-full"
             :src="meal.strMealThumb"
             alt="Meal Image"
           />
           <div>
-            <div class="text-xl font-medium text-black">{{ meal.strMeal }}</div>
+            <div class="font-medium text-black title">{{ meal.strMeal }}</div>
             <div class="text-gray-500">
               {{ meal.strCategory }} | {{ meal.strArea }}
             </div>
@@ -99,7 +99,20 @@ onMounted(() => {
 
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
 main {
   width: 100vw;
 }
+
+.title {
+  font-family: "Anton", sans-serif;
+  font-size: 3rem;
+}
+
+.img-meal {
+  height: 150px;
+
+}
+
 </style>
