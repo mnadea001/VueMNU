@@ -89,7 +89,7 @@ h2 {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background-color: rgb(255, 110, 253);
+  background-color: blue;
 }
 
 .back-body-btn button,
