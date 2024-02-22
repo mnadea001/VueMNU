@@ -1,7 +1,7 @@
 <template>
     <div class="p-2 m-2 mx-auto bg-white rounded-xl shadow-md relative items-center meal-card">
       <div class="meal-image">
-        <img class="h-25 w-25 object-cover" :src="props.img" alt="Meal Thumbnail" />
+        <img class="object-cover img-meal" :src="props.img" alt="Meal Thumbnail" />
       </div>
       <div class="overlay">
         <div class="text">{{ props.strMeal }}</div>
@@ -29,6 +29,10 @@
   .meal-card {
     display: inline-block;
   }
+
+  .img-meal {
+height:220px;
+  }
   .overlay {
     position: absolute;
     top: 0;
@@ -42,6 +46,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    box-sizing: content-box;
   }
 
   
@@ -50,11 +55,11 @@
   }
   
   .text {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: bold;
     font-family: "Anton", sans-serif;
     color: #28390f;
-    word-wrap: break-word !important;
+    text-wrap: wrap!important;;
   }
   </style>
   
