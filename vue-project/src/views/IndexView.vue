@@ -53,7 +53,12 @@ const closeModal2 = () => {
 
       </div>
       <div class="image-btn">
-        <vue-flip active-hover height="240px" width="240px">
+
+        <button class="text-btn" @click="openModal1">BODY</button>
+        <img :src="elevateImageSrc" class="w-80 h-80 rounded-full" />
+        <button class="text-btn" @click="openModal2">MIND</button>
+
+        <!-- <vue-flip active-hover height="240px" width="240px">
           <template v-slot:front>
             <img src="../assets/noisyimg.png" class="pl-3 pr-3 rounded-full" />
           </template>
@@ -74,7 +79,7 @@ const closeModal2 = () => {
               <button class="text-btn" @click="openModal2">MIND</button>
             </span>
           </template>
-        </vue-flip>
+        </vue-flip> -->
       </div>
       <MindModalComponent
         :isOpen="isModalOpened2"
