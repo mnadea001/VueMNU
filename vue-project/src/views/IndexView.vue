@@ -54,7 +54,7 @@ const closeModal2 = () => {
           </template>
           <template v-slot:back>
             <span class="back-body-btn">
-              <button @click="openModal1">BODY</button>
+              <button class="text-btn" @click="openModal1">BODY</button>
             </span>
           </template>
         </vue-flip>
@@ -64,7 +64,7 @@ const closeModal2 = () => {
           </template>
           <template v-slot:back>
             <span class="back-mind-btn">
-              <button @click="openModal2">MIND</button>
+              <button class="text-btn" @click="openModal2">MIND</button>
             </span>
           </template>
         </vue-flip>
@@ -90,10 +90,13 @@ main {
 }
 
 h1,
-h2 {
+h2, .text-btn {
   font-family: "Anton", sans-serif;
 }
 
+.text-btn {
+  font-size: 2rem !important;
+}
 .title-container {
   display: grid;
   place-items: center;
