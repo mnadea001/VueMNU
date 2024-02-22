@@ -7,9 +7,13 @@ npm create vue@latest
 npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
 npm i @vueuse/core
 http://michalsnik.github.io/aos/
+
+
 npm i @headlessui/vue
 npm install @heroicons/vue
 npm install three@0.134 troisjs
+
+npm install vue-typical : https://github.com/Turkyden/vue-typical
 
 ## Project Setup
 

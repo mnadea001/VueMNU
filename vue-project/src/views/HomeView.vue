@@ -1,60 +1,49 @@
 <script setup lang="ts">
 import meditateImg from "../assets/meditation.gif";
 import meditation from "../assets/noisyimg.jpg";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import study from "../assets/unsplash.jpg";
+import VTypical from "vue-typical";
+import { defineComponent } from "vue";
 
 const meditateImageSrc: string = meditateImg;
-
-AOS.init({
-  disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
-  startEvent: "DOMContentLoaded", // name of the event dispatched on the document, that AOS should initialize on
-  initClassName: "aos-init", // class applied after initialization
-  animatedClassName: "aos-animate", // class applied on animation
-  useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
-  disableMutationObserver: false, // disables automatic mutations' detections (advanced)
-  debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
-  throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
-
-  // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-  offset: 120, // offset (in px) from the original trigger point
-  delay: 0, // values from 0 to 3000, with step 50ms
-  duration: 400, // values from 0 to 3000, with step 50ms
-  easing: "ease", // default easing for AOS animations
-  once: false, // whether animation should happen only once - while scrolling down
-  mirror: false, // whether elements should animate out while scrolling past them
-  anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
+const meditationImageSrc: string = meditation;
+const studyImageSrc: string = study;
+defineComponent({
+  components: {
+    VTypical,
+  },
 });
 </script>
 
 <template>
   <main>
     <div class="home-box">
-        <h1 class="text-3xl font-semibold text-center my-4">
-          WELCOME NEW YOGI
-        </h1>
-        <div class="image-container">
-          <img :src="meditateImageSrc" class="w-80 h-80" />
+      <h1 class="text-3xl font-semibold text-center my-4">WELCOME NEW YOGI</h1>
+      <div class="image-container">
+        <img :src="meditateImageSrc" class="w-80 h-80" />
 
-          <h2>YOGA IS THE UNION OF BODY AND MIND</h2>
-        </div>
+        <h2>YOGA IS THE UNION OF BODY AND MIND</h2>
+        <v-typical
+          class="blink"
+          :steps="[
+            'FIND',
+            1000,
+            'FIND HARMONY',
+            500,
+            'FIND HARMONY AND BE HAPPY !! 🧘‍♀️',
+            1000,
+          ]"
+          :loop="Infinity"
+          :wrapper="'h2'"
+        ></v-typical>
       </div>
-    <div
-      data-aos="flip-up"
-      data-aos-offset="200"
-      data-aos-delay="5"
-      data-aos-duration="100"
-      data-aos-easing="ease-in-out"
-      data-aos-mirror="true"
-      data-aos-once="false"
-      data-aos-anchor-placement="bottom-center"
-    >
-    <img :src="meditation" class="w-80 h-80" />
+      <div class="image-btn pt-5">
+        <img :src="meditationImageSrc" class="w-40 h-40 px-2 rounded-full" />
+        <img :src="studyImageSrc" class="w-40 h-40 px-2 rounded-full" />
+      </div>
     </div>
   </main>
 </template>
-
-<script setup lang="ts"></script>
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
@@ -72,5 +61,11 @@ h2 {
 .image-container {
   display: grid;
   place-items: center;
+}
+
+.image-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 </style>
