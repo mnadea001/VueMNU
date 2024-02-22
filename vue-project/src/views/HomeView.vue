@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import meditateImg from "../assets/meditation.gif";
+import meditation from "../assets/noisyimg.jpg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -28,17 +29,7 @@ AOS.init({
 
 <template>
   <main>
-    <div
-      data-aos="flip-up"
-      data-aos-offset="200"
-      data-aos-delay="5"
-      data-aos-duration="100"
-      data-aos-easing="ease-in-out"
-      data-aos-mirror="true"
-      data-aos-once="false"
-      data-aos-anchor-placement="top-center"
-    >
-      <div class="home-box">
+    <div class="home-box">
         <h1 class="text-3xl font-semibold text-center my-4">
           WELCOME NEW YOGI
         </h1>
@@ -48,6 +39,17 @@ AOS.init({
           <h2>YOGA IS THE UNION OF BODY AND MIND</h2>
         </div>
       </div>
+    <div
+      data-aos="flip-up"
+      data-aos-offset="200"
+      data-aos-delay="5"
+      data-aos-duration="100"
+      data-aos-easing="ease-in-out"
+      data-aos-mirror="true"
+      data-aos-once="false"
+      data-aos-anchor-placement="bottom-center"
+    >
+    <img :src="meditation" class="w-80 h-80" />
     </div>
   </main>
 </template>
