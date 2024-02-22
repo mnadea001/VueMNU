@@ -5,6 +5,9 @@ import BodyModalComponent from "../components/BodyModalComponent.vue";
 import { ref } from "vue";
 import VTypical from "vue-typical";
 import { defineComponent } from "vue";
+import elevateImg from "../assets/elevate.gif";
+
+const elevateImageSrc: string = elevateImg;
 
 defineComponent({
   components: {
@@ -32,7 +35,7 @@ const closeModal2 = () => {
 <template>
   <main>
     <div class="home-box">
-      <h1 class="text-3xl font-semibold text-center my-4">WELCOME NEW YOGI</h1>
+      <h1 class="text-3xl font-semibold text-center my-4">ELEVATE YOURSELF WITH YOGA</h1>
       <div class="title-container">
       <v-typical
           class="blink"
@@ -46,7 +49,9 @@ const closeModal2 = () => {
           ]"
           :loop="Infinity"
           :wrapper="'h2'"
-        ></v-typical></div>
+        ></v-typical>
+
+      </div>
       <div class="image-btn">
         <vue-flip active-hover height="240px" width="240px">
           <template v-slot:front>
@@ -58,6 +63,8 @@ const closeModal2 = () => {
             </span>
           </template>
         </vue-flip>
+        <img :src="elevateImageSrc" class="w-80 h-80" />
+
         <vue-flip active-hover height="240px" width="240px">
           <template v-slot:front>
             <img src="../assets/unsplash.png" class="pl-3 pr-3 rounded-full" />
@@ -107,6 +114,7 @@ h2, .text-btn {
   flex-direction: row;
   justify-content: center;
   margin-top: 50px;
+  align-items: center;
 }
 
 .back-body-btn,
