@@ -3,6 +3,8 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "amd",
+    "lib": ["DOM"],
+    "types": ["@types/node", "@types/whatwg-fetch", "vue"],
     "moduleResolution": "node",
     "allowJs": true,
     "strict": true,

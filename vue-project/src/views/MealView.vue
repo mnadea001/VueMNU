@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
 
 interface Meal {
@@ -16,32 +16,39 @@ interface Meal {
 const meal = ref<Meal | null>(null);
 const error = ref<string | null>(null);
 const route = useRoute();
-
 const router = useRouter();
 
 function goBack() {
   router.go(-1); 
 }
 
-fetch(
-  `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${route.params.idMeal}`
-)
-  .then((res) => {
-    if (!res.ok) {
-      throw new Error("Network response was not ok");
-    }
-    return res.json() as Promise<{ meals: Meal[] }>;
-  })
-  .then((data) => {
-    if (data.meals && data.meals.length > 0) {
-      meal.value = data.meals[0];
-    } else {
-      error.value = "Meal not found";
-    }
-  })
-  .catch((err) => {
-    error.value = `Fetch error: ${err.message}`;
-  });
+const fetchMealData = () => {
+  fetch(
+    `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${route.params.idMeal}`
+  )
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return res.json() as Promise<{ meals: Meal[] }>;
+    })
+    .then((data) => {
+      if (data.meals && data.meals.length > 0) {
+        meal.value = data.meals[0];
+      } else {
+        error.value = "Meal not found";
+      }
+    })
+    .catch((err) => {
+      error.value = `Fetch error: ${err.message}`;
+    });
+};
+
+
+onMounted(() => {
+  fetchMealData();
+});
+
 </script>
 
 
