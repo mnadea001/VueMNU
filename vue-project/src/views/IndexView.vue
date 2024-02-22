@@ -1,15 +1,23 @@
 <script setup lang="ts">
 import { VueFlip } from "vue-flip";
-import ModalComponent from "../components/ModalComponent.vue";
+import MindModalComponent from "../components/MindModalComponent.vue";
+import BodyModalComponent from "../components/BodyModalComponent.vue";
 import { ref } from "vue";
 
-const isModalOpened = ref(false);
+const isModalOpened1 = ref(false);
+const isModalOpened2 = ref(false);
 
-const openModal = () => {
-  isModalOpened.value = true;
+const openModal1 = () => {
+  isModalOpened1.value = true;
 };
-const closeModal = () => {
-  isModalOpened.value = false;
+const openModal2 = () => {
+  isModalOpened2.value = true;
+};
+const closeModal1 = () => {
+  isModalOpened1.value = false;
+};
+const closeModal2 = () => {
+  isModalOpened2.value = false;
 };
 
 </script>
@@ -28,7 +36,7 @@ const closeModal = () => {
           </template>
           <template v-slot:back>
             <span class="back-body-btn">
-              <button @click="openModal">BODY</button>
+              <button @click="openModal1">BODY</button>
             </span>
           </template>
         </vue-flip>
@@ -38,15 +46,18 @@ const closeModal = () => {
           </template>
           <template v-slot:back>
             <span class="back-mind-btn">
-              <button @click="openModal">MIND</button>
+              <button @click="openModal2">MIND</button>
             </span>
           </template>
         </vue-flip>
       </div>
-      <ModalComponent
-        :isOpen="isModalOpened"
-        @modal-close="closeModal"
-        name="first-modal"
+      <MindModalComponent
+        :isOpen="isModalOpened2"
+        @modal-close="closeModal2"
+      />
+      <BodyModalComponent
+        :isOpen="isModalOpened1"
+        @modal-close="closeModal1"
       />
     </div>
   </main>
