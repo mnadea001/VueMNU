@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { defineProps, defineEmits, ref } from "vue";
-import {onClickOutside} from '@vueuse/core'
+import { onClickOutside } from "@vueuse/core";
 
 const props = defineProps({
   isOpen: Boolean,
@@ -8,9 +8,8 @@ const props = defineProps({
 
 const emit = defineEmits(["modal-close"]);
 
-const target = ref(null)
-onClickOutside(target, ()=>emit('modal-close'))
-
+const target = ref(null);
+onClickOutside(target, () => emit("modal-close"));
 </script>
 
 <template>
@@ -18,16 +17,20 @@ onClickOutside(target, ()=>emit('modal-close'))
     <div class="modal-wrapper">
       <div class="modal-container" ref="target">
         <div class="modal-header">
-          <slot name="header"> default header </slot>
-        </div>
-        <div class="modal-body">
-          <slot name="content"> default content </slot>
-        </div>
-        <div class="modal-footer">
-          <slot name="footer" >
+          <slot name="header" class="text-3xl font-semibold text-center my-4">
             <div>
               <button @click.stop="emit('modal-close')">FERMER</button>
             </div>
+          </slot>
+        </div>
+        <div class="modal-body">
+          <slot name="content">
+            <RouterLink to="/food" class="btn-home-start font-bold mt-3"
+              >FOOD</RouterLink
+            >
+            <RouterLink to="/yoga" class="btn-home-start font-bold mt-3"
+              >YOGA</RouterLink
+            >
           </slot>
         </div>
       </div>
@@ -55,5 +58,4 @@ onClickOutside(target, ()=>emit('modal-close'))
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
   color: black;
 }
-
 </style>

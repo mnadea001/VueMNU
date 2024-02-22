@@ -38,7 +38,7 @@ const closeModal = () => {
           </template>
           <template v-slot:back>
             <span class="back-mind-btn">
-              <button>MIND</button>
+              <button @click="openModal">MIND</button>
             </span>
           </template>
         </vue-flip>
