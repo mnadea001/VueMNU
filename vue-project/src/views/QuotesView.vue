@@ -2,8 +2,8 @@
   <main class="dark:bg-white">
     <h1 class="text-3xl font-semibold text-center my-4">MENTAL IS VITAL</h1>
     <div class="content">
-    <img :src="quoteImageSrc" class="w-80 h-80 rounded-full mt-4" />
-  </div>
+      <img :src="quoteImageSrc" class="w-80 h-80 rounded-full mt-4" />
+    </div>
     <div class="quote-card my-4">
       <p class="text-3xl font-semibold text-center my-4">{{ quote }}</p>
       <p class="text-3xl font-semibold text-center my-4">- {{ author }}</p>
@@ -17,8 +17,6 @@ import quoteImg from "../assets/mental.gif";
 const quote = ref<string>("");
 const author = ref<string>("");
 const quoteImageSrc: string = quoteImg;
-
-
 
 onMounted(() => {
   const script = document.createElement("script");

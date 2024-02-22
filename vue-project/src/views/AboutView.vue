@@ -2,7 +2,11 @@
   <main>
     <div class="dark:bg-white">
       <div class="content">
-        <h1>PHILOSOPHY</h1>
+        <h1 class="text-3xl font-semibold text-center my-4">PHILOSOPHY</h1>
+
+        <div class="content-img">
+          <img :src="chillImageSrc" class="w-80 h-80 rounded-full mt-4" />
+        </div>
         <h2>Introduction to Yoga</h2>
         <p>
           Yoga is an ancient practice that originated in India thousands of
@@ -50,6 +54,9 @@
   </main>
 </template>
 
+<script setup lang="ts">
+import chillImageSrc from "../assets/pray.gif";
+</script>
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 
@@ -58,8 +65,17 @@ main {
   height: 100vh;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: "Anton", sans-serif;
+}
+
+.content-img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 50px;
+  align-items: center;
 }
 .content {
   width: 70%;
