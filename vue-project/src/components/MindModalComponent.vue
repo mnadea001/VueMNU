@@ -39,6 +39,8 @@ onClickOutside(target, () => emit("modal-close"));
 </template>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
 .modal-mask {
   position: fixed;
   z-index: 9998;
@@ -57,5 +59,21 @@ onClickOutside(target, () => emit("modal-close"));
   border-radius: 2px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
   color: black;
+}
+
+.modal-body {
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 50px;
+}
+
+.btn-home-start {
+  padding: 30px;
+  border: 1px solid black;
+  text-align: center;
+  margin-left: 20px;
+  font-family: "Anton", sans-serif;
+  font-size: 3em;
 }
 </style>
