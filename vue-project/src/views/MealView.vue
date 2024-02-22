@@ -109,6 +109,7 @@ main {
 
 .card {
   padding: 50px;
+  margin-bottom: 50px;
 }
 .title {
   font-family: "Anton", sans-serif;
