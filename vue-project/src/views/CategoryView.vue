@@ -13,7 +13,7 @@
         </button>
         <div class="flex items-center space-x-4">
           <div>
-            <h1 class="text-gray-500">  {{ yoga.category_name }}</h1>
+            <h1 class="text-gray-500">{{ yoga.category_name }}</h1>
           </div>
         </div>
         <div class="mt-4">
@@ -35,9 +35,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
-
 import PoseCard from "../components/PoseCard.vue";
 
 interface Pose {
@@ -61,19 +60,27 @@ function goBack() {
   router.go(-1);
 }
 
-fetch(`https://yoga-api-nzy4.onrender.com/v1/categories?id=${route.params.id}`)
-  .then((res) => {
-    if (!res.ok) {
-      throw new Error("Network response was not ok");
-    }
-    return res.json() as Promise<Yoga>;
-  })
-  .then((data) => {
-    yoga.value = data;
-  })
-  .catch((err) => {
-    error.value = `Fetch error: ${err.message}`;
-  });
+const fetchCategoryData = () => {
+  fetch(
+    `https://yoga-api-nzy4.onrender.com/v1/categories?id=${route.params.id}`
+  )
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return res.json() as Promise<Yoga>;
+    })
+    .then((data: Yoga) => {
+      yoga.value = data;
+    })
+    .catch((err: Error) => {
+      error.value = `Fetch error: ${err.message}`;
+    });
+};
+
+onMounted(() => {
+  fetchCategoryData();
+});
 </script>
 
 <style scoped>

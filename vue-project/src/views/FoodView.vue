@@ -26,17 +26,22 @@ interface Meal {
 
 const meals = ref<Meal[]>([]);
 
-onMounted(() => {
+const fetchMealData = () => {
   fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Vegetarian")
-    .then((res: Meal[]) => res.json() as Promise<{ meals: Meal[] }>)
-    .then((data: Meal[]) => {
+    .then((res) => res.json() as Promise<{ meals: Meal[] }>)
+    .then((data) => {
       console.log(data);
       meals.value = data.meals;
     })
-    .catch((error) => {
+    .catch((error: Error) => {
       console.error("Error fetching meals:", error);
     });
+};
+
+onMounted(() => {
+  fetchMealData();
 });
+
 </script>
 
 <style scoped>

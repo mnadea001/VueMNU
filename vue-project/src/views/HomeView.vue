@@ -3,6 +3,8 @@ import meditateImg from "../assets/meditation.gif";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+const meditateImageSrc: string = meditateImg;
+
 AOS.init({
   disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
   startEvent: "DOMContentLoaded", // name of the event dispatched on the document, that AOS should initialize on
@@ -41,7 +43,7 @@ AOS.init({
           WELCOME NEW YOGI
         </h1>
         <div class="image-container">
-          <img :src="meditateImg" class="w-80 h-80" />
+          <img :src="meditateImageSrc" class="w-80 h-80" />
 
           <h2>YOGA IS THE UNION OF BODY AND MIND</h2>
         </div>

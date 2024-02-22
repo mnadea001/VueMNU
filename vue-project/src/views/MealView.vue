@@ -2,6 +2,7 @@
 import { ref, onMounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
 
+
 interface Meal {
   idMeal: string;
   strMeal: string;
@@ -26,20 +27,20 @@ const fetchMealData = () => {
   fetch(
     `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${route.params.idMeal}`
   )
-    .then((res) => {
+    .then((res: Response) => {
       if (!res.ok) {
         throw new Error("Network response was not ok");
       }
       return res.json() as Promise<{ meals: Meal[] }>;
     })
-    .then((data) => {
+    .then((data: { meals: Meal[] }) => {
       if (data.meals && data.meals.length > 0) {
         meal.value = data.meals[0];
       } else {
         error.value = "Meal not found";
       }
     })
-    .catch((err) => {
+    .catch((err: Error) => {
       error.value = `Fetch error: ${err.message}`;
     });
 };
