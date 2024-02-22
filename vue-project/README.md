@@ -6,6 +6,9 @@ npm create vue@latest
 
 npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
 npm i @vueuse/core
+http://michalsnik.github.io/aos/
+npm i @headlessui/vue
+npm install @heroicons/vue
 
 ## Project Setup
 

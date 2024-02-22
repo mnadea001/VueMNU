@@ -11,7 +11,11 @@
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
+    "@headlessui/vue": "^0.0.0-insiders.043edb8",
+    "@heroicons/vue": "^2.1.1",
+    "@vue-hero-icons/outline": "^1.7.2",
     "@vueuse/core": "^10.8.0",
+    "aos": "^2.3.4",
     "pinia": "^2.1.7",
     "vue": "^3.4.15",
     "vue-router": "^4.2.5"
