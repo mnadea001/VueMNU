@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <footer>
     <div class="wrapper">
       <nav>
         <RouterLink to="/">Home</RouterLink>
@@ -18,7 +18,7 @@
         </button>
       </nav>
     </div>
-  </header>
+  </footer>
 </template>
 
 <script setup lang="ts">
@@ -34,10 +34,11 @@ const toggleDark = useToggle(isDark);
   flex-direction: row;
 }
 
-header {
+footer {
   line-height: 1.5;
   max-height: 100vh;
   width: 100vw;
+  height: 100px;
   padding: 2rem 5rem;
 }
 nav {
