@@ -7,9 +7,9 @@
       >
         <button
           @click="goBack"
-          class="text-lg font-medium text-blue-500 hover:underline mb-4"
+          class="text-lg font-medium text-black-500 hover:underline mb-4 flex"
         >
-          Back
+        <img :src="backIcon" class="w-10 h-10" /> Back
         </button>
         <div class="flex items-center space-x-4">
           <div>
@@ -38,6 +38,7 @@
 import { ref, onMounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import PoseCard from "../components/PoseCard.vue";
+import backIcon from "../assets/back.svg";
 
 interface Pose {
   english_name: string;

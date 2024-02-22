@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
+import backIcon from "../assets/back.svg";
 
 interface Pose {
   id: number;
@@ -44,19 +45,21 @@ async function fetchPoseData() {
   <main class="dark:bg-white">
     <div v-if="pose" class="pose-details">
       <button
-        @click="goBack"
-        class="text-lg font-medium text-blue-500 hover:underline mb-4"
-      >
-        Back
-      </button>
+          @click="goBack"
+          class="text-lg font-medium hover:underline mb-4 flex"
+        >
+          <img :src="backIcon" class="w-10 h-10" /> Back
+        </button>
 
       <h1>{{ pose.english_name }}</h1>
       <p><strong>Sanskrit Name:</strong> {{ pose.sanskrit_name }}</p>
       <p><strong>Translation Name:</strong> {{ pose.translation_name }}</p>
       <p><strong>Description:</strong> {{ pose.pose_description }}</p>
       <p><strong>Benefits:</strong> {{ pose.pose_benefits }}</p>
-      <img :src="pose.url_svg" alt="Pose Image" />
+      <div class="content">
+      <img class="img-pose rounded-full" :src="pose.url_svg" alt="Pose Image" />
     </div>
+  </div>
     <p v-else class="text-center">Loading...</p>
     <p v-if="error" class="text-center text-red-500">{{ error }}</p>
   </main>
@@ -73,12 +76,22 @@ main {
   width: 100vw;
   height: 100%;
 }
-
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 50px;
+  align-items: center;
+}
 .pose-details {
   max-width: 600px;
   margin: auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
+}
+
+.img-pose {
+  height: 250px;
 }
 </style>
