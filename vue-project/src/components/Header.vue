@@ -7,6 +7,7 @@
         <RouterLink to="/about">Philosophy</RouterLink>
         <RouterLink to="/yoga">Yoga</RouterLink>
         <RouterLink to="/quote">Mental</RouterLink>
+        <RouterLink to="/animate">Animate</RouterLink>
         <button
           @click="toggleDark()"
           class="py-2 px-4 bg-black text-white border rounded-md dark:bg-white dark:text-black"

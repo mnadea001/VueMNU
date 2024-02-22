@@ -9,6 +9,7 @@ npm i @vueuse/core
 http://michalsnik.github.io/aos/
 npm i @headlessui/vue
 npm install @heroicons/vue
+npm install three@0.134 troisjs
 
 ## Project Setup
 
