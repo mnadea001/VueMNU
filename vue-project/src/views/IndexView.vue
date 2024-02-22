@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { VueFlip } from "vue-flip";
 import MindModalComponent from "../components/MindModalComponent.vue";
 import BodyModalComponent from "../components/BodyModalComponent.vue";
 import { ref } from "vue";
@@ -57,29 +56,6 @@ const closeModal2 = () => {
         <button class="text-btn" @click="openModal1">BODY</button>
         <img :src="elevateImageSrc" class="w-80 h-80 rounded-full" />
         <button class="text-btn" @click="openModal2">MIND</button>
-
-        <!-- <vue-flip active-hover height="240px" width="240px">
-          <template v-slot:front>
-            <img src="../assets/noisyimg.png" class="pl-3 pr-3 rounded-full" />
-          </template>
-          <template v-slot:back>
-            <span class="back-body-btn">
-              <button class="text-btn" @click="openModal1">BODY</button>
-            </span>
-          </template>
-        </vue-flip>
-        <img :src="elevateImageSrc" class="w-80 h-80" />
-
-        <vue-flip active-hover height="240px" width="240px">
-          <template v-slot:front>
-            <img src="../assets/unsplash.png" class="pl-3 pr-3 rounded-full" />
-          </template>
-          <template v-slot:back>
-            <span class="back-mind-btn">
-              <button class="text-btn" @click="openModal2">MIND</button>
-            </span>
-          </template>
-        </vue-flip> -->
       </div>
       <MindModalComponent
         :isOpen="isModalOpened2"
