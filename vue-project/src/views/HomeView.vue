@@ -5,7 +5,7 @@ import meditateImg from "../assets/meditation.gif";
 <template>
   <main>
     <div class="home-box">
-      <h1 class="text-3xl font-semibold text-center my-4">WELCOME</h1>
+      <h1 class="text-3xl font-semibold text-center my-4">WELCOME NEW YOGI</h1>
       <div class="image-container">
         <img :src="meditateImg" class="w-80 h-80" />
       </div>

@@ -16,12 +16,9 @@ const toggleDark = useToggle(isDark);
           <RouterLink to="/about">About</RouterLink>
           <RouterLink to="/yoga">Yoga</RouterLink>
           <RouterLink to="/quote">Mental</RouterLink>
-          <span class="dark:text-white">
-            {{ isDark ? "Dark" : "Light" }} Mode
-          </span>
           <button
             @click="toggleDark()"
-            class="py-2 px-4 bg-black text-white rounded-md dark:bg-white dark:text-black"
+            class="py-2 px-4 bg-black text-white border rounded-md dark:bg-white dark:text-black"
           >
             Switch Mode!
           </button>
@@ -50,7 +47,7 @@ header {
   line-height: 1.5;
   max-height: 100vh;
   width: 100vw;
-  padding: 5rem;
+  padding: 2rem 5rem;
 }
 nav {
   width: 100%;
@@ -99,7 +96,6 @@ nav a:first-of-type {
     text-align: left;
     margin-left: -1rem;
     font-size: 1rem;
-
     padding: 1rem 0;
     margin-top: 1rem;
   }
