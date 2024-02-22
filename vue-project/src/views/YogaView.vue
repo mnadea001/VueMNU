@@ -31,11 +31,11 @@ onMounted(() => {
   fetch("https://yoga-api-nzy4.onrender.com/v1/categories")
     .then((res: Yoga[]) => res.json() as Promise<{ yogas: Yoga[] }>)
     .then((data: Yoga[]) => {
-      console.log(data);
+      // console.log(data);
       yogas.value = data;
     })
     .catch((error: Yoga[]) => {
-      console.error('Error fetching yoga categories:', error);
+      // console.error('Error fetching yoga categories:', error);
     });
 });
 </script>

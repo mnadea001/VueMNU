@@ -3,7 +3,14 @@ import { VueFlip } from "vue-flip";
 import MindModalComponent from "../components/MindModalComponent.vue";
 import BodyModalComponent from "../components/BodyModalComponent.vue";
 import { ref } from "vue";
+import VTypical from "vue-typical";
+import { defineComponent } from "vue";
 
+defineComponent({
+  components: {
+    VTypical,
+  },
+});
 const isModalOpened1 = ref(false);
 const isModalOpened2 = ref(false);
 
@@ -26,9 +33,20 @@ const closeModal2 = () => {
   <main>
     <div class="home-box">
       <h1 class="text-3xl font-semibold text-center my-4">WELCOME NEW YOGI</h1>
-      <div class="image-container">
-        <h2>CHOICE YOUR FIELD !</h2>
-      </div>
+      <div class="title-container">
+      <v-typical
+          class="blink"
+          :steps="[
+            'CHOOSE',
+            1000,
+            'CHOOSE YOUR',
+            500,
+            'CHOOSE YOUR FIELD !!',
+            1000,
+          ]"
+          :loop="Infinity"
+          :wrapper="'h2'"
+        ></v-typical></div>
       <div class="image-btn">
         <vue-flip active-hover height="240px" width="240px">
           <template v-slot:front>
@@ -76,7 +94,7 @@ h2 {
   font-family: "Anton", sans-serif;
 }
 
-.image-container {
+.title-container {
   display: grid;
   place-items: center;
 }
