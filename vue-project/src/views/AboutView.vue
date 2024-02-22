@@ -2,7 +2,7 @@
   <main>
     <div class="dark:bg-white">
       <div class="content">
-        <h1>This is an about page</h1>
+        <h1>PHILOSOPHY</h1>
         <h2>Introduction to Yoga</h2>
         <p>
           Yoga is an ancient practice that originated in India thousands of

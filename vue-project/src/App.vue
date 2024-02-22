@@ -13,7 +13,7 @@ const toggleDark = useToggle(isDark);
         <nav>
           <RouterLink to="/">Home</RouterLink>
           <RouterLink to="/food">Food</RouterLink>
-          <RouterLink to="/about">About</RouterLink>
+          <RouterLink to="/about">Philosophy</RouterLink>
           <RouterLink to="/yoga">Yoga</RouterLink>
           <RouterLink to="/quote">Mental</RouterLink>
           <button
