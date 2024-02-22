@@ -8,15 +8,23 @@
       <div class="image-btn">
         <vue-flip active-hover height="240px" width="240px">
           <template v-slot:front>  
-            <img src="../assets/noisyimg.jpg" class="pl-3 pr-3 rounded-full" />
+            <img src="../assets/noisyimg.png" class="pl-3 pr-3 rounded-full" />
           </template>
-          <template v-slot:back>  <img src="../assets/unsplash.jpg" class="pl-3 pr-3 rounded-full" /> </template>
+          <template v-slot:back>  
+            <span class="back-body-btn">
+            <button>BODY</button>
+          </span>    
+          </template>
         </vue-flip>
         <vue-flip active-hover height="240px" width="240px">
           <template v-slot:front>  
-            <img src="../assets/unsplash.jpg" class="pl-3 pr-3 rounded-full" />
+            <img src="../assets/unsplash.png" class="pl-3 pr-3 rounded-full" />
           </template>
-          <template v-slot:back> back </template>
+          <template v-slot:back>
+          <span class="back-mind-btn">
+            <button>MIND</button>
+          </span>  
+          </template>
         </vue-flip>
       </div>
     </div>
@@ -58,5 +66,29 @@ h2 {
   flex-direction: row;
   justify-content: center;
   margin-top: 50px;
+}
+
+.back-body-btn,
+.back-mind-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: rgb(255, 110, 253);
+}
+
+.back-body-btn button,
+.back-mind-btn button {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 5px;
+  outline: none;
 }
 </style>
