@@ -36,65 +36,18 @@ const closeModal = () => {
 .wrapper {
   width: 100vw;
   display: flex;
+  place-items: flex-start;
   flex-direction: row;
   justify-content: space-between;
 }
-
 header {
+  display: flex;
   line-height: 1.5;
   max-height: 100vh;
   width: 100vw;
+  place-items: center;
   padding: 2rem 5rem;
-}
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-  padding: 5rem;
+  padding-right: calc(var(--section-gap) / 2);
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
 </style>
