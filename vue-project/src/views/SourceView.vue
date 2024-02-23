@@ -8,10 +8,12 @@
           <img :src="namasteImageSrc" class="w-80 h-80 rounded-full my-4" />
           <h2 class="text-3xl font-semibold text-center my-4">To create this app, I used:</h2>
           <ul>
-            <li>Vue.js 3</li>
+            <li>Vue.js 3 with TypeScript</li>
             <li>APIs themealdb, yoga-api from alexcumplido, forismatic</li>
             <li>Librairies vue-typical, tailwindcss, vueuse</li>
             <li>Threejs, Troisjs</li>
+            <li>GIFs on Tenor and Giphy</li>
+            <li>3D model on SketchFab</li>
           </ul>
           <br>
           <p>Created By Mathilde NADEAU - Feb. 2024</p>
@@ -29,7 +31,7 @@ import namasteImageSrc from "../assets/namaste.gif";
 
 main {
   max-width: 100vw;
-  height: 100vh;
+  height: 100%;
 }
 
 h1,
@@ -48,8 +50,9 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 50px;
+  padding-top: 50px;
   align-items: center;
+  margin-bottom: 50px;
 }
 .content {
   width: 70%;

@@ -54,7 +54,7 @@ onClickOutside(target, () => emit("modal-close"));
   background-color: rgba(0, 0, 0, 0.734);
 }
 .modal-container {
-  width: 50%;
+  width: 70%;
   height: 40vh;
   margin: 150px auto;
   padding: 20px 30px;
@@ -77,6 +77,6 @@ onClickOutside(target, () => emit("modal-close"));
   text-align: center;
   margin-left: 20px;
   font-family: "Anton", sans-serif;
-  font-size: 3em;
+  font-size: 2em;
 }
 </style>
