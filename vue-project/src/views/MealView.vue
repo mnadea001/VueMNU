@@ -53,10 +53,7 @@ onMounted(() => {
 <template>
   <main class="dark:bg-white">
     <div>
-      <div
-        v-if="meal"
-        class="m-2 max-w-4xl mx-auto rounded-xl shadow-md card"
-      >
+      <div v-if="meal" class="m-2 max-w-4xl mx-auto rounded-xl shadow-md card">
         <button
           @click="goBack"
           class="text-lg font-medium hover:underline mb-4 flex"
@@ -78,11 +75,11 @@ onMounted(() => {
           </div>
         </div>
         <div v-if="meal.strTags">
-          <div class="text-lg font-medium ">Tags:</div>
+          <div class="text-lg font-medium">Tags:</div>
           <div class="text-gray-500">{{ meal.strTags }}</div>
         </div>
         <div class="mt-4">
-          <div class="text-lg font-medium ">Instructions:</div>
+          <div class="text-lg font-medium">Instructions:</div>
           <div class="text-gray-500">{{ meal.strInstructions }}</div>
         </div>
         <div class="mt-4">

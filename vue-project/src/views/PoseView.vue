@@ -36,8 +36,10 @@ async function fetchPoseData() {
     const data = await response.json();
     pose.value = data;
   } catch (error) {
-    console.error("Error fetching pose data:", error);
-    error.value = "Error fetching pose data";
+    if (error instanceof Error) {
+    // console.error("Error fetching pose data:", error);
+    error = "Error fetching pose data";
+  }
   }
 }
 </script>
@@ -45,11 +47,11 @@ async function fetchPoseData() {
   <main class="dark:bg-white">
     <div v-if="pose" class="pose-details">
       <button
-          @click="goBack"
-          class="text-lg font-medium hover:underline mb-4 flex text-dark"
-        >
-          <img :src="backIcon" class="w-10 h-10" /> Back
-        </button>
+        @click="goBack"
+        class="text-lg font-medium hover:underline mb-4 flex text-dark"
+      >
+        <img :src="backIcon" class="w-10 h-10" /> Back
+      </button>
 
       <h1 class="text-center">{{ pose.english_name }}</h1>
       <p><strong>Sanskrit Name:</strong> {{ pose.sanskrit_name }}</p>
@@ -57,9 +59,9 @@ async function fetchPoseData() {
       <p><strong>Description:</strong> {{ pose.pose_description }}</p>
       <p><strong>Benefits:</strong> {{ pose.pose_benefits }}</p>
       <div class="content">
-      <img class="img-pose" :src="pose.url_svg" alt="Pose Image" />
+        <img class="img-pose" :src="pose.url_svg" alt="Pose Image" />
+      </div>
     </div>
-  </div>
     <p v-else class="text-center">Loading...</p>
     <p v-if="error" class="text-center text-red-500">{{ error }}</p>
   </main>

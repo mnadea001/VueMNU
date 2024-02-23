@@ -53,8 +53,10 @@ function goBack() {
         <img :src="chillImageSrc" class="h-80 rounded-full" />
       </div>
       <div class="image-container">
-      <RouterLink to="/buddha" class="btn-home-start font-bold mt-3">LET'S START NOW !!</RouterLink>
-    </div>
+        <RouterLink to="/buddha" class="btn-home-start font-bold mt-3"
+          >LET'S START NOW !!</RouterLink
+        >
+      </div>
     </div>
   </main>
 </template>
@@ -97,9 +99,8 @@ h2,
 }
 
 .btn-home-start {
-background-color: blue;
-border-radius: 35px;
-padding: 10px 15px;
+  background-color: blue;
+  border-radius: 35px;
+  padding: 10px 15px;
 }
-
 </style>

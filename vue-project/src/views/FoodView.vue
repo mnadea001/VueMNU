@@ -2,11 +2,11 @@
   <main>
     <div class="title-container">
       <button
-          @click="goBack"
-          class="text-lg font-medium text-black-500 hover:underline mb-4 flex"
-        >
+        @click="goBack"
+        class="text-lg font-medium text-black-500 hover:underline mb-4 flex"
+      >
         <img :src="backIcon" class="w-10 h-10" /> Back
-        </button>
+      </button>
       <h1 class="text-3xl font-semibold text-center my-4">VEGGIE IS GOOD</h1>
       <h4 class="text-3xl font-semibold text-center my-4">
         Vegetarianism holds a significant place in the lifestyle and philosophy
@@ -16,7 +16,7 @@
         which align with the core principles of yoga practice.
       </h4>
     </div>
-    <p class="my-4 ml-5">Scroll vertically to see all meals: </p>
+    <p class="my-4 ml-5">Scroll vertically to see all meals:</p>
     <div class="container-card my-4">
       <RouterLink
         v-for="(meal, index) in meals"
@@ -79,20 +79,20 @@
         yogis minimize their ecological footprint and contribute to a more
         compassionate and sustainable world.
       </h4>
-      <br>
-      <hr/>
-      <br>
-      <br>
+      <br />
+      <hr />
+      <br />
+      <br />
       <h2 class="text-3xl font-semibold text-center mt-4">
-      In conclusion, vegetarian food holds immense importance for yogis, serving
-      as a practical manifestation of yogic principles such as ahimsa, promoting
-      mental clarity and inner peace, enhancing pranic energy, and aligning with
-      ethical and environmental values. By embracing a vegetarian diet, yogis
-      not only nourish their bodies but also cultivate compassion, mindfulness,
-      and harmony in their lives and the world around them.
-    </h2>
+        In conclusion, vegetarian food holds immense importance for yogis,
+        serving as a practical manifestation of yogic principles such as ahimsa,
+        promoting mental clarity and inner peace, enhancing pranic energy, and
+        aligning with ethical and environmental values. By embracing a
+        vegetarian diet, yogis not only nourish their bodies but also cultivate
+        compassion, mindfulness, and harmony in their lives and the world around
+        them.
+      </h2>
     </div>
-
   </main>
 </template>
 
@@ -117,13 +117,15 @@ const meals = ref<Meal[]>([]);
 
 const fetchMealData = () => {
   fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Vegetarian")
-    .then((res) => res.json() as Promise<{ meals: Meal[] }>)
-    .then((data) => {
-      console.log(data);
+    .then((res: Response) => res.json() as Promise<{ meals: Meal[] }>)
+    .then((data: { meals: Meal[] }) => {
+      // console.log(data);
       meals.value = data.meals;
     })
     .catch((error: Error) => {
-      console.error("Error fetching meals:", error);
+       if (error instanceof Error) {
+      // console.error("Error fetching meals:", error);
+        }
     });
 };
 

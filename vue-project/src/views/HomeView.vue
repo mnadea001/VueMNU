@@ -17,11 +17,13 @@ defineComponent({
   <main>
     <div class="home-box">
       <h1 class="text-3xl font-semibold text-center my-4">WELCOME NEW YOGI</h1>
-      
+
       <div class="image-container">
         <img :src="meditateImageSrc" class="w-80 h-80" />
 
-        <h2 class="text-3xl font-semibold text-center my-4">YOGA IS THE UNION OF BODY AND MIND</h2>
+        <h2 class="text-3xl font-semibold text-center my-4">
+          YOGA IS THE UNION OF BODY AND MIND
+        </h2>
         <v-typical
           class="blink"
           :steps="[
@@ -35,9 +37,10 @@ defineComponent({
           :loop="Infinity"
           :wrapper="'h2'"
         ></v-typical>
-        <RouterLink to="/index" class="btn-home-start font-bold mt-3">LET'S START NOW !!</RouterLink>
+        <RouterLink to="/index" class="btn-home-start font-bold mt-3"
+          >LET'S START NOW !!</RouterLink
+        >
       </div>
-     
     </div>
   </main>
 </template>
@@ -61,8 +64,8 @@ h2 {
 }
 
 .btn-home-start {
-background-color: blue;
-border-radius: 35px;
-padding: 10px 15px;
+  background-color: blue;
+  border-radius: 35px;
+  padding: 10px 15px;
 }
 </style>
