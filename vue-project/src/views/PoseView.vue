@@ -57,7 +57,7 @@ async function fetchPoseData() {
       <p><strong>Description:</strong> {{ pose.pose_description }}</p>
       <p><strong>Benefits:</strong> {{ pose.pose_benefits }}</p>
       <div class="content">
-      <img class="img-pose rounded-full" :src="pose.url_svg" alt="Pose Image" />
+      <img class="img-pose" :src="pose.url_svg" alt="Pose Image" />
     </div>
   </div>
     <p v-else class="text-center">Loading...</p>
@@ -94,5 +94,6 @@ main {
 
 .img-pose {
   height: 250px;
+  object-fit: contain !important;
 }
 </style>

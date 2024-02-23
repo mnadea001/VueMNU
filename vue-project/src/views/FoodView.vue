@@ -16,6 +16,7 @@
         which align with the core principles of yoga practice.
       </h4>
     </div>
+    <p class="my-4 ml-5">Scroll vertically to see all meals: </p>
     <div class="container-card my-4">
       <RouterLink
         v-for="(meal, index) in meals"

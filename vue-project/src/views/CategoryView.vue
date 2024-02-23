@@ -19,7 +19,7 @@
         <div class="content">
           <img :src="childPoseImageSrc" class="h-80 rounded-full mt-4" />
         </div>
-        <p class="my-4">Scroll to see all poses: </p>
+        <p class="my-4">Scroll vertically to see all poses: </p>
         <div class="pose-content-box my-4">
         <div class="pose-content">
           <PoseCard

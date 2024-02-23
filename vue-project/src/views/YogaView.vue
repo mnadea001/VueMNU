@@ -74,7 +74,7 @@ onMounted(() => {
       <img :src="yogaImageSrc" class="w-80 h-80 rounded-full mt-4" />
     </div>
     <div class="slider-yoga">
-    <p class="my-4 mr-4">Scroll to see all yoga styles: </p>
+    <p class="my-4 mr-4">Scroll vertically to see all yoga styles: </p>
     <div class="container my-4">
       <div class="category-card my-4">
         <RouterLink
