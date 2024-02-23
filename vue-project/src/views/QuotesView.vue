@@ -74,5 +74,9 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 150px;
+  margin-left: 150px;
+  margin-right: 150px;
 }
+ 
 </style>

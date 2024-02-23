@@ -51,7 +51,7 @@ async function fetchPoseData() {
           <img :src="backIcon" class="w-10 h-10" /> Back
         </button>
 
-      <h1>{{ pose.english_name }}</h1>
+      <h1 class="text-center">{{ pose.english_name }}</h1>
       <p><strong>Sanskrit Name:</strong> {{ pose.sanskrit_name }}</p>
       <p><strong>Translation Name:</strong> {{ pose.translation_name }}</p>
       <p><strong>Description:</strong> {{ pose.pose_description }}</p>

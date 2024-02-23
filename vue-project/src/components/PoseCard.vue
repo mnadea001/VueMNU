@@ -1,6 +1,6 @@
 <template>
     <div class="pose-card" @click="navigateToPose">
-      <h3 class="text-gray-500">{{ pose?.english_name }}</h3>
+      <h3 class="text-gray-500 text-center">{{ pose?.english_name }}</h3>
       <img :src="eyeImg" class="w-10 h-10"/>
     </div>
   </template>
@@ -52,7 +52,7 @@ h3 {
     background-color: #f9f9f9;
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
+    justify-content: center;
     align-items: center;
   }
   </style>

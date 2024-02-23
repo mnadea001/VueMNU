@@ -1,60 +1,76 @@
 <template>
   <main>
     <div class="dark:bg-white">
-      <div class="content">
+      <div class="content-btn">
         <button
           @click="goBack"
-          class="text-lg font-medium text-black-500 hover:underline mb-4 flex"
+          class="text-lg font-medium text-white-500 dark:text-black hover:underline mb-4 flex"
         >
-        <img :src="backIcon" class="w-10 h-10" /> Back
+          <img :src="backIcon" class="w-10 h-10 dark:color-white" /> Back
         </button>
+      </div>
+      <div class="content">
         <h1 class="text-3xl font-semibold text-center my-4">PHILOSOPHY</h1>
 
         <div class="content-img">
           <img :src="chillImageSrc" class="w-80 h-80 rounded-full mt-4" />
         </div>
-        <h2>Introduction to Yoga</h2>
-        <p>
-          Yoga is an ancient practice that originated in India thousands of
-          years ago. It is a holistic system that encompasses physical postures
-          (asanas), breath control (pranayama), meditation, and ethical
-          principles aimed at achieving harmony between mind, body, and spirit.
-        </p>
 
-        <h2>Origin</h2>
-        <p>
-          The origins of yoga can be traced back to ancient texts known as the
-          Vedas, particularly the Rigveda, which dates back over 5,000 years.
-          Yoga evolved over centuries, with the systematic compilation of yoga
-          teachings found in the Yoga Sutras of Patanjali, written around 400
-          CE. Over time, various schools of yoga emerged, each emphasizing
-          different aspects of the practice.
-        </p>
-        <h2>Definition</h2>
-        <p>
-          Yoga, derived from the Sanskrit word "yuj," means to unite or join. At
-          its core, yoga is about the union of individual consciousness with the
-          universal consciousness. It involves the integration of physical,
-          mental, and spiritual practices to achieve a state of balance and
-          inner peace.
-        </p>
-        <h2>Benefits</h2>
-        <p>
-          The practice of yoga offers a myriad of benefits for both the body and
-          mind. Physically, yoga improves flexibility, strength, and balance. It
-          helps to alleviate tension in the muscles and promotes overall
-          relaxation. Mentally, yoga cultivates mindfulness and reduces stress,
-          anxiety, and depression. It enhances concentration, clarity of
-          thought, and emotional well-being. Additionally, regular yoga practice
-          can boost immune function, improve sleep quality, and contribute to
-          overall health and longevity.
-        </p>
-        <p>
-          In summary, yoga is a profound and transformative practice that
-          promotes physical health, mental clarity, and spiritual growth. Its
-          rich history, diverse teachings, and numerous benefits make it a
-          valuable tool for holistic well-being in today's fast-paced world.
-        </p>
+        <h2 class="text-3xl font-semibold text-center my-4">
+          Introduction to Yoga
+        </h2>
+        <span class="text-center content-span">
+          <p>
+            Yoga is an ancient practice that originated in India thousands of
+            years ago. It is a holistic system that encompasses physical
+            postures (asanas), breath control (pranayama), meditation, and
+            ethical principles aimed at achieving harmony between mind, body,
+            and spirit.
+          </p>
+        </span>
+
+        <h2 class="text-3xl font-semibold text-center my-4">Origin</h2>
+        <span class="text-center content-span">
+          <p>
+            The origins of yoga can be traced back to ancient texts known as the
+            Vedas, particularly the Rigveda, which dates back over 5,000 years.
+            Yoga evolved over centuries, with the systematic compilation of yoga
+            teachings found in the Yoga Sutras of Patanjali, written around 400
+            CE. Over time, various schools of yoga emerged, each emphasizing
+            different aspects of the practice.
+          </p>
+        </span>
+        <h2 class="text-3xl font-semibold text-center my-4">Definition</h2>
+        <span class="text-center content-span">
+          <p>
+            Yoga, derived from the Sanskrit word "yuj," means to unite or join.
+            At its core, yoga is about the union of individual consciousness
+            with the universal consciousness. It involves the integration of
+            physical, mental, and spiritual practices to achieve a state of
+            balance and inner peace.
+          </p>
+        </span>
+        <h2 class="text-3xl font-semibold text-center my-4">Benefits</h2>
+        <span class="text-center content-span">
+          <p>
+            The practice of yoga offers a myriad of benefits for both the body
+            and mind. Physically, yoga improves flexibility, strength, and
+            balance. It helps to alleviate tension in the muscles and promotes
+            overall relaxation. Mentally, yoga cultivates mindfulness and
+            reduces stress, anxiety, and depression. It enhances concentration,
+            clarity of thought, and emotional well-being. Additionally, regular
+            yoga practice can boost immune function, improve sleep quality, and
+            contribute to overall health and longevity.
+          </p>
+        </span>
+        <span class="text-center content-span">
+          <p>
+            In summary, yoga is a profound and transformative practice that
+            promotes physical health, mental clarity, and spiritual growth. Its
+            rich history, diverse teachings, and numerous benefits make it a
+            valuable tool for holistic well-being in today's fast-paced world.
+          </p>
+        </span>
       </div>
     </div>
   </main>
@@ -64,7 +80,6 @@
 import chillImageSrc from "../assets/pray.gif";
 import backIcon from "../assets/back.svg";
 import { useRouter } from "vue-router";
-
 
 const router = useRouter();
 
@@ -85,6 +100,9 @@ h2 {
   font-family: "Anton", sans-serif;
 }
 
+.content-btn {
+  margin-left: 80px;
+}
 .content-img {
   display: flex;
   flex-direction: column;
@@ -93,10 +111,14 @@ h2 {
   align-items: center;
 }
 .content {
-  width: 70%;
   padding: 15px;
   justify-content: center;
   align-items: center;
-  margin-left: 50px;
+}
+
+.content-span p {
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
 }
 </style>
