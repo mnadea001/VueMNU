@@ -3,7 +3,7 @@
     <div>
       <div
         v-if="yoga"
-        class="p-6 m-2 max-w-4xl mx-auto bg-white rounded-xl shadow-md"
+        class="p-6 m-2 max-w-4xl mx-auto bg-white rounded-xl shadow-md category-detail"
       >
         <button
           @click="goBack"
@@ -108,5 +108,9 @@ main {
   justify-content: center;
   margin-top: 50px;
   align-items: center;
+}
+
+.category-detail {
+  margin-bottom: 50px;
 }
 </style>

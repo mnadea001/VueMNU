@@ -10,12 +10,6 @@
         <RouterLink to="/quote">Mental</RouterLink>
         <RouterLink to="/animate">Animate</RouterLink>
         <RouterLink to="/source">Source</RouterLink>
-        <button
-          @click="toggleDark()"
-          class="py-2 px-4 bg-black text-white border rounded-md dark:bg-white dark:text-black"
-        >
-          Switch Mode!
-        </button>
       </nav>
     </div>
   </footer>
@@ -23,30 +17,28 @@
 
 <script setup lang="ts">
 import { RouterLink } from "vue-router";
-import { useDark, useToggle } from "@vueuse/core";
-const isDark = useDark();
-const toggleDark = useToggle(isDark);
 </script>
 <style scoped>
 .wrapper {
   width: 100vw;
   display: flex;
   flex-direction: row;
+  background-color: orange;
 }
 
 footer {
   line-height: 1.5;
-  max-height: 100vh;
   width: 100vw;
-  height: 100px;
-  padding: 2rem 5rem;
+  height: 50px;
+
 }
 nav {
   width: 100%;
-  font-size: 12px;
+  font-size: 1rem;
   text-align: center;
-  margin-top: 2rem;
-  padding: 5rem;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
 }
 
 nav a.router-link-exact-active {
@@ -60,36 +52,12 @@ nav a.router-link-exact-active:hover {
 nav a {
   display: inline-block;
   padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+  color: black;
 }
 
 nav a:first-of-type {
   border: 0;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
 </style>
