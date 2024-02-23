@@ -1,24 +1,26 @@
 <template>
-  <main>
+  <main class="dark:bg-white">
     <div>
       <div
         v-if="yoga"
-        class="p-6 m-2 max-w-4xl mx-auto bg-white rounded-xl shadow-md category-detail"
+        class="p-6 m-2 max-w-4xl mx-auto rounded-xl shadow-md category-detail"
       >
         <button
           @click="goBack"
-          class="text-lg font-medium text-black hover:underline mb-4 flex"
+          class="text-lg font-medium hover:underline mb-4 flex"
         >
           <img :src="backIcon" class="w-10 h-10" /> Back
         </button>
         <h1 class="text-gray-500 text-center">{{ yoga.category_name }}</h1>
         <div class="mt-4">
-          <div class="text-lg font-medium text-black text-center ">Description:</div>
+          <div class="text-lg font-medium text-center ">Description:</div>
           <div class="text-gray-500 text-center ">{{ yoga.category_description }}</div>
         </div>
         <div class="content">
           <img :src="childPoseImageSrc" class="h-80 rounded-full mt-4" />
         </div>
+        <p class="my-4">Scroll to see all poses: </p>
+        <div class="pose-content-box my-4">
         <div class="pose-content">
           <PoseCard
             v-for="(pose, index) in yoga.poses"
@@ -26,6 +28,7 @@
             :pose="pose"
           />
         </div>
+      </div>
       </div>
       <p v-else class="text-center">Loading...</p>
       <p v-if="error" class="text-center text-red-500">{{ error }}</p>
@@ -109,6 +112,15 @@ main {
   margin-bottom: 50px;
 }
 
+.pose-content-box{
+  width: 100%;
+  margin: auto;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  object-fit: contain;
+  scroll-snap-type: x mandatory;
+}
 .pose-content {
   display: flex;
 }

@@ -73,7 +73,9 @@ onMounted(() => {
       ></v-typical>
       <img :src="yogaImageSrc" class="w-80 h-80 rounded-full mt-4" />
     </div>
-    <div class="container">
+    <div class="slider-yoga">
+    <p class="my-4 mr-4">Scroll to see all yoga styles: </p>
+    <div class="container my-4">
       <div class="category-card my-4">
         <RouterLink
           v-for="(yoga, index) in yogas"
@@ -84,6 +86,7 @@ onMounted(() => {
         </RouterLink>
       </div>
     </div>
+  </div>
   </main>
 </template>
 
@@ -108,10 +111,18 @@ h1 {
 .content-btn {
   margin-left: 80px;
 }
+.slider-yoga {
+  margin-right: 30px;
+  margin-left: 30px;
+}
 .container {
-  /* display: flex; */
-  max-width: 80vw !important;
-  margin-left: 50px;
+  width: 100%;
+  margin: auto;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  object-fit: contain;
+  scroll-snap-type: x mandatory;
 }
 .category-card {
   display: flex;

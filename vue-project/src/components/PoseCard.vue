@@ -1,7 +1,6 @@
 <template>
     <div class="pose-card" @click="navigateToPose">
       <h3 class="text-gray-500 text-center">{{ pose?.english_name }}</h3>
-      <img :src="eyeImg" class="w-10 h-10"/>
     </div>
   </template>
 
@@ -9,7 +8,6 @@
   import { ref, onMounted } from 'vue';
   import { useRouter } from 'vue-router';
   import { defineProps } from 'vue';
-  import eyeImg from '../assets/eye.svg';
 
   interface Pose {
     id: number;

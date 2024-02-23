@@ -51,7 +51,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <main  class="dark:bg-white">
+  <main class="dark:bg-white">
     <div>
       <div
         v-if="meal"
