@@ -49,9 +49,10 @@ export default defineComponent({
 </script>
 
 <template>
-  <Renderer resize="window" orbit-ctrl ref="renderer">
+  <div class="space">
+  <Renderer resize="window" orbit-ctrl ref="renderer" alpha="0">
     <Camera :position="{ z: 10 }" />
-    <Scene background="#4DBA87">
+    <Scene>
       <PointLight :position="{ y: 50, z: 50 }" />
       <Box ref="box" :rotation="{ y: Math.PI / 4, z: Math.PI / 4 }">
         <BasicMaterial>
@@ -73,4 +74,10 @@ export default defineComponent({
       </Sphere>
     </Scene>
   </Renderer>
+</div>
 </template>
+<style scoped>
+.space {
+  background-image: url('/space-dust.png')
+}
+</style>
