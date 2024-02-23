@@ -1,19 +1,18 @@
 <template>
   <header>
     <div class="wrapper">
-      <button class="text-btn" @click="openModal"> <img :src="burgerIcon" class="w-10 h-10" /> MENU</button>
       <button
-              @click="toggleDark()"
-              class="py-2 px-4 bg-black text-white border rounded-md dark:bg-white dark:text-black"
-            >
-              Switch Mode!
-            </button>
+        @click="toggleDark()"
+        class="py-2 px-4 bg-black text-white border rounded-md dark:bg-white dark:text-black"
+      >
+        Switch Mode!
+      </button>
+      <button class="text-btn" @click="openModal">
+        <img :src="burgerIcon" class="w-10 h-10" /> MENU
+      </button>
     </div>
   </header>
-  <MenuComponent
-        :isOpen="isModalOpened"
-        @modal-close="closeModal"
-      />
+  <MenuComponent :isOpen="isModalOpened" @modal-close="closeModal" />
 </template>
 
 <script setup lang="ts">
@@ -24,7 +23,6 @@ import { useDark, useToggle } from "@vueuse/core";
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
 
-
 const isModalOpened = ref(false);
 
 const openModal = () => {
@@ -33,13 +31,13 @@ const openModal = () => {
 const closeModal = () => {
   isModalOpened.value = false;
 };
-
 </script>
 <style scoped>
 .wrapper {
   width: 100vw;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 header {
