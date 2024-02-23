@@ -11,6 +11,7 @@
             <li>Vue.js 3</li>
             <li>APIs themealdb, yoga-api from alexcumplido, forismatic</li>
             <li>Librairies vue-typical, tailwindcss, vueuse</li>
+            <li>Threejs, Troisjs</li>
           </ul>
           <br>
           <p>Created By Mathilde NADEAU - Feb. 2024</p>

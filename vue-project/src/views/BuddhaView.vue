@@ -39,6 +39,8 @@ function goBack() {
       </button>
     </div>
   <h2 class="text-center">SCROLL DOWN IN BLACK BOX TO SEE BUDDHA</h2>
+  <h2 class="text-center">THEN YOU CAN DRAG AROUND BUDDHA</h2>
+
   <audio controls autoplay>
   <source src="../assets/music/om.mp3" type="audio/mpeg">
 Your browser does not support the audio element.
@@ -57,7 +59,6 @@ Your browser does not support the audio element.
       </Scene>
     </Renderer>
 
-  <h2 class="text-center">YOU CAN DRAG AROUND BUDDHA</h2>
 
 </template>
 <style scoped>
