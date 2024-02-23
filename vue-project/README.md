@@ -17,6 +17,8 @@ npm install vue-typical : https://github.com/Turkyden/vue-typical
 
 npm i vue-flip
 
+npm i @vueuse/motion
+
 ## Project Setup
 
 ```sh

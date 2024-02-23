@@ -5,6 +5,8 @@ import { ref } from "vue";
 import VTypical from "vue-typical";
 import { defineComponent } from "vue";
 import elevateImg from "../assets/elevate.gif";
+import { useRouter } from "vue-router";
+import backIcon from "../assets/back.svg";
 
 const elevateImageSrc: string = elevateImg;
 
@@ -28,12 +30,22 @@ const closeModal1 = () => {
 const closeModal2 = () => {
   isModalOpened2.value = false;
 };
+const router = useRouter();
 
+function goBack() {
+  router.go(-1);
+}
 </script>
 
 <template>
   <main>
     <div class="home-box">
+      <button
+          @click="goBack"
+          class="text-lg font-medium text-black-500 hover:underline mb-4 flex"
+        >
+          <img :src="backIcon" class="w-10 h-10" /> Back
+        </button>
       <h1 class="text-3xl font-semibold text-center my-4">ELEVATE YOURSELF WITH YOGA</h1>
       <div class="title-container">
       <v-typical
