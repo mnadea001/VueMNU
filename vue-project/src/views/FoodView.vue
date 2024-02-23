@@ -1,6 +1,12 @@
 <template>
   <main>
     <div class="title-container">
+      <button
+          @click="goBack"
+          class="text-lg font-medium text-black-500 hover:underline mb-4 flex"
+        >
+        <img :src="backIcon" class="w-10 h-10" /> Back
+        </button>
       <h1 class="text-3xl font-semibold text-center my-4">VEGGIE IS GOOD</h1>
       <h4 class="text-3xl font-semibold text-center my-4">
         Vegetarianism holds a significant place in the lifestyle and philosophy
@@ -91,13 +97,19 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
-import { RouterLink } from "vue-router";
+import { RouterLink, useRouter } from "vue-router";
 import MealCard from "../components/MealCard.vue";
-
+import backIcon from "../assets/back.svg";
 interface Meal {
   idMeal: string;
   strMeal: string;
   strMealThumb: string;
+}
+
+const router = useRouter();
+
+function goBack() {
+  router.go(-1);
 }
 
 const meals = ref<Meal[]>([]);

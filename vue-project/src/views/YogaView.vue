@@ -1,5 +1,11 @@
 <template>
   <main class="dark:bg-white">
+    <button
+          @click="goBack"
+          class="text-lg font-medium text-black-500 hover:underline mb-4 flex"
+        >
+        <img :src="backIcon" class="w-10 h-10" /> Back
+        </button>
     <h1 class="text-3xl font-semibold text-center my-4">YOGA IS ART</h1>
     <div class="content">
       <v-typical
@@ -33,17 +39,25 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
-import { RouterLink } from "vue-router";
+import { RouterLink, useRouter } from "vue-router";
 import CategoryCard from "../components/CategoryCard.vue";
 import yogaImg from "../assets/yoga.gif";
 import VTypical from "vue-typical";
 import { defineComponent } from "vue";
+import backIcon from "../assets/back.svg";
 
 defineComponent({
   components: {
     VTypical,
   },
 });
+
+const router = useRouter();
+
+function goBack() {
+  router.go(-1);
+}
+
 const yogaImageSrc: string = yogaImg;
 interface Pose {
   pose_name: string;

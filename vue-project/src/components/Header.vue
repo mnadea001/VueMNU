@@ -1,31 +1,39 @@
 <template>
   <header>
     <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/index">Index</RouterLink>
-        <RouterLink to="/about">Philosophy</RouterLink>
-        <RouterLink to="/quote">Inspiration</RouterLink>
-        <RouterLink to="/food">Food</RouterLink>
-        <RouterLink to="/yoga">Yoga</RouterLink>
-        <RouterLink to="/animate">Animate</RouterLink>
-        <RouterLink to="/source">Source</RouterLink>
-        <button
-          @click="toggleDark()"
-          class="py-2 px-4 bg-black text-white border rounded-md dark:bg-white dark:text-black"
-        >
-          Switch Mode!
-        </button>
-      </nav>
+      <button class="text-btn" @click="openModal"> <img :src="burgerIcon" class="w-10 h-10" /> MENU</button>
+      <button
+              @click="toggleDark()"
+              class="py-2 px-4 bg-black text-white border rounded-md dark:bg-white dark:text-black"
+            >
+              Switch Mode!
+            </button>
     </div>
   </header>
+  <MenuComponent
+        :isOpen="isModalOpened"
+        @modal-close="closeModal"
+      />
 </template>
 
 <script setup lang="ts">
-import { RouterLink } from "vue-router";
+import MenuComponent from "../components/MenuComponent.vue";
+import { ref } from "vue";
+import burgerIcon from "../assets/burger.svg";
 import { useDark, useToggle } from "@vueuse/core";
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
+
+
+const isModalOpened = ref(false);
+
+const openModal = () => {
+  isModalOpened.value = true;
+};
+const closeModal = () => {
+  isModalOpened.value = false;
+};
+
 </script>
 <style scoped>
 .wrapper {

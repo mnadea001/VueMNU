@@ -2,6 +2,12 @@
   <main>
     <div class="dark:bg-white">
       <div class="content">
+        <button
+          @click="goBack"
+          class="text-lg font-medium text-black-500 hover:underline mb-4 flex"
+        >
+        <img :src="backIcon" class="w-10 h-10" /> Back
+        </button>
         <h1 class="text-3xl font-semibold text-center my-4">PHILOSOPHY</h1>
 
         <div class="content-img">
@@ -56,6 +62,15 @@
 
 <script setup lang="ts">
 import chillImageSrc from "../assets/pray.gif";
+import backIcon from "../assets/back.svg";
+import { useRouter } from "vue-router";
+
+
+const router = useRouter();
+
+function goBack() {
+  router.go(-1);
+}
 </script>
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");

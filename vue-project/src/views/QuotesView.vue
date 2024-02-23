@@ -1,5 +1,11 @@
 <template>
   <main class="dark:bg-white">
+    <button
+          @click="goBack"
+          class="text-lg font-medium text-black-500 hover:underline mb-4 flex"
+        >
+        <img :src="backIcon" class="w-10 h-10" /> Back
+        </button>
     <h1 class="text-3xl font-semibold text-center my-4">MENTAL IS VITAL</h1>
     <div class="content">
       <img :src="quoteImageSrc" class="w-80 h-80 rounded-full mt-4" />
@@ -14,9 +20,17 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import quoteImg from "../assets/mental.gif";
+import { useRouter } from "vue-router";
+import backIcon from "../assets/back.svg";
 const quote = ref<string>("");
 const author = ref<string>("");
 const quoteImageSrc: string = quoteImg;
+
+const router = useRouter();
+
+function goBack() {
+  router.go(-1);
+}
 
 onMounted(() => {
   const script = document.createElement("script");
