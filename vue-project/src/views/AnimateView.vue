@@ -29,7 +29,7 @@ export default defineComponent({
     const boxRotation = ref(0.01);
     onMounted(() => {
       renderer?.value?.onBeforeRender(() => {
-        box.value.mesh.rotation.x += boxRotation.value;
+        box.value.mesh.rotation.x += boxRotation. value;
         sphere.value.mesh.rotation.y += 0.001;
       });
     });
