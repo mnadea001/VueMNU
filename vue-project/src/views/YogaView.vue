@@ -40,8 +40,10 @@ onMounted(() => {
       // console.log(data);
       yogas.value = data;
     })
-    .catch((error: Yoga[]) => {
+    .catch((error: Error) => {
+       if (error instanceof Error) {
       // console.error('Error fetching yoga categories:', error);
+        }
     });
 });
 </script>
