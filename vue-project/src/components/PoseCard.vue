@@ -40,17 +40,19 @@
 
 h3 {
   font-family: "Anton", sans-serif;
+  margin-right: 10px;
 }
 .pose-card {
     cursor: pointer;
     border: 1px solid #ccc;
     border-radius: 8px;
-    padding: 15px;
-    margin-bottom: 10px;
+    padding: 10px 15px;
+    margin-top: 30px;
+    margin-right: 10px;
     background-color: #f9f9f9;
-    /* display: block; */
-    /* flex-direction: row;
-    justify-content: space-between;
-    align-items: center; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-items: center;
   }
   </style>

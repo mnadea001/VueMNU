@@ -9,22 +9,17 @@
           @click="goBack"
           class="text-lg font-medium text-black hover:underline mb-4 flex"
         >
-        <img :src="backIcon" class="w-10 h-10" /> Back
+          <img :src="backIcon" class="w-10 h-10" /> Back
         </button>
-        <div class="flex items-center space-x-4">
-          <div>
-            <h1 class="text-gray-500">{{ yoga.category_name }}</h1>
-          </div>
-        </div>
+        <h1 class="text-gray-500 text-center">{{ yoga.category_name }}</h1>
         <div class="mt-4">
-          <div class="text-lg font-medium text-black">Description:</div>
-          <div class="text-gray-500">{{ yoga.category_description }}</div>
+          <div class="text-lg font-medium text-black text-center ">Description:</div>
+          <div class="text-gray-500 text-center ">{{ yoga.category_description }}</div>
         </div>
         <div class="content">
-   
-    <img :src="childPoseImageSrc" class="h-80 rounded-full mt-4" />
-  </div>
-        <div class="mt-4">
+          <img :src="childPoseImageSrc" class="h-80 rounded-full mt-4" />
+        </div>
+        <div class="pose-content">
           <PoseCard
             v-for="(pose, index) in yoga.poses"
             :key="index"
@@ -112,5 +107,9 @@ main {
 
 .category-detail {
   margin-bottom: 50px;
+}
+
+.pose-content {
+  display: flex;
 }
 </style>

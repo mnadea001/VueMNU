@@ -51,15 +51,15 @@ onMounted(() => {
 </script>
 
 <template>
-  <main>
+  <main  class="dark:bg-white">
     <div>
       <div
         v-if="meal"
-        class="m-2 max-w-4xl mx-auto bg-white rounded-xl shadow-md card"
+        class="m-2 max-w-4xl mx-auto rounded-xl shadow-md card"
       >
         <button
           @click="goBack"
-          class="text-lg font-medium text-black hover:underline mb-4 flex"
+          class="text-lg font-medium hover:underline mb-4 flex"
         >
           <img :src="backIcon" class="w-10 h-10" /> Back
         </button>
@@ -71,18 +71,18 @@ onMounted(() => {
             alt="Meal Image"
           />
           <div>
-            <div class="font-medium text-black title">{{ meal.strMeal }}</div>
+            <div class="font-medium title">{{ meal.strMeal }}</div>
             <div class="text-gray-500">
               {{ meal.strCategory }} | {{ meal.strArea }}
             </div>
           </div>
         </div>
         <div v-if="meal.strTags">
-          <div class="text-lg font-medium text-black">Tags:</div>
+          <div class="text-lg font-medium ">Tags:</div>
           <div class="text-gray-500">{{ meal.strTags }}</div>
         </div>
         <div class="mt-4">
-          <div class="text-lg font-medium text-black">Instructions:</div>
+          <div class="text-lg font-medium ">Instructions:</div>
           <div class="text-gray-500">{{ meal.strInstructions }}</div>
         </div>
         <div class="mt-4">
