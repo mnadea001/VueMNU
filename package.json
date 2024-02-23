@@ -1,6 +1,5 @@
 {
   "devDependencies": {
-    "@types/whatwg-fetch": "^0.0.33",
     "typescript": "^5.3.3"
   },
   "dependencies": {
