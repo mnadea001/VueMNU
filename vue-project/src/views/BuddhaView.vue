@@ -1,4 +1,4 @@
-<script lang="ts">
+<script setup lang="ts">
 import { defineComponent } from "vue";
 import {
   Renderer,
@@ -8,8 +8,10 @@ import {
   AmbientLight,
   GltfModel,
 } from "troisjs";
+import { useRouter } from "vue-router";
 
-export default defineComponent({
+import backIcon from "../assets/back.svg";
+defineComponent({
   components: {
     Renderer,
     Scene,
@@ -19,9 +21,23 @@ export default defineComponent({
     GltfModel,
   }
 });
+
+const router = useRouter();
+
+function goBack() {
+  router.go(-1);
+}
 </script>
 
 <template>
+      <div class="content-btn">
+      <button
+        @click="goBack"
+        class="text-lg font-medium text-white-500 dark:text-black hover:underline mb-4 flex"
+      >
+        <img :src="backIcon" class="w-10 h-10 dark:color-white" /> Back
+      </button>
+    </div>
   <h2 class="text-center">SCROLL DOWN IN BLACK BOX TO SEE BUDDHA</h2>
   <audio controls autoplay>
   <source src="../assets/music/om.mp3" type="audio/mpeg">
@@ -45,5 +61,7 @@ Your browser does not support the audio element.
 
 </template>
 <style scoped>
-
+.content-btn {
+  margin-left: 80px;
+}
 </style>

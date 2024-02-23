@@ -111,27 +111,4 @@ h2,
   align-items: center;
 }
 
-.back-body-btn,
-.back-mind-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-color: blue;
-}
-
-.back-body-btn button,
-.back-mind-btn button {
-  font-size: 16px;
-  font-weight: bold;
-  color: white;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 10px 20px;
-  border-radius: 5px;
-  outline: none;
-}
 </style>

@@ -1,0 +1,105 @@
+<script setup lang="ts">
+import VTypical from "vue-typical";
+import { defineComponent } from "vue";
+import chillImg from "../assets/chill.gif";
+import { useRouter } from "vue-router";
+import backIcon from "../assets/back.svg";
+
+const chillImageSrc: string = chillImg;
+
+defineComponent({
+  components: {
+    VTypical,
+  },
+});
+
+const router = useRouter();
+
+function goBack() {
+  router.go(-1);
+}
+</script>
+
+<template>
+  <main>
+    <div class="content-btn">
+      <button
+        @click="goBack"
+        class="text-lg font-medium text-white-500 dark:text-black hover:underline mb-4 flex"
+      >
+        <img :src="backIcon" class="w-10 h-10 dark:color-white" /> Back
+      </button>
+    </div>
+    <div class="home-box">
+      <h1 class="text-3xl font-semibold text-center my-4">
+        MEDITATION TO CALM THE MIND
+      </h1>
+      <div class="title-container">
+        <v-typical
+          class="blink"
+          :steps="[
+            'GET READY',
+            1000,
+            'GET READY FOR AN',
+            500,
+            'GET READY FOR AN IMMERSIVE EXPERIENCE !!',
+            1000,
+          ]"
+          :loop="Infinity"
+          :wrapper="'h2'"
+        ></v-typical>
+      </div>
+      <div class="image-btn">
+        <img :src="chillImageSrc" class="h-80 rounded-full" />
+      </div>
+      <div class="image-container">
+      <RouterLink to="/buddha" class="btn-home-start font-bold mt-3">LET'S START NOW !!</RouterLink>
+    </div>
+    </div>
+  </main>
+</template>
+
+<style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+main {
+  width: 100vw;
+  height: 100vh;
+}
+
+h1,
+h2,
+.text-btn {
+  font-family: "Anton", sans-serif;
+}
+
+.text-btn {
+  font-size: 2rem !important;
+}
+.title-container {
+  display: grid;
+  place-items: center;
+}
+
+.content-btn {
+  margin-left: 80px;
+}
+.image-container {
+  display: grid;
+  place-items: center;
+}
+.image-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 50px;
+  align-items: center;
+}
+
+.btn-home-start {
+background-color: blue;
+border-radius: 35px;
+padding: 10px 15px;
+}
+
+</style>

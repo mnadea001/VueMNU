@@ -2,14 +2,15 @@
   <footer>
     <div class="wrapper">
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/food">Food</RouterLink>
-        <RouterLink to="/index">Index</RouterLink>
-        <RouterLink to="/about">Philosophy</RouterLink>
-        <RouterLink to="/yoga">Yoga</RouterLink>
-        <RouterLink to="/quote">Mental</RouterLink>
-        <RouterLink to="/animate">Animate</RouterLink>
-        <RouterLink to="/source">Source</RouterLink>
+        <RouterLink to="/" class="nav-item">Home</RouterLink>
+        <RouterLink to="/index" class="nav-item">Index</RouterLink>
+        <RouterLink to="/about" class="nav-item">Philosophy</RouterLink>
+        <RouterLink to="/quote" class="nav-item">Inspiration</RouterLink>
+        <RouterLink to="/food" class="nav-item">Food</RouterLink>
+        <RouterLink to="/yoga" class="nav-item">Yoga</RouterLink>
+        <RouterLink to="/source" class="nav-item">Source</RouterLink>
+        <RouterLink to="/meditation" class="nav-item">Meditation</RouterLink>
+        <RouterLink to="/buddha" class="nav-item">Buddha</RouterLink>
       </nav>
     </div>
   </footer>
@@ -30,7 +31,6 @@ footer {
   line-height: 1.5;
   width: 100vw;
   height: 50px;
-
 }
 nav {
   width: 100%;
@@ -58,6 +58,4 @@ nav a {
 nav a:first-of-type {
   border: 0;
 }
-
-
 </style>

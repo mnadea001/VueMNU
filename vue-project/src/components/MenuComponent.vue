@@ -32,9 +32,8 @@ onClickOutside(target, () => emit("modal-close"));
             <RouterLink to="/quote" class="nav-item">Inspiration</RouterLink>
             <RouterLink to="/food" class="nav-item">Food</RouterLink>
             <RouterLink to="/yoga" class="nav-item">Yoga</RouterLink>
-            <RouterLink to="/animate" class="nav-item">Animate</RouterLink>
             <RouterLink to="/source" class="nav-item">Source</RouterLink>
-            <RouterLink to="/model" class="nav-item">Model</RouterLink>
+            <RouterLink to="/meditation" class="nav-item">Meditation</RouterLink>
             <RouterLink to="/buddha" class="nav-item">Buddha</RouterLink>
           </slot>
         </div>

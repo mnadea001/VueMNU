@@ -28,6 +28,9 @@ onClickOutside(target, () => emit("modal-close"));
             <RouterLink to="/about" class="btn-home-start font-bold mt-3"
               >PHILOSOPHY</RouterLink
             >
+            <RouterLink to="/meditation" class="btn-home-start font-bold mt-3"
+              >MEDITATION</RouterLink
+            >
             <RouterLink to="/quote" class="btn-home-start font-bold mt-3"
               >INSPIRATION</RouterLink
             >
@@ -62,10 +65,10 @@ onClickOutside(target, () => emit("modal-close"));
 }
 
 .modal-body {
-display: flex;
-justify-content: center;
-align-items: center;
-margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
 }
 
 .btn-home-start {

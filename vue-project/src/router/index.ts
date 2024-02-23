@@ -7,11 +7,10 @@ import PoseView from '../views/PoseView.vue'
 import AboutView from '../views/AboutView.vue'
 import QuotesView from '../views/QuotesView.vue'
 import FoodView from '../views/FoodView.vue'
-import AnimateView from '../views/AnimateView.vue'
 import IndexView from '../views/IndexView.vue'
 import SourceView from '../views/SourceView.vue'
-import ModelView from '../views/ModelView.vue'
 import BuddhaView from '../views/BuddhaView.vue'
+import MeditationView from '../views/MeditationView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -52,14 +51,9 @@ const router = createRouter({
       component: AboutView
     },
     {
-      path: '/animate',
-      name: 'animate',
-      component: AnimateView
-    },
-    {
-      path: '/model',
-      name: 'model',
-      component: ModelView
+      path: '/meditation',
+      name: 'meditation',
+      component: MeditationView
     },
     {
       path: '/yoga',
