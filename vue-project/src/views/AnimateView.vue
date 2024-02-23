@@ -26,10 +26,10 @@ export default defineComponent({
     const renderer = ref(null);
     const box = ref(null);
     const sphere = ref(null);
-
+    const boxRotation = ref(0.01);
     onMounted(() => {
       renderer?.value?.onBeforeRender(() => {
-        box.value.mesh.rotation.x += 0.01;
+        box.value.mesh.rotation.x += boxRotation.value;
         sphere.value.mesh.rotation.y += 0.001;
       });
     });
