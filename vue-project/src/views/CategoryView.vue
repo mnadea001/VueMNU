@@ -43,6 +43,7 @@ import PoseCard from "../components/PoseCard.vue";
 import backIcon from "../assets/back.svg";
 import childPoseImg from "../assets/childpose.gif";
 
+
 const childPoseImageSrc: string = childPoseImg;
 
 interface Pose {
@@ -70,7 +71,7 @@ const fetchCategoryData = () => {
   fetch(
     `https://yoga-api-nzy4.onrender.com/v1/categories?id=${route.params.id}`
   )
-    .then((res) => {
+    .then((res: Response) => {
       if (!res.ok) {
         throw new Error("Network response was not ok");
       }
