@@ -11,6 +11,7 @@ import AnimateView from '../views/AnimateView.vue'
 import IndexView from '../views/IndexView.vue'
 import SourceView from '../views/SourceView.vue'
 import ModelView from '../views/ModelView.vue'
+import BuddhaView from '../views/BuddhaView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -24,6 +25,11 @@ const router = createRouter({
       path: '/food',
       name: 'food',
       component: FoodView
+    },
+    {
+      path: '/buddha',
+      name: 'buddha',
+      component: BuddhaView
     },
     {
       path: '/source',
