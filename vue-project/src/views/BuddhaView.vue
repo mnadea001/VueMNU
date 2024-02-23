@@ -23,7 +23,11 @@ export default defineComponent({
 
 <template>
   <h2 class="text-center">SCROLL DOWN IN BLACK BOX TO SEE BUDDHA</h2>
-  <div class="container">
+  <audio controls autoplay>
+  <source src="../assets/music/om.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
     <Renderer ref="renderer" antialias orbit-ctrl resize="window">
       <Camera :position="{ x: 0, z: 20 }" />
       <Scene>
@@ -36,13 +40,10 @@ export default defineComponent({
         <GltfModel src="/models/buddha/buddha.gltf" />
       </Scene>
     </Renderer>
-  </div>
-  <h2 class="text-center">YOU CAN DRAG AROUND BUDDHA</h2>
-  <h2>SCROLL DOWN</h2>
-  <h2>SCROLL DOWN</h2>
-  <h2>SCROLL DOWN</h2>
-  <h2>SCROLL DOWN</h2>
 
-  <h2>SCROLL DOWN</h2>
+  <h2 class="text-center">YOU CAN DRAG AROUND BUDDHA</h2>
+
 </template>
-<style scoped></style>
+<style scoped>
+
+</style>
