@@ -7,11 +7,23 @@ import {
   Scene,
   LambertMaterial,
 } from 'troisjs';
-import { defineComponent } from 'vue';
+import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
   components: { Box, Camera, Renderer, Scene, PointLight, LambertMaterial },
+  setup() {
+    const renderer = ref(null);
+    const box = ref(null);
+
+    renderer?.value?.onBeforeRender(() => {
+        box.value.mesh.rotation.x += 0.01;
+    }) 
+    return { renderer, box };
+  }
+
 });
+
+
 </script>
 
 <template>
