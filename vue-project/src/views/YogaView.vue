@@ -35,7 +35,7 @@ const yogas = ref<Yoga[]>([]);
 
 onMounted(() => {
   fetch("https://yoga-api-nzy4.onrender.com/v1/categories")
-    .then((res: Yoga[]) => res.json() as Promise<{ yogas: Yoga[] }>)
+  .then((res: Response) => res.json() as Promise<{ yogas: Yoga[] }>)
     .then((data: Yoga[]) => {
       // console.log(data);
       yogas.value = data;
