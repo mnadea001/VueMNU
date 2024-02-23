@@ -1,42 +1,3 @@
-<template>
-  <main class="dark:bg-white">
-    <button
-          @click="goBack"
-          class="text-lg font-medium text-black-500 hover:underline mb-4 flex"
-        >
-        <img :src="backIcon" class="w-10 h-10" /> Back
-        </button>
-    <h1 class="text-3xl font-semibold text-center my-4">YOGA IS ART</h1>
-    <div class="content">
-      <v-typical
-          class="blink"
-          :steps="[
-            'DISCOVER',
-            1000,
-            'DISCOVER DIFFERENT',
-            500,
-            'DISCOVER DIFFERENT YOGA STYLES !',
-            1000,
-          ]"
-          :loop="Infinity"
-          :wrapper="'h2'"
-        ></v-typical>
-    <img :src="yogaImageSrc" class="w-80 h-80 rounded-full mt-4" />
-  </div>
-    <div class="container">
-      <div class="category-card my-4">
-        <RouterLink
-          v-for="(yoga, index) in yogas"
-          :key="index"
-          :to="`/category/${yoga.id}`"
-        >
-          <CategoryCard :categoryName="yoga.category_name" />
-        </RouterLink>
-      </div>
-    </div>
-  </main>
-</template>
-
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
 import { RouterLink, useRouter } from "vue-router";
@@ -85,12 +46,52 @@ onMounted(() => {
 });
 </script>
 
+<template>
+  <main class="dark:bg-white">
+    <div class="content-btn">
+      <button
+        @click="goBack"
+        class="text-lg font-medium text-white-500 dark:text-black hover:underline mb-4 flex"
+      >
+        <img :src="backIcon" class="w-10 h-10 dark:color-white" /> Back
+      </button>
+    </div>
+    <h1 class="text-3xl font-semibold text-center my-4">YOGA IS ART</h1>
+    <div class="content">
+      <v-typical
+        class="blink"
+        :steps="[
+          'DISCOVER',
+          1000,
+          'DISCOVER DIFFERENT',
+          500,
+          'DISCOVER DIFFERENT YOGA STYLES !',
+          1000,
+        ]"
+        :loop="Infinity"
+        :wrapper="'h2'"
+      ></v-typical>
+      <img :src="yogaImageSrc" class="w-80 h-80 rounded-full mt-4" />
+    </div>
+    <div class="container">
+      <div class="category-card my-4">
+        <RouterLink
+          v-for="(yoga, index) in yogas"
+          :key="index"
+          :to="`/category/${yoga.id}`"
+        >
+          <CategoryCard :categoryName="yoga.category_name" />
+        </RouterLink>
+      </div>
+    </div>
+  </main>
+</template>
+
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 
 main {
-  width: 100vw;
-
+  max-width: 100vw;
 }
 
 h1 {
@@ -103,22 +104,17 @@ h1 {
   margin-top: 50px;
   align-items: center;
 }
+
+.content-btn {
+  margin-left: 80px;
+}
 .container {
-  width: 80%;
-  margin-left: 50px;
   /* display: flex; */
-  /* flex-direction: row; */
-  /* align-items: center;
-justify-content: center; */
-  /* flex-direction: row; */
-  /* align-items: center;
-  justify-content: center; */
+  max-width: 80vw !important;
+  margin-left: 50px;
 }
 .category-card {
   display: flex;
-
   flex-direction: row;
-  /* align-items: center;
-justify-content: center; */
 }
 </style>

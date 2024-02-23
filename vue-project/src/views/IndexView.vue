@@ -39,16 +39,20 @@ function goBack() {
 
 <template>
   <main>
-    <div class="home-box">
+    <div class="content-btn">
       <button
-          @click="goBack"
-          class="text-lg font-medium text-black-500 hover:underline mb-4 flex"
-        >
-          <img :src="backIcon" class="w-10 h-10" /> Back
-        </button>
-      <h1 class="text-3xl font-semibold text-center my-4">ELEVATE YOURSELF WITH YOGA</h1>
+        @click="goBack"
+        class="text-lg font-medium text-white-500 dark:text-black hover:underline mb-4 flex"
+      >
+        <img :src="backIcon" class="w-10 h-10 dark:color-white" /> Back
+      </button>
+    </div>
+    <div class="home-box">
+      <h1 class="text-3xl font-semibold text-center my-4">
+        ELEVATE YOURSELF WITH YOGA
+      </h1>
       <div class="title-container">
-      <v-typical
+        <v-typical
           class="blink"
           :steps="[
             'CHOOSE',
@@ -61,22 +65,14 @@ function goBack() {
           :loop="Infinity"
           :wrapper="'h2'"
         ></v-typical>
-
       </div>
       <div class="image-btn">
-
         <button class="text-btn" @click="openModal1">BODY</button>
         <img :src="elevateImageSrc" class="w-80 h-80 rounded-full" />
         <button class="text-btn" @click="openModal2">MIND</button>
       </div>
-      <MindModalComponent
-        :isOpen="isModalOpened2"
-        @modal-close="closeModal2"
-      />
-      <BodyModalComponent
-        :isOpen="isModalOpened1"
-        @modal-close="closeModal1"
-      />
+      <MindModalComponent :isOpen="isModalOpened2" @modal-close="closeModal2" />
+      <BodyModalComponent :isOpen="isModalOpened1" @modal-close="closeModal1" />
     </div>
   </main>
 </template>
@@ -90,7 +86,8 @@ main {
 }
 
 h1,
-h2, .text-btn {
+h2,
+.text-btn {
   font-family: "Anton", sans-serif;
 }
 
@@ -100,6 +97,10 @@ h2, .text-btn {
 .title-container {
   display: grid;
   place-items: center;
+}
+
+.content-btn {
+  margin-left: 80px;
 }
 
 .image-btn {

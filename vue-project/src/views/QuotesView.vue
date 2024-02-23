@@ -1,11 +1,13 @@
 <template>
   <main class="dark:bg-white">
-    <button
-          @click="goBack"
-          class="text-lg font-medium text-black-500 hover:underline mb-4 flex"
-        >
-        <img :src="backIcon" class="w-10 h-10" /> Back
-        </button>
+    <div class="content-btn">
+      <button
+        @click="goBack"
+        class="text-lg font-medium text-white-500 dark:text-black hover:underline mb-4 flex"
+      >
+        <img :src="backIcon" class="w-10 h-10 dark:color-white" /> Back
+      </button>
+    </div>
     <h1 class="text-3xl font-semibold text-center my-4">MENTAL IS VITAL</h1>
     <div class="content">
       <img :src="quoteImageSrc" class="w-80 h-80 rounded-full mt-4" />
@@ -57,6 +59,9 @@ h1 {
   font-family: "Anton", sans-serif;
 }
 
+.content-btn {
+  margin-left: 80px;
+}
 .content {
   display: flex;
   flex-direction: column;
