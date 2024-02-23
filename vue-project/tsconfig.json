@@ -1,20 +1,5 @@
 {
   "files": [],
-  "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "lib": ["dom", "esnext"],
-    "types": ["@types/node", "@types/whatwg-fetch", "vue"],
-    "moduleResolution": "node",
-    "allowJs": true,
-    "strict": true,
-    "esModuleInterop": true,
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ]
-    }
-  },
   "references": [
     {
       "path": "./tsconfig.node.json"
