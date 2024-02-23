@@ -7,7 +7,7 @@ import {
   Scene,
   LambertMaterial,
 } from 'troisjs';
-import { defineComponent, ref } from 'vue';
+import { defineComponent, ref, onMounted } from 'vue';
 
 export default defineComponent({
   components: { Box, Camera, Renderer, Scene, PointLight, LambertMaterial },
@@ -15,9 +15,13 @@ export default defineComponent({
     const renderer = ref(null);
     const box = ref(null);
 
-    renderer?.value?.onBeforeRender(() => {
+    onMounted(() => {
+      renderer?.value?.onBeforeRender(() => {
         box.value.mesh.rotation.x += 0.01;
-    }) 
+    }); 
+    })
+
+
     return { renderer, box };
   }
 
@@ -31,7 +35,7 @@ export default defineComponent({
     <Camera :position="{ z: 10 }" />
     <Scene background="#4DBA87">
       <PointLight :position="{ y: 50, z: 50 }" />
-      <Box ref="box">
+      <Box ref="box" :rotation="{ y: Math.PI / 4, z: Math.PI / 4 }">
         <LambertMaterial />
       </Box>
     </Scene>
