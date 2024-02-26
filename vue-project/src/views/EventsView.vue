@@ -11,7 +11,7 @@ interface Event {
 const events = ref<Event[]>([]);
 
 const fetchEventData = () => {
-  fetch("https://app.ticketmaster.com/discovery/v2/events.json?apikey=7elxdku9GGG5k8j0Xm8KWdANDgecHMV0&countryCode=US&classificationName=Sports")
+  fetch("https://app.ticketmaster.com/discovery/v2/events.json?keyword=yoga&source=universe&apikey=4efAJ7EnckUfcbAT82O2UvSHqbUaLyGs")
   .then((res: Response) => res.json() as Promise<{ _embedded: { events: Event[] } }>)
     .then((data: { _embedded: { events: Event[] } }) => {
       events.value = data._embedded.events;

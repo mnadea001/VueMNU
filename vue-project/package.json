@@ -17,6 +17,7 @@
     "@vueuse/core": "^10.8.0",
     "@vueuse/motion": "^2.1.0",
     "aos": "^2.3.4",
+    "axios": "^1.6.7",
     "pinia": "^2.1.7",
     "three": "^0.134.0",
     "troisjs": "^0.3.4",
