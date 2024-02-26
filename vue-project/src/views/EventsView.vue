@@ -1,23 +1,31 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
-import Map from '@/components/Map.vue'
 
 interface Event {
   id: number;
   name: string;
   description: string;
+  dates: {
+    timezone: string;
+  };
 }
+
 
 const events = ref<Event[]>([]);
 
 const fetchEventData = () => {
-  fetch("https://app.ticketmaster.com/discovery/v2/events.json?keyword=yoga&source=universe&apikey=4efAJ7EnckUfcbAT82O2UvSHqbUaLyGs")
-  .then((res: Response) => res.json() as Promise<{ _embedded: { events: Event[] } }>)
+  fetch(
+    "https://app.ticketmaster.com/discovery/v2/events.json?keyword=yoga&source=universe&apikey=4efAJ7EnckUfcbAT82O2UvSHqbUaLyGs"
+  )
+    .then(
+      (res: Response) =>
+        res.json() as Promise<{ _embedded: { events: Event[] } }>
+    )
     .then((data: { _embedded: { events: Event[] } }) => {
       events.value = data._embedded.events;
     })
     .catch((error: Error) => {
-      console.error('Error fetching events:', error);
+      console.error("Error fetching events:", error);
     });
 };
 onMounted(() => {
@@ -30,20 +38,20 @@ onMounted(() => {
     <div class="main-content">
       <div class="content">
         <h1 class="text-3xl font-semibold text-center my-4">EVENTS</h1>
-
         <div class="content-img my-4">
-          <h2 class="text-3xl font-semibold text-center my-4">List of related events</h2>
+          <h2 class="text-3xl font-semibold text-center my-4">
+            List of related events
+          </h2>
           <div v-for="event in events" :key="event.id" class="event">
             <h2>{{ event.name }}</h2>
             <p>{{ event.description }}</p>
+            <p>Timezone: {{ event.dates.timezone }}</p>
           </div>
         </div>
-        <Map ></Map>
       </div>
     </div>
   </main>
 </template>
-
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
@@ -58,8 +66,8 @@ h2 {
   font-family: "Anton", sans-serif;
 }
 .main-content {
-display: flex;
-justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 img {
