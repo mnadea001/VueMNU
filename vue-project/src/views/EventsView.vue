@@ -34,7 +34,7 @@ onMounted(() => {
         <div class="content-img my-4">
           <h2 class="text-3xl font-semibold text-center my-4">List of related events</h2>
           <div v-for="event in events" :key="event.id" class="event">
-            <h2 class="text-2xl font-semibold">{{ event.name }}</h2>
+            <h2>{{ event.name }}</h2>
             <p>{{ event.description }}</p>
           </div>
         </div>
