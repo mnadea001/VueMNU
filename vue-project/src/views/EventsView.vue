@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
-
+import Map from '@/components/Map.vue'
 
 interface Event {
   id: number;
@@ -38,6 +38,7 @@ onMounted(() => {
             <p>{{ event.description }}</p>
           </div>
         </div>
+        <Map ></Map>
       </div>
     </div>
   </main>
