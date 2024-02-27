@@ -25,6 +25,8 @@ import { RouterLink, useRouter } from "vue-router";
 interface Event {
   id: string;
   name: string;
+  url: string;
+  locale: string;
   description: string;
   dates: {
     timezone: string;

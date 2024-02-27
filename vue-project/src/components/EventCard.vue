@@ -4,6 +4,7 @@
         <h2>{{ event.name }}</h2>
         <p>Timezone: {{ event.dates.timezone }}</p>
         <p>Date: {{ event.dates.start.localDate }}</p>
+        <p>Link: {{ event.url }}</p>
       </div>
     </div>
   </template>
@@ -14,6 +15,8 @@
   interface Event {
     id: string;
     name: string;
+    url: string;
+    locale: string;
     description: string;
     dates: {
       timezone: string;
