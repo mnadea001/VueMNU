@@ -16,10 +16,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
   
-  /* .card {
-    display: flex;
-    flex-direction: row !important;
-  } */
+
   .text {
     font-size: 1.5rem;
     font-family: "Anton", sans-serif;

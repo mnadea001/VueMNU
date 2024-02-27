@@ -119,13 +119,13 @@ const fetchMealData = () => {
   fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Vegetarian")
     .then((res: Response) => res.json() as Promise<{ meals: Meal[] }>)
     .then((data: { meals: Meal[] }) => {
-      // console.log(data);
+      console.log(data);
       meals.value = data.meals;
     })
     .catch((error: Error) => {
-       if (error instanceof Error) {
-      // console.error("Error fetching meals:", error);
-        }
+  
+      console.error("Error fetching meals:", error);
+
     });
 };
 

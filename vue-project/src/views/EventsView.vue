@@ -7,7 +7,11 @@
           <h2>
             List of related events
           </h2>
-          <EventCard v-for="event in events" :key="event.id" :event="event" />
+          <RouterLink
+          v-for="event in events" :key="event.id"
+          :to="`/events/${event.id}`"
+          >
+          <EventCard  :event="event" /></RouterLink>
         </div>
       </div>
     </div>
@@ -17,7 +21,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
 import EventCard from "../components/EventCard.vue";
-
+import { RouterLink, useRouter } from "vue-router";
 interface Event {
   id: string;
   name: string;

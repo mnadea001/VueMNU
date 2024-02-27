@@ -37,15 +37,18 @@ const fetchYogaData = () => {
   fetch("https://yoga-api-nzy4.onrender.com/v1/categories")
   .then((res: Response) => res.json() as Promise<{ yogas: Yoga[] }>)
     .then((data: {yogas:Yoga[]}) => {
-      // console.log(data);
+      console.log(data);
       yogas.value = data.yogas;
     })
     .catch((error: Error) => {
-       if (error instanceof Error) {
-      // console.error('Error fetching yoga categories:', error);
-        }
+
+      console.error('Error fetching yoga categories:', error);
+
     });
 };
+onMounted(() => {
+  fetchYogaData();
+});
 </script>
 
 <template>
