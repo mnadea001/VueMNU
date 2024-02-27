@@ -1,38 +1,3 @@
-<script setup lang="ts">
-import { onMounted, ref } from "vue";
-
-interface Event {
-  id: number;
-  name: string;
-  description: string;
-  dates: {
-    timezone: string;
-  };
-}
-
-
-const events = ref<Event[]>([]);
-
-const fetchEventData = () => {
-  fetch(
-    "https://app.ticketmaster.com/discovery/v2/events.json?keyword=yoga&source=universe&apikey=4efAJ7EnckUfcbAT82O2UvSHqbUaLyGs"
-  )
-    .then(
-      (res: Response) =>
-        res.json() as Promise<{ _embedded: { events: Event[] } }>
-    )
-    .then((data: { _embedded: { events: Event[] } }) => {
-      events.value = data._embedded.events;
-    })
-    .catch((error: Error) => {
-      console.error("Error fetching events:", error);
-    });
-};
-onMounted(() => {
-  fetchEventData();
-});
-</script>
-
 <template>
   <main class="dark:bg-white">
     <div class="main-content">
@@ -42,16 +7,55 @@ onMounted(() => {
           <h2 class="text-3xl font-semibold text-center my-4">
             List of related events
           </h2>
-          <div v-for="event in events" :key="event.id" class="event">
-            <h2>{{ event.name }}</h2>
-            <p>{{ event.description }}</p>
-            <p>Timezone: {{ event.dates.timezone }}</p>
+          <div v-for="event in events" :key="event.id" class="event-card">
+            <div class="event-card-content">
+              <h2>{{ event.name }}</h2>
+              <!-- <p>{{ event.id }}</p> -->
+              <!-- <p>{{ event.description }}</p> -->
+              <p>Timezone: {{ event.dates.timezone }}</p>
+              <p>Date: {{ event.dates.start.localDate }}</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </main>
 </template>
+
+<script setup lang="ts">
+import { onMounted, ref } from "vue";
+
+interface Event {
+  id: string;
+  name: string;
+  description: string;
+  dates: {
+    timezone: string;
+    start: {
+      localDate: string;
+    };
+  };
+}
+
+const events = ref<Event[]>([]);
+
+const fetchEventData = () => {
+  fetch(
+    "https://app.ticketmaster.com/discovery/v2/events.json?keyword=yoga&source=universe&apikey=4efAJ7EnckUfcbAT82O2UvSHqbUaLyGs"
+  )
+    .then((res: Response) => res.json() as Promise<{ _embedded: { events: Event[] } }>)
+    .then((data: { _embedded: { events: Event[] } }) => {
+      events.value = data._embedded.events;
+    })
+    .catch((error: Error) => {
+      console.error("Error fetching events:", error);
+    });
+};
+
+onMounted(() => {
+  fetchEventData();
+});
+</script>
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
@@ -65,14 +69,27 @@ h1,
 h2 {
   font-family: "Anton", sans-serif;
 }
+
 .main-content {
   display: flex;
   justify-content: center;
 }
 
+.event-card {
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.event-card-content {
+  padding: 20px;
+}
+
 img {
   margin-bottom: 50px;
 }
+
 .content-img {
   display: flex;
   flex-direction: column;
@@ -81,10 +98,12 @@ img {
   align-items: center;
   margin-bottom: 50px;
 }
+
 .content {
   width: 70%;
   padding: 15px;
 }
+
 ul li {
   text-align: center;
 }
