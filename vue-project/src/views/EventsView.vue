@@ -4,18 +4,10 @@
       <div class="content">
         <h1 class="text-3xl font-semibold text-center my-4">EVENTS</h1>
         <div class="content-img my-4">
-          <h2 class="text-3xl font-semibold text-center my-4">
+          <h2>
             List of related events
           </h2>
-          <div v-for="event in events" :key="event.id" class="event-card">
-            <div class="event-card-content">
-              <h2>{{ event.name }}</h2>
-              <!-- <p>{{ event.id }}</p> -->
-              <!-- <p>{{ event.description }}</p> -->
-              <p>Timezone: {{ event.dates.timezone }}</p>
-              <p>Date: {{ event.dates.start.localDate }}</p>
-            </div>
-          </div>
+          <EventCard v-for="event in events" :key="event.id" :event="event" />
         </div>
       </div>
     </div>
@@ -24,6 +16,7 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
+import EventCard from "../components/EventCard.vue";
 
 interface Event {
   id: string;
