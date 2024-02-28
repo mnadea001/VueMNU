@@ -33,22 +33,18 @@ interface Yoga {
 
 const yogas = ref<Yoga[]>([]);
 
-
-const fetchYogaData = () => {
+onMounted(() => {
   fetch("https://yoga-api-nzy4.onrender.com/v1/categories")
   .then((res: Response) => res.json() as Promise<{ yogas: Yoga[] }>)
-    .then((data : Yoga[]) => {
+    .then((data: Yoga[]) => {
       // console.log(data);
       yogas.value = data;
     })
     .catch((error: Error) => {
-
-      console.error('Error fetching yoga categories:', error);
-
+       if (error instanceof Error) {
+      // console.error('Error fetching yoga categories:', error);
+        }
     });
-};
-onMounted(() => {
-  fetchYogaData();
 });
 </script>
 

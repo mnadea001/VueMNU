@@ -12,7 +12,6 @@ import SourceView from '../views/SourceView.vue'
 import BuddhaView from '../views/BuddhaView.vue'
 import MeditationView from '../views/MeditationView.vue'
 import EventsView from '../views/EventsView.vue'
-import EventDetailView from '../views/EventDetailView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -51,12 +50,6 @@ const router = createRouter({
       path: '/meal/:idMeal',
       name: 'meal',
       component: MealView
-    },
-    {
-      path: '/events/:id',
-      name: 'event',
-      component: EventDetailView,
-      props: true 
     },
     {
       path: '/about',
