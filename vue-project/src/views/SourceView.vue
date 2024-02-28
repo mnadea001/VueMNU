@@ -9,7 +9,7 @@
           <h2 class="text-3xl font-semibold text-center my-4">To create this app, I used:</h2>
           <ul>
             <li>Vue.js 3 with TypeScript</li>
-            <li>APIs themealdb, yoga-api from alexcumplido, forismatic</li>
+            <li>APIs themealdb, yoga-api from alexcumplido, forismatic, ticketmaster</li>
             <li>Librairies vue-typical, tailwindcss, vueuse</li>
             <li>Threejs, Troisjs</li>
             <li>GIFs on Tenor and Giphy</li>
