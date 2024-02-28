@@ -17,9 +17,11 @@
 
 <script setup lang="ts">
 import MenuComponent from "../components/MenuComponent.vue";
-import { ref } from "vue";
-import burgerIcon from "../assets/burger.svg";
+import { ref, computed } from "vue";
 import { useDark, useToggle } from "@vueuse/core";
+import blackBurger from "../assets/burger.svg";
+import whiteBurger from "../assets/white-burger.svg";
+
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
 
@@ -31,7 +33,12 @@ const openModal = () => {
 const closeModal = () => {
   isModalOpened.value = false;
 };
+
+const burgerIcon = computed(() => {
+  return isDark.value ? blackBurger : whiteBurger;
+});
 </script>
+
 <style scoped>
 .wrapper {
   width: 100vw;
@@ -49,5 +56,4 @@ header {
   padding: 2rem 5rem;
   padding-right: calc(var(--section-gap) / 2);
 }
-
 </style>
