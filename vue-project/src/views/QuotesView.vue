@@ -27,6 +27,13 @@ import backIcon from "../assets/back.svg";
 import whiteBack from "../assets/white-back.png";
 import { useDark } from "@vueuse/core";
 
+// Declare handleQuoteResponse in the global scope
+declare global {
+  interface Window {
+    handleQuoteResponse: (data: any) => void;
+  }
+}
+
 const isDark = useDark();
 const arrowIcon = computed(() => {
   return isDark.value ? backIcon : whiteBack;
@@ -49,11 +56,13 @@ onMounted(() => {
   document.body.appendChild(script);
 });
 
+// Now TypeScript knows about handleQuoteResponse
 window.handleQuoteResponse = (data: any) => {
   quote.value = data.quoteText;
   author.value = data.quoteAuthor;
 };
 </script>
+
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 
