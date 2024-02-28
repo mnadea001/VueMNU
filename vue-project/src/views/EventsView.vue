@@ -2,13 +2,14 @@
   <main class="dark:bg-white">
     <div class="main-content">
       <div class="content">
-        <h1 class="text-3xl font-semibold text-center my-4">EVENTS</h1>
+        <h1 class="text-3xl font-semibold text-center mt-4">EVENTS</h1>
         <div class="content-img my-4">
-          <h2>
+          <p class="text-3xl font-semibold text-center mb-4">
             List of related events
-          </h2>
-
-          <EventCard  v-for="event in events" :key="event.id" :event="event" />
+          </p>
+          <div class="event-card">
+            <EventCard v-for="event in events" :key="event.id" :event="event" />
+          </div>
         </div>
       </div>
     </div>
@@ -38,7 +39,10 @@ const fetchEventData = () => {
   fetch(
     "https://app.ticketmaster.com/discovery/v2/events.json?keyword=yoga&source=universe&apikey=4efAJ7EnckUfcbAT82O2UvSHqbUaLyGs"
   )
-    .then((res: Response) => res.json() as Promise<{ _embedded: { events: Event[] } }>)
+    .then(
+      (res: Response) =>
+        res.json() as Promise<{ _embedded: { events: Event[] } }>
+    )
     .then((data: { _embedded: { events: Event[] } }) => {
       events.value = data._embedded.events;
     })
@@ -71,19 +75,11 @@ h2 {
 }
 
 .event-card {
-  background-color: #f0f0f0;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+  width: 100%;
 }
 
-.event-card-content {
-  padding: 20px;
-}
 
-img {
-  margin-bottom: 50px;
-}
+
 
 .content-img {
   display: flex;
