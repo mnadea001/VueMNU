@@ -11,6 +11,9 @@ const emit = defineEmits(["modal-close"]);
 
 const target = ref(null);
 onClickOutside(target, () => emit("modal-close"));
+const handleClose = () => {
+  emit("modal-close");
+};
 </script>
 
 <template>
@@ -26,15 +29,15 @@ onClickOutside(target, () => emit("modal-close"));
         </div>
         <div class="modal-body">
           <slot name="content">
-            <RouterLink to="/" class="nav-item">Home</RouterLink>
-            <RouterLink to="/index" class="nav-item">Index</RouterLink>
-            <RouterLink to="/about" class="nav-item">Philosophy</RouterLink>
-            <RouterLink to="/quote" class="nav-item">Inspiration</RouterLink>
-            <RouterLink to="/meditation" class="nav-item">Meditation</RouterLink>
-            <RouterLink to="/food" class="nav-item">Food</RouterLink>
-            <RouterLink to="/yoga" class="nav-item">Yoga</RouterLink>
-            <RouterLink to="/events" class="nav-item">Events</RouterLink>
-            <RouterLink to="/source" class="nav-item">About</RouterLink>
+            <RouterLink  @click.native="handleClose" to="/" class="nav-item">Home</RouterLink>
+            <RouterLink @click.native="handleClose" to="/index" class="nav-item">Index</RouterLink>
+            <RouterLink @click.native="handleClose" to="/about" class="nav-item">Philosophy</RouterLink>
+            <RouterLink @click.native="handleClose" to="/quote" class="nav-item">Inspiration</RouterLink>
+            <RouterLink @click.native="handleClose" to="/meditation" class="nav-item">Meditation</RouterLink>
+            <RouterLink @click.native="handleClose" to="/food" class="nav-item">Food</RouterLink>
+            <RouterLink @click.native="handleClose" to="/yoga" class="nav-item">Yoga</RouterLink>
+            <RouterLink @click.native="handleClose" to="/events" class="nav-item">Events</RouterLink>
+            <RouterLink @click.native="handleClose" to="/source" class="nav-item">About</RouterLink>
           </slot>
         </div>
       </div>
