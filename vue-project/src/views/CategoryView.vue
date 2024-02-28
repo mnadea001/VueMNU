@@ -9,7 +9,7 @@
           @click="goBack"
           class="text-lg font-medium hover:underline mb-4 flex"
         >
-          <img :src="backIcon" class="w-10 h-10" /> Back
+          <img :src="arrowIcon" class="w-10 h-10" /> Back
         </button>
         <h1 class="text-gray-500 text-center">{{ yoga.category_name }}</h1>
         <div class="mt-4">
@@ -37,12 +37,17 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import PoseCard from "../components/PoseCard.vue";
 import backIcon from "../assets/back.svg";
+import whiteBack from "../assets/white-back.png";
+import { useDark } from "@vueuse/core";
 import childPoseImg from "../assets/childpose.gif";
-
+const isDark = useDark();
+const arrowIcon = computed(() => {
+  return isDark.value ? backIcon : whiteBack;
+});
 
 const childPoseImageSrc: string = childPoseImg;
 

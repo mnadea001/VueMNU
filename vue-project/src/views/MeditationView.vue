@@ -4,7 +4,13 @@ import { defineComponent } from "vue";
 import chillImg from "../assets/chill.gif";
 import { useRouter } from "vue-router";
 import backIcon from "../assets/back.svg";
-
+import whiteBack from "../assets/white-back.png";
+import { useDark } from "@vueuse/core";
+import { computed } from "vue";
+const isDark = useDark();
+const arrowIcon = computed(() => {
+  return isDark.value ? backIcon : whiteBack;
+});
 const chillImageSrc: string = chillImg;
 
 defineComponent({
@@ -27,7 +33,7 @@ function goBack() {
         @click="goBack"
         class="text-lg font-medium text-white-500 dark:text-black hover:underline mb-4 flex"
       >
-        <img :src="backIcon" class="w-10 h-10 dark:color-white" /> Back
+        <img :src="arrowIcon" class="w-10 h-10 dark:color-white" /> Back
       </button>
     </div>
     <div class="home-box">

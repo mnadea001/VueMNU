@@ -6,7 +6,7 @@
           @click="goBack"
           class="text-lg font-medium text-white-500 dark:text-black hover:underline mb-4 flex"
         >
-          <img :src="backIcon" class="w-10 h-10 dark:color-white" /> Back
+          <img :src="arrowIcon" class="w-10 h-10 dark:color-white" /> Back
         </button>
       </div>
       <div class="content">
@@ -77,10 +77,17 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from "vue";
 import chillImageSrc from "../assets/pray.gif";
 import backIcon from "../assets/back.svg";
 import { useRouter } from "vue-router";
+import whiteBack from "../assets/white-back.png";
+import { useDark } from "@vueuse/core";
 
+const isDark = useDark();
+const arrowIcon = computed(() => {
+  return isDark.value ? backIcon : whiteBack;
+});
 const router = useRouter();
 
 function goBack() {

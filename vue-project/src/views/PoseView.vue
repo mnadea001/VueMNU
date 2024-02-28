@@ -1,7 +1,15 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import backIcon from "../assets/back.svg";
+import whiteBack from "../assets/white-back.png";
+import { useDark } from "@vueuse/core";
+
+const isDark = useDark();
+const arrowIcon = computed(() => {
+  return isDark.value ? backIcon : whiteBack;
+});
+
 
 interface Pose {
   id: number;
@@ -50,7 +58,7 @@ async function fetchPoseData() {
         @click="goBack"
         class="text-lg font-medium hover:underline mb-4 flex text-dark"
       >
-        <img :src="backIcon" class="w-10 h-10" /> Back
+        <img :src="arrowIcon" class="w-10 h-10" /> Back
       </button>
 
       <h1 class="text-center">{{ pose.english_name }}</h1>

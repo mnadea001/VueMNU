@@ -9,8 +9,15 @@ import {
   GltfModel,
 } from "troisjs";
 import { useRouter } from "vue-router";
-
+import whiteBack from "../assets/white-back.png";
+import { useDark } from "@vueuse/core";
+import { computed } from "vue";
 import backIcon from "../assets/back.svg";
+
+const isDark = useDark();
+const arrowIcon = computed(() => {
+  return isDark.value ? backIcon : whiteBack;
+});
 defineComponent({
   components: {
     Renderer,
@@ -35,7 +42,7 @@ function goBack() {
         @click="goBack"
         class="text-lg font-medium text-white-500 dark:text-black hover:underline mb-4 flex"
       >
-        <img :src="backIcon" class="w-10 h-10 dark:color-white" /> Back
+        <img :src="arrowIcon" class="w-10 h-10 dark:color-white" /> Back
       </button>
     </div>
   <h2 class="text-center">SCROLL DOWN IN BLACK BOX TO SEE BUDDHA</h2>

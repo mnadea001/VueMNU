@@ -1,19 +1,18 @@
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
+import { onMounted, ref, computed } from "vue";
 import { RouterLink, useRouter } from "vue-router";
 import CategoryCard from "../components/CategoryCard.vue";
 import yogaImg from "../assets/yoga.gif";
 import VTypical from "vue-typical";
-import { defineComponent } from "vue";
 import backIcon from "../assets/back.svg";
-
-defineComponent({
-  components: {
-    VTypical,
-  },
-});
+import whiteBack from "../assets/white-back.png";
+import { useDark } from "@vueuse/core";
 
 const router = useRouter();
+const isDark = useDark();
+const arrowIcon = computed(() => {
+  return isDark.value ? backIcon : whiteBack;
+});
 
 function goBack() {
   router.go(-1);
@@ -48,6 +47,7 @@ onMounted(() => {
 });
 </script>
 
+
 <template>
   <main class="dark:bg-white">
     <div class="content-btn">
@@ -55,7 +55,7 @@ onMounted(() => {
         @click="goBack"
         class="text-lg font-medium text-white-500 dark:text-black hover:underline mb-4 flex"
       >
-        <img :src="backIcon" class="w-10 h-10 dark:color-white" /> Back
+        <img :src="arrowIcon" class="w-10 h-10" /> Back
       </button>
     </div>
     <h1 class="text-3xl font-semibold text-center my-4">YOGA IS ART</h1>

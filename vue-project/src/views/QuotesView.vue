@@ -5,7 +5,7 @@
         @click="goBack"
         class="text-lg font-medium text-white-500 dark:text-black hover:underline mb-4 flex"
       >
-        <img :src="backIcon" class="w-10 h-10 dark:color-white" /> Back
+        <img :src="arrowIcon" class="w-10 h-10 dark:color-white" /> Back
       </button>
     </div>
     <h1 class="text-3xl font-semibold text-center my-4">MENTAL IS VITAL</h1>
@@ -20,10 +20,18 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
 import quoteImg from "../assets/mental.gif";
 import { useRouter } from "vue-router";
 import backIcon from "../assets/back.svg";
+import whiteBack from "../assets/white-back.png";
+import { useDark } from "@vueuse/core";
+
+const isDark = useDark();
+const arrowIcon = computed(() => {
+  return isDark.value ? backIcon : whiteBack;
+});
+
 const quote = ref<string>("");
 const author = ref<string>("");
 const quoteImageSrc: string = quoteImg;

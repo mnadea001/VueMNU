@@ -1,12 +1,19 @@
 <script setup lang="ts">
 import MindModalComponent from "../components/MindModalComponent.vue";
 import BodyModalComponent from "../components/BodyModalComponent.vue";
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import VTypical from "vue-typical";
 import { defineComponent } from "vue";
 import elevateImg from "../assets/elevate.gif";
 import { useRouter } from "vue-router";
 import backIcon from "../assets/back.svg";
+import whiteBack from "../assets/white-back.png";
+import { useDark } from "@vueuse/core";
+
+const isDark = useDark();
+const arrowIcon = computed(() => {
+  return isDark.value ? backIcon : whiteBack;
+});
 
 const elevateImageSrc: string = elevateImg;
 
@@ -44,7 +51,7 @@ function goBack() {
         @click="goBack"
         class="text-lg font-medium text-white-500 dark:text-black hover:underline mb-4 flex"
       >
-        <img :src="backIcon" class="w-10 h-10 dark:color-white" /> Back
+        <img :src="arrowIcon" class="w-10 h-10 dark:color-white" /> Back
       </button>
     </div>
     <div class="home-box">

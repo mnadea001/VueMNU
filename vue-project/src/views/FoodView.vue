@@ -5,7 +5,7 @@
         @click="goBack"
         class="text-lg font-medium text-black-500 hover:underline mb-4 flex"
       >
-        <img :src="backIcon" class="w-10 h-10" /> Back
+        <img :src="arrowIcon" class="w-10 h-10" /> Back
       </button>
       <h1 class="text-3xl font-semibold text-center my-4">VEGGIE IS GOOD</h1>
       <h4 class="text-3xl font-semibold text-center my-4">
@@ -97,10 +97,17 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
+import { onMounted, ref, computed } from "vue";
 import { RouterLink, useRouter } from "vue-router";
 import MealCard from "../components/MealCard.vue";
 import backIcon from "../assets/back.svg";
+import whiteBack from "../assets/white-back.png";
+import { useDark } from "@vueuse/core";
+
+const isDark = useDark();
+const arrowIcon = computed(() => {
+  return isDark.value ? backIcon : whiteBack;
+});
 interface Meal {
   idMeal: string;
   strMeal: string;
