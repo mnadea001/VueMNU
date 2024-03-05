@@ -5,9 +5,9 @@
         <h2 class="text-lg">{{ props.event.name.toUpperCase() }}</h2>
         <div class="gap-2 flex items-center">
           <IconCalendar />
-          <p class="mt-2">Le {{ formatDate(props.event.dates.start.localDate) }}
+          <p class="mt-2">On {{ formatDate(props.event.dates.start.localDate) }}
             <span v-if="!props.event.dates.start.noSpecificTime">
-                à {{ formatTime(props.event.dates.start.localTime) }}
+                at {{ formatTime(props.event.dates.start.localTime) }}
               </span>
           </p>
         </div>
