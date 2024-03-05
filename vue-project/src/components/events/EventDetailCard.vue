@@ -8,15 +8,6 @@
         {{ eventName }}
       </h2>
     </div>
-    <div class="flex gap-2">
-      <div class="self-center">
-        <IconCalendar />
-      </div>
-      <p class="mt-2">
-        On {{ formatDate(localDate) }}
-        <span v-if="!noSpecificTime">at {{ formatTime(localTime) }}</span>
-      </p>
-    </div>
   </div>
   <div
     v-if="event"
@@ -26,8 +17,54 @@
       <img :src="image" alt="detail" class="w-2/3 rounded-lg" />
       <br />
       <br />
-      <p>{{ eventDescription }}</p>
+
+      <div class="flex gap-2">
+        <div class="self-center">
+          <IconCalendar />
+        </div>
+        <p class="mt-2">
+          On {{ formatDate(localDate) }}
+          <span v-if="!noSpecificTime">at {{ formatTime(localTime) }}</span>
+        </p>
+      </div>
+      <div class="flex gap-2">
+        <a :href="event.url" target="_blank"
+           class="flex gap-4 p-3 bg-teal font-semibold rounded-full text-base-100 hover:scale-105 hover:cursor-pointer">
+          <IconTicket />
+          Book my ticket
+        </a>
+      </div>
+      <button
+        @click="toggleDropdown"
+        class="mt-5 dark:text-black border-black text-white hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        type="button"
+      >
+        See description
+        <svg
+          class="w-2.5 h-2.5 ms-3"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 10 6"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="m1 1 4 4 4-4"
+          />
+        </svg>
+      </button>
+      <div
+        v-if="isDropdownOpen"
+        id="dropdown"
+        class="z-10 dark:bg-white w-100 rounded-lg shadow p-5 bg-gray-700"
+      >
+        <p>{{ eventDescription }}</p>
+      </div>
     </div>
+
     <div>
       <h3 class="flex items-center gap-2 mb-2">
         <IconMarker />
@@ -36,6 +73,7 @@
       </h3>
       <p>{{ eventAddress }}</p>
       <p>{{ eventLatitude }}, {{ eventLongitude }}</p>
+
       <Map
         v-if="location"
         class="py-5"
@@ -51,13 +89,12 @@
 
 <script setup lang="ts">
 import type { Event } from '@/types/event'
-import { defineProps } from 'vue'
 import IconCalendar from '@/components/icons/IconCalendar.vue'
 import IconMarker from '@/components/icons/IconMarker.vue'
 import Map from '@/components/map/Map.vue'
 import { formatDate } from '@/filters/formatDate'
 import { formatTime } from '@/filters/formatTime'
-
+import { defineProps, ref } from 'vue'
 const props = defineProps<{
   event: Event
 }>()
@@ -73,8 +110,12 @@ const eventAddress = place?.address?.line1 || 'Address undefined'
 const eventLatitude = place?.location?.latitude || 'Latitude undefined'
 const eventLongitude = place?.location?.longitude || 'Longitude undefined'
 const location = place?.location ? [place.location.latitude, place.location.longitude] : null
+
+const isDropdownOpen = ref(false)
+
+function toggleDropdown() {
+  isDropdownOpen.value = !isDropdownOpen.value
+}
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

@@ -8,13 +8,6 @@
         <IconPrevious />
         Back
       </button>
-      <div class="flex gap-2">
-        <a :href="event.url" target="_blank"
-           class="flex gap-4 p-3 bg-teal font-semibold rounded-full text-base-100 hover:scale-105 hover:cursor-pointer">
-          <IconTicket />
-          Book my ticket
-        </a>
-      </div>
     </div>
     <EventDetailCard v-if="event" :event="event" />
   </div>

@@ -1,13 +1,16 @@
 <template>
   <header>
     <div class="wrapper">
-      <button
+      <span class="flex">      <button
         @click="toggleDark()"
         class="py-2 px-4 bg-black text-white border rounded-md dark:bg-white dark:text-black"
       >
         Switch Mode!
       </button>
-      <button class="text-btn" @click="openModal">
+      <RouterLink  to="/">Home</RouterLink>
+</span>
+
+      <button @click="openModal">
         <img :src="burgerIcon" class="w-10 h-10" /> MENU
       </button>
     </div>
