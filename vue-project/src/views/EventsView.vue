@@ -1,11 +1,9 @@
 <template>
   <main class="grid lg:grid-cols-2 sm:grid-cols-1 dark:bg-white">
     <div class="rounded-lg min-h-screen overflow-hidden">
-      <SearchBar @on-search="searchQuery" />
       <ErrorAlert v-if="errorMessage" :message="errorMessage" />
       <EventList :events="events" :page="page" />
       <Pagination
-        :query-param="keyword"
         :fetch-next-page="fetchNextPage"
         :fetch-previous-page="fetchPreviousPage"
         :current-page="currentPage" />
@@ -18,7 +16,6 @@
 import Map from '../components/map/Map.vue'
 import { onMounted, ref } from 'vue'
 import type { Event } from '@/types/event'
-import SearchBar from '@/components/SearchBar.vue'
 import EventList from '@/components/events/EventList.vue'
 import { fetchEvents } from '../api/ticketmasterApi'
 import Pagination from '@/components/Pagination.vue'
@@ -33,7 +30,6 @@ const page = ref<Page>({
   totalPages: 0,
   number: 0
 })
-const keyword = ref<string | undefined>('')
 const currentPage = ref(1)
 const totalPages = ref<number>(1)
 const errorMessage = ref<string | null>(null)
@@ -49,21 +45,11 @@ onMounted(async () => {
   page.value = response.page
 })
 
-const searchQuery = async (query: string) => {
-  try {
-    const response = await fetchEvents(query)
-    events.value = response._embedded.events
-    page.value = response.page
-    keyword.value = query
-    errorMessage.value = null
-  } catch (error: any) {
-    errorMessage.value = 'Oops ! aucun event trouvé'
-  }
-}
+
 
 const fetchNextPage = async () => {
   const nextPageNumber = currentPage.value + 1
-  const response = await fetchEvents(keyword?.value, nextPageNumber)
+  const response = await fetchEvents( nextPageNumber)
   currentPage.value = response.page.number
   totalPages.value = response.page.totalPages
   events.value = response._embedded.events
@@ -71,7 +57,7 @@ const fetchNextPage = async () => {
 
 const fetchPreviousPage = async () => {
   const nextPageNumber = currentPage.value - 1
-  const response = await fetchEvents(keyword?.value, nextPageNumber)
+  const response = await fetchEvents( nextPageNumber)
   currentPage.value = response.page.number
   totalPages.value = response.page.totalPages
   events.value = response._embedded.events

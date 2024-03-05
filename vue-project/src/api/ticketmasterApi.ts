@@ -1,7 +1,7 @@
 import axios, { AxiosError } from 'axios'
 import type { RouteParamValue } from 'vue-router'
-import type { Page } from '../types/page'
 import type { Event } from '../types/event'
+import type { Page } from '@/types/ page';
 
 const API_KEY = import.meta.env.VITE_TICKETMASTER_API_KEY
 const API_URL_BASE: string = 'https://app.ticketmaster.com/discovery/v2/events';
@@ -13,12 +13,10 @@ interface EventsApiResponse {
   }
 }
 
-export const fetchEvents = async (keyword?: string, page: number = 1): Promise<EventsApiResponse> => {
+export const fetchEvents = async ( page: number = 1): Promise<EventsApiResponse> => {
   try {
     let url = `${API_URL_BASE}.json?keyword=yoga&source=universe&apikey=${API_KEY}&sort=date,asc&size=10&page=${page}`;
-    if (keyword) {
-      url += `&keyword=${keyword}`;
-    }
+
 
     const { data} = await axios.get<EventsApiResponse>(url);
 

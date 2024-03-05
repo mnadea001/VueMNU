@@ -14,7 +14,7 @@
       </div>
       <p class="mt-2">
         On {{ formatDate(localDate) }}
-        <span v-if="!noSpecificTime">à {{ formatTime(localTime) }}</span>
+        <span v-if="!noSpecificTime">at {{ formatTime(localTime) }}</span>
       </p>
     </div>
   </div>
