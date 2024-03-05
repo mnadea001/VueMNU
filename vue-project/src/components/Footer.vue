@@ -11,6 +11,8 @@
         <RouterLink to="/yoga" class="nav-item">Yoga</RouterLink>
         <RouterLink to="/events" class="nav-item">Events</RouterLink>
         <RouterLink to="/source" class="nav-item">About</RouterLink>
+        <RouterLink to="/login" class="nav-item">Login</RouterLink>
+        <RouterLink to="/register" class="nav-item">Register</RouterLink>
       </nav>
     </div>
   </footer>
