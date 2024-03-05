@@ -13,7 +13,7 @@
           </l-marker>
         </template>
       </l-marker-cluster-group>
-      <l-marker v-else :lat-lng="[latitude, longitude]" :icon="customMarker" />
+      <l-marker v-else :lat-lng="[props.event.place.location?.latitude, props.event.place.location?.longitude]" :icon="customMarker" />
     </l-map>
   </div>
 </template>

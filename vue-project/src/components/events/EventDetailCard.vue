@@ -40,6 +40,7 @@
         v-if="location"
         class="py-5"
         :zoom="14"
+        :event="event"
         :center="location"
         :latitude="eventLatitude"
         :longitude="eventLongitude"
