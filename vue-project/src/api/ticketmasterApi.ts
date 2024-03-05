@@ -13,36 +13,35 @@ interface EventsApiResponse {
   }
 }
 
-export const fetchEvents = async ( page: number = 1): Promise<EventsApiResponse> => {
+export const fetchEvents = async (page: number = 1): Promise<EventsApiResponse> => {
   try {
     let url = `${API_URL_BASE}.json?keyword=yoga&source=universe&apikey=${API_KEY}&sort=date,asc&size=10&page=${page}`;
-
-
-    const { data} = await axios.get<EventsApiResponse>(url);
-
+    const { data } = await axios.get<EventsApiResponse>(url);
     return data;
-
   } catch (error) {
     if (axios.isAxiosError(error)) {
       handleAxiosError(error);
     } else {
       handleUnexpectedError(error);
     }
+    // Add a return statement here to handle the case where an error occurs
+    return Promise.reject(error); // or return undefined;
   }
 }
 
 export const fetchEventById = async (id: string | RouteParamValue[]): Promise<Event> => {
   try {
     const url: string = `${API_URL_BASE}/${id}?apikey=${API_KEY}`;
-    const { data} = await axios.get(url);
+    const { data } = await axios.get(url);
     return data;
-
   } catch (error) {
     if (axios.isAxiosError(error)) {
       handleAxiosError(error);
     } else {
       handleUnexpectedError(error);
     }
+    // Add a return statement here to handle the case where an error occurs
+    return Promise.reject(error); // or return undefined;
   }
 }
 
