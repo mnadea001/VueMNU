@@ -20,7 +20,6 @@
   </template>
   
   <script setup lang="ts">
-  import defineProps from 'vue'
   import IconPrevious from '@/components/icons/IconPrevious.vue'
   import IconNext from '@/components/icons/IconNext.vue'
   

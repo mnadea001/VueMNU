@@ -83,14 +83,9 @@ h2 {
   display: flex;
   justify-content: center;
 }
-
 .event-card {
   width: 100%;
 }
-
-
-
-
 .content-img {
   display: flex;
   flex-direction: column;
