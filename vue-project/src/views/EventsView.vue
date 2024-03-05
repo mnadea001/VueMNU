@@ -14,12 +14,12 @@
 
 <script setup lang="ts">
 import Map from '../components/map/Map.vue'
-import { onMounted, ref } from 'vue'
-import type { Event } from '@/types/event'
 import EventList from '@/components/events/EventList.vue'
-import { fetchEvents } from '../api/ticketmasterApi'
 import Pagination from '@/components/Pagination.vue'
 import ErrorAlert from '@/components/ErrorAlert.vue'
+import { ref, onMounted } from 'vue'
+import { fetchEvents } from '../api/ticketmasterApi'
+import type { Event } from '@/types/event'
 import type { Page } from '@/types/ page'
 
 const eventDetails = ref<Event | null>(null)
@@ -30,7 +30,7 @@ const page = ref<Page>({
   totalPages: 0,
   number: 0
 })
-const currentPage = ref(1)
+const currentPage = ref<number>(1)
 const totalPages = ref<number>(1)
 const errorMessage = ref<string | null>(null)
 
@@ -39,31 +39,30 @@ const isSelected = (event: Event) => {
 }
 
 onMounted(async () => {
-  const response = await fetchEvents()
-
-  events.value = response._embedded.events
-  page.value = response.page
+  await fetchEventData(currentPage.value)
 })
 
-
+const fetchEventData = async (pageNumber: number) => {
+  try {
+    const response = await fetchEvents(pageNumber)
+    events.value = response._embedded.events
+    page.value = response.page
+  } catch (error) {
+    errorMessage.value = 'Error fetching events data'
+  }
+}
 
 const fetchNextPage = async () => {
   const nextPageNumber = currentPage.value + 1
-  const response = await fetchEvents( nextPageNumber)
-  currentPage.value = response.page.number
-  totalPages.value = response.page.totalPages
-  events.value = response._embedded.events
+  await fetchEventData(nextPageNumber)
+  currentPage.value = nextPageNumber
 }
 
 const fetchPreviousPage = async () => {
-  const nextPageNumber = currentPage.value - 1
-  const response = await fetchEvents( nextPageNumber)
-  currentPage.value = response.page.number
-  totalPages.value = response.page.totalPages
-  events.value = response._embedded.events
+  const previousPageNumber = currentPage.value - 1
+  await fetchEventData(previousPageNumber)
+  currentPage.value = previousPageNumber
 }
-
-
 </script>
 
 <style scoped>
