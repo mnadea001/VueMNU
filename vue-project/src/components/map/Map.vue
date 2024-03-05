@@ -1,11 +1,23 @@
 <template>
   <div id="map">
-    <l-map :zoom="zoom" :center="center">
+    <l-map :zoom="props.zoom" :center="center">
       <l-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"></l-tile-layer>
-      <l-marker :lat-lng="[latitude, longitude]" />
+      <l-marker-cluster-group v-if="!props.event">
+        <template v-for="event in props.events" :key="event.id">
+          <l-marker
+            v-if="event.place.location?.latitude && event.place.location?.longitude"
+            :icon="customMarker"
+            :lat-lng="[event.place.location?.latitude, event.place.location?.longitude]"
+            @click="$emit('onSelected', event)"
+          >
+          </l-marker>
+        </template>
+      </l-marker-cluster-group>
+      <l-marker v-else :lat-lng="[latitude, longitude]" :icon="customMarker" />
     </l-map>
   </div>
 </template>
+
 
 <script setup lang="ts">
 import L from 'leaflet'
@@ -19,13 +31,21 @@ import MapPopup from '../map/MapPopup.vue'
 import { defineProps } from 'vue'
 
 const props = defineProps({
+  event: {
+    type: Object as () => Event | null,
+    default: null
+  },
+  events: {
+    type: Array as () => Event[] | null,
+    default: null
+  },
   zoom: {
     type: Number,
     default: 8
   },
   center: {
     type: Array as () => number[],
-    default: () => [36.174465, -86.767960]
+    default: () => [36.174465, -86.76796]
   },
   latitude: {
     type: Number,
@@ -44,8 +64,11 @@ const popUpOptions = {
   autoPan: true,
   color: 'black'
 }
+// const { place } = props.event || {};
+// const eventLatitude = place?.location?.latitude || 'Latitude undefined';
+// const eventLongitude = place?.location?.longitude || 'Longitude undefined';
 
-const MARKER_URL = 'https://www.svgrepo.com/show/425616/guitar-pick.svg'
+const MARKER_URL = 'https://www.svgrepo.com/show/508306/marker.svg'
 const customMarker = L.icon({
   iconUrl: MARKER_URL,
   iconSize: [38, 38],
@@ -54,12 +77,11 @@ const customMarker = L.icon({
   shadowAnchor: [4, 62],
   popupAnchor: [-3, -76]
 })
-
 </script>
 
 <style scoped>
 #map {
   width: 600px;
-  height:600px;
+  height: 800px;
 }
 </style>

@@ -1,18 +1,18 @@
 <template>
-  <div v-if="!event">Chargement en cours ...</div>
-  <div v-else class="concert-detail container mx-auto">
+  <div v-if="!event">Loading ...</div>
+  <div v-else class="event-detail container mx-auto">
     <div class="flex items-center justify-between pt-5">
       <button
         @click="$router.go(-1)"
         class="p-3 flex items-center gap-2 bg-light font-semibold rounded-full text-pink hover:scale-105">
         <IconPrevious />
-        Retour
+        Back
       </button>
       <div class="flex gap-2">
         <a :href="event.url" target="_blank"
            class="flex gap-4 p-3 bg-teal font-semibold rounded-full text-base-100 hover:scale-105 hover:cursor-pointer">
           <IconTicket />
-          Réserver ma place
+          Book my ticket
         </a>
       </div>
     </div>
@@ -45,3 +45,9 @@ onMounted(async () => {
   }
 })
 </script>
+
+<style scoped>
+.event-detail {
+padding: 100px
+}
+</style>

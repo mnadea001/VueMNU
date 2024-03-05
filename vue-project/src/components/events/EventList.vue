@@ -1,8 +1,8 @@
 <template>
-    <div class="concert-list">
+    <div class="event-list">
       <div class="p-5 font-semibold mb-5">
-        <h2 class="text-xl">Events les plus proches de chez vous</h2>
-        <p>{{ props.page.totalElements }} event(s) vous attendent</p>
+        <h2 class="text-xl">Events close to you</h2>
+        <p>{{ props.page.totalElements }} event(s) found</p>
       </div>
       <EventListItem v-for="event in props.events" :key="event.id" :event="event" />
     </div>
@@ -21,3 +21,10 @@
   }>()
   
   </script>
+
+  <style scoped>
+
+.event-list {
+  padding: 100px;
+}
+</style>

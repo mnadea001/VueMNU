@@ -1,5 +1,8 @@
 <template>
-  <div v-if="event" class="font-bold flex justify-between items-center mt-5 p-5 bg-teal bg-opacity-40 rounded-t-xl">
+  <div
+    v-if="event"
+    class="font-bold flex justify-between items-center mt-5 p-5 bg-teal bg-opacity-40 rounded-t-xl"
+  >
     <div>
       <h2 class="text-3xl">
         {{ eventName }}
@@ -10,12 +13,15 @@
         <IconCalendar />
       </div>
       <p class="mt-2">
-        Le {{ formatDate(localDate) }}
+        On {{ formatDate(localDate) }}
         <span v-if="!noSpecificTime">à {{ formatTime(localTime) }}</span>
       </p>
     </div>
   </div>
-  <div v-if="event" class="grid grid-cols-2 gap-10 p-10 bg-teal rounded-b-lg bg-opacity-15 text-base concert-detail-card">
+  <div
+    v-if="event"
+    class="grid grid-cols-2 gap-10 p-10 bg-teal rounded-b-lg bg-opacity-15 text-base event-detail-card"
+  >
     <div>
       <img :src="image" alt="detail" class="w-2/3 rounded-lg" />
       <br />
@@ -29,14 +35,14 @@
         {{ eventState }}
       </h3>
       <p>{{ eventAddress }}</p>
-      <p>{{ eventLatitude }} - {{ eventLongitude }}</p>
+      <p>{{ eventLatitude }}, {{ eventLongitude }}</p>
       <Map
         v-if="location"
         class="py-5"
         :zoom="14"
         :center="location"
-        :longitude="eventLongitude"
         :latitude="eventLatitude"
+        :longitude="eventLongitude"
       />
     </div>
   </div>
@@ -55,15 +61,19 @@ const props = defineProps<{
   event: Event
 }>()
 
-const { place } = props.event || {};
-const { localTime, localDate, noSpecificTime } = props.event.dates?.start || {};
-const eventName = props.event.name;
-const eventDescription = props.event.description;
-const image = props.event.images && props.event.images.length > 1 ? props.event.images[1].url : '';
-const eventCity = place?.city?.name || 'City undefined';
-const eventState = place?.state?.stateCode || "State Code undefined";
-const eventAddress = place?.address?.line1 || 'Address undefined';
-const eventLatitude = place?.location?.latitude || 'Latitude undefined';
-const eventLongitude = place?.location?.longitude || 'Longitude undefined';
-const location = place?.location ? [place.location.latitude, place.location.longitude] : null;
+const { place } = props.event || {}
+const { localTime, localDate, noSpecificTime } = props.event.dates?.start || {}
+const eventName = props.event.name
+const eventDescription = props.event.description
+const image = props.event.images && props.event.images.length > 1 ? props.event.images[1].url : ''
+const eventCity = place?.city?.name || 'City undefined'
+const eventState = place?.state?.stateCode || 'State Code undefined'
+const eventAddress = place?.address?.line1 || 'Address undefined'
+const eventLatitude = place?.location?.latitude || 'Latitude undefined'
+const eventLongitude = place?.location?.longitude || 'Longitude undefined'
+const location = place?.location ? [place.location.latitude, place.location.longitude] : null
 </script>
+
+<style scoped>
+
+</style>
