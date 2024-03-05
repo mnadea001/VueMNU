@@ -33,7 +33,7 @@
       <Map
         v-if="location"
         class="py-5"
-        :zoom="16"
+        :zoom="14"
         :center="location"
         :longitude="eventLongitude"
         :latitude="eventLatitude"
