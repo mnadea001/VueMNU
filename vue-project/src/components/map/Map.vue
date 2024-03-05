@@ -34,7 +34,6 @@ import { LMarkerClusterGroup } from 'vue-leaflet-markercluster'
 import 'vue-leaflet-markercluster/dist/style.css'
 import type { Event } from '../../types/event'
 import MapPopup from '../map/MapPopup.vue'
-
 import { defineProps } from 'vue'
 
 const props = defineProps({
@@ -63,6 +62,7 @@ const props = defineProps({
     required: true
   }
 })
+
 const popUpOptions = {
   maxWidth: 300,
   minWidth: 300,
@@ -71,13 +71,9 @@ const popUpOptions = {
   autoPan: true,
   color: 'black'
 }
-// const { place } = props.event || {};
-// const eventLatitude = place?.location?.latitude || 'Latitude undefined';
-// const eventLongitude = place?.location?.longitude || 'Longitude undefined';
 
-const MARKER_URL = 'https://www.svgrepo.com/show/508306/marker.svg'
 const customMarker = L.icon({
-  iconUrl: MARKER_URL,
+  iconUrl: 'https://www.svgrepo.com/show/508306/marker.svg',
   iconSize: [38, 38],
   shadowSize: [50, 64],
   iconAnchor: [22, 50],
@@ -85,6 +81,7 @@ const customMarker = L.icon({
   popupAnchor: [-3, -76]
 })
 </script>
+
 
 <style scoped>
 #map {

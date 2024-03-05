@@ -95,6 +95,7 @@ import Map from '@/components/map/Map.vue'
 import { formatDate } from '@/filters/formatDate'
 import { formatTime } from '@/filters/formatTime'
 import { defineProps, ref } from 'vue'
+
 const props = defineProps<{
   event: Event
 }>()
@@ -107,9 +108,9 @@ const image = props.event.images && props.event.images.length > 1 ? props.event.
 const eventCity = place?.city?.name || 'City undefined'
 const eventState = place?.state?.stateCode || 'State Code undefined'
 const eventAddress = place?.address?.line1 || 'Address undefined'
-const eventLatitude = place?.location?.latitude || 'Latitude undefined'
-const eventLongitude = place?.location?.longitude || 'Longitude undefined'
-const location = place?.location ? [place.location.latitude, place.location.longitude] : null
+const eventLatitude = Number(place?.location?.latitude) || 0 // Provide a default value if latitude is undefined or not a number
+const eventLongitude = Number(place?.location?.longitude) || 0 // Provide a default value if longitude is undefined or not a number
+const location = place?.location ? [eventLatitude, eventLongitude] : null
 
 const isDropdownOpen = ref(false)
 
@@ -117,5 +118,6 @@ function toggleDropdown() {
   isDropdownOpen.value = !isDropdownOpen.value
 }
 </script>
+
 
 <style scoped></style>
