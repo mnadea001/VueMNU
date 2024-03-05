@@ -1,10 +1,8 @@
 <template>
     <div @click="goToDetail(props.event.id)" class="bg-white rounded-lg hover:cursor-pointer">
-      <img class="object-cover w-full rounded-t-lg" :src="props.event?.images[0].url" alt="photo">
+      <img class="object-cover w-full rounded-t-lg" :src="image" alt="photo">
       <div class="p-5">
         <h2 class="text-lg">{{ props.event.name.toUpperCase() }}</h2>
-        <h3 class="py-2">{{ props.event._embedded.venues[0].city.name.toUpperCase() }},
-          {{ event._embedded.venues[0].state.stateCode.toUpperCase() }}</h3>
         <div class="gap-2 flex items-center">
           <IconCalendar />
           <p class="mt-2">Le {{ formatDate(props.event.dates.start.localDate) }}
@@ -33,7 +31,7 @@
       }
     }
   )
-  
+  const image = props.event.images && props.event.images.length > 1 ? props.event.images[1].url : ''
   const goToDetail = (id: string) => {
     router.push({ name: 'eventDetail', params: { id } })
   }

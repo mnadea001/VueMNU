@@ -10,10 +10,17 @@
             :lat-lng="[event.place.location?.latitude, event.place.location?.longitude]"
             @click="$emit('onSelected', event)"
           >
+          <l-popup :options="popUpOptions">
+              <MapPopup :event="event" />
+            </l-popup>
           </l-marker>
         </template>
       </l-marker-cluster-group>
-      <l-marker v-else :lat-lng="[props.event.place.location?.latitude, props.event.place.location?.longitude]" :icon="customMarker" />
+      <l-marker v-else :lat-lng="[props.event.place.location?.latitude, props.event.place.location?.longitude]" :icon="customMarker" >
+        <l-popup :options="popUpOptions">
+          <MapPopup :event="props.event" />
+        </l-popup>
+      </l-marker>
     </l-map>
   </div>
 </template>
