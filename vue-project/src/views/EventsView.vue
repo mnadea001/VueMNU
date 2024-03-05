@@ -21,9 +21,9 @@ import type { Event } from '@/types/event'
 import SearchBar from '@/components/SearchBar.vue'
 import EventList from '@/components/events/EventList.vue'
 import { fetchEvents } from '../api/ticketmasterApi'
-import type { Page } from '../types/page'
 import Pagination from '@/components/Pagination.vue'
 import ErrorAlert from '@/components/ErrorAlert.vue'
+import type { Page } from '@/types/ page'
 
 const eventDetails = ref<Event | null>(null)
 const events = ref<Event[]>([])
