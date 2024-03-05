@@ -34,7 +34,6 @@
         v-if="location"
         class="py-5"
         :zoom="16"
-        :is-from-detail="true"
         :center="location"
         :longitude="eventLongitude"
         :latitude="eventLatitude"

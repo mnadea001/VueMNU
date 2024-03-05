@@ -42,10 +42,6 @@ const props = defineProps({
   center: {
     type: Array as () => number[],
     default: () => [36.174465, -86.767960]
-  },
-  isFromDetail: {
-    type: Boolean,
-    default: false
   }
 })
 
