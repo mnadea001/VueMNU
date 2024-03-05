@@ -8,7 +8,7 @@
         :fetch-previous-page="fetchPreviousPage"
         :current-page="currentPage" />
     </div>
-    <Map @selected="isSelected" :zoom="3" :events="events" />
+<Map @selected="isSelected" :zoom="3" :events="events" />
   </main>
 </template>
 

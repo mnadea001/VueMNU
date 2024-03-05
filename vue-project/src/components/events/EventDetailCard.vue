@@ -80,8 +80,6 @@
         :zoom="14"
         :event="event"
         :center="location"
-        :latitude="eventLatitude"
-        :longitude="eventLongitude"
       />
     </div>
   </div>
