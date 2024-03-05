@@ -1,6 +1,6 @@
 <template>
   <main class="grid lg:grid-cols-2 sm:grid-cols-1 dark:bg-white">
-    <div class="bg-gray-800 rounded-lg min-h-screen overflow-hidden">
+    <div class="rounded-lg min-h-screen overflow-hidden">
       <SearchBar @on-search="searchQuery" />
       <ErrorAlert v-if="errorMessage" :message="errorMessage" />
       <EventList :events="events" :page="page" />

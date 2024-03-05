@@ -4,8 +4,6 @@
       <h2 class="text-3xl">
         {{ eventName }}
       </h2>
-
-
     </div>
     <div class="flex gap-2">
       <div class="self-center">
@@ -30,17 +28,16 @@
         {{ eventCity }},
         {{ eventState }}
       </h3>
-
-      <p>{{ name }}</p>
-      <p>{{ address ? address.line1 : 'Adresse non définie' }}</p>
-
+      <p>{{ eventAddress }}</p>
+      <p>{{ eventLatitude }} - {{ eventLongitude }}</p>
       <Map
         v-if="location"
         class="py-5"
-        :event="props.event"
         :zoom="16"
         :is-from-detail="true"
         :center="location"
+        :longitude="eventLongitude"
+        :latitude="eventLatitude"
       />
     </div>
   </div>
@@ -59,14 +56,15 @@ const props = defineProps<{
   event: Event
 }>()
 
-const { name, address, place } =
-  props.event || {}
-const { localTime, localDate, noSpecificTime } =
-  (props.event.dates && props.event.dates.start) || {}
-const eventName = props.event.name
-const eventDescription = props.event.description
-const image = props.event.images && props.event.images.length > 1 ? props.event.images[1].url : ''
-const eventCity = place?.city?.name || 'Ville non définie'
-const eventState = place?.state?.stateCode || "Code d'état non défini"
-const location = place?.location ? [place.location.latitude, place.location.longitude] : null
+const { place } = props.event || {};
+const { localTime, localDate, noSpecificTime } = props.event.dates?.start || {};
+const eventName = props.event.name;
+const eventDescription = props.event.description;
+const image = props.event.images && props.event.images.length > 1 ? props.event.images[1].url : '';
+const eventCity = place?.city?.name || 'City undefined';
+const eventState = place?.state?.stateCode || "State Code undefined";
+const eventAddress = place?.address?.line1 || 'Address undefined';
+const eventLatitude = place?.location?.latitude || 'Latitude undefined';
+const eventLongitude = place?.location?.longitude || 'Longitude undefined';
+const location = place?.location ? [place.location.latitude, place.location.longitude] : null;
 </script>
