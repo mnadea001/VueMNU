@@ -1,0 +1,36 @@
+<template>
+  <div
+    class="grid grid-cols-3 rounded-lg bg-teal-dark bg-opacity-15 m-3 p-2 hover:cursor-pointer hover:bg-pink hover:bg-opacity-10"
+    @click="goToDetail(props.event.id)">
+    <div class="col-span-1 justify-self-center">
+      <img :src="eventImage" alt="event image" class="w-52 h-32 object-cover">
+    </div>
+    <div class="col-span-2">
+      <div class="flex justify-between">
+        <h2 class="text-xl">{{ props.event.name.toUpperCase() }}</h2>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import type { Event } from '@/types/event'
+import router from '@/router'
+import { defineProps, computed } from "vue";
+
+const props = defineProps<{
+  event: Event,
+}>()
+
+const eventImage = computed(() => {
+  // Check if images exist before accessing the URL
+  if (props.event.images && props.event.images.length > 1) {
+    return props.event.images[1].url;
+  }
+  return ''; // Return a placeholder image or handle this case as needed
+})
+
+const goToDetail = (id: string) => {
+  router.push({ name: 'eventDetail', params: { id } })
+}
+</script>

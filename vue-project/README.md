@@ -19,6 +19,8 @@ npm i vue-flip
 
 npm i @vueuse/motion
 
+npm i -D @vue-leaflet/vue-leaflet leaflet
+
 ## Project Setup
 
 ```sh

@@ -1,59 +1,83 @@
 <template>
-  <main class="dark:bg-white">
-    <div class="main-content">
-      <div class="content">
-        <h1 class="text-3xl font-semibold text-center mt-4">EVENTS</h1>
-        <div class="content-img my-4">
-          <p class="text-3xl font-semibold text-center mb-4">
-            List of related events
-          </p>
-          <div class="event-card">
-            <EventCard v-for="event in events" :key="event.id" :event="event" />
-          </div>
-        </div>
-      </div>
+  <main class="grid lg:grid-cols-2 sm:grid-cols-1 dark:bg-white">
+    <div class="bg-gray-800 rounded-lg min-h-screen overflow-hidden">
+      <SearchBar @on-search="searchQuery" />
+      <ErrorAlert v-if="errorMessage" :message="errorMessage" />
+      <EventList :events="events" :page="page" />
+      <Pagination
+        :query-param="keyword"
+        :fetch-next-page="fetchNextPage"
+        :fetch-previous-page="fetchPreviousPage"
+        :current-page="currentPage" />
     </div>
+    <Map @on-selected="isSelected" :zoom="4" :events="events" />
   </main>
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
-import EventCard from "../components/EventCard.vue";
-interface Event {
-  id: string;
-  name: string;
-  url: string;
-  locale: string;
-  description: string;
-  dates: {
-    timezone: string;
-    start: {
-      localDate: string;
-    };
-  };
+import Map from '../components/map/Map.vue'
+import { onMounted, ref } from 'vue'
+import type { Event } from '@/types/event'
+import SearchBar from '@/components/SearchBar.vue'
+import EventList from '@/components/events/EventList.vue'
+import { fetchEvents } from '../api/ticketmasterApi'
+import type { Page } from '../types/page'
+import Pagination from '@/components/Pagination.vue'
+import ErrorAlert from '@/components/ErrorAlert.vue'
+
+const eventDetails = ref<Event | null>(null)
+const events = ref<Event[]>([])
+const page = ref<Page>({
+  size: 0,
+  totalElements: 0,
+  totalPages: 0,
+  number: 0
+})
+const keyword = ref<string | undefined>('')
+const currentPage = ref(1)
+const totalPages = ref<number>(1)
+const errorMessage = ref<string | null>(null)
+
+const isSelected = (event: Event) => {
+  eventDetails.value = event
 }
 
-const events = ref<Event[]>([]);
+onMounted(async () => {
+  const response = await fetchEvents()
 
-const fetchEventData = () => {
-  fetch(
-    "https://app.ticketmaster.com/discovery/v2/events.json?keyword=yoga&source=universe&apikey=4efAJ7EnckUfcbAT82O2UvSHqbUaLyGs"
-  )
-    .then(
-      (res: Response) =>
-        res.json() as Promise<{ _embedded: { events: Event[] } }>
-    )
-    .then((data: { _embedded: { events: Event[] } }) => {
-      events.value = data._embedded.events;
-    })
-    .catch((error: Error) => {
-      console.error("Error fetching events:", error);
-    });
-};
+  events.value = response._embedded.events
+  page.value = response.page
+})
 
-onMounted(() => {
-  fetchEventData();
-});
+const searchQuery = async (query: string) => {
+  try {
+    const response = await fetchEvents(query)
+    events.value = response._embedded.events
+    page.value = response.page
+    keyword.value = query
+    errorMessage.value = null
+  } catch (error: any) {
+    errorMessage.value = 'Oops ! aucun event trouvé'
+  }
+}
+
+const fetchNextPage = async () => {
+  const nextPageNumber = currentPage.value + 1
+  const response = await fetchEvents(keyword?.value, nextPageNumber)
+  currentPage.value = response.page.number
+  totalPages.value = response.page.totalPages
+  events.value = response._embedded.events
+}
+
+const fetchPreviousPage = async () => {
+  const nextPageNumber = currentPage.value - 1
+  const response = await fetchEvents(keyword?.value, nextPageNumber)
+  currentPage.value = response.page.number
+  totalPages.value = response.page.totalPages
+  events.value = response._embedded.events
+}
+
+
 </script>
 
 <style scoped>
