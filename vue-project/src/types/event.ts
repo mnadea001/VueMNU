@@ -19,8 +19,8 @@ export interface Event {
       line1: string;
     };
     location: {
-      longitude: string;
-      latitude: string;
+      longitude: number;
+      latitude: number;
     };
     state: {
       name: string;
