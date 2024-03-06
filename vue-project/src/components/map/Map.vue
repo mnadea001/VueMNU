@@ -1,6 +1,5 @@
 <template>
   <div id="map">
-    // @ts-ignore 
     <l-map :zoom="props.zoom" :center="center">
       <l-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"></l-tile-layer>
       <l-marker-cluster-group v-if="!props.event">
@@ -53,6 +52,7 @@ import type { Event } from '../../types/event'
 import MapPopup from '../map/MapPopup.vue'
 import { defineProps } from 'vue'
 
+    // @ts-ignore
 const props = defineProps({
   event: {
     type: Object as () => Event | null,
