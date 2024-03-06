@@ -10,20 +10,20 @@
             :lat-lng="[Number(event.place.location.latitude), Number(event.place.location.longitude)]"
             @click="$emit('onSelected', event)"
           >
-          <l-popup :options="popUpOptions">
+            <l-popup :options="popUpOptions">
               <MapPopup :event="event" />
             </l-popup>
           </l-marker>
         </template>
       </l-marker-cluster-group>
-      <l-marker v-else :lat-lng="[Number(props.event.place.location?.latitude), Number(props.event.place.location?.longitude)]" :icon="customMarker" >        <l-popup :options="popUpOptions">
+      <l-marker v-else-if="props.event.place.location?.latitude && props.event.place.location?.longitude" :lat-lng="[Number(props.event.place.location.latitude), Number(props.event.place.location.longitude)]" :icon="customMarker">
+        <l-popup :options="popUpOptions">
           <MapPopup :event="props.event" />
         </l-popup>
       </l-marker>
     </l-map>
   </div>
 </template>
-
 
 <script setup lang="ts">
 import L from 'leaflet'
@@ -53,14 +53,6 @@ const props = defineProps({
     type: Array as () => number[] | null,
     required: false,
     default: () => [36.174465, -86.76796]
-  },
-  latitude: {
-    type: Number,
-    required: false
-  },
-  longitude: {
-    type: Number,
-    required: false
   }
 })
 
@@ -82,7 +74,6 @@ const customMarker = L.icon({
   popupAnchor: [-3, -76]
 })
 </script>
-
 
 <style scoped>
 #map {
