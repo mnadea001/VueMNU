@@ -1,6 +1,6 @@
 <template>
   <div id="map">
-    // @ts-ignore { // TypeScript type checking is disabled for this block
+    // @ts-ignore 
     <l-map :zoom="props.zoom" :center="center">
       <l-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"></l-tile-layer>
       <l-marker-cluster-group v-if="!props.event">
@@ -39,7 +39,7 @@
         </l-popup>
       </l-marker>
     </l-map>
-  }
+
   </div>
 </template>
 
