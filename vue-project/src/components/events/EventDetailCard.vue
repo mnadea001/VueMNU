@@ -1,6 +1,5 @@
 <template>
   <div
-    v-if="event"
     class="font-bold flex justify-between items-center mt-5 p-5 bg-teal bg-opacity-40 rounded-t-xl"
   >
     <div>
@@ -10,7 +9,6 @@
     </div>
   </div>
   <div
-    v-if="event"
     class="grid grid-cols-2 gap-10 p-10 bg-teal rounded-b-lg bg-opacity-15 text-base event-detail-card"
   >
     <div>
@@ -75,7 +73,6 @@
       <p>{{ eventLatitude }}, {{ eventLongitude }}</p>
 
       <Map
-        v-if="location"
         class="py-5"
         :zoom="14"
         :event="event"

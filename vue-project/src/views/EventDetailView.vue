@@ -9,7 +9,7 @@
         Back
       </button>
     </div>
-    <EventDetailCard v-if="event" :event="event" />
+    <EventDetailCard :event="event" />
   </div>
 </template>
 
@@ -17,7 +17,6 @@
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { fetchEventById } from '@/api/ticketmasterApi'
-import IconTicket from '@/components/icons/IconTicket.vue'
 import IconPrevious from '@/components/icons/IconPrevious.vue'
 import EventDetailCard from '@/components/events/EventDetailCard.vue'
 import type { Event } from '@/types/event'
