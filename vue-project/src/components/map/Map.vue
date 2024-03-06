@@ -7,7 +7,7 @@
           <l-marker
             v-if="event.place.location?.latitude && event.place.location?.longitude"
             :icon="customMarker"
-            :lat-lng="[event.place.location?.latitude, event.place.location?.longitude]"
+            :lat-lng="[Number(event.place.location.latitude), Number(event.place.location.longitude)]"
             @click="$emit('onSelected', event)"
           >
           <l-popup :options="popUpOptions">
@@ -16,8 +16,7 @@
           </l-marker>
         </template>
       </l-marker-cluster-group>
-      <l-marker v-else :lat-lng="[props.event.place.location?.latitude, props.event.place.location?.longitude]" :icon="customMarker" >
-        <l-popup :options="popUpOptions">
+      <l-marker v-else :lat-lng="[Number(props.event.place.location?.latitude), Number(props.event.place.location?.longitude)]" :icon="customMarker" >        <l-popup :options="popUpOptions">
           <MapPopup :event="props.event" />
         </l-popup>
       </l-marker>
