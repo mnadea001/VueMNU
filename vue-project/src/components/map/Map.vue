@@ -47,19 +47,21 @@ const props = defineProps({
   },
   zoom: {
     type: Number,
-    default: 8
+    default: 8,
+    required: false
   },
   center: {
     type: Array as () => number[],
+    required: false,
     default: () => [36.174465, -86.76796]
   },
   latitude: {
     type: Number,
-    required: true
+    required: false
   },
   longitude: {
     type: Number,
-    required: true
+    required: false
   }
 })
 
