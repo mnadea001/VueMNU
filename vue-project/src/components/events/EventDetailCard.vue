@@ -73,6 +73,7 @@
       <p>{{ eventLatitude }}, {{ eventLongitude }}</p>
 
       <Map
+      v-if="location"
         class="py-5"
         :zoom="14"
         :event="event"
