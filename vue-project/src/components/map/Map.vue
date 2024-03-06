@@ -1,10 +1,11 @@
 <template>
   <div id="map">
+    // @ts-ignore { // TypeScript type checking is disabled for this block
     <l-map :zoom="props.zoom" :center="center">
       <l-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"></l-tile-layer>
       <l-marker-cluster-group v-if="!props.event">
         <template v-for="event in props.events" :key="event.id">
-          // @ts-ignore { // TypeScript type checking is disabled for this block
+      
           <l-marker
             v-if="event.place.location?.latitude && event.place.location?.longitude"
             :icon="customMarker"
@@ -18,7 +19,7 @@
               <MapPopup :event="event" />
             </l-popup>
           </l-marker>
-          }
+   
         </template>
       </l-marker-cluster-group>
 
@@ -38,6 +39,7 @@
         </l-popup>
       </l-marker>
     </l-map>
+  }
   </div>
 </template>
 
