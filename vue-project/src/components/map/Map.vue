@@ -4,9 +4,8 @@
       <l-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"></l-tile-layer>
       <l-marker-cluster-group v-if="!props.event">
         <template v-for="event in props.events" :key="event.id">
-          // @ts-ignore
           <l-marker
-            v-if="event.place.location?.latitude && event.place.location?.longitude"
+            v-if="event.place.location?.latitude !== null && event.place.location?.longitude !== null"
             :icon="customMarker"
             :lat-lng="[Number(event.place.location.latitude), Number(event.place.location.longitude)]"
             @click="$emit('onSelected', event)"
@@ -18,7 +17,7 @@
         </template>
       </l-marker-cluster-group>
       
-      <l-marker v-else-if="props.event.place.location?.latitude && props.event.place.location?.longitude" :lat-lng="[Number(props.event.place.location.latitude), Number(props.event.place.location.longitude)]" :icon="customMarker">
+      <l-marker v-else-if="props.event.place.location?.latitude !== null && props.event.place.location?.longitude !== null" :lat-lng="[Number(props.event.place.location.latitude), Number(props.event.place.location.longitude)]" :icon="customMarker">
         <l-popup :options="popUpOptions">
           <MapPopup :event="props.event" />
         </l-popup>
@@ -26,6 +25,7 @@
     </l-map>
   </div>
 </template>
+
 
 <script setup lang="ts">
 import L from 'leaflet'
