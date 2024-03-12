@@ -58,4 +58,20 @@ nav a {
 nav a:first-of-type {
   border: 0;
 }
+
+/*  règles CSS pour les écrans mobile */
+@media screen and (max-width: 600px) {
+  .wrapper {
+    flex-direction: column; /* Les éléments s'affichent les uns en dessous des autres */
+  }
+
+  nav {
+    padding: 1rem; /* Réduire le rembourrage pour les liens sur les écrans mobiles */
+  }
+
+  nav a {
+    display: block; /* Afficher les liens comme des blocs pour qu'ils occupent la largeur totale */
+    padding: 0.5rem 0; /* Espacement supplémentaire entre les liens */
+  }
+}
 </style>
