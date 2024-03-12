@@ -106,7 +106,7 @@ const eventState = place?.state?.stateCode || 'State Code undefined'
 const eventAddress = place?.address?.line1 || 'Address undefined'
 const eventLatitude = Number(place?.location?.latitude) || 0 // Provide a default value if latitude is undefined or not a number
 const eventLongitude = Number(place?.location?.longitude) || 0 // Provide a default value if longitude is undefined or not a number
-const location = [eventLatitude, eventLongitude]
+const location: [number, number] = [eventLatitude, eventLongitude]
 
 const isDropdownOpen = ref(false)
 
