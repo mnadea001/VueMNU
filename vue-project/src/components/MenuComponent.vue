@@ -29,6 +29,7 @@ const handleClose = () => {
         </div>
         <div class="modal-body">
           <slot name="content">
+              <div class="nav-items">
             <RouterLink  @click.native="handleClose" to="/" class="nav-item">Home</RouterLink>
             <RouterLink @click.native="handleClose" to="/index" class="nav-item">Index</RouterLink>
             <RouterLink @click.native="handleClose" to="/about" class="nav-item">Philosophy</RouterLink>
@@ -38,6 +39,7 @@ const handleClose = () => {
             <RouterLink @click.native="handleClose" to="/yoga" class="nav-item">Yoga</RouterLink>
             <RouterLink @click.native="handleClose" to="/events" class="nav-item">Events</RouterLink>
             <RouterLink @click.native="handleClose" to="/source" class="nav-item">About</RouterLink>
+                  </div>
           </slot>
         </div>
       </div>
@@ -83,7 +85,10 @@ const handleClose = () => {
   font-family: "Anton", sans-serif;
   font-size: 3em;
 }
-
+.nav-items {
+  display: flex;
+  flex-direction: column;
+}
 .nav-item {
   padding: 10px;
   font-family: "Anton", sans-serif;
