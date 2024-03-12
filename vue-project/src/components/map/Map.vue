@@ -68,7 +68,7 @@ const props = defineProps({
     required: false
   },
   center: {
-    type: Array as () => number[] | null,
+    type: Array as () => number[],
     default: () => [36.174465, -86.76796]
   }
 })
