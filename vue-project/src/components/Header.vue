@@ -3,12 +3,14 @@
     <div class="wrapper">
       <span class="flex">
         <button @click="toggleDark()" class="py-2 px-4 bg-black border rounded-md dark:bg-white">
-          <img :src="darkModeIcon" class="w-10 h-10" />
+          <img :src="darkModeIcon" class="w-5 h-5" />
         </button>
         <RouterLink to="/" class="home-link">home</RouterLink>
       </span>
-      <button @click="openModal">
-        <img :src="burgerIcon" class="w-10 h-10" /> MENU
+
+      <button class="flex" @click="openModal">
+        <p class="menu-link">menu</p>
+        <img :src="burgerIcon" class="w-7 h-7" />
       </button>
     </div>
   </header>
@@ -16,36 +18,35 @@
 </template>
 
 <script setup lang="ts">
-import { useDark, useToggle } from "@vueuse/core";
-import { ref, computed } from "vue";
-import blackBurger from "../assets/burger.svg";
-import whiteBurger from "../assets/white-burger.svg";
-import moon from "../assets/moon.png";
-import sun from "../assets/sun.svg";
+import { useDark, useToggle } from '@vueuse/core'
+import { ref, computed } from 'vue'
+import blackBurger from '../assets/burger.svg'
+import whiteBurger from '../assets/white-burger.svg'
+import moon from '../assets/moon.png'
+import sun from '../assets/sun.svg'
 
+import MenuComponent from '../components/MenuComponent.vue'
 
-import MenuComponent from "../components/MenuComponent.vue";
+const isDark = useDark()
+const toggleDark = useToggle(isDark)
 
-const isDark = useDark();
-const toggleDark = useToggle(isDark);
-
-const isModalOpened = ref(false);
+const isModalOpened = ref(false)
 
 const openModal = () => {
-  isModalOpened.value = true;
-};
+  isModalOpened.value = true
+}
 
 const closeModal = () => {
-  isModalOpened.value = false;
-};
+  isModalOpened.value = false
+}
 
 const darkModeIcon = computed(() => {
-  return isDark.value ? moon : sun;
-});
+  return isDark.value ? moon : sun
+})
 
 const burgerIcon = computed(() => {
-  return isDark.value ? blackBurger : whiteBurger;
-});
+  return isDark.value ? blackBurger : whiteBurger
+})
 </script>
 
 <style scoped>
@@ -67,9 +68,10 @@ header {
   padding-right: calc(var(--section-gap) / 2);
 }
 
-.home-link {
-  font-family: "Caprasimo", sans-serif;
+.home-link, .menu-link {
+  font-family: 'Caprasimo', sans-serif;
   font-size: 1.5em;
   padding-left: 10px;
+  padding-right: 10px;
 }
 </style>

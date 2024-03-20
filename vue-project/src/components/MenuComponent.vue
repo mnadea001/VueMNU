@@ -23,7 +23,7 @@ const handleClose = () => {
         <div class="modal-header">
           <slot name="header" class="text-3xl font-semibold text-center my-4">
             <div>
-              <button @click.stop="emit('modal-close')">FERMER</button>
+              <button class="close-btn" @click.stop="emit('modal-close')">fermer</button>
             </div>
           </slot>
         </div>
@@ -47,6 +47,7 @@ const handleClose = () => {
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 
 .modal-mask {
   position: fixed;
@@ -54,13 +55,12 @@ const handleClose = () => {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.734);
 }
 .modal-container {
-  width: 70%;
-  height: 40vh;
-  margin: 150px auto;
+  width: 100%;
+  height: 100vh;
   padding: 20px 30px;
   background-color: #fff;
   border-radius: 2px;
@@ -88,5 +88,18 @@ const handleClose = () => {
   padding: 10px;
   font-family: "Anton", sans-serif;
   font-size: 1.5rem;
+}
+
+.close-btn {
+  font-family: 'Caprasimo', sans-serif;
+  font-size: 1.5em;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+@media screen and (max-width: 768px) {
+  .modal-body {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 </style>
