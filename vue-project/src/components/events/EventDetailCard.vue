@@ -72,13 +72,13 @@
       <p>{{ eventAddress }}</p>
       <p>{{ eventLatitude }}, {{ eventLongitude }}</p>
 
-      <Map
+      <!-- <Map
       v-if="location"
         class="py-5"
         :zoom="14"
         :event="event"
         :center="location"
-      />
+      /> -->
     </div>
   </div>
 </template>
@@ -90,7 +90,7 @@ import IconMarker from '@/components/icons/IconMarker.vue'
 import { formatDate } from '@/filters/formatDate'
 import { formatTime } from '@/filters/formatTime'
 import { defineProps, ref } from 'vue'
-import Map from '@/components/map/Map.vue'
+// import Map from '@/components/map/Map.vue'
 
 const props = defineProps<{
   event: Event

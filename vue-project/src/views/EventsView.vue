@@ -8,12 +8,12 @@
         :fetch-previous-page="fetchPreviousPage"
         :current-page="currentPage" />
     </div>
-<Map @selected="isSelected" :zoom="3" :events="events" />
+<!-- <Map @selected="isSelected" :zoom="3" :events="events" /> -->
   </main>
 </template>
 
 <script setup lang="ts">
-import Map from '../components/map/Map.vue'
+// import Map from '../components/map/Map.vue'
 import EventList from '@/components/events/EventList.vue'
 import Pagination from '@/components/Pagination.vue'
 import ErrorAlert from '@/components/ErrorAlert.vue'
@@ -34,9 +34,9 @@ const currentPage = ref<number>(1)
 const totalPages = ref<number>(1)
 const errorMessage = ref<string | null>(null)
 
-const isSelected = (event: Event) => {
-  eventDetails.value = event
-}
+// const isSelected = (event: Event) => {
+//   eventDetails.value = event
+// }
 
 onMounted(async () => {
   await fetchEventData(currentPage.value)
