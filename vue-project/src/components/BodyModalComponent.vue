@@ -19,16 +19,16 @@ onClickOutside(target, () => emit("modal-close"));
         <div class="modal-header">
           <slot name="header" class="text-3xl font-semibold text-center my-4">
             <div>
-              <button @click.stop="emit('modal-close')">CLOSE</button>
+              <button class="close-btn" @click.stop="emit('modal-close')">close</button>
             </div>
           </slot>
         </div>
         <div class="modal-body">
           <slot name="content">
-            <RouterLink to="/food" class="btn-home-start font-bold mt-3"
+            <RouterLink to="/food" class="btn-home-start mt-3"
               >FOOD</RouterLink
             >
-            <RouterLink to="/yoga" class="btn-home-start font-bold mt-3"
+            <RouterLink to="/yoga" class="btn-home-start mt-3"
               >YOGA</RouterLink
             >
           </slot>
@@ -40,6 +40,7 @@ onClickOutside(target, () => emit("modal-close"));
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 
 .modal-mask {
   position: fixed;
@@ -73,5 +74,25 @@ margin-top: 50px;
   margin-left: 20px;
   font-family: "Anton", sans-serif;
   font-size: 3em;
+}
+.close-btn {
+  font-family: 'Caprasimo', sans-serif;
+  font-size: 1.5em;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+@media screen and (max-width: 768px) {
+  .modal-container {
+    width: 80%;
+    height: 80vh;
+    margin: 150px auto 20px;
+  }
+  .modal-body {
+    flex-direction: column;
+    align-items: center;
+  }
+  .btn-home-start {
+    margin: 10px 0;
+  }
 }
 </style>

@@ -20,17 +20,23 @@
 import { RouterLink } from "vue-router";
 </script>
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+
 .wrapper {
-  width: 100vw;
+  width: 80vw;
   display: flex;
   flex-direction: row;
   background-color: orange;
+  justify-content: center;
+  border-radius: 10px;
 }
 
 footer {
   line-height: 1.5;
   width: 100vw;
-  height: 50px;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
 }
 nav {
   width: 100%;
@@ -42,7 +48,7 @@ nav {
 }
 
 nav a.router-link-exact-active {
-  color: var(--color-text);
+  text-decoration: underline;
 }
 
 nav a.router-link-exact-active:hover {
@@ -53,9 +59,19 @@ nav a {
   display: inline-block;
   padding: 0 1rem;
   color: black;
+  font-family: 'Caprasimo', sans-serif;
+  font-size: 1em;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 nav a:first-of-type {
   border: 0;
+}
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 </style>

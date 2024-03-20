@@ -16,13 +16,13 @@ defineComponent({
 <template>
   <main>
     <div class="home-box">
-      <h1 class="text-3xl font-semibold text-center my-4">WELCOME NEW YOGI</h1>
+      <h1 class="text-3xl text-center my-4">Welcome new yogi</h1>
 
       <div class="image-container">
         <img :src="meditateImageSrc" class="w-80 h-80" />
 
-        <h2 class="text-3xl font-semibold text-center my-4">
-          YOGA IS THE UNION OF BODY AND MIND
+        <h2 class="text-3xl text-center my-4">
+          Yoga is the union of body & mind
         </h2>
         <v-typical
           class="blink"
@@ -58,6 +58,9 @@ h2 {
   font-family: "Anton", sans-serif;
 }
 
+.home-box {
+  padding: 50px;
+}
 .image-container {
   display: grid;
   place-items: center;

@@ -23,7 +23,7 @@ const handleClose = () => {
         <div class="modal-header">
           <slot name="header" class="text-3xl font-semibold text-center my-4">
             <div>
-              <button class="close-btn" @click.stop="emit('modal-close')">fermer</button>
+              <button class="close-btn" @click.stop="emit('modal-close')">close</button>
             </div>
           </slot>
         </div>

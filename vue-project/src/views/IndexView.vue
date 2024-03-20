@@ -55,8 +55,8 @@ function goBack() {
       </button>
     </div>
     <div class="home-box">
-      <h1 class="text-3xl font-semibold text-center my-4">
-        ELEVATE YOURSELF WITH YOGA
+      <h1 class="text-3xl text-center my-4">
+        Elevate yourself with yoga
       </h1>
       <div class="title-container">
         <v-typical
@@ -74,9 +74,11 @@ function goBack() {
         ></v-typical>
       </div>
       <div class="image-btn">
-        <button class="text-btn" @click="openModal1">BODY</button>
+        <button class="text-btn" @click="openModal1">  <p class="hover:text-orange">BODY</p></button>
         <img :src="elevateImageSrc" class="w-80 h-80 rounded-full" />
-        <button class="text-btn" @click="openModal2">MIND</button>
+        <button class="text-btn" @click="openModal2">
+          <p class="hover:text-orange">MIND</p>
+          </button>
       </div>
       <MindModalComponent :isOpen="isModalOpened2" @modal-close="closeModal2" />
       <BodyModalComponent :isOpen="isModalOpened1" @modal-close="closeModal1" />
@@ -109,7 +111,9 @@ h2,
 .content-btn {
   margin-left: 80px;
 }
-
+.text-btn p:hover {
+  color: orange;
+}
 .image-btn {
   display: flex;
   flex-direction: row;
