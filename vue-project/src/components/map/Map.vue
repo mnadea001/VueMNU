@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div id="map">
     <l-map :zoom="props.zoom" :center="center">
       <l-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"></l-tile-layer>
@@ -97,4 +97,4 @@ const customMarker = L.icon({
   width: 600px;
   height: 800px;
 }
-</style>
+</style> -->
