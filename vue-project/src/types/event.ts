@@ -73,7 +73,7 @@ export interface Event {
   };
 }
 
-interface Image {
+export interface Image {
   ratio: string;
   url: string;
   width: number;

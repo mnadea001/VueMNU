@@ -91,7 +91,6 @@ import { formatDate } from '@/filters/formatDate'
 import { formatTime } from '@/filters/formatTime'
 import { defineProps, ref } from 'vue'
 // import Map from '@/components/map/Map.vue'
-
 const props = defineProps<{
   event: Event
 }>()

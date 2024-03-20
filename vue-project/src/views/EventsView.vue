@@ -12,58 +12,73 @@
   </main>
 </template>
 
-<script setup lang="ts">
-// import Map from '../components/map/Map.vue'
+<script lang="ts">
+import { defineComponent, ref, onMounted } from 'vue'
 import EventList from '@/components/events/EventList.vue'
 import Pagination from '@/components/Pagination.vue'
 import ErrorAlert from '@/components/ErrorAlert.vue'
-import { ref, onMounted } from 'vue'
 import { fetchEvents } from '../api/ticketmasterApi'
 import type { Event } from '@/types/event'
 import type { Page } from '@/types/ page'
+export default defineComponent({
+  name: 'YourComponentName',
+  components: {
+    EventList,
+    Pagination,
+    ErrorAlert
+  },
+  setup() {
+    const eventDetails = ref<Event | null>(null)
+    const events = ref<Event[]>([])
+    const page = ref<Page>({
+      size: 0,
+      totalElements: 0,
+      totalPages: 0,
+      number: 0
+    })
+    const currentPage = ref<number>(1)
+    const errorMessage = ref<string | null>(null)
 
-const eventDetails = ref<Event | null>(null)
-const events = ref<Event[]>([])
-const page = ref<Page>({
-  size: 0,
-  totalElements: 0,
-  totalPages: 0,
-  number: 0
-})
-const currentPage = ref<number>(1)
-const totalPages = ref<number>(1)
-const errorMessage = ref<string | null>(null)
+    const fetchEventData = async (pageNumber: number): Promise<void> => {
+      try {
+        const response = await fetchEvents(pageNumber)
+        events.value = response._embedded.events
+        page.value = response.page
+      } catch (error) {
+        errorMessage.value = 'Error fetching events data'
+      }
+    }
 
-// const isSelected = (event: Event) => {
-//   eventDetails.value = event
-// }
+    const fetchNextPage = async (): Promise<void> => {
+      const nextPageNumber = currentPage.value + 1
+      await fetchEventData(nextPageNumber)
+      currentPage.value = nextPageNumber
+    }
 
-onMounted(async () => {
-  await fetchEventData(currentPage.value)
-})
+    const fetchPreviousPage = async (): Promise<void> => {
+      const previousPageNumber = currentPage.value - 1
+      await fetchEventData(previousPageNumber)
+      currentPage.value = previousPageNumber
+    }
 
-const fetchEventData = async (pageNumber: number) => {
-  try {
-    const response = await fetchEvents(pageNumber)
-    events.value = response._embedded.events
-    page.value = response.page
-  } catch (error) {
-    errorMessage.value = 'Error fetching events data'
+    onMounted(async () => {
+      await fetchEventData(currentPage.value)
+    })
+
+    return {
+      eventDetails,
+      events,
+      page,
+      currentPage,
+      errorMessage,
+      fetchNextPage,
+      fetchPreviousPage
+    }
   }
-}
-
-const fetchNextPage = async () => {
-  const nextPageNumber = currentPage.value + 1
-  await fetchEventData(nextPageNumber)
-  currentPage.value = nextPageNumber
-}
-
-const fetchPreviousPage = async () => {
-  const previousPageNumber = currentPage.value - 1
-  await fetchEventData(previousPageNumber)
-  currentPage.value = previousPageNumber
-}
+})
 </script>
+
+
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
