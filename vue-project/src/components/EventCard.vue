@@ -1,6 +1,6 @@
 <template>
-    <div class="event-card">
-      <div class="event-card-content bg-gray-700 dark:bg-white">
+    <div class="event-card ">
+      <div class="event-card-content  rounded-lg  bg-gray-700 dark:bg-white">
         <p class="text-3xl font-semibold mb-4">{{ event.name }}</p>
         <div class="flex justify-between items-center mb-4">
           <div>

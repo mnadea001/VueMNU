@@ -7,7 +7,7 @@
           <p class="text-3xl font-semibold text-center mb-4">
             List of related events
           </p>
-          <div class="event-card">
+          <div class="event-card ">
             <EventCard v-for="event in events" :key="event.id" :event="event" />
           </div>
         </div>
