@@ -13,7 +13,6 @@
         </button>
         <h1 class="text-gray-500 text-center">{{ yoga.category_name }}</h1>
         <div class="mt-4">
-          <div class="text-lg font-medium text-center ">Description:</div>
           <div class="text-gray-500 text-center ">{{ yoga.category_description }}</div>
         </div>
         <div class="content">

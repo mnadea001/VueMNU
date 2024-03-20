@@ -8,8 +8,9 @@
             <p>Date: {{ event.dates.start.localDate }}</p>
           </div>
           <div class="link-event flex justify-center items-center">
-            <a :href="event.url" target="_blank">Visit event link</a>
-          </div>
+          <a :href="event.url" target="_blank" class="visit-link">Check more</a>
+          <img :src="vector" class="w-10 h-10" />
+        </div>
         </div>
   
         <button
@@ -33,6 +34,8 @@
               d="m1 1 4 4 4-4"
             />
           </svg>
+       
+
         </button>
   
         <!-- Dropdown menu -->
@@ -49,7 +52,7 @@
   
   <script setup lang="ts">
   import { defineProps, ref } from "vue";
-  
+  import vector from "../assets/Vector2.png";
   interface Event {
     id: string;
     name: string;
@@ -87,21 +90,23 @@
   }
   
   .link-event {
-    background-color: orange;
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 10px;
-  }
-  
-  .link-event a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-  }
+  position: relative;
+  text-align: center;
+}
+
+.visit-link {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.link-event img {
+  width: 140px;
+  height: 140px;
+}
   </style>
   

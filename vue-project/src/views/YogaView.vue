@@ -1,54 +1,52 @@
 <script setup lang="ts">
-import { onMounted, ref, computed } from "vue";
-import { RouterLink, useRouter } from "vue-router";
-import CategoryCard from "../components/CategoryCard.vue";
-import yogaImg from "../assets/yoga.gif";
-import VTypical from "vue-typical";
-import backIcon from "../assets/back.svg";
-import whiteBack from "../assets/white-back.png";
-import { useDark } from "@vueuse/core";
+import { onMounted, ref, computed } from 'vue'
+import { RouterLink, useRouter } from 'vue-router'
+import CategoryCard from '../components/CategoryCard.vue'
+import yogaImg from '../assets/yoga.gif'
+import VTypical from 'vue-typical'
+import backIcon from '../assets/back.svg'
+import whiteBack from '../assets/white-back.png'
+import { useDark } from '@vueuse/core'
 
-const router = useRouter();
-const isDark = useDark();
+const router = useRouter()
+const isDark = useDark()
 const arrowIcon = computed(() => {
-  return isDark.value ? backIcon : whiteBack;
-});
+  return isDark.value ? backIcon : whiteBack
+})
 
 function goBack() {
-  router.go(-1);
+  router.go(-1)
 }
 
-const yogaImageSrc: string = yogaImg;
+const yogaImageSrc: string = yogaImg
 interface Pose {
-  pose_name: string;
+  pose_name: string
 }
 
 interface Yoga {
-  id: number;
-  category_name: string;
-  category_description: string;
-  poses: Pose[];
+  id: number
+  category_name: string
+  category_description: string
+  poses: Pose[]
 }
 
-const yogas = ref<Yoga[]>([]);
+const yogas = ref<Yoga[]>([])
 
 onMounted(() => {
-
-  fetch("https://yoga-api-nzy4.onrender.com/v1/categories")
-  .then((res: Response) => res.json() as Promise<{ yogas: Yoga[] }>)
-      // @ts-ignore
+  fetch('https://yoga-api-nzy4.onrender.com/v1/categories')
+    .then((res: Response) => res.json() as Promise<{ yogas: Yoga[] }>)
+    // @ts-ignore
     .then((data: Yoga[]) => {
       // console.log(data);
-      yogas.value = data;
+      yogas.value = data
     })
     .catch((error: Error) => {
-       if (error instanceof Error) {
-      // console.error('Error fetching yoga categories:', error);
-        }
-    });
-});
+      if (error instanceof Error) {
+        // console.error('Error fetching yoga categories:', error);
+      }
+    })
+})
 </script>
-
 
 <template>
   <main class="dark:bg-white">
@@ -60,7 +58,7 @@ onMounted(() => {
         <img :src="arrowIcon" class="w-10 h-10" /> Back
       </button>
     </div>
-    <h1 class="text-3xl font-semibold text-center my-4">YOGA IS ART</h1>
+    <h1 class="text-3xl text-center my-4">Yoga is art</h1>
     <div class="content">
       <v-typical
         class="blink"
@@ -70,7 +68,7 @@ onMounted(() => {
           'DISCOVER DIFFERENT',
           500,
           'DISCOVER DIFFERENT YOGA STYLES !',
-          1000,
+          1000
         ]"
         :loop="Infinity"
         :wrapper="'h2'"
@@ -78,31 +76,27 @@ onMounted(() => {
       <img :src="yogaImageSrc" class="w-80 h-80 rounded-full mt-4" />
     </div>
     <div class="slider-yoga">
-    <p class="my-4 mr-4">Scroll vertically to see all yoga styles: </p>
-    <div class="container my-4">
-      <div class="category-card my-4">
-        <RouterLink
-          v-for="(yoga, index) in yogas"
-          :key="index"
-          :to="`/category/${yoga.id}`"
-        >
-          <CategoryCard :categoryName="yoga.category_name" />
-        </RouterLink>
+      <p class="my-4 ms-4">Scroll vertically to see all yoga styles:</p>
+      <div class="container my-4">
+        <div class="category-card my-4">
+          <RouterLink v-for="(yoga, index) in yogas" :key="index" :to="`/category/${yoga.id}`">
+            <CategoryCard :categoryName="yoga.category_name" />
+          </RouterLink>
+        </div>
       </div>
     </div>
-  </div>
   </main>
 </template>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 main {
   max-width: 100vw;
 }
 
 h1 {
-  font-family: "Anton", sans-serif;
+  font-family: 'Anton', sans-serif;
 }
 .content {
   display: flex;
@@ -118,6 +112,7 @@ h1 {
 .slider-yoga {
   margin-right: 30px;
   margin-left: 30px;
+  margin-bottom: 30px;
 }
 .container {
   width: 100%;

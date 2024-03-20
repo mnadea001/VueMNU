@@ -1,6 +1,6 @@
 <template>
   <main>
-    <div class="dark:bg-white">
+    <div class="dark:bg-white main-content">
       <div class="content-btn">
         <button
           @click="goBack"
@@ -10,13 +10,13 @@
         </button>
       </div>
       <div class="content">
-        <h1 class="text-3xl font-semibold text-center my-4">PHILOSOPHY</h1>
+        <h1 class="text-3xl text-center my-4">Philosophy</h1>
 
         <div class="content-img">
           <img :src="chillImageSrc" class="w-80 h-80 rounded-full mt-4" />
         </div>
 
-        <h2 class="text-3xl font-semibold text-center my-4">
+        <h2 class="text-xl text-center my-4">
           Introduction to Yoga
         </h2>
         <span class="text-center content-span">
@@ -29,7 +29,7 @@
           </p>
         </span>
 
-        <h2 class="text-3xl font-semibold text-center my-4">Origin</h2>
+        <h2 class="text-xl text-center my-4">Origin</h2>
         <span class="text-center content-span">
           <p>
             The origins of yoga can be traced back to ancient texts known as the
@@ -40,7 +40,7 @@
             different aspects of the practice.
           </p>
         </span>
-        <h2 class="text-3xl font-semibold text-center my-4">Definition</h2>
+        <h2 class="text-xl text-center my-4">Definition</h2>
         <span class="text-center content-span">
           <p>
             Yoga, derived from the Sanskrit word "yuj," means to unite or join.
@@ -50,7 +50,7 @@
             balance and inner peace.
           </p>
         </span>
-        <h2 class="text-3xl font-semibold text-center my-4">Benefits</h2>
+        <h2 class="text-xl text-center my-4">Benefits</h2>
         <span class="text-center content-span">
           <p>
             The practice of yoga offers a myriad of benefits for both the body
@@ -64,7 +64,7 @@
           </p>
         </span>
         <span class="text-center content-span">
-          <p>
+          <p class="text-xl">
             In summary, yoga is a profound and transformative practice that
             promotes physical health, mental clarity, and spiritual growth. Its
             rich history, diverse teachings, and numerous benefits make it a
@@ -100,6 +100,12 @@ function goBack() {
 main {
   width: 100vw;
   height: 100%;
+
+}
+
+.main-content {
+  justify-content: center;
+  display: flex;
 }
 
 h1,
@@ -107,9 +113,7 @@ h2 {
   font-family: "Anton", sans-serif;
 }
 
-.content-btn {
-  margin-left: 80px;
-}
+
 .content-img {
   display: flex;
   flex-direction: column;
@@ -121,6 +125,7 @@ h2 {
   padding: 15px;
   justify-content: center;
   align-items: center;
+  width: 70%;
 }
 
 .content-span p {

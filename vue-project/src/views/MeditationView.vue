@@ -37,8 +37,8 @@ function goBack() {
       </button>
     </div>
     <div class="home-box">
-      <h1 class="text-3xl font-semibold text-center my-4">
-        MEDITATION TO CALM THE MIND
+      <h1 class="text-3xl text-center my-4">
+        Meditation to calm the mind
       </h1>
       <div class="title-container">
         <v-typical

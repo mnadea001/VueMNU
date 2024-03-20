@@ -29,7 +29,7 @@ onClickOutside(target, () => emit("modal-close"));
               >FOOD</RouterLink
             >
             <RouterLink to="/yoga" class="btn-home-start mt-3"
-              >YOGA</RouterLink
+              >ASANAS</RouterLink
             >
           </slot>
         </div>

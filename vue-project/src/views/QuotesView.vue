@@ -8,13 +8,13 @@
         <img :src="arrowIcon" class="w-10 h-10 dark:color-white" /> Back
       </button>
     </div>
-    <h1 class="text-3xl font-semibold text-center my-4">MENTAL IS VITAL</h1>
+    <h1 class="text-3xl text-center my-4">Mental is vital</h1>
     <div class="content">
       <img :src="quoteImageSrc" class="w-80 h-80 rounded-full mt-4" />
     </div>
     <div class="quote-card my-4">
-      <p class="text-3xl font-semibold text-center my-4">{{ quote }}</p>
-      <p class="text-3xl font-semibold text-center my-4">- {{ author }}</p>
+      <p class="text-2xl font-semibold text-center my-4">{{ quote }}</p>
+      <p class="text-xl font-semibold text-center my-4">- {{ author }}</p>
     </div>
   </main>
 </template>

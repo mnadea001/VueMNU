@@ -33,12 +33,13 @@
   </script>
 
   <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 
 
 h3 {
-  font-family: "Anton", sans-serif;
+  font-family: "Caprasimo", sans-serif;
   margin-right: 10px;
+  font-size: 1.2em;
 }
 .pose-card {
     cursor: pointer;
@@ -52,5 +53,6 @@ h3 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 5px;
   }
   </style>

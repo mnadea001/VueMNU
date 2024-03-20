@@ -7,8 +7,8 @@
       >
         <img :src="arrowIcon" class="w-10 h-10" /> Back
       </button>
-      <h1 class="text-3xl font-semibold text-center my-4">VEGGIE IS GOOD</h1>
-      <h4 class="text-3xl font-semibold text-center my-4">
+      <h1 class="text-3xl text-center my-4">Veggie is good !!!</h1>
+      <h4 class="text-xl font-semibold text-center my-4">
         Vegetarianism holds a significant place in the lifestyle and philosophy
         of yoga, serving as more than just a dietary choice but rather a
         cornerstone of spiritual and holistic living. Yogis, practitioners of
@@ -27,8 +27,8 @@
       </RouterLink>
     </div>
     <div class="title-container">
-      <h2 class="text-3xl font-bold text-center my-4">Ahimsa (Non-violence)</h2>
-      <h4 class="text-2xl font-regular text-center my-4">
+      <h2 class="text-2xl font-bold text-center my-4">Ahimsa (Non-violence)</h2>
+      <h4 class="text-xl font-regular text-center my-4">
         Ahimsa, or non-violence, is one of the fundamental principles of yoga
         philosophy. It extends beyond refraining from physical harm and includes
         compassion and kindness toward all living beings. By choosing a
@@ -38,10 +38,10 @@
       </h4>
     </div>
     <div class="title-container">
-      <h2 class="text-3xl font-bold text-center my-4">
+      <h2 class="text-2xl font-bold text-center my-4">
         Sattvic Diet for Mental Clarity
       </h2>
-      <h4 class="text-2xl font-regular text-center my-4">
+      <h4 class="text-xl font-regular text-center my-4">
         Yoga aims to achieve a state of mental clarity and inner peace.
         According to yogic teachings, different foods have distinct energetic
         qualities that can influence one's state of mind. A sattvic diet, which
@@ -53,10 +53,10 @@
       </h4>
     </div>
     <div class="title-container">
-      <h2 class="text-3xl font-bold text-center my-4">
+      <h2 class="text-2xl font-bold text-center my-4">
         Enhanced Pranic Energy
       </h2>
-      <h4 class="text-2xl font-regular text-center my-4">
+      <h4 class="text-xl font-regular text-center my-4">
         Yogic philosophy recognizes the existence of prana, the life force
         energy that sustains all living beings. Vegetarian foods are believed to
         be rich in prana, making them conducive to maintaining and enhancing the
@@ -67,10 +67,10 @@
       </h4>
     </div>
     <div class="title-container">
-      <h2 class="text-3xl font-bold text-center my-4">
+      <h2 class="text-2xl font-bold text-center my-4">
         Environmental and Ethical Considerations
       </h2>
-      <h4 class="text-2xl font-regular text-center my-4">
+      <h4 class="text-xl font-regular text-center my-4">
         Beyond personal health benefits, vegetarianism reflects an awareness of
         the interconnectedness of all living beings and a commitment to
         environmental sustainability. The livestock industry is a significant
@@ -83,7 +83,7 @@
       <hr />
       <br />
       <br />
-      <h2 class="text-3xl font-semibold text-center mt-4">
+      <h2 class="text-xl font-semibold text-center mt-4">
         In conclusion, vegetarian food holds immense importance for yogis,
         serving as a practical manifestation of yogic principles such as ahimsa,
         promoting mental clarity and inner peace, enhancing pranic energy, and

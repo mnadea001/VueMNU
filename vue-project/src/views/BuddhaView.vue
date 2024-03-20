@@ -65,6 +65,7 @@ Your browser does not support the audio element.
         <GltfModel src="/models/buddha/buddha.gltf" />
       </Scene>
     </Renderer>
+<br>
 
 
 </template>
@@ -72,4 +73,8 @@ Your browser does not support the audio element.
 .content-btn {
   margin-left: 80px;
 }
+
+/* .buddha {
+  margin-bottom: 30px;
+} */
 </style>
