@@ -1,15 +1,12 @@
 <template>
   <header>
     <div class="wrapper">
-      <span class="flex">      <button
-        @click="toggleDark()"
-        class="py-2 px-4 bg-black text-white border rounded-md dark:bg-white dark:text-black"
-      >
-        Switch Mode!
-      </button>
-      <RouterLink  to="/">Home</RouterLink>
-</span>
-
+      <span class="flex">
+        <button @click="toggleDark()" class="py-2 px-4 bg-black border rounded-md dark:bg-white">
+          <img :src="darkModeIcon" class="w-10 h-10" />
+        </button>
+        <RouterLink to="/" class="home-link">home</RouterLink>
+      </span>
       <button @click="openModal">
         <img :src="burgerIcon" class="w-10 h-10" /> MENU
       </button>
@@ -19,11 +16,15 @@
 </template>
 
 <script setup lang="ts">
-import MenuComponent from "../components/MenuComponent.vue";
-import { ref, computed } from "vue";
 import { useDark, useToggle } from "@vueuse/core";
+import { ref, computed } from "vue";
 import blackBurger from "../assets/burger.svg";
 import whiteBurger from "../assets/white-burger.svg";
+import moon from "../assets/moon.png";
+import sun from "../assets/sun.svg";
+
+
+import MenuComponent from "../components/MenuComponent.vue";
 
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
@@ -33,9 +34,14 @@ const isModalOpened = ref(false);
 const openModal = () => {
   isModalOpened.value = true;
 };
+
 const closeModal = () => {
   isModalOpened.value = false;
 };
+
+const darkModeIcon = computed(() => {
+  return isDark.value ? moon : sun;
+});
 
 const burgerIcon = computed(() => {
   return isDark.value ? blackBurger : whiteBurger;
@@ -43,6 +49,7 @@ const burgerIcon = computed(() => {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 .wrapper {
   width: 100vw;
   display: flex;
@@ -58,5 +65,11 @@ header {
   place-items: center;
   padding: 2rem 5rem;
   padding-right: calc(var(--section-gap) / 2);
+}
+
+.home-link {
+  font-family: "Caprasimo", sans-serif;
+  font-size: 1.5em;
+  padding-left: 10px;
 }
 </style>

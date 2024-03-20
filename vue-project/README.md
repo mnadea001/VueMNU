@@ -45,6 +45,9 @@ API pour les recettes : https://www.themealdb.com
 API pour les poses et catégories de yoga : https://github.com/alexcumplido/yoga-api?fbclid=IwAR0emlb7HhpF7GEA2CZoCmZUjnzxcWBRQGoJEdR3Qxlg8Y4GTKjl8I-GyLw
 API pour les citations : http://forismatic.com/en/api/
 
+### SVG 
+
+https://flowbite.com/icons/
 
 ### Deployment 
 
