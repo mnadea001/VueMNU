@@ -41,9 +41,7 @@ const darkModeIcon = computed(() => {
   return isDark.value ? moon : sun
 })
 
-const burgerIcon = computed(() => {
-  return isDark.value ? blackBurger : whiteBurger
-})
+
 </script>
 
 <style scoped>
