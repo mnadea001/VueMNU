@@ -179,7 +179,7 @@ h2 {
   padding: 30px;
   border-radius: 50px;
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3);
-  height: 400px;
+  height: 500px;
   display: flex;
   justify-content: center;
   flex-direction: column;
