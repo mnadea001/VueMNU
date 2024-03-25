@@ -10,7 +10,6 @@
 
       <button class="flex" @click="openModal">
         <p class="menu-link">menu</p>
-        <img :src="burgerIcon" class="w-7 h-7" />
       </button>
     </div>
   </header>
@@ -20,8 +19,6 @@
 <script setup lang="ts">
 import { useDark, useToggle } from '@vueuse/core'
 import { ref, computed } from 'vue'
-import blackBurger from '../assets/burger.svg'
-import whiteBurger from '../assets/white-burger.svg'
 import moon from '../assets/moon.png'
 import sun from '../assets/sun.svg'
 
