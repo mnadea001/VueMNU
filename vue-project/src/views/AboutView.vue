@@ -137,7 +137,7 @@ h2 {
 }
 
 .container {
-  width: 90%;
+  /* width: 90%; */
   margin: 0 auto;
   margin-bottom: 50px;
 }
