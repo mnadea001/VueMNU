@@ -19,8 +19,8 @@
           <ul id="cards">
             <li class="card" id="card1">
               <div class="card-body">
-                <h2>Introduction to Yoga</h2>
-                <p>
+                <h2 class="text-black">Introduction to Yoga</h2>
+                <p class="text-black">
                   Yoga is an ancient practice that originated in India thousands of years ago. It is
                   a holistic system that encompasses physical postures (asanas), breath control
                   (pranayama), meditation, and ethical principles aimed at achieving harmony between
@@ -30,8 +30,8 @@
             </li>
             <li class="card" id="card2">
               <div class="card-body">
-                <h2>Origin</h2>
-                <p>
+                <h2 class="text-black">Origin</h2>
+                <p class="text-black">
                   The origins of yoga can be traced back to ancient texts known as the Vedas,
                   particularly the Rigveda, which dates back over 5,000 years. Yoga evolved over
                   centuries, with the systematic compilation of yoga teachings found in the Yoga
@@ -42,8 +42,8 @@
             </li>
             <li class="card" id="card3">
               <div class="card-body">
-                <h2>Definition</h2>
-                <p>
+                <h2 class="text-black">Definition</h2>
+                <p class="text-black">
                   Yoga, derived from the Sanskrit word "yuj," means to unite or join. At its core,
                   yoga is about the union of individual consciousness with the universal
                   consciousness. It involves the integration of physical, mental, and spiritual
@@ -53,8 +53,8 @@
             </li>
             <li class="card" id="card4">
               <div class="card-body">
-                <h2>Benefits</h2>
-                <p>
+                <h2 class="text-black">Benefits</h2>
+                <p class="text-black">
                   The practice of yoga offers a myriad of benefits for both the body and mind.
                   Physically, yoga improves flexibility, strength, and balance. It helps to
                   alleviate tension in the muscles and promotes overall relaxation. Mentally, yoga
