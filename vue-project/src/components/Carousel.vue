@@ -23,12 +23,7 @@
   import { defineComponent } from 'vue'
 import { Splide, SplideSlide } from '@splidejs/vue-splide'
 
-const SplideWithTypes: typeof Splide = Splide;
-const SplideSlideWithTypes: typeof SplideSlide = SplideSlide;
 
-defineComponent({
-  components: { Splide: SplideWithTypes, SplideSlide: SplideSlideWithTypes }
-})
   const slides = [
     {
       image: slide1,
@@ -53,11 +48,11 @@ defineComponent({
   ]
   
   defineComponent({
-    components: { Splide, SplideSlide },
-    setup() {
-      return { slides }
-    }
-  })
+  components: { Splide, SplideSlide },
+  setup() {
+    return { slides }
+  }
+})
   </script>
   
 
