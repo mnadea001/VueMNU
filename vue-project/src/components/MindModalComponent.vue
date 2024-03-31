@@ -31,9 +31,6 @@ onClickOutside(target, () => emit("modal-close"));
             <RouterLink to="/meditation" class="btn-home-start mt-3"
               >MEDITATION</RouterLink
             >
-            <RouterLink to="/quote" class="btn-home-start mt-3"
-              >INSPIRATION</RouterLink
-            >
           </slot>
         </div>
       </div>

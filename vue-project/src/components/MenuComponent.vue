@@ -34,7 +34,6 @@ const handleClose = () => {
             <RouterLink  @click.native="handleClose" to="/" class="nav-item">Home</RouterLink>
             <RouterLink @click.native="handleClose" to="/index" class="nav-item">Index</RouterLink>
             <RouterLink @click.native="handleClose" to="/about" class="nav-item">Philosophy</RouterLink>
-            <RouterLink @click.native="handleClose" to="/quote" class="nav-item">Inspiration</RouterLink>
             <RouterLink @click.native="handleClose" to="/meditation" class="nav-item">Meditation</RouterLink>
             <RouterLink @click.native="handleClose" to="/food" class="nav-item">Food</RouterLink>
             <RouterLink @click.native="handleClose" to="/yoga" class="nav-item">Asanas</RouterLink>
