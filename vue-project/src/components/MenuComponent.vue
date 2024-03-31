@@ -35,7 +35,7 @@ const handleClose = () => {
             <RouterLink @click.native="handleClose" to="/quote" class="nav-item">Inspiration</RouterLink>
             <RouterLink @click.native="handleClose" to="/meditation" class="nav-item">Meditation</RouterLink>
             <RouterLink @click.native="handleClose" to="/food" class="nav-item">Food</RouterLink>
-            <RouterLink @click.native="handleClose" to="/yoga" class="nav-item">Yoga</RouterLink>
+            <RouterLink @click.native="handleClose" to="/yoga" class="nav-item">Asanas</RouterLink>
             <RouterLink @click.native="handleClose" to="/source" class="nav-item">About</RouterLink>
           </slot>
         </div>

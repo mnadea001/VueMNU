@@ -52,6 +52,7 @@ onClickOutside(target, () => emit("modal-close"));
   background-color: rgba(0, 0, 0, 0.734);
 }
 .modal-container {
+  position: relative;
   width: 50%;
   height: 40vh;
   margin: 150px auto;

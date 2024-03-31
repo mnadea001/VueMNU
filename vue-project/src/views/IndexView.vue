@@ -121,5 +121,9 @@ h2,
   margin-top: 50px;
   align-items: center;
 }
-
+@media screen and (max-width: 768px) {
+  .image-btn {
+  flex-direction: column;
+}
+}
 </style>

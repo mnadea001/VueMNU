@@ -8,7 +8,7 @@
         <RouterLink to="/quote" class="nav-item">Inspiration</RouterLink>
         <RouterLink to="/meditation" class="nav-item">Meditation</RouterLink>
         <RouterLink to="/food" class="nav-item">Food</RouterLink>
-        <RouterLink to="/yoga" class="nav-item">Yoga</RouterLink>
+        <RouterLink to="/yoga" class="nav-item">Asanas</RouterLink>
         <RouterLink to="/source" class="nav-item">About</RouterLink>
       </nav>
     </div>
@@ -25,7 +25,7 @@ import { RouterLink } from "vue-router";
   width: 80vw;
   display: flex;
   flex-direction: row;
-  background-color: orange;
+  background-color: rgb(209, 242, 63);
   justify-content: center;
   border-radius: 10px;
 }
@@ -70,7 +70,8 @@ nav a:first-of-type {
 @media screen and (max-width: 768px) {
   nav {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
   }
 }
 </style>
