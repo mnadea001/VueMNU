@@ -11,27 +11,20 @@
       </div>
       <div class="content">
         <h1 class="text-3xl text-center my-4">Philosophy</h1>
-
-        <div class="content-img">
-          <img :src="chillImageSrc" class="w-80 h-80 rounded-full mt-4" />
-        </div>
+        <span class="text-center content-span">
+          <p class="text-xl text-center">
+            Yoga is an ancient practice that originated in India thousands of years ago. It is a
+            holistic system that encompasses physical postures (asanas), breath control (pranayama),
+            meditation, and ethical principles aimed at achieving harmony between mind, body, and
+            spirit.
+          </p>
+        </span>
         <div class="container">
           <ul id="cards">
-            <li class="card" id="card1">
-              <div class="card-body">
-                <h2 class="text-black">Introduction to Yoga</h2>
-                <p class="text-black">
-                  Yoga is an ancient practice that originated in India thousands of years ago. It is
-                  a holistic system that encompasses physical postures (asanas), breath control
-                  (pranayama), meditation, and ethical principles aimed at achieving harmony between
-                  mind, body, and spirit.
-                </p>
-              </div>
-            </li>
             <li class="card" id="card2">
               <div class="card-body">
-                <h2 class="text-black">Origin</h2>
-                <p class="text-black">
+                <h2 class="text-black mb-5 text-xl">Origin</h2>
+                <p class="text-black text-center">
                   The origins of yoga can be traced back to ancient texts known as the Vedas,
                   particularly the Rigveda, which dates back over 5,000 years. Yoga evolved over
                   centuries, with the systematic compilation of yoga teachings found in the Yoga
@@ -42,8 +35,8 @@
             </li>
             <li class="card" id="card3">
               <div class="card-body">
-                <h2 class="text-black">Definition</h2>
-                <p class="text-black">
+                <h2 class="text-black mb-5 text-xl">Definition</h2>
+                <p class="text-black text-center">
                   Yoga, derived from the Sanskrit word "yuj," means to unite or join. At its core,
                   yoga is about the union of individual consciousness with the universal
                   consciousness. It involves the integration of physical, mental, and spiritual
@@ -53,8 +46,8 @@
             </li>
             <li class="card" id="card4">
               <div class="card-body">
-                <h2 class="text-black">Benefits</h2>
-                <p class="text-black">
+                <h2 class="text-black mb-5 text-xl">Benefits</h2>
+                <p class="text-black text-center">
                   The practice of yoga offers a myriad of benefits for both the body and mind.
                   Physically, yoga improves flexibility, strength, and balance. It helps to
                   alleviate tension in the muscles and promotes overall relaxation. Mentally, yoga
@@ -82,7 +75,6 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import chillImageSrc from '../assets/pray.gif'
 import backIcon from '../assets/back.svg'
 import { useRouter } from 'vue-router'
 import whiteBack from '../assets/white-back.png'
@@ -100,6 +92,7 @@ function goBack() {
 </script>
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 
 main {
   width: 100vw;
@@ -111,17 +104,12 @@ main {
   display: flex;
 }
 
-h1,
-h2 {
+h1 {
   font-family: 'Anton', sans-serif;
 }
 
-.content-img {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: 50px;
-  align-items: center;
+h2 {
+  font-family: 'Caprasimo', sans-serif;
 }
 .content {
   padding: 15px;
@@ -133,11 +121,9 @@ h2 {
 .content-span p {
   padding-left: 50px;
   padding-right: 50px;
-  padding-bottom: 50px;
 }
 
 .container {
-  /* width: 90%; */
   margin: 0 auto;
   margin-bottom: 50px;
 }
@@ -173,13 +159,13 @@ h2 {
 }
 
 .card-body {
-  margin-top: 50px;
-  background-color: #cdcdcd;
+  margin: 50px;
+  background-color: rgb(209, 242, 63);
   box-sizing: border-box;
   padding: 30px;
-  border-radius: 50px;
+  border-radius: 20px;
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3);
-  height: 500px;
+  height: 550px;
   display: flex;
   justify-content: center;
   flex-direction: column;

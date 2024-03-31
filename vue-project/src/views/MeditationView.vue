@@ -59,8 +59,8 @@ function goBack() {
         <img :src="chillImageSrc" class="h-80 rounded-full" />
       </div>
       <div class="image-container">
-        <RouterLink to="/buddha" class="btn-home-start font-bold mt-3"
-          >LET'S START NOW !!</RouterLink
+        <RouterLink to="/buddha" class="btn-home-start text-3xl my-3"
+          >Let's start now !!</RouterLink
         >
       </div>
     </div>
@@ -69,6 +69,7 @@ function goBack() {
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 
 main {
   width: 100vw;
@@ -108,5 +109,10 @@ h2,
   background-color: blue;
   border-radius: 35px;
   padding: 10px 15px;
+  font-family: 'Caprasimo', sans-serif;
+}
+
+.btn-home-start:hover {
+  background-color: rgb(134, 134, 244);
 }
 </style>

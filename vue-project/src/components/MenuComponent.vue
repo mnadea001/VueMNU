@@ -3,6 +3,7 @@ import { defineProps, defineEmits, ref } from "vue";
 import { onClickOutside } from "@vueuse/core";
 import { RouterLink } from "vue-router";
 
+import chillImageSrc from '../assets/pray.gif'
 const props = defineProps({
   isOpen: Boolean,
 });
@@ -28,7 +29,8 @@ const handleClose = () => {
           </slot>
         </div>
         <div class="modal-body">
-          <slot name="content">
+          <div class="content">
+            <slot name="content">
             <RouterLink  @click.native="handleClose" to="/" class="nav-item">Home</RouterLink>
             <RouterLink @click.native="handleClose" to="/index" class="nav-item">Index</RouterLink>
             <RouterLink @click.native="handleClose" to="/about" class="nav-item">Philosophy</RouterLink>
@@ -38,6 +40,12 @@ const handleClose = () => {
             <RouterLink @click.native="handleClose" to="/yoga" class="nav-item">Asanas</RouterLink>
             <RouterLink @click.native="handleClose" to="/source" class="nav-item">About</RouterLink>
           </slot>
+          </div>
+  
+          <div>
+            <img :src="chillImageSrc" class="w-80 h-80 rounded-full mt-4" />
+
+          </div>
         </div>
       </div>
     </div>
@@ -66,9 +74,13 @@ const handleClose = () => {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
   color: black;
 }
-
+.content {
+  display: flex;
+  flex-direction: row;
+}
 .modal-body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 50px;

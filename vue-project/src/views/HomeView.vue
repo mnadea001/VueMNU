@@ -37,8 +37,8 @@ defineComponent({
           :loop="Infinity"
           :wrapper="'h2'"
         ></v-typical>
-        <RouterLink to="/index" class="btn-home-start font-bold my-3"
-          >LET'S START NOW !!</RouterLink
+        <RouterLink to="/index" class="btn-home-start text-3xl my-3"
+          >Let's start now !!</RouterLink
         >
       </div>
     </div>
@@ -47,6 +47,7 @@ defineComponent({
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 
 main {
   width: 100vw;
@@ -69,6 +70,7 @@ h2 {
 .btn-home-start {
   background-color: blue;
   border-radius: 35px;
+  font-family: 'Caprasimo', sans-serif;
   padding: 10px 15px;
 }
 
