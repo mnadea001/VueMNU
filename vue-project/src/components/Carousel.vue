@@ -15,14 +15,20 @@
   </template>
   
   <script setup lang="ts">
-  import { defineComponent } from 'vue'
-  import { Splide, SplideSlide } from '@splidejs/vue-splide'
   import '@splidejs/vue-splide/css'
   import slide1 from '@/assets/images/slide1.jpg'
   import slide2 from '@/assets/images/slide2.jpg'
   import slide3 from '@/assets/images/slide3.jpg'
   import slide4 from '@/assets/images/slide4.jpg'
-  
+  import { defineComponent } from 'vue'
+import { Splide, SplideSlide } from '@splidejs/vue-splide'
+
+const SplideWithTypes: typeof Splide = Splide;
+const SplideSlideWithTypes: typeof SplideSlide = SplideSlide;
+
+defineComponent({
+  components: { Splide: SplideWithTypes, SplideSlide: SplideSlideWithTypes }
+})
   const slides = [
     {
       image: slide1,
