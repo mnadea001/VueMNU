@@ -14,6 +14,6 @@
 
     "module": "ESNext",
     "moduleResolution": "node",
-    "types": ["node",  "splidejs__vue-splide"]
+    "types": ["node"]
   }
 }
