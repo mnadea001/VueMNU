@@ -21,6 +21,7 @@
   import slide3 from '@/assets/images/slide3.jpg'
   import slide4 from '@/assets/images/slide4.jpg'
   import { defineComponent } from 'vue'
+  // @ts-ignore
 import { Splide, SplideSlide } from '@splidejs/vue-splide'
 
 
