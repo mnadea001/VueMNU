@@ -2,21 +2,21 @@
   <main class="dark:bg-white">
     <div class="main-content">
       <div class="content">
-        <h1 class="text-3xl font-semibold text-center my-4">SOURCES</h1>
+        <h1 class="text-3xl text-center my-4">Sources</h1>
 
         <div class="content-img my-4">
           <img :src="namasteImageSrc" class="w-80 h-80 rounded-full my-4" />
-          <h2 class="text-3xl font-semibold text-center my-4">To create this app, I used:</h2>
+          <h2 class="text-xl text-center my-4">To create this app, I used:</h2>
           <ul>
             <li>Vue.js 3 with TypeScript</li>
-            <li>APIs themealdb, yoga-api from alexcumplido, forismatic, ticketmaster</li>
+            <li>APIs themealdb, yoga-api from alexcumplido</li>
             <li>Librairies vue-typical, tailwindcss, vueuse</li>
             <li>Threejs, Troisjs</li>
             <li>GIFs on Tenor and Giphy</li>
             <li>3D model on SketchFab</li>
           </ul>
           <br>
-          <p>Created By Mathilde NADEAU - Feb. 2024</p>
+          <p>Created By Mathilde NADEAU - April 2024</p>
         </div>
       </div>
     </div>
