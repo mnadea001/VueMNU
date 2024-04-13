@@ -7,7 +7,7 @@
       >
         <button
           @click="goBack"
-          class="text-lg font-medium hover:underline mb-4 flex"
+          class="hover:underline mb-4 flex"
         >
           <img :src="arrowIcon" class="w-10 h-10" /> Back
         </button>

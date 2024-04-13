@@ -56,7 +56,7 @@ async function fetchPoseData() {
     <div v-if="pose" class="pose-details">
       <button
         @click="goBack"
-        class="text-lg font-medium hover:underline mb-4 flex text-dark"
+        class="hover:underline mb-4 flex text-dark"
       >
         <img :src="arrowIcon" class="w-10 h-10" /> Back
       </button>

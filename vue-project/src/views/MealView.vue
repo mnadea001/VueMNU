@@ -62,7 +62,7 @@ onMounted(() => {
       <div v-if="meal" class="m-2 max-w-4xl mx-auto rounded-xl shadow-md card">
         <button
           @click="goBack"
-          class="text-lg font-medium hover:underline mb-4 flex"
+          class="text-lg hover:underline mb-4 flex"
         >
           <img :src="arrowIcon" class="w-10 h-10" /> Back
         </button>
