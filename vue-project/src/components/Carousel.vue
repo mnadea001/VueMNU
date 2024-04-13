@@ -86,6 +86,7 @@ h2 {
 img {
   max-width: 500px;
   max-height: 400px;
+  margin: auto;
 }
 
 @media screen and (max-width: 768px) {
