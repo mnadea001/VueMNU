@@ -1,83 +1,73 @@
 <script setup lang="ts">
-import { ref, onMounted, computed } from "vue";
-import { useRoute, useRouter } from "vue-router";
-import backIcon from "../assets/back.svg";
-import whiteBack from "../assets/white-back.png";
-import { useDark } from "@vueuse/core";
+import { ref, onMounted, computed } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+import backIcon from '../assets/back.svg'
+import whiteBack from '../assets/white-back.png'
+import { useDark } from '@vueuse/core'
 
-const isDark = useDark();
+const isDark = useDark()
 const arrowIcon = computed(() => {
-  return isDark.value ? backIcon : whiteBack;
-});
+  return isDark.value ? backIcon : whiteBack
+})
 interface Meal {
-  idMeal: string;
-  strMeal: string;
-  strMealThumb: string;
-  strTags: string;
-  strCategory: string;
-  strArea: string;
-  strInstructions: string;
-  strYoutube: string;
+  idMeal: string
+  strMeal: string
+  strMealThumb: string
+  strTags: string
+  strCategory: string
+  strArea: string
+  strInstructions: string
+  strYoutube: string
 }
 
-const meal = ref<Meal | null>(null);
-const error = ref<string | null>(null);
-const route = useRoute();
-const router = useRouter();
+const meal = ref<Meal | null>(null)
+const error = ref<string | null>(null)
+const route = useRoute()
+const router = useRouter()
 
 function goBack() {
-  router.go(-1);
+  router.go(-1)
 }
 
 const fetchMealData = () => {
-  fetch(
-    `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${route.params.idMeal}`
-  )
+  fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${route.params.idMeal}`)
     .then((res: Response) => {
       if (!res.ok) {
-        throw new Error("Network response was not ok");
+        throw new Error('Network response was not ok')
       }
-      return res.json() as Promise<{ meals: Meal[] }>;
+      return res.json() as Promise<{ meals: Meal[] }>
     })
     .then((data: { meals: Meal[] }) => {
       if (data.meals && data.meals.length > 0) {
-        meal.value = data.meals[0];
+        meal.value = data.meals[0]
       } else {
-        error.value = "Meal not found";
+        error.value = 'Meal not found'
       }
     })
     .catch((err: Error) => {
-      error.value = `Fetch error: ${err.message}`;
-    });
-};
+      error.value = `Fetch error: ${err.message}`
+    })
+}
 
 onMounted(() => {
-  fetchMealData();
-});
+  fetchMealData()
+})
 </script>
 
 <template>
   <main class="dark:bg-white">
     <div>
-      <div v-if="meal" class="m-2 max-w-4xl mx-auto rounded-xl shadow-md card">
-        <button
-          @click="goBack"
-          class="text-lg hover:underline mb-4 flex"
-        >
+      <div class="content-btn">
+        <button @click="goBack" class="text-lg hover:underline mb-4 flex">
           <img :src="arrowIcon" class="w-10 h-10" /> Back
         </button>
-
+      </div>
+      <div v-if="meal" class="m-2 max-w-4xl mx-auto card">
         <div class="flex items-center space-y-4 space-x-4">
-          <img
-            class="img-meal rounded-full"
-            :src="meal.strMealThumb"
-            alt="Meal Image"
-          />
+          <img class="img-meal rounded-full" :src="meal.strMealThumb" alt="Meal Image" />
           <div>
             <div class="font-medium title me-1">{{ meal.strMeal }}</div>
-            <div class="text-gray-500">
-              {{ meal.strCategory }} | {{ meal.strArea }}
-            </div>
+            <div class="text-gray-500">{{ meal.strCategory }} | {{ meal.strArea }}</div>
           </div>
         </div>
         <div v-if="meal.strTags">
@@ -104,7 +94,7 @@ onMounted(() => {
 </template>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 main {
   width: 100vw;
@@ -114,11 +104,20 @@ main {
   padding: 50px;
 }
 .title {
-  font-family: "Anton", sans-serif;
+  font-family: 'Anton', sans-serif;
   font-size: 3rem;
 }
 
 .img-meal {
   height: 150px;
+}
+
+.content-btn {
+  margin-left: 80px;
+}
+@media screen and (max-width: 768px) {
+  .content-btn {
+    margin-left: 10px;
+  }
 }
 </style>
