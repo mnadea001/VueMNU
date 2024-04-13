@@ -1,11 +1,11 @@
 <template>
   <main>
     <div class="title-container">
-      <button @click="goBack" class="text-lg font-medium text-black-500 hover:underline mb-4 flex">
+      <button @click="goBack" class="font-medium text-black-500 hover:underline mb-4 flex">
         <img :src="arrowIcon" class="w-10 h-10" /> Back
       </button>
-      <h1 class="text-3xl text-center my-4">Veggie is good !!!</h1>
-      <h4 class="text-xl text-center my-4">
+      <h1 class="text-xl text-center my-4">Veggie is good !!!</h1>
+      <h4 class="text-center my-4">
         Vegetarianism holds a significant place in the lifestyle and philosophy of yoga, serving as
         more than just a dietary choice but rather a cornerstone of spiritual and holistic living.
         Yogis, practitioners of yoga, often adhere to a vegetarian diet for various reasons, all of
@@ -21,7 +21,7 @@
 <h2 class="text-3xl text-center mt-4 pt-5">4 main reasons for vegetarism:</h2>
     <Carousel />
 <div class="conclusion-food">
-    <h3 class="text-xl text-center mb-4">
+    <h3 class="text-center mb-4">
       In conclusion, vegetarian food holds immense importance for yogis, serving as a practical
       manifestation of yogic principles such as ahimsa, promoting mental clarity and inner peace,
       enhancing pranic energy, and aligning with ethical and environmental values. By embracing a
