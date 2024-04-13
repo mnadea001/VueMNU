@@ -75,7 +75,7 @@ nav a:first-of-type {
   }
 
   footer {
-    margin-top: 40px;
+    margin-top: 70px;
   }
 }
 </style>

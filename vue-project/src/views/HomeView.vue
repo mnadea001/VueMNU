@@ -37,7 +37,7 @@ defineComponent({
           :loop="Infinity"
           :wrapper="'h2'"
         ></v-typical>
-        <RouterLink to="/index" class="btn-home-start text-3xl my-3"
+        <RouterLink to="/index" class="btn-home-start text-xl my-3"
           >Let's start now !!</RouterLink
         >
       </div>
@@ -77,5 +77,17 @@ h2 {
 
 .btn-home-start:hover {
   background-color: rgb(134, 134, 244);
+}
+
+@media screen and (max-width: 768px) {
+  .btn-home-start {
+  background-color: blue;
+  font-size: small;
+  border-radius: 35px;
+  font-family: 'Caprasimo', sans-serif;
+  padding: 10px 15px;
+  margin-bottom: 30px;
+}
+
 }
 </style>
