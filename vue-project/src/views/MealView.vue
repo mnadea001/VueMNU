@@ -63,7 +63,7 @@ onMounted(() => {
         </button>
       </div>
       <div v-if="meal" class="m-2 max-w-4xl mx-auto card">
-        <div class="flex items-center space-y-4 space-x-4">
+        <div>
           <img class="img-meal rounded-full" :src="meal.strMealThumb" alt="Meal Image" />
           <div>
             <div class="font-medium title me-1">{{ meal.strMeal }}</div>

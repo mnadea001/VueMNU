@@ -182,6 +182,7 @@ h2 {
 @media (max-width: 768px) {
   .content {
     width: 90%; /* Adjust width for smaller screens */
+    margin: auto;
   }
 
   .content-span p {
