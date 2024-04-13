@@ -106,4 +106,10 @@ font-family: 'Caprasimo', sans-serif;
 .conclusion-food {
 margin: 100px;
 }
+
+@media screen and (max-width: 768px) {
+  .title-container {
+  margin: 10px;
+}
+}
 </style>

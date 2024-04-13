@@ -53,7 +53,7 @@ onMounted(() => {
     <div class="content-btn">
       <button
         @click="goBack"
-        class="text-lg font-medium text-white-500 dark:text-black hover:underline mb-4 flex"
+        class="text-lg text-white-500 dark:text-black hover:underline mb-4 flex"
       >
         <img :src="arrowIcon" class="w-10 h-10" /> Back
       </button>

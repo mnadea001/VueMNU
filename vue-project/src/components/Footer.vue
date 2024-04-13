@@ -35,6 +35,7 @@ footer {
   justify-content: center;
   display: flex;
   flex-direction: row;
+  margin-top: 10px;
 }
 nav {
   width: 100%;
