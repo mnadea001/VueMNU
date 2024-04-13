@@ -39,12 +39,12 @@ function goBack() {
   </div>
   <div class="box-docker">
     <div class="first-box">
-      <h2 class="text-center me-5">scroll down the black box to see buddha</h2>
+      <h2 class="text-center text-black me-5">scroll down the black box to see buddha</h2>
       <img :src="mouseScroll" class="w-10 h-10 ms-5 me-5" alt="" />
     </div>
     <div class="second-box">
-      <h2 class="text-center ms-5 me-5">then you can drag around buddha</h2>
-      <img :src="aroundImg" class="w-10 h-10 ms-5" alt="" />
+      <h2 class="text-center text-black ms-5 me-5">then you can drag around buddha</h2>
+      <img :src="aroundImg" class="w-10 h-10 ms-5 dark:color-white" alt="" />
     </div>
   </div>
 
@@ -80,22 +80,30 @@ Your browser does not support the audio element.
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  background: rgb(209, 242, 63);
+  background: linear-gradient(90deg, rgba(209, 242, 63, 1) 0%, rgba(255, 220, 0, 1) 100%);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
 }
 .second-box {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  margin-bottom: 20px;
+  background: rgb(209, 242, 63);
+  background: linear-gradient(90deg, rgba(209, 242, 63, 1) 0%, rgba(255, 220, 0, 1) 100%);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
 }
 
 @media screen and (max-width: 768px) {
   .box-docker {
-  display: flex;
-  flex-direction: column;;
-  justify-content: center;
-  align-items: center;
-}
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 </style>
