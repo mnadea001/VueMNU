@@ -130,4 +130,10 @@ h1 {
   display: flex;
   flex-direction: row;
 }
+
+@media screen and (max-width: 768px) {
+  .content-btn {
+  margin-left: 10px;
+}
+}
 </style>

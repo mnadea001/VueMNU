@@ -74,7 +74,7 @@ onMounted(() => {
             alt="Meal Image"
           />
           <div>
-            <div class="font-medium title">{{ meal.strMeal }}</div>
+            <div class="font-medium title me-1">{{ meal.strMeal }}</div>
             <div class="text-gray-500">
               {{ meal.strCategory }} | {{ meal.strArea }}
             </div>
@@ -112,7 +112,6 @@ main {
 
 .card {
   padding: 50px;
-  margin-bottom: 50px;
 }
 .title {
   font-family: "Anton", sans-serif;

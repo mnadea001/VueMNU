@@ -1,65 +1,63 @@
 <script setup lang="ts">
-import { ref, onMounted, computed } from "vue";
-import { useRoute, useRouter } from "vue-router";
-import backIcon from "../assets/back.svg";
-import whiteBack from "../assets/white-back.png";
-import { useDark } from "@vueuse/core";
+import { ref, onMounted, computed } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+import backIcon from '../assets/back.svg'
+import whiteBack from '../assets/white-back.png'
+import { useDark } from '@vueuse/core'
 
-const isDark = useDark();
+const isDark = useDark()
 const arrowIcon = computed(() => {
-  return isDark.value ? backIcon : whiteBack;
-});
-
+  return isDark.value ? backIcon : whiteBack
+})
 
 interface Pose {
-  id: number;
-  english_name: string;
-  sanskrit_name: string;
-  translation_name: string;
-  pose_description: string;
-  pose_benefits: string;
-  url_svg: string;
+  id: number
+  english_name: string
+  sanskrit_name: string
+  translation_name: string
+  pose_description: string
+  pose_benefits: string
+  url_svg: string
 }
 
-const pose = ref<Pose | null>(null);
-const error = ref<string | null>(null);
-const route = useRoute();
-const router = useRouter();
+const pose = ref<Pose | null>(null)
+const error = ref<string | null>(null)
+const route = useRoute()
+const router = useRouter()
 function goBack() {
-  router.go(-1);
+  router.go(-1)
 }
 
 onMounted(() => {
-  fetchPoseData();
-});
+  fetchPoseData()
+})
 
 async function fetchPoseData() {
   try {
     const response = await fetch(
       `https://yoga-api-nzy4.onrender.com/v1/poses?id=${route.params.id}`
-    );
+    )
     if (!response.ok) {
-      throw new Error("Network response was not ok");
+      throw new Error('Network response was not ok')
     }
-    const data = await response.json();
-    pose.value = data;
+    const data = await response.json()
+    pose.value = data
   } catch (error) {
     if (error instanceof Error) {
-    // console.error("Error fetching pose data:", error);
-    error = "Error fetching pose data";
-  }
+      // console.error("Error fetching pose data:", error);
+      error = 'Error fetching pose data'
+    }
   }
 }
 </script>
 <template>
   <main class="dark:bg-white">
+    <div class="content-btn">
+        <button @click="goBack" class="hover:underline mb-4 flex text-dark">
+          <img :src="arrowIcon" class="w-10 h-10" /> Back
+        </button>
+      </div>
     <div v-if="pose" class="pose-details">
-      <button
-        @click="goBack"
-        class="hover:underline mb-4 flex text-dark"
-      >
-        <img :src="arrowIcon" class="w-10 h-10" /> Back
-      </button>
 
       <h1 class="text-center">{{ pose.english_name }}</h1>
       <p><strong>Sanskrit Name:</strong> {{ pose.sanskrit_name }}</p>
@@ -76,11 +74,12 @@ async function fetchPoseData() {
 </template>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 h1 {
-  font-family: "Anton", sans-serif;
+  font-family: 'Anton', sans-serif;
   font-size: 2rem;
+  margin-bottom: 20px;
 }
 main {
   width: 100vw;
@@ -94,7 +93,7 @@ main {
   align-items: center;
 }
 .pose-details {
-  max-width: 600px;
+  width: 600px;
   margin: auto;
   padding: 20px;
 }
@@ -102,5 +101,14 @@ main {
 .img-pose {
   height: 250px;
   object-fit: contain !important;
+}
+
+.content-btn {
+  margin-left: 80px;
+}
+@media screen and (max-width: 768px) {
+  .content-btn {
+    margin-left: 10px;
+  }
 }
 </style>

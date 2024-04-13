@@ -1,16 +1,19 @@
 <template>
   <main class="dark:bg-white">
-    <div>
-      <div
-        v-if="yoga"
-        class="p-6 m-2 max-w-4xl mx-auto rounded-xl category-detail"
-      >
-        <button
+    <div >
+      <div class="content-btn">
+      <button
           @click="goBack"
           class="hover:underline mb-4 flex"
         >
           <img :src="arrowIcon" class="w-10 h-10" /> Back
         </button>
+        </div>
+      <div
+        v-if="yoga"
+        class="p-6 m-2 max-w-4xl mx-auto rounded-xl category-detail"
+      >
+
         <h1 class="text-center">{{ yoga.category_name }}</h1>
         <div class="mt-4">
           <div class="text-center ">{{ yoga.category_description }}</div>
@@ -129,5 +132,14 @@ main {
 }
 .pose-content {
   display: flex;
+}
+
+.content-btn {
+  margin-left: 80px;
+}
+@media screen and (max-width: 768px) {
+  .content-btn {
+  margin-left: 10px;
+}
 }
 </style>
