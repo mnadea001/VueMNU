@@ -32,6 +32,7 @@ function goBack() {
 </script>
 
 <template>
+  <main>
   <div class="content-btn">
     <button @click="goBack" class="text-white-500 dark:text-black hover:underline mb-4 flex">
       <img :src="arrowIcon" class="w-10 h-10 dark:color-white" /> back
@@ -47,11 +48,13 @@ function goBack() {
       <img :src="aroundImg" class="w-10 h-10 ms-5 dark:color-white" alt="" />
     </div>
   </div>
-
-  <!-- <audio controls autoplay>
-  <source src="../assets/music/om.mp3" type="audio/mpeg">
-Your browser does not support the audio element.
-</audio> -->
+  <div class="audio-box">
+    <p class="text-center text-black me-5">start mantra</p>
+    <audio controls class="audio">
+      <source src="../assets/music/om.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+  </div>
 
   <Renderer ref="renderer" antialias orbit-ctrl resize="window">
     <Camera :position="{ x: 0, z: 20 }" />
@@ -62,10 +65,26 @@ Your browser does not support the audio element.
     </Scene>
   </Renderer>
   <br />
+</main>
 </template>
 <style scoped>
+main {
+  width: 100vw;
+}
 .content-btn {
   margin-left: 80px;
+}
+.audio-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: rgb(209, 242, 63);
+  background: linear-gradient(90deg, rgba(209, 242, 63, 1) 0%, rgba(255, 220, 0, 1) 100%);
+  border-radius: 10px;
+  padding: 20px;
+  margin: auto;
+  width: 30%;
 }
 
 .box-docker {
@@ -98,12 +117,22 @@ Your browser does not support the audio element.
   margin: 20px;
 }
 
+.audio {
+  /* filter: saturate(70%);
+     */
+  width: 200px;
+  background: transparent;
+  height: 25px;
+}
 @media screen and (max-width: 768px) {
   .box-docker {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+  .audio-box {
+    width: 60%;
   }
 }
 </style>
