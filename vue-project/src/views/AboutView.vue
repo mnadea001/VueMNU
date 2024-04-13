@@ -178,4 +178,28 @@ h2 {
   --cardTopPadding: 1.5em;
   --cardMargin: 4vw;
 }
+
+@media (max-width: 768px) {
+  .content {
+    width: 90%; /* Adjust width for smaller screens */
+  }
+
+  .content-span p {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .card-body {
+    margin: 20px;
+    height: auto; /* Adjust height for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .content-span p {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
 </style>

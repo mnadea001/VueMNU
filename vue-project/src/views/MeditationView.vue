@@ -110,6 +110,7 @@ h2,
   border-radius: 35px;
   padding: 10px 15px;
   font-family: 'Caprasimo', sans-serif;
+  color: white;
 }
 
 .btn-home-start:hover {
