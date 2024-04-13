@@ -95,13 +95,17 @@ img {
     width: 100%;
   }
 
+  .content-box {
+    width: 100%;
+    margin: auto;
+  }
   .div-img {
     display: none;
   }
 
   .slide-text {
-  width: 80%;
-  margin: 10px;
-}
+    width: 80%;
+    margin: 10px;
+  }
 }
 </style>

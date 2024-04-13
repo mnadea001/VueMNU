@@ -111,5 +111,8 @@ margin: 100px;
   .title-container {
   margin: 10px;
 }
+.conclusion-food {
+margin: 10px;
+}
 }
 </style>

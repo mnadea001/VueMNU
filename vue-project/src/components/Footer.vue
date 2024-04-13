@@ -15,7 +15,7 @@
 </template>
 
 <script setup lang="ts">
-import { RouterLink } from "vue-router";
+import { RouterLink } from 'vue-router'
 </script>
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
@@ -72,6 +72,10 @@ nav a:first-of-type {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+
+  footer {
+    margin-top: 40px;
   }
 }
 </style>
