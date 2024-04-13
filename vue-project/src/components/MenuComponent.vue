@@ -41,7 +41,7 @@ const handleClose = () => {
           </slot>
           </div>
   
-          <div>
+          <div class="image-menu">
             <img :src="chillImageSrc" class="w-80 h-80 rounded-full mt-4" />
 
           </div>
@@ -110,6 +110,13 @@ const handleClose = () => {
   .modal-body {
     flex-direction: column;
     align-items: flex-start;
+  }
+  .content {
+    flex-direction: column;
+  }
+
+  .image-menu { 
+    display: none;
   }
 }
 </style>
