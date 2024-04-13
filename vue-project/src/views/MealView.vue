@@ -59,7 +59,7 @@ onMounted(() => {
     <div>
       <div class="content-btn">
         <button @click="goBack" class="text-lg hover:underline mb-4 flex">
-          <img :src="arrowIcon" class="w-10 h-10" /> Back
+          <img :src="arrowIcon" class="w-10 h-10" /> back
         </button>
       </div>
       <div v-if="meal" class="m-2 max-w-4xl mx-auto card">

@@ -6,7 +6,7 @@
           @click="goBack"
           class="hover:underline mb-4 flex"
         >
-          <img :src="arrowIcon" class="w-10 h-10" /> Back
+          <img :src="arrowIcon" class="w-10 h-10" /> back
         </button>
         </div>
       <div

@@ -2,7 +2,7 @@
   <main>
     <div class="title-container">
       <button @click="goBack" class="font-medium text-black-500 hover:underline mb-4 flex">
-        <img :src="arrowIcon" class="w-10 h-10" /> Back
+        <img :src="arrowIcon" class="w-10 h-10" /> back
       </button>
       <h1 class="text-xl text-center my-4">Veggie is good !!!</h1>
       <h4 class="text-center my-4">

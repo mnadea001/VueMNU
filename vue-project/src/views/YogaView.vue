@@ -55,7 +55,7 @@ onMounted(() => {
         @click="goBack"
         class="text-white-500 dark:text-black hover:underline mb-4 flex"
       >
-        <img :src="arrowIcon" class="w-10 h-10" /> Back
+        <img :src="arrowIcon" class="w-10 h-10" /> back
       </button>
     </div>
     <h1 class="text-3xl text-center my-4">Yoga is art</h1>

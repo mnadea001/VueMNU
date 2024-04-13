@@ -51,7 +51,7 @@ function goBack() {
         @click="goBack"
         class="text-lg text-white-500 dark:text-black hover:underline mb-4 flex"
       >
-        <img :src="arrowIcon" class="w-10 h-10 dark:color-white" /> Back
+        <img :src="arrowIcon" class="w-10 h-10 dark:color-white" /> back
       </button>
     </div>
     <div class="home-box">
