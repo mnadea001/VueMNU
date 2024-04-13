@@ -73,6 +73,7 @@ h2 {
   font-family: 'Caprasimo', sans-serif;
   padding: 10px 15px;
   margin-bottom: 10px;
+  color: white;
 }
 
 .btn-home-start:hover {

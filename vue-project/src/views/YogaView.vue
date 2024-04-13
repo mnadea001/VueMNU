@@ -76,7 +76,7 @@ onMounted(() => {
       <img :src="yogaImageSrc" class="w-80 h-80 rounded-full mt-4" />
     </div>
     <div class="slider-yoga">
-      <p class="my-4 ms-4">Scroll vertically to see all yoga styles:</p>
+      <p class="my-4 ms-4 scroll-text">Scroll vertically to see all yoga styles:</p>
       <div class="container my-4">
         <div class="category-card my-4">
           <RouterLink v-for="(yoga, index) in yogas" :key="index" :to="`/category/${yoga.id}`">
@@ -90,7 +90,11 @@ onMounted(() => {
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 
+.scroll-text {
+  font-family: "Caprasimo", sans-serif;
+}
 main {
   max-width: 100vw;
 }
@@ -112,7 +116,6 @@ h1 {
 .slider-yoga {
   margin-right: 30px;
   margin-left: 30px;
-  margin-bottom: 30px;
 }
 .container {
   width: 100%;

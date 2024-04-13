@@ -3,7 +3,7 @@
     <div>
       <div
         v-if="yoga"
-        class="p-6 m-2 max-w-4xl mx-auto rounded-xl shadow-md category-detail"
+        class="p-6 m-2 max-w-4xl mx-auto rounded-xl category-detail"
       >
         <button
           @click="goBack"
@@ -11,14 +11,14 @@
         >
           <img :src="arrowIcon" class="w-10 h-10" /> Back
         </button>
-        <h1 class="text-gray-500 text-center">{{ yoga.category_name }}</h1>
+        <h1 class="text-center">{{ yoga.category_name }}</h1>
         <div class="mt-4">
-          <div class="text-gray-500 text-center ">{{ yoga.category_description }}</div>
+          <div class="text-center ">{{ yoga.category_description }}</div>
         </div>
         <div class="content">
           <img :src="childPoseImageSrc" class="h-80 rounded-full mt-4" />
         </div>
-        <p class="my-4">Scroll vertically to see all poses: </p>
+        <p class="my-4 scroll-text">Scroll vertically to see all poses: </p>
         <div class="pose-content-box my-4">
         <div class="pose-content">
           <PoseCard
@@ -96,7 +96,11 @@ onMounted(() => {
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 
+.scroll-text {
+  font-family: "Caprasimo", sans-serif;
+}
 h1 {
   font-family: "Anton", sans-serif;
   font-size: 2rem;
@@ -113,9 +117,6 @@ main {
   align-items: center;
 }
 
-.category-detail {
-  margin-bottom: 50px;
-}
 
 .pose-content-box{
   width: 100%;

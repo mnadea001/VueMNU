@@ -16,7 +16,7 @@
             <li>3D model on SketchFab</li>
           </ul>
           <br>
-          <p>Created By Mathilde NADEAU - April 2024</p>
+          <p class="text-center">Created By Mathilde NADEAU - April 2024</p>
         </div>
       </div>
     </div>

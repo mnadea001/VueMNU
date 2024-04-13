@@ -19,7 +19,7 @@
 <script setup lang="ts">
 import { useDark, useToggle } from '@vueuse/core'
 import { ref, computed } from 'vue'
-import moon from '../assets/moon.png'
+import moon from '../assets/moon.svg'
 import sun from '../assets/sun.svg'
 
 import MenuComponent from '../components/MenuComponent.vue'

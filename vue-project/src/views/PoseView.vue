@@ -97,9 +97,6 @@ main {
   max-width: 600px;
   margin: auto;
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  margin-bottom: 50px;
 }
 
 .img-pose {

@@ -1,6 +1,6 @@
 <template>
   <div class="content-box">
-    <Splide :options="{ rewind: true }" aria-label="Vue Splide Example">
+    <Splide :options="{ rewind: true }" aria-label="Splide">
       <SplideSlide v-for="(slide, index) in slides" :key="index">
         <div class="slide-content">
           <div class="div-img">
@@ -73,7 +73,7 @@ h2 {
 }
 .slide-content {
   display: flex;
-  margin: 50px;
+  margin-top: 50px;
 }
 .slide-text {
   width: 50%;
@@ -93,6 +93,8 @@ img {
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin-top: 50px;
+    margin-bottom: 20px;
   }
 
   .content-box {
@@ -105,7 +107,7 @@ img {
 
   .slide-text {
     width: 80%;
-    margin: 10px;
+    margin: auto;
   }
 }
 </style>

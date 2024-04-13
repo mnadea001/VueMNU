@@ -13,13 +13,13 @@
   </script>
   
   <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
   
 
   .text {
     font-size: 1.5rem;
-    font-family: "Caprasimo", sans-serif;
+    font-family: 'Anton', sans-serif;
     word-wrap: break-word !important;
     color: black;
   }

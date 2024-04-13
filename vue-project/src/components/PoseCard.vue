@@ -1,6 +1,6 @@
 <template>
     <div class="pose-card" @click="navigateToPose">
-      <h3 class="text-gray-500 text-center">{{ pose?.english_name }}</h3>
+      <h3 class="text-center">{{ pose?.english_name }}</h3>
     </div>
   </template>
 
@@ -33,11 +33,11 @@
   </script>
 
   <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 
 h3 {
-  font-family: "Caprasimo", sans-serif;
+  font-family: 'Anton', sans-serif;
   margin-right: 10px;
   font-size: 1.2em;
 }
@@ -48,7 +48,6 @@ h3 {
     padding: 10px 15px;
     margin-top: 30px;
     margin-right: 10px;
-    background-color: #f9f9f9;
     display: flex;
     flex-direction: column;
     justify-content: center;
