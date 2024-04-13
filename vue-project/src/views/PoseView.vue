@@ -57,7 +57,7 @@ async function fetchPoseData() {
           <img :src="arrowIcon" class="w-10 h-10" /> Back
         </button>
       </div>
-    <div v-if="pose" class="pose-details">
+    <div v-if="pose" class="m-2 max-w-4xl mx-auto card pose-details">
 
       <h1 class="text-center">{{ pose.english_name }}</h1>
       <p><strong>Sanskrit Name:</strong> {{ pose.sanskrit_name }}</p>
@@ -93,9 +93,7 @@ main {
   align-items: center;
 }
 .pose-details {
-  width: 600px;
-  margin: auto;
-  padding: 20px;
+  padding: 50px;
 }
 
 .img-pose {
