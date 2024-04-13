@@ -1,6 +1,6 @@
 <template>
-  <div class="p-2 m-2 mx-auto bg-white rounded-xl shadow-md items-center card">
-    <h2 class="text-center text">{{ props.categoryName }}</h2>
+  <div class="category-card">
+    <h3 class="text-center">{{ props.categoryName }}</h3>
   </div>
 </template>
 
@@ -14,10 +14,22 @@ const props = defineProps({
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-
-.text {
+h3 {
   font-family: 'Anton', sans-serif;
-  word-wrap: break-word !important;
-  color: black;
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+.category-card {
+  cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-top: 30px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
 }
 </style>
