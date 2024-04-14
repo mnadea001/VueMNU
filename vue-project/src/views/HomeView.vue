@@ -132,5 +132,9 @@ h2 {
     display: flex;
     flex-direction: column;
   }
+
+  .image-box {
+    display: none;
+  }
 }
 </style>
