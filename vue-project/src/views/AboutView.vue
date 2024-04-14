@@ -160,7 +160,9 @@ h2 {
 
 .card-body {
   margin: 50px;
-  background-color: rgb(209, 242, 63);
+
+  background: rgb(209, 242, 63);
+  background: linear-gradient(90deg, rgba(209, 242, 63, 1) 0%, rgba(255, 220, 0, 1) 100%);
   box-sizing: border-box;
   padding: 30px;
   border-radius: 20px;
