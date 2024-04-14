@@ -33,7 +33,7 @@ function goBack() {
 
 <template>
   <main>
-  <div class="content-btn">
+  <!-- <div class="content-btn">
     <button @click="goBack" class="text-white-500 dark:text-black hover:underline mb-4 flex">
       <img :src="arrowIcon" class="w-10 h-10 dark:color-white" /> back
     </button>
@@ -54,7 +54,7 @@ function goBack() {
       <source src="../assets/music/om.mp3" type="audio/mpeg" />
       Your browser does not support the audio element.
     </audio>
-  </div>
+  </div> -->
 
   <Renderer ref="renderer" antialias orbit-ctrl resize="window">
     <Camera :position="{ x: 0, z: 20 }" />

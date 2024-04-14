@@ -9,11 +9,11 @@
 
 
 
-@media (hover: hover) {
+/* @media (hover: hover) {
   a:hover {
     background-color: hsla(239, 65%, 58%, 0.2);
   }
-}
+} */
 
 @media (min-width: 1024px) {
   body {
