@@ -1,8 +1,11 @@
 <template>
   <main>
-    <BackButton/>
+    <BackButton />
     <div class="title-container">
-      <h1 class="text-xl text-center my-4">Veggie is good !!!</h1>
+      <h1 class="text-xl text-center my-4">
+        Veggie <br />
+        is good !!!
+      </h1>
       <h4 class="text-center my-4">
         Vegetarianism holds a significant place in the lifestyle and philosophy of yoga, serving as
         more than just a dietary choice but rather a cornerstone of spiritual and holistic living.
@@ -16,43 +19,32 @@
         <MealCard :img="meal.strMealThumb" :strMeal="meal.strMeal" />
       </RouterLink>
     </div>
-<h2 class="text-3xl text-center mt-4 pt-5">4 main reasons for vegetarism:</h2>
+    <h2 class="text-3xl text-center mt-4 pt-5">4 main reasons for vegetarism:</h2>
     <Carousel />
-<div class="conclusion-food">
-    <h3 class="text-center mb-4">
-      In conclusion, vegetarian food holds immense importance for yogis, serving as a practical
-      manifestation of yogic principles such as ahimsa, promoting mental clarity and inner peace,
-      enhancing pranic energy, and aligning with ethical and environmental values. By embracing a
-      vegetarian diet, yogis not only nourish their bodies but also cultivate compassion,
-      mindfulness, and harmony in their lives and the world around them.
-    </h3>
-  </div>
+    <div class="conclusion-food">
+      <h3 class="text-center mb-4">
+        In conclusion, vegetarian food holds immense importance for yogis, serving as a practical
+        manifestation of yogic principles such as ahimsa, promoting mental clarity and inner peace,
+        enhancing pranic energy, and aligning with ethical and environmental values. By embracing a
+        vegetarian diet, yogis not only nourish their bodies but also cultivate compassion,
+        mindfulness, and harmony in their lives and the world around them.
+      </h3>
+    </div>
   </main>
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, computed } from 'vue'
-import { RouterLink, useRouter } from 'vue-router'
+import { onMounted, ref } from 'vue'
+import { RouterLink } from 'vue-router'
 import MealCard from '../components/MealCard.vue'
-import backIcon from '../assets/back.svg'
-import whiteBack from '../assets/white-back.png'
-import { useDark } from '@vueuse/core'
+
 import Carousel from '@/components/Carousel.vue'
 import BackButton from '@/components/BackButton.vue'
-const isDark = useDark()
-const arrowIcon = computed(() => {
-  return isDark.value ? backIcon : whiteBack
-})
+
 interface Meal {
   idMeal: string
   strMeal: string
   strMealThumb: string
-}
-
-const router = useRouter()
-
-function goBack() {
-  router.go(-1)
 }
 
 const meals = ref<Meal[]>([])
@@ -77,17 +69,28 @@ onMounted(() => {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
 
 main {
   width: 100vw;
   height: 100%;
 }
 h1 {
-  font-family: 'Anton', sans-serif;
+  font-family: 'Bungee Shade', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4.5em !important;
+  color: #d1f23f;
+  line-height: 1.5;
 }
 
-h2, .scroll-text {
-font-family: 'Caprasimo', sans-serif;
+h2 {
+  color: #f537df;
+  margin-top: 40px;
+}
+h2,
+.scroll-text {
+  font-family: 'Caprasimo', sans-serif;
 }
 .title-container {
   margin: 120px;
@@ -103,15 +106,15 @@ font-family: 'Caprasimo', sans-serif;
 }
 
 .conclusion-food {
-margin: 100px;
+  margin: 100px;
 }
 
 @media screen and (max-width: 768px) {
   .title-container {
-  margin: 10px;
-}
-.conclusion-food {
-margin: 10px;
-}
+    margin: 10px;
+  }
+  .conclusion-food {
+    margin: 10px;
+  }
 }
 </style>
