@@ -62,3 +62,6 @@ https://learnvue.co/articles/parallax-scrolling-in-vue
 
 png image : 
 https://www.cleanpng.com/
+
+docu tailwind:
+https://tailwindcss.com/docs/background-color 
