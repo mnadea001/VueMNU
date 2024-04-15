@@ -1,5 +1,7 @@
 <template>
+  <div class="content-btn">
   <RouterLink to="/index" class="btn-start">Let's start !!</RouterLink>
+</div>
 </template>
 
 <script setup lang="ts">
@@ -23,5 +25,11 @@ import { RouterLink } from 'vue-router'
 .btn-start:hover {
   background-color: rgb(10, 216, 48);
   /* color: black; */
+}
+
+@media screen and (max-width: 768px) {
+  .content-btn {
+    margin-left: 10px;
+  }
 }
 </style>
