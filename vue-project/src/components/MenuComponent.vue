@@ -4,6 +4,7 @@ import { onClickOutside } from "@vueuse/core";
 import { RouterLink } from "vue-router";
 
 import chillImageSrc from '../assets/pray.gif'
+import SmilingFlower from "./SmilingFlower.vue";
 const props = defineProps({
   isOpen: Boolean,
 });
@@ -42,8 +43,8 @@ const handleClose = () => {
           </div>
   
           <div class="image-menu">
-            <img :src="chillImageSrc" class="w-80 h-80 rounded-full mt-4" />
-
+            <!-- <img :src="chillImageSrc" class="w-80 h-80 rounded-full mt-4" /> -->
+<SmilingFlower/>
           </div>
         </div>
       </div>
