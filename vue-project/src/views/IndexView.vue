@@ -101,6 +101,7 @@ h2 {
   font-weight: 400;
   font-style: bold;
   font-size: 2.5em !important;
+  font-family: 'Anton', sans-serif;
 }
 h2 .text-btn {
   font-family: 'Anton', sans-serif;

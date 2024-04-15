@@ -1,14 +1,8 @@
 <script setup lang="ts">
-import { ref, onMounted, computed } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
-import backIcon from '../assets/back.svg'
-import whiteBack from '../assets/white-back.png'
-import { useDark } from '@vueuse/core'
+import { ref, onMounted,  } from 'vue'
+import { useRoute } from 'vue-router'
+import BackButton from '@/components/BackButton.vue'
 
-const isDark = useDark()
-const arrowIcon = computed(() => {
-  return isDark.value ? backIcon : whiteBack
-})
 
 interface Pose {
   id: number
@@ -23,10 +17,7 @@ interface Pose {
 const pose = ref<Pose | null>(null)
 const error = ref<string | null>(null)
 const route = useRoute()
-const router = useRouter()
-function goBack() {
-  router.go(-1)
-}
+
 
 onMounted(() => {
   fetchPoseData()
@@ -52,18 +43,15 @@ async function fetchPoseData() {
 </script>
 <template>
   <main class="dark:bg-white">
-    <div class="content-btn">
-        <button @click="goBack" class="hover:underline mb-4 flex text-dark">
-          <img :src="arrowIcon" class="w-10 h-10" /> back
-        </button>
-      </div>
+    <BackButton/>
     <div v-if="pose" class="m-2 max-w-4xl mx-auto card pose-details">
-
       <h1 class="text-center">{{ pose.english_name }}</h1>
-      <p><strong>Sanskrit Name:</strong> {{ pose.sanskrit_name }}</p>
-      <p><strong>Translation Name:</strong> {{ pose.translation_name }}</p>
-      <p><strong>Description:</strong> {{ pose.pose_description }}</p>
-      <p><strong>Benefits:</strong> {{ pose.pose_benefits }}</p>
+      <span class="my-4">
+        <p class="my-4"><strong>Sanskrit Name:</strong> {{ pose.sanskrit_name }}</p>
+        <p class="my-4"><strong>Translation Name:</strong> {{ pose.translation_name }}</p>
+        <p class="my-4"><strong>Description:</strong> {{ pose.pose_description }}</p>
+        <p class="my-4"><strong>Benefits:</strong> {{ pose.pose_benefits }}</p>
+      </span>
       <div class="content">
         <img class="img-pose" :src="pose.url_svg" alt="Pose Image" />
       </div>
@@ -74,13 +62,17 @@ async function fetchPoseData() {
 </template>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 h1 {
-  font-family: 'Anton', sans-serif;
-  font-size: 2rem;
-  margin-bottom: 20px;
+  font-family: 'Caprasimo', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3.5em;
+  color: #d1f23f;
 }
+
 main {
   width: 100vw;
   height: 100%;
@@ -101,12 +93,4 @@ main {
   object-fit: contain !important;
 }
 
-.content-btn {
-  margin-left: 80px;
-}
-@media screen and (max-width: 768px) {
-  .content-btn {
-    margin-left: 10px;
-  }
-}
 </style>

@@ -89,6 +89,8 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
 h1 {
   font-family: 'Caprasimo', sans-serif;
   font-weight: 400;
@@ -110,6 +112,7 @@ h3 {
   font-style: bold;
   font-size: 2.5em !important;
   margin-bottom: 50px;
+  font-family: 'Anton', sans-serif;
 }
 
 .section {
@@ -174,6 +177,7 @@ img.background {
 display: flex;
 flex-direction: row;
 justify-content: center;
+margin-bottom: 50px;
 }
 
 </style>

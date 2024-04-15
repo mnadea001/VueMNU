@@ -1,22 +1,12 @@
 <script setup lang="ts">
-import { onMounted, ref, computed } from 'vue'
+import { onMounted, ref } from 'vue'
 import { RouterLink, useRouter } from 'vue-router'
 import CategoryCard from '../components/CategoryCard.vue'
 import yogaImg from '../assets/yoga.gif'
 import VTypical from 'vue-typical'
-import backIcon from '../assets/back.svg'
-import whiteBack from '../assets/white-back.png'
-import { useDark } from '@vueuse/core'
+import BackButton from '@/components/BackButton.vue'
 
-const router = useRouter()
-const isDark = useDark()
-const arrowIcon = computed(() => {
-  return isDark.value ? backIcon : whiteBack
-})
 
-function goBack() {
-  router.go(-1)
-}
 
 const yogaImageSrc: string = yogaImg
 interface Pose {
@@ -50,14 +40,7 @@ onMounted(() => {
 
 <template>
   <main class="dark:bg-white">
-    <div class="content-btn">
-      <button
-        @click="goBack"
-        class="text-white-500 dark:text-black hover:underline mb-4 flex"
-      >
-        <img :src="arrowIcon" class="w-10 h-10" /> back
-      </button>
-    </div>
+    <BackButton/>
     <h1 class="text-3xl text-center my-4">Yoga is art</h1>
     <div class="content">
       <v-typical
@@ -91,6 +74,7 @@ onMounted(() => {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
 
 .scroll-text {
   font-family: "Caprasimo", sans-serif;
@@ -100,6 +84,18 @@ main {
 }
 
 h1 {
+  font-family: 'Bungee Shade', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4.5em !important;
+  color: #d1f23f;
+  line-height: 1.5;
+}
+
+h2 {
+  font-weight: 400;
+  font-style: bold;
+  font-size: 2.5em !important;
   font-family: 'Anton', sans-serif;
 }
 .content {
@@ -110,9 +106,7 @@ h1 {
   align-items: center;
 }
 
-.content-btn {
-  margin-left: 80px;
-}
+
 .slider-yoga {
   margin-right: 30px;
   margin-left: 30px;
@@ -131,9 +125,4 @@ h1 {
   flex-direction: row;
 }
 
-@media screen and (max-width: 768px) {
-  .content-btn {
-  margin-left: 10px;
-}
-}
 </style>
