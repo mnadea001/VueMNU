@@ -1,18 +1,22 @@
 <template>
   <div class="root">
-    <img class="background" ref="background" src="../assets/tree-1.jpg" />
-    <img class="foreground" ref="foreground" src="../assets/tree-foreground.png" />
+    <img class="background" ref="background" src="../assets/nature.jpg" />
+    <img class="foreground" ref="foreground" src="../assets/birds.png" />
     <div class="section section-1" ref="first">
       <div>
-        <h1>Parallax Made Easy.</h1>
+        <h1>
+          Welcome
+          <br />
+          new yogi
+        </h1>
       </div>
     </div>
-    <div class="section section-2" ref="second">
-      <div>
-        <h2>Here's more info</h2>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit...</p>
-      </div>
+    <div class="section-2" ref="second">
+    <div>
+      <h2>find harmony & be happy</h2>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit...</p>
     </div>
+  </div>
   </div>
 </template>
 
@@ -38,7 +42,8 @@ export default {
 
       // zoom the background at a slower rate
       background.value.style.transform = 'scale(' + (100 + backgroundSize * 0.4) / 100 + ')'
-      foreground.value.style.transform = 'scale(' + (100 + backgroundSize) / 100 + ')'
+      // foreground.value.style.transform = 'scale(' + (100 + backgroundSize) / 100 + ')'
+      foreground.value.style.transform = `translateX(${scrollY}px)`
     }
     onMounted(() => {
       document.addEventListener('scroll', handleScroll)
@@ -58,13 +63,30 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+h1 {
+  font-family: 'Caprasimo', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5em;
+  color: #d1f23f;
+}
 
+h2 {
+  font-family: 'Caprasimo', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5em;
+  color: #ef3ff2;
+}
 .section {
   height: 100vh;
   position: relative;
 }
 
+.img.foreground {
+  padding-top: 600px !important;
+}
 img.background,
 img.foreground {
   /* Fill background */
@@ -78,8 +100,8 @@ img.foreground {
 
 img.background {
   /* Positioning */
-  position: fixed;
-  top: 0;
+  position: absolute;
+  top: 20;
   left: 0;
 }
 
@@ -88,12 +110,12 @@ img.background {
   color: white;
   /* centers this div */
   left: 50%;
-  top: 50%;
+  top: 70%;
   transform: translate(-50%, -50%);
 }
 
 .section-1 {
-  margin-bottom: 500px; /* determines the gap between our two sections */
+  /* margin-bottom: 500px;  */
   font-size: 4em;
 }
 
@@ -102,10 +124,11 @@ img.background {
 }
 
 .section-2 div {
-  background-color: rgba(255, 255, 255, 0.7);
+  /* background-color: rgba(255, 255, 255, 0.7); */
   color: black;
   text-align: center;
   padding: 50px;
+  margin: auto;
   max-width: 300px;
 }
 
