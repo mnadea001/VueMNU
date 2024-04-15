@@ -2,6 +2,7 @@
   "files": [],
   "compilerOptions": {
     "noImplicitAny": false,
+    "verbatimModuleSyntax": true,
     "target": "esnext",
     "module": "esnext",
     "paths": {
