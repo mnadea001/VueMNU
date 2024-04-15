@@ -1,140 +1,180 @@
-<script setup lang="ts">
-import meditateImg from '../assets/meditation.gif'
-
-import { RouterLink } from 'vue-router'
-import VTypical from 'vue-typical'
-import { defineComponent, ref, computed } from 'vue'
-import { useMouseInElement } from '@vueuse/core'
-
-const meditateImageSrc: string = meditateImg
-defineComponent({
-  components: {
-    VTypical
-  }
-})
-
-const target = ref(null)
-
-const { elementX, elementY, isOutside, elementHeight, elementWidth } = useMouseInElement(target)
-
-const cardTransform = computed(() => {
-  const MAX_ROTATION = 150
-
-  const rX = (MAX_ROTATION / 2 - (elementY.value / elementHeight.value) * MAX_ROTATION).toFixed(2)
-
-  const rY = ((elementX.value / elementWidth.value) * MAX_ROTATION - MAX_ROTATION / 2).toFixed(2)
-
-  return isOutside.value
-    ? ''
-    : `perspective(${elementWidth.value}px) rotateX(${rX}deg) rotateY(${rY}deg)`
-})
-</script>
-
 <template>
-  <main>
-    <div class="home-box">
-      <div
-        ref="target"
-        :style="{
-          transform: cardTransform,
-          transition: 'transform 0.25s ease-out'
-        }"
-      >
-        <h1 class="text-3xl text-center my-4">Welcome new yogi</h1>
+  <div class="root">
+    <img class="background" ref="background" src="../assets/nature.jpg" />
+    <img class="foreground" ref="foreground" src="../assets/birds.png" />
+    <div class="section section-1" ref="first">
+      <div>
+        <h1>
+          Welcome
+          <br />
+          new yogi
+        </h1>
       </div>
-      <div class="image-container">
-        <div class="text-box">
-          <h2 class="text-3xl text-center my-4">Yoga is the union of body & mind</h2>
+    </div>
+    <div class="section-2" ref="second">
+      <div>
+        <h2 class="text-center">
+          Yoga is the union <br />
+          of body & mind
+        </h2>
+        <span>
           <v-typical
             class="blink"
             :steps="['find', 1000, 'find harmony', 500, 'find harmony & be happy !!', 1000]"
             :loop="Infinity"
-            :wrapper="'h2'"
-          ></v-typical>
-          <RouterLink to="/index" class="btn-home-start text-xl my-3"
-            >Let's start now !!</RouterLink
-          >
-        </div>
-        <div class="image-box">
-          <img :src="meditateImageSrc" class="w-80 h-80" />
-        </div>
+            :wrapper="'h3'"
+          ></v-typical
+        ></span>
+
+        
       </div>
     </div>
-  </main>
+    <div class="section-3">
+      <StartButton />
+    </div>
+  
+  </div>
 </template>
 
+<script lang="ts">
+import StartButton from '@/components/StartButton.vue'
+import { ref, onMounted, onUnmounted } from 'vue'
+import VTypical from 'vue-typical'
+
+export default {
+  components: {
+    VTypical,
+    StartButton
+  },
+  setup() {
+    const foreground = ref(null)
+    const background = ref(null)
+    const first = ref(null)
+    const second = ref(null)
+    const handleScroll = (evt) => {
+      const scrollY = window.scrollY
+      // decreases as user scrolls
+      first.value.style.opacity =
+        (100 - (scrollY + window.innerHeight - first.value.offsetHeight)) / 100
+      // increases as user scrolls
+      second.value.style.opacity = (scrollY + window.innerHeight - second.value.offsetTop) / 100
+
+      const maxBackgroundSize = 120
+      const backgroundSize = scrollY / (maxBackgroundSize - 100) // increases as user scrolls
+
+      // zoom the background at a slower rate
+      background.value.style.transform = 'scale(' + (100 + backgroundSize * 0.4) / 100 + ')'
+      // foreground.value.style.transform = 'scale(' + (100 + backgroundSize) / 100 + ')'
+      foreground.value.style.transform = `translateX(${scrollY}px)`
+    }
+    onMounted(() => {
+      document.addEventListener('scroll', handleScroll)
+    })
+
+    onUnmounted(() => {
+      document.removeEventListener('scroll', handleScroll)
+    })
+    return {
+      foreground,
+      background,
+      first,
+      second,
+      VTypical
+    }
+  }
+}
+</script>
+
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
 
-main {
-  width: 100vw;
-  height: 100vh;
-}
-
 h1 {
-  font-family: 'Bungee Shade', sans-serif;
+  font-family: 'Caprasimo', sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 3.5em;
+  font-size: 1.5em;
+  color: #d1f23f;
 }
 
 h2 {
-  font-family: 'Caprasimo', sans-serif;
+  font-family: 'Bungee Shade', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4.5em !important;
+  color: #ef3ff2;
 }
 
-.home-box {
-  padding: 50px;
-}
-.image-container {
-  display: flex;
-  flex-direction: row;
-  margin: auto;
-  padding-top: 50px;
-  width: 80%;
+h3 {
+  font-weight: 400;
+  font-style: bold;
+  font-size: 2.5em !important;
+  margin-bottom: 50px;
 }
 
-.text-box,
-.image-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  width: 50%;
+.section {
+  height: 100vh;
+  position: relative;
 }
 
-.btn-home-start {
-  background-color: blue;
-  border-radius: 35px;
-  font-family: 'Caprasimo', sans-serif;
-  padding: 10px 15px;
-  margin-bottom: 10px;
+.img.foreground {
+  padding-top: 600px !important;
+}
+img.background,
+img.foreground {
+  /* Fill background */
+  min-height: 100%;
+  min-width: 1024px;
+
+  /* Scale proportionately */
+  width: 100%;
+  height: auto;
+}
+
+img.background {
+  /* Positioning */
+  position: absolute;
+  top: 20;
+  left: 0;
+}
+.section > div {
+  position: fixed;
   color: white;
+  /* centers this div */
+  left: 50%;
+  top: 70%;
+  transform: translate(-50%, -50%);
 }
 
-.btn-home-start:hover {
-  background-color: rgb(134, 134, 244);
+.section-1 {
+  font-size: 4em;
+}
+.section-2 {
+  opacity: 0; /* defaults to 0 because it's not visible */
 }
 
-@media screen and (max-width: 768px) {
-  .btn-home-start {
-    background-color: blue;
-    font-size: small;
-    border-radius: 35px;
-    font-family: 'Caprasimo', sans-serif;
-    padding: 10px 15px;
-    margin-bottom: 30px;
-  }
-
-  .image-container {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .image-box {
-    display: none;
-  }
+.section-2 div {
+  color: black;
+  text-align: center;
+  padding: 50px;
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
+
+.section-2 h2 {
+  font-size: 2em;
+  margin-bottom: 40px;
+}
+
+.section-2 p {
+  line-height: 150%;
+}
+
+.section-3 {
+display: flex;
+flex-direction: row;
+justify-content: center;
+}
+
 </style>

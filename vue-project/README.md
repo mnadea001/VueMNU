@@ -59,3 +59,6 @@ vue-mnu.vercel.app
 
 parallax effect tuto
 https://learnvue.co/articles/parallax-scrolling-in-vue 
+
+png image : 
+https://www.cleanpng.com/
