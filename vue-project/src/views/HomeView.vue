@@ -20,7 +20,7 @@
         <span>
           <v-typical
             class="blink"
-            :steps="['find', 1000, 'find harmony', 500, 'find harmony & be happy !!', 1000]"
+            :steps="['FIND', 1000, 'FIND HARMONY', 500, 'FIND HARMONY & BE HAPPY !!', 1000]"
             :loop="Infinity"
             :wrapper="'h3'"
           ></v-typical
@@ -102,7 +102,7 @@ h2 {
   font-weight: 400;
   font-style: normal;
   font-size: 4.5em !important;
-  color: #ef3ff2;
+  color: #d1f23f;
 }
 
 h3 {
@@ -159,7 +159,6 @@ img.background {
   padding: 50px;
   margin: auto;
   margin-top: 100px;
-  margin-bottom: 100px;
 }
 
 .section-2 h2 {

@@ -1,47 +1,62 @@
 <script setup lang="ts">
-import MindModalComponent from "../components/MindModalComponent.vue";
-import BodyModalComponent from "../components/BodyModalComponent.vue";
-import { ref, computed } from "vue";
-import VTypical from "vue-typical";
-import { defineComponent } from "vue";
-import elevateImg from "../assets/elevate.gif";
-import { useRouter } from "vue-router";
-import backIcon from "../assets/back.svg";
-import whiteBack from "../assets/white-back.png";
-import { useDark } from "@vueuse/core";
+import MindModalComponent from '../components/MindModalComponent.vue'
+import BodyModalComponent from '../components/BodyModalComponent.vue'
+import { ref, computed, watchEffect } from 'vue'
+import VTypical from 'vue-typical'
+import { defineComponent } from 'vue'
+import elevateImg from '../assets/elevate.gif'
+import { useRouter } from 'vue-router'
+import backIcon from '../assets/back.svg'
+import whiteBack from '../assets/white-back.png'
+import { useDark } from '@vueuse/core'
 
-const isDark = useDark();
+const isDark = useDark()
 const arrowIcon = computed(() => {
-  return isDark.value ? backIcon : whiteBack;
-});
+  return isDark.value ? backIcon : whiteBack
+})
 
-const elevateImageSrc: string = elevateImg;
+const elevateImageSrc: string = elevateImg
 
 defineComponent({
   components: {
-    VTypical,
-  },
-});
-const isModalOpened1 = ref(false);
-const isModalOpened2 = ref(false);
+    VTypical
+  }
+})
+const isModalOpened1 = ref(false)
+const isModalOpened2 = ref(false)
+const rotationDirection = ref('')
 
 const openModal1 = () => {
-  isModalOpened1.value = true;
-};
+  isModalOpened1.value = true
+}
 const openModal2 = () => {
-  isModalOpened2.value = true;
-};
+  isModalOpened2.value = true
+}
 const closeModal1 = () => {
-  isModalOpened1.value = false;
-};
+  isModalOpened1.value = false
+}
 const closeModal2 = () => {
-  isModalOpened2.value = false;
-};
-const router = useRouter();
+  isModalOpened2.value = false
+}
+const router = useRouter()
 
 function goBack() {
-  router.go(-1);
+  router.go(-1)
 }
+const rotateImage = (direction: string) => {
+  rotationDirection.value = direction === 'left' ? 'rotate(-6deg)' : 'rotate(6deg)';
+};
+
+const resetRotation = () => {
+  rotationDirection.value = '';
+};
+
+const imageRotation = ref('');
+
+watchEffect(() => {
+  imageRotation.value = rotationDirection;
+});
+
 </script>
 
 <template>
@@ -56,29 +71,25 @@ function goBack() {
     </div>
     <div class="home-box">
       <h1 class="text-3xl text-center my-4">
-        Elevate yourself with yoga
+        Elevate yourself <br />
+        with yoga
       </h1>
       <div class="title-container">
         <v-typical
           class="blink"
-          :steps="[
-            'CHOOSE',
-            1000,
-            'CHOOSE YOUR',
-            500,
-            'CHOOSE YOUR FIELD !!',
-            1000,
-          ]"
+          :steps="['CHOOSE', 1000, 'CHOOSE YOUR', 500, 'CHOOSE YOUR FIELD !!', 1000]"
           :loop="Infinity"
           :wrapper="'h2'"
         ></v-typical>
       </div>
       <div class="image-btn">
-        <button class="text-btn" @click="openModal1">  <p class="hover:text-orange">BODY</p></button>
-        <img :src="elevateImageSrc" class="w-80 h-80 rounded-full" />
-        <button class="text-btn" @click="openModal2">
+        <button class="text-btn" @mouseover="rotateImage('left')" @click="openModal1">
+          <p class="hover:text-orange">BODY</p>
+        </button>
+        <img :src="elevateImageSrc" class="w-80 h-80" :style="{ transform: imageRotation.value }" />
+        <button class="text-btn" @mouseover="rotateImage('right')" @click="openModal2">
           <p class="hover:text-orange">MIND</p>
-          </button>
+        </button>
       </div>
       <MindModalComponent :isOpen="isModalOpened2" @modal-close="closeModal2" />
       <BodyModalComponent :isOpen="isModalOpened1" @modal-close="closeModal1" />
@@ -87,17 +98,30 @@ function goBack() {
 </template>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
 
 main {
   width: 100vw;
   height: 100vh;
 }
 
-h1,
-h2,
-.text-btn {
-  font-family: "Anton", sans-serif;
+h1 {
+  font-family: 'Bungee Shade', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4.5em !important;
+  color: #d1f23f;
+  line-height: 1.5;
+}
+
+h2 {
+  font-weight: 400;
+  font-style: bold;
+  font-size: 2.5em !important;
+}
+h2 .text-btn {
+  font-family: 'Anton', sans-serif;
 }
 
 .text-btn {
@@ -108,11 +132,17 @@ h2,
   place-items: center;
 }
 
+img {
+  border-radius: 50% 50% 0% 0%;
+}
 .content-btn {
   margin-left: 80px;
 }
 .text-btn p:hover {
-  color: orange;
+  font-weight: bolder;
+}
+.text-btn p:hover img {
+  transform: rotate(50);
 }
 .image-btn {
   display: flex;
@@ -123,7 +153,7 @@ h2,
 }
 @media screen and (max-width: 768px) {
   .image-btn {
-  flex-direction: column;
-}
+    flex-direction: column;
+  }
 }
 </style>
