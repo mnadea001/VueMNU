@@ -37,7 +37,7 @@
 </template>
 <script lang="ts">
 import StartButton from '@/components/StartButton.vue'
-import { ref, onMounted, onUnmounted, Ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import VTypical from 'vue-typical'
 
 interface ElementRefs {
