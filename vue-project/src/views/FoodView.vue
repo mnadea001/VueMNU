@@ -1,9 +1,7 @@
 <template>
   <main>
+    <BackButton/>
     <div class="title-container">
-      <button @click="goBack" class="font-medium text-black-500 hover:underline mb-4 flex">
-        <img :src="arrowIcon" class="w-10 h-10" /> back
-      </button>
       <h1 class="text-xl text-center my-4">Veggie is good !!!</h1>
       <h4 class="text-center my-4">
         Vegetarianism holds a significant place in the lifestyle and philosophy of yoga, serving as
@@ -40,6 +38,7 @@ import backIcon from '../assets/back.svg'
 import whiteBack from '../assets/white-back.png'
 import { useDark } from '@vueuse/core'
 import Carousel from '@/components/Carousel.vue'
+import BackButton from '@/components/BackButton.vue'
 const isDark = useDark()
 const arrowIcon = computed(() => {
   return isDark.value ? backIcon : whiteBack

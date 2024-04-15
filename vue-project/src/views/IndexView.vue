@@ -1,19 +1,12 @@
 <script setup lang="ts">
 import MindModalComponent from '../components/MindModalComponent.vue'
 import BodyModalComponent from '../components/BodyModalComponent.vue'
-import { ref, computed, watchEffect } from 'vue'
+import { ref, watchEffect } from 'vue'
 import VTypical from 'vue-typical'
 import { defineComponent } from 'vue'
 import elevateImg from '../assets/elevate.gif'
-import { useRouter } from 'vue-router'
-import backIcon from '../assets/back.svg'
-import whiteBack from '../assets/white-back.png'
-import { useDark } from '@vueuse/core'
+import BackButton from '@/components/BackButton.vue'
 
-const isDark = useDark()
-const arrowIcon = computed(() => {
-  return isDark.value ? backIcon : whiteBack
-})
 
 const elevateImageSrc: string = elevateImg
 
@@ -38,11 +31,7 @@ const closeModal1 = () => {
 const closeModal2 = () => {
   isModalOpened2.value = false
 }
-const router = useRouter()
 
-function goBack() {
-  router.go(-1)
-}
 const rotateImage = (direction: string) => {
   rotationDirection.value = direction === 'left' ? 'rotate(-6deg)' : 'rotate(6deg)';
 };
@@ -61,14 +50,7 @@ watchEffect(() => {
 
 <template>
   <main>
-    <div class="content-btn">
-      <button
-        @click="goBack"
-        class="text-lg text-white-500 dark:text-black hover:underline mb-4 flex"
-      >
-        <img :src="arrowIcon" class="w-10 h-10 dark:color-white" /> back
-      </button>
-    </div>
+    <BackButton/>
     <div class="home-box">
       <h1 class="text-3xl text-center my-4">
         Elevate yourself <br />
@@ -135,9 +117,7 @@ h2 .text-btn {
 img {
   border-radius: 50% 50% 0% 0%;
 }
-.content-btn {
-  margin-left: 80px;
-}
+
 .text-btn p:hover {
   font-weight: bolder;
 }
