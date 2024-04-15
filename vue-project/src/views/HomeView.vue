@@ -35,11 +35,17 @@
   
   </div>
 </template>
-
 <script lang="ts">
 import StartButton from '@/components/StartButton.vue'
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, Ref } from 'vue'
 import VTypical from 'vue-typical'
+
+interface ElementRefs {
+  background: HTMLElement | null;
+  foreground: HTMLElement | null;
+  first: HTMLElement | null;
+  second: HTMLElement | null;
+}
 
 export default {
   components: {
@@ -47,26 +53,32 @@ export default {
     StartButton
   },
   setup() {
-    const foreground = ref(null)
-    const background = ref(null)
-    const first = ref(null)
-    const second = ref(null)
-    const handleScroll = (evt) => {
+    const foreground: Ref<HTMLElement | null> = ref(null)
+    const background: Ref<HTMLElement | null> = ref(null)
+    const first: Ref<HTMLElement | null> = ref(null)
+    const second: Ref<HTMLElement | null> = ref(null)
+
+    const handleScroll = (evt: Event) => {
       const scrollY = window.scrollY
-      // decreases as user scrolls
-      first.value.style.opacity =
-        (100 - (scrollY + window.innerHeight - first.value.offsetHeight)) / 100
-      // increases as user scrolls
-      second.value.style.opacity = (scrollY + window.innerHeight - second.value.offsetTop) / 100
+      if (first.value && second.value && background.value) {
+        // decreases as user scrolls
+        first.value.style.opacity =
+          (100 - (scrollY + window.innerHeight - first.value.offsetHeight)) / 100
+        // increases as user scrolls
+        second.value.style.opacity = (scrollY + window.innerHeight - second.value.offsetTop) / 100
 
-      const maxBackgroundSize = 120
-      const backgroundSize = scrollY / (maxBackgroundSize - 100) // increases as user scrolls
+        const maxBackgroundSize = 120
+        const backgroundSize = scrollY / (maxBackgroundSize - 100) // increases as user scrolls
 
-      // zoom the background at a slower rate
-      background.value.style.transform = 'scale(' + (100 + backgroundSize * 0.4) / 100 + ')'
-      // foreground.value.style.transform = 'scale(' + (100 + backgroundSize) / 100 + ')'
-      foreground.value.style.transform = `translateX(${scrollY}px)`
+        // zoom the background at a slower rate
+        background.value.style.transform = `scale(${(100 + backgroundSize * 0.4) / 100})`
+        // foreground.value.style.transform = 'scale(' + (100 + backgroundSize) / 100 + ')'
+        if (foreground.value) {
+          foreground.value.style.transform = `translateX(${scrollY}px)`
+        }
+      }
     }
+
     onMounted(() => {
       document.addEventListener('scroll', handleScroll)
     })
@@ -74,6 +86,7 @@ export default {
     onUnmounted(() => {
       document.removeEventListener('scroll', handleScroll)
     })
+
     return {
       foreground,
       background,
@@ -84,6 +97,7 @@ export default {
   }
 }
 </script>
+
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
