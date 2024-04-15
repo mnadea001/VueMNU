@@ -10,18 +10,24 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import flowerImageSrc from '../assets/smile.png'
 import eyesImageSrc from '../assets/eyes.png'
 
-const eyesContainer = ref(null)
-const eyesImage = ref(null)
+const eyesContainer = ref<HTMLElement | null>(null)
+const eyesImage = ref<HTMLImageElement | null>(null)
 
 onMounted(() => {
-  eyesContainer.value.addEventListener('mousemove', handleMouseMove)
+  if (eyesContainer.value && eyesImage.value) {
+    eyesContainer.value.addEventListener('mousemove', handleMouseMove)
+  }
 })
 
 onUnmounted(() => {
-  eyesContainer.value.removeEventListener('mousemove', handleMouseMove)
+  if (eyesContainer.value && eyesImage.value) {
+    eyesContainer.value.removeEventListener('mousemove', handleMouseMove)
+  }
 })
 
-const handleMouseMove = (event) => {
+const handleMouseMove = (event: MouseEvent) => {
+  if (!eyesImage.value) return
+
   const eyesRect = eyesImage.value.getBoundingClientRect()
   const mouseX = event.clientX
   const mouseY = event.clientY
@@ -38,7 +44,9 @@ const handleMouseMove = (event) => {
   const eyeOffsetX = Math.cos(angle) * distance
   const eyeOffsetY = Math.sin(angle) * distance
 
-  eyesImage.value.style.transform = `translate(${eyeOffsetX}px, ${eyeOffsetY}px)`
+  if (eyesImage.value) {
+    eyesImage.value.style.transform = `translate(${eyeOffsetX}px, ${eyeOffsetY}px)`
+  }
 }
 </script>
 
