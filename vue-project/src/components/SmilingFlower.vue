@@ -9,8 +9,6 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import flowerImageSrc from '../assets/smile.png'
 import eyesImageSrc from '../assets/eyes.png'
-//   const flowerImageSrc = './assets/smile.png';
-//   const eyesImageSrc = './assets/eyes.png';
 
 const eyesContainer = ref(null)
 const eyesImage = ref(null)

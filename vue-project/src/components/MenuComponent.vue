@@ -1,21 +1,20 @@
 <script setup lang="ts">
-import { defineProps, defineEmits, ref } from "vue";
-import { onClickOutside } from "@vueuse/core";
-import { RouterLink } from "vue-router";
+import { defineProps, defineEmits, ref } from 'vue'
+import { onClickOutside } from '@vueuse/core'
+import { RouterLink } from 'vue-router'
 
-import chillImageSrc from '../assets/pray.gif'
-import SmilingFlower from "./SmilingFlower.vue";
+import SmilingFlower from './SmilingFlower.vue'
 const props = defineProps({
-  isOpen: Boolean,
-});
+  isOpen: Boolean
+})
 
-const emit = defineEmits(["modal-close"]);
+const emit = defineEmits(['modal-close'])
 
-const target = ref(null);
-onClickOutside(target, () => emit("modal-close"));
+const target = ref(null)
+onClickOutside(target, () => emit('modal-close'))
 const handleClose = () => {
-  emit("modal-close");
-};
+  emit('modal-close')
+}
 </script>
 
 <template>
@@ -32,19 +31,28 @@ const handleClose = () => {
         <div class="modal-body">
           <div class="content">
             <slot name="content">
-            <RouterLink  @click.native="handleClose" to="/" class="nav-item">Home</RouterLink>
-            <RouterLink @click.native="handleClose" to="/index" class="nav-item">Index</RouterLink>
-            <RouterLink @click.native="handleClose" to="/about" class="nav-item">Philosophy</RouterLink>
-            <RouterLink @click.native="handleClose" to="/meditation" class="nav-item">Meditation</RouterLink>
-            <RouterLink @click.native="handleClose" to="/food" class="nav-item">Food</RouterLink>
-            <RouterLink @click.native="handleClose" to="/yoga" class="nav-item">Asanas</RouterLink>
-            <RouterLink @click.native="handleClose" to="/source" class="nav-item">About</RouterLink>
-          </slot>
+              <RouterLink @click.native="handleClose" to="/" class="nav-item">Home</RouterLink>
+              <RouterLink @click.native="handleClose" to="/index" class="nav-item"
+                >Index</RouterLink
+              >
+              <RouterLink @click.native="handleClose" to="/about" class="nav-item"
+                >Philosophy</RouterLink
+              >
+              <RouterLink @click.native="handleClose" to="/meditation" class="nav-item"
+                >Meditation</RouterLink
+              >
+              <RouterLink @click.native="handleClose" to="/food" class="nav-item">Food</RouterLink>
+              <RouterLink @click.native="handleClose" to="/yoga" class="nav-item"
+                >Asanas</RouterLink
+              >
+              <RouterLink @click.native="handleClose" to="/source" class="nav-item"
+                >About</RouterLink
+              >
+            </slot>
           </div>
-  
+
           <div class="image-menu">
-            <!-- <img :src="chillImageSrc" class="w-80 h-80 rounded-full mt-4" /> -->
-<SmilingFlower/>
+            <SmilingFlower />
           </div>
         </div>
       </div>
@@ -53,7 +61,7 @@ const handleClose = () => {
 </template>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 
 .modal-mask {
@@ -91,13 +99,13 @@ const handleClose = () => {
   border: 1px solid black;
   text-align: center;
   margin-left: 20px;
-  font-family: "Anton", sans-serif;
+  font-family: 'Anton', sans-serif;
   font-size: 3em;
 }
 
 .nav-item {
   padding: 10px;
-  font-family: "Anton", sans-serif;
+  font-family: 'Anton', sans-serif;
   font-size: 1.5rem;
 }
 
@@ -107,6 +115,10 @@ const handleClose = () => {
   padding-left: 10px;
   padding-right: 10px;
 }
+
+
+
+/* ####RESPONSIVE###  */
 @media screen and (max-width: 768px) {
   .modal-body {
     flex-direction: column;
@@ -116,7 +128,7 @@ const handleClose = () => {
     flex-direction: column;
   }
 
-  .image-menu { 
+  .image-menu {
     display: none;
   }
 }

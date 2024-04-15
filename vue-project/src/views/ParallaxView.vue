@@ -12,18 +12,40 @@
       </div>
     </div>
     <div class="section-2" ref="second">
-    <div>
-      <h2>find harmony & be happy</h2>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit...</p>
+      <div>
+        <h2 class="text-center">
+          Yoga is the union <br />
+          of body & mind
+        </h2>
+        <!-- <span>
+          <v-typical
+            class="blink"
+            :steps="['find', 1000, 'find harmony', 500, 'find harmony & be happy !!', 1000]"
+            :loop="Infinity"
+            :wrapper="'h3'"
+          ></v-typical
+        ></span> -->
+
+        
+      </div>
     </div>
-  </div>
+    <div class="section-3">
+      <StartButton />
+    </div>
+  
   </div>
 </template>
 
 <script lang="ts">
+import StartButton from '@/components/StartButton.vue'
 import { ref, onMounted, onUnmounted } from 'vue'
+import VTypical from 'vue-typical'
 
 export default {
+  components: {
+    VTypical,
+    StartButton
+  },
   setup() {
     const foreground = ref(null)
     const background = ref(null)
@@ -56,7 +78,8 @@ export default {
       foreground,
       background,
       first,
-      second
+      second,
+      VTypical
     }
   }
 }
@@ -64,6 +87,8 @@ export default {
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
+
 h1 {
   font-family: 'Caprasimo', sans-serif;
   font-weight: 400;
@@ -73,12 +98,20 @@ h1 {
 }
 
 h2 {
-  font-family: 'Caprasimo', sans-serif;
+  font-family: 'Bungee Shade', sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 1.5em;
+  font-size: 4.5em !important;
   color: #ef3ff2;
 }
+
+h3 {
+  font-weight: 400;
+  font-style: bold;
+  font-size: 2.5em !important;
+  margin-bottom: 50px;
+}
+
 .section {
   height: 100vh;
   position: relative;
@@ -104,7 +137,6 @@ img.background {
   top: 20;
   left: 0;
 }
-
 .section > div {
   position: fixed;
   color: white;
@@ -115,21 +147,19 @@ img.background {
 }
 
 .section-1 {
-  /* margin-bottom: 500px;  */
   font-size: 4em;
 }
-
 .section-2 {
   opacity: 0; /* defaults to 0 because it's not visible */
 }
 
 .section-2 div {
-  /* background-color: rgba(255, 255, 255, 0.7); */
   color: black;
   text-align: center;
   padding: 50px;
   margin: auto;
-  max-width: 300px;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 .section-2 h2 {
@@ -140,4 +170,11 @@ img.background {
 .section-2 p {
   line-height: 150%;
 }
+
+.section-3 {
+display: flex;
+flex-direction: row;
+justify-content: center;
+}
+
 </style>
