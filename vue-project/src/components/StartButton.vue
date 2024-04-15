@@ -13,7 +13,7 @@ import { RouterLink } from 'vue-router'
   border: #d1f23f;
   cursor: pointer;
   background-color: blue;
-  z-index: 540;
+  z-index: 240;
   padding: 10px 15px;
   margin-bottom: 10px;
   color: white;
