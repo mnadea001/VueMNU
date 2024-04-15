@@ -53,3 +53,9 @@ https://flowbite.com/icons/
 
 On Vercel 
 vue-mnu.vercel.app
+
+
+-----
+
+parallax effect tuto
+https://learnvue.co/articles/parallax-scrolling-in-vue 
