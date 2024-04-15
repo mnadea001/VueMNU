@@ -2,15 +2,8 @@
 import VTypical from "vue-typical";
 import { defineComponent } from "vue";
 import chillImg from "../assets/chill.gif";
-import { useRouter } from "vue-router";
-import backIcon from "../assets/back.svg";
-import whiteBack from "../assets/white-back.png";
-import { useDark } from "@vueuse/core";
-import { computed } from "vue";
-const isDark = useDark();
-const arrowIcon = computed(() => {
-  return isDark.value ? backIcon : whiteBack;
-});
+import BackButton from "@/components/BackButton.vue";
+
 const chillImageSrc: string = chillImg;
 
 defineComponent({
@@ -19,27 +12,16 @@ defineComponent({
   },
 });
 
-const router = useRouter();
-
-function goBack() {
-  router.go(-1);
-}
 </script>
 
 <template>
   <main>
-    <div class="content-btn">
-      <button
-        @click="goBack"
-        class="text-white-500 dark:text-black hover:underline mb-4 flex"
-      >
-        <img :src="arrowIcon" class="w-10 h-10 dark:color-white" /> back
-      </button>
-    </div>
+    <BackButton/>
     <div class="home-box">
       <h1 class="text-3xl text-center my-4">
-        Meditation to calm the mind
+        Meditation
       </h1>
+      <h2 class="text-center">to calm the mind</h2>
       <div class="title-container">
         <v-typical
           class="blink"
@@ -52,7 +34,7 @@ function goBack() {
             1000,
           ]"
           :loop="Infinity"
-          :wrapper="'h2'"
+          :wrapper="'h3'"
         ></v-typical>
       </div>
       <div class="image-btn">
@@ -70,21 +52,32 @@ function goBack() {
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
+
 
 main {
   width: 100vw;
-  height: 100vh;
+  height: 100% !important;
 }
 
-h1,
+h1 {
+  font-family: 'Bungee Shade', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4.5em !important;
+  color: #d1f23f;
+  line-height: 1.5;
+}
+
 h2,
-.text-btn {
-  font-family: "Anton", sans-serif;
+h3 {
+  font-weight: 400;
+  font-style: bold;
+  font-size: 2.5em !important;
+  margin-bottom: 50px;
+  font-family: 'Anton', sans-serif;
 }
 
-.text-btn {
-  font-size: 2rem !important;
-}
 .title-container {
   display: grid;
   place-items: center;

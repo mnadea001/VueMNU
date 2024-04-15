@@ -1,14 +1,7 @@
 <template>
   <main>
+    <BackButton/>
     <div class="dark:bg-white main-content">
-      <div class="content-btn">
-        <button
-          @click="goBack"
-          class="text-white-500 dark:text-black hover:underline mb-4 flex"
-        >
-          <img :src="arrowIcon" class="w-10 h-10 dark:color-white" /> back
-        </button>
-      </div>
       <div class="content">
         <h1 class="text-3xl text-center my-4">Philosophy</h1>
         <span class="text-center content-span">
@@ -74,25 +67,15 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-import backIcon from '../assets/back.svg'
-import { useRouter } from 'vue-router'
-import whiteBack from '../assets/white-back.png'
-import { useDark } from '@vueuse/core'
+import BackButton from '@/components/BackButton.vue'
 
-const isDark = useDark()
-const arrowIcon = computed(() => {
-  return isDark.value ? backIcon : whiteBack
-})
-const router = useRouter()
 
-function goBack() {
-  router.go(-1)
-}
+
 </script>
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
 
 main {
   width: 100vw;
@@ -105,11 +88,17 @@ main {
 }
 
 h1 {
-  font-family: 'Anton', sans-serif;
+  font-family: 'Bungee Shade', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4.5em;
+  color: #d1f23f;
+  line-height: 1.5;
 }
 
 h2 {
   font-family: 'Caprasimo', sans-serif;
+  font-size: 2em;
 }
 .content {
   padding: 15px;
@@ -204,5 +193,4 @@ h2 {
     padding-right: 10px;
   }
 }
-
 </style>
