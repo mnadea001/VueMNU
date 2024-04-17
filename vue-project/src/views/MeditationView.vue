@@ -113,6 +113,8 @@ h3 {
   }
   h2 {
     font-size: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }
 </style>
