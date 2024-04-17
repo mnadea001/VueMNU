@@ -198,7 +198,7 @@ margin-bottom: 50px;
 
 @media screen and (max-width: 768px) {
   h1, h2{
-    font-size: 30px;
+    font-size: 90px;
   }
 }
 </style>
