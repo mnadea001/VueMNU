@@ -19,8 +19,7 @@
             <p class="text-center">Created By Mathilde NADEAU - April 2024</p>
           </div>
 
-
-            <img :src="namasteImageSrc" class="img-yoga h-80 my-4" />
+          <img :src="namasteImageSrc" class="img-yoga h-80 my-4" />
         </div>
       </div>
     </div>
@@ -28,10 +27,7 @@
 </template>
 
 <script setup lang="ts">
-
 import namasteImageSrc from '../assets/meditation.gif'
-
-
 </script>
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
@@ -41,7 +37,7 @@ main {
   height: 100%;
 }
 
-h1{
+h1 {
   font-family: 'Anton', sans-serif;
 }
 
@@ -69,14 +65,9 @@ ul li {
   text-align: center;
 }
 
-.img-yoga {
-  border-radius: 50% 50% 0% 0%;
-}
-
 @media screen and (max-width: 768px) {
   .content-img {
     flex-direction: column-reverse;
   }
-
 }
 </style>

@@ -143,7 +143,7 @@ img.background,
 img.foreground {
   /* Fill background */
   min-height: 100%;
-  min-width: 1024px;
+  width: 100vw;
 
   /* Scale proportionately */
   width: 100%;

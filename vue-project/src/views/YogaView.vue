@@ -90,6 +90,7 @@ h1 {
   font-size: 4.5em !important;
   color: #d1f23f;
   line-height: 1.5;
+  white-space: normal;
 }
 
 h2 {
@@ -124,5 +125,9 @@ h2 {
   display: flex;
   flex-direction: row;
 }
-
+/* @media screen and (max-width: 768px) {
+  .content-img {
+    flex-direction: column-reverse;
+  }
+} */
 </style>

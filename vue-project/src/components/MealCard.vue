@@ -59,7 +59,7 @@ height:220px;
     font-weight: bold;
     font-family: "Anton", sans-serif;
     color: #28390f;
-    text-wrap: wrap!important;;
+    white-space: normal!important;;
   }
   </style>
   
