@@ -53,7 +53,7 @@ onMounted(() => {
         <div>
           <img class="img-meal rounded-full" :src="meal.strMealThumb" alt="Meal Image" />
           <div>
-            <div class="font-medium title me-1">{{ meal.strMeal }}</div>
+            <h1>{{ meal.strMeal }}</h1>
             <div class="text-gray-500">{{ meal.strCategory }} | {{ meal.strArea }}</div>
           </div>
         </div>
@@ -82,11 +82,19 @@ onMounted(() => {
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 
 main {
   width: 100vw;
 }
 
+h1 {
+  font-family: 'Caprasimo', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3.5em;
+  color: #d1f23f;
+}
 .card {
   padding: 50px;
 }
