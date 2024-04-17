@@ -110,6 +110,11 @@ const handleClose = () => {
   font-size: 1.5rem;
 }
 
+.nav-item:hover {
+background-color: black;
+color: rgb(255, 255, 255);
+}
+
 .close-btn {
   font-family: 'Caprasimo', sans-serif;
   font-size: 1.5em;
@@ -117,9 +122,6 @@ const handleClose = () => {
   padding-right: 10px;
 }
 
-/* .image-menu {
- margin-top: 50px;
-  } */
 
 /* ####RESPONSIVE###  */
 @media screen and (max-width: 768px) {
