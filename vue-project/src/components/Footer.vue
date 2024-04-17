@@ -4,8 +4,8 @@
       <nav>
         <RouterLink to="/" class="nav-item">Home</RouterLink>
         <RouterLink to="/index" class="nav-item">Index</RouterLink>
-        <RouterLink to="/about" class="nav-item">Philosophy</RouterLink>
-        <RouterLink to="/meditation" class="nav-item">Meditation</RouterLink>
+        <RouterLink to="/about" class="nav-item">Philo'</RouterLink>
+        <RouterLink to="/meditation" class="nav-item">Medit'</RouterLink>
         <RouterLink to="/food" class="nav-item">Food</RouterLink>
         <RouterLink to="/yoga" class="nav-item">Asanas</RouterLink>
         <RouterLink to="/source" class="nav-item">About</RouterLink>
@@ -48,11 +48,14 @@ nav {
 }
 
 nav a.router-link-exact-active {
-  text-decoration: underline;
+  /* text-decoration: underline; */
+  background-color: #020202;
+  color: #d1f23f;;
 }
 
 nav a.router-link-exact-active:hover {
   background-color: transparent;
+  color: #020202;
 }
 
 nav a {
@@ -74,7 +77,7 @@ nav a {
   display: none;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 50%; 
   transform: translate(-50%, -50%);
 }
 
