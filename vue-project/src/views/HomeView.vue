@@ -153,7 +153,7 @@ img.foreground {
 img.background {
   /* Positioning */
   position: absolute;
-  top: 20px;
+  top: 20;
   left: 0;
 }
 .section > div {
