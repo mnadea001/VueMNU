@@ -41,7 +41,7 @@ const resetRotation = () => {
 };
 // @ts-ignore
 const imageRotation = ref<string>('');
-
+// @ts-ignore
 watchEffect(() => {
   imageRotation.value = rotationDirection.value;
 });
