@@ -39,7 +39,7 @@ const rotateImage = (direction: string) => {
 const resetRotation = () => {
   rotationDirection.value = '';
 };
-
+// @ts-ignore
 const imageRotation = ref<string>('');
 
 watchEffect(() => {
