@@ -1,23 +1,16 @@
 <script setup lang="ts">
-import MindModalComponent from '../components/MindModalComponent.vue'
-import BodyModalComponent from '../components/BodyModalComponent.vue'
-import { ref, watchEffect } from 'vue'
-import VTypical from 'vue-typical'
-import { defineComponent } from 'vue'
+import { ref } from 'vue'
 import elevateImg from '../assets/elevate.gif'
 import BackButton from '@/components/BackButton.vue'
+import MindModalComponent from '../components/MindModalComponent.vue'
+import BodyModalComponent from '../components/BodyModalComponent.vue'
+import VTypical from 'vue-typical'
 
+const elevateImageSrc = elevateImg
 
-const elevateImageSrc: string = elevateImg
-
-defineComponent({
-  components: {
-    VTypical
-  }
-})
 const isModalOpened1 = ref(false)
 const isModalOpened2 = ref(false)
-const rotationDirection = ref('')
+const rotationDirection = ref<string>('')
 
 const openModal1 = () => {
   isModalOpened1.value = true
@@ -36,18 +29,12 @@ const rotateImage = (direction: string) => {
   rotationDirection.value = direction === 'left' ? 'rotate(-6deg)' : 'rotate(6deg)';
 };
 
-const resetRotation = () => {
-  rotationDirection.value = '';
-};
-
-const imageRotation = ref<string>('');
+const imageRotation = ref<string>('')
 
 watchEffect(() => {
-  imageRotation.value = rotationDirection.value as string;
+  imageRotation.value = rotationDirection.value;
 });
-
 </script>
-
 <template>
   <main>
     <BackButton/>
