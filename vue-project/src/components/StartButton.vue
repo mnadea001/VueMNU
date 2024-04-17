@@ -10,8 +10,11 @@ import { RouterLink } from 'vue-router'
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+
 .btn-start {
   border-radius: 80px;
+  font-family: 'Caprasimo', sans-serif;
   border: #d1f23f;
   cursor: pointer;
   background-color: rgb(1, 74, 34);

@@ -78,6 +78,11 @@ onClickOutside(target, () => emit("modal-close"));
   font-family: "Anton", sans-serif;
   font-size: 2em;
 }
+.btn-home-start:hover {
+color: white;
+  background-color:  black;
+
+}
 .close-btn {
   font-family: 'Caprasimo', sans-serif;
   font-size: 1.5em;
