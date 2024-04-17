@@ -74,9 +74,9 @@ export default {
         // zoom the background at a slower rate
         background.value.style.transform = `scale(${(100 + backgroundSize * 0.4) / 100})`
         // foreground.value.style.transform = 'scale(' + (100 + backgroundSize) / 100 + ')'
-        if (foreground.value) {
-          foreground.value.style.transform = `translateX(${scrollY}px)`
-        }
+  if (foreground.value) {
+  foreground.value.style.transform = `translateX(${scrollY}px)`; // Use template literal
+}
       }
     }
 
@@ -152,7 +152,7 @@ img.foreground {
 img.background {
   /* Positioning */
   position: absolute;
-  top: 20;
+  top: 20px;
   left: 0;
 }
 .section > div {
