@@ -111,8 +111,11 @@ h3 {
 }
 
 @media screen and (max-width: 768px) {
-  h1, h2{
+  h1{
     font-size: 60px;
+  }
+  h2{
+    font-size: 40px;
   }
 }
 </style>

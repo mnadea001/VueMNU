@@ -200,5 +200,9 @@ margin-bottom: 50px;
   h1, h2{
     font-size: 60px;
   }
+
+  .section-2 div {
+  margin-top: 40px;
+}
 }
 </style>

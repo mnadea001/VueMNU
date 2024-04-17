@@ -5,7 +5,7 @@
       <div class="content">
         <h1 class="text-center my-4">Philosophy</h1>
         <span class="text-center content-span">
-          <p class="text-xl text-center">
+          <p class="text-center">
             Yoga is an ancient practice that originated in India thousands of years ago. It is a
             holistic system that encompasses physical postures (asanas), breath control (pranayama),
             meditation, and ethical principles aimed at achieving harmony between mind, body, and
@@ -16,7 +16,7 @@
           <ul id="cards">
             <li class="card" id="card2">
               <div class="card-body">
-                <h2 class="text-black mb-5 text-xl">Origin</h2>
+                <h2 class="text-black mb-5">Origin</h2>
                 <p class="text-black text-center">
                   The origins of yoga can be traced back to ancient texts known as the Vedas,
                   particularly the Rigveda, which dates back over 5,000 years. Yoga evolved over
@@ -28,7 +28,7 @@
             </li>
             <li class="card" id="card3">
               <div class="card-body">
-                <h2 class="text-black mb-5 text-xl">Definition</h2>
+                <h2 class="text-black mb-5 ">Definition</h2>
                 <p class="text-black text-center">
                   Yoga, derived from the Sanskrit word "yuj," means to unite or join. At its core,
                   yoga is about the union of individual consciousness with the universal
@@ -39,7 +39,7 @@
             </li>
             <li class="card" id="card4">
               <div class="card-body">
-                <h2 class="text-black mb-5 text-xl">Benefits</h2>
+                <h2 class="text-black mb-5">Benefits</h2>
                 <p class="text-black text-center">
                   The practice of yoga offers a myriad of benefits for both the body and mind.
                   Physically, yoga improves flexibility, strength, and balance. It helps to
@@ -192,8 +192,11 @@ h2 {
     padding-left: 10px;
     padding-right: 10px;
   }
-  h1, h2{
-    font-size: 60px;
+  h1{
+    font-size: 40px;
+  }
+  h2{
+    font-size: 30px;
   }
 }
 </style>

@@ -137,8 +137,12 @@ img {
     flex-direction: column;
   }
 
-  h1, h2{
+  h1{
     font-size: 60px;
+  }
+
+  h2{
+    font-size: 40px;
   }
 }
 </style>

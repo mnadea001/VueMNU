@@ -115,8 +115,11 @@ h2,
   .conclusion-food {
     margin: 10px;
   }
-  h1, h2{
+  h1{
     font-size: 60px;
+  }
+  h2{
+    font-size: 40px;
   }
 }
 </style>
