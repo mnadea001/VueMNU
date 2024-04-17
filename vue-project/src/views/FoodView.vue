@@ -2,7 +2,7 @@
   <main>
     <BackButton />
     <div class="title-container">
-      <h1 class="text-xl text-center my-4">
+      <h1 class="text-center my-4">
         Veggie <br />
         is good !!!
       </h1>
@@ -67,7 +67,6 @@ onMounted(() => {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
 
@@ -79,7 +78,7 @@ h1 {
   font-family: 'Bungee Shade', sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 4.5em !important;
+  font-size: 4.5em ;
   color: #d1f23f;
   line-height: 1.5;
 }
@@ -115,6 +114,9 @@ h2,
   }
   .conclusion-food {
     margin: 10px;
+  }
+  h1, h2{
+    font-size: 60px;
   }
 }
 </style>

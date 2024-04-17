@@ -18,7 +18,7 @@ defineComponent({
   <main>
     <BackButton/>
     <div class="home-box">
-      <h1 class="text-3xl text-center my-4">
+      <h1 class="text-center my-4">
         Meditation
       </h1>
       <h2 class="text-center">to calm the mind</h2>
@@ -64,7 +64,7 @@ h1 {
   font-family: 'Bungee Shade', sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 4.5em !important;
+  font-size: 4.5em ;
   color: #d1f23f;
   line-height: 1.5;
 }
@@ -108,5 +108,11 @@ h3 {
 
 .btn-home-start:hover {
   background-color: rgb(134, 134, 244);
+}
+
+@media screen and (max-width: 768px) {
+  h1, h2{
+    font-size: 60px;
+  }
 }
 </style>

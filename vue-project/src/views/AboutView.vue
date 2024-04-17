@@ -3,7 +3,7 @@
     <BackButton/>
     <div class="dark:bg-white main-content">
       <div class="content">
-        <h1 class="text-3xl text-center my-4">Philosophy</h1>
+        <h1 class="text-center my-4">Philosophy</h1>
         <span class="text-center content-span">
           <p class="text-xl text-center">
             Yoga is an ancient practice that originated in India thousands of years ago. It is a
@@ -191,6 +191,9 @@ h2 {
   .content-span p {
     padding-left: 10px;
     padding-right: 10px;
+  }
+  h1, h2{
+    font-size: 60px;
   }
 }
 </style>

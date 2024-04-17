@@ -52,7 +52,7 @@ watchEffect(() => {
   <main>
     <BackButton/>
     <div class="home-box">
-      <h1 class="text-3xl text-center my-4">
+      <h1 class="text-center my-4">
         Elevate yourself <br />
         with yoga
       </h1>
@@ -92,7 +92,7 @@ h1 {
   font-family: 'Bungee Shade', sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 4.5em !important;
+  font-size: 4.5em;
   color: #d1f23f;
   line-height: 1.5;
 }
@@ -100,7 +100,7 @@ h1 {
 h2 {
   font-weight: 400;
   font-style: bold;
-  font-size: 2.5em !important;
+  font-size: 2.5em;
   font-family: 'Anton', sans-serif;
 }
 h2 .text-btn {
@@ -135,6 +135,10 @@ img {
 @media screen and (max-width: 768px) {
   .image-btn {
     flex-direction: column;
+  }
+
+  h1, h2{
+    font-size: 60px;
   }
 }
 </style>

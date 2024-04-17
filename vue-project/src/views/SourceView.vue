@@ -30,7 +30,7 @@
 import namasteImageSrc from '../assets/meditation.gif'
 </script>
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
 
 main {
   max-width: 100vw;
@@ -38,7 +38,12 @@ main {
 }
 
 h1 {
-  font-family: 'Anton', sans-serif;
+  font-family: 'Bungee Shade', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4.5em ;
+  color: #d1f23f;
+  line-height: 1.5;
 }
 
 .main-content {

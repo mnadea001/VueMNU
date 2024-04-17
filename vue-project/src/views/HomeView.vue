@@ -126,7 +126,7 @@ h2 {
 h3 {
   font-weight: 400;
   font-style: bold;
-  font-size: 2.5em !important;
+  font-size: 2.5em ;
   margin-bottom: 50px;
   font-family: 'Anton', sans-serif;
 }
