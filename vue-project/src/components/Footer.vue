@@ -65,6 +65,23 @@ nav a {
   padding-right: 10px;
 }
 
+.nav-item {
+  position: relative;
+}
+
+.nav-item::after {
+  content: url('../assets/hover-link.png');
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.nav-item:hover::after {
+  display: inline-block;
+}
+
 nav a:first-of-type {
   border: 0;
 }
