@@ -39,6 +39,7 @@
 import StartButton from '@/components/StartButton.vue'
 import { ref, onMounted, onUnmounted } from 'vue'
 import VTypical from 'vue-typical'
+import type { Ref } from 'vue'
 
 interface ElementRefs {
   background: HTMLElement | null;
