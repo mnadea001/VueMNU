@@ -40,10 +40,10 @@ const resetRotation = () => {
   rotationDirection.value = '';
 };
 
-const imageRotation = ref('');
+const imageRotation = ref<string>('');
 
 watchEffect(() => {
-  imageRotation.value = rotationDirection;
+ imageRotation.value = rotationDirection.value;
 });
 
 </script>
