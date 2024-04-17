@@ -13,26 +13,21 @@
     </div>
     <div class="section-2" ref="second">
       <div>
-        <h2 class="text-center">
+        <h3 class="text-center mb-4">
           Yoga is the union <br />
           of body & mind
-        </h2>
-        <span>
-          <v-typical
-            class="blink"
-            :steps="['FIND', 1000, 'FIND HARMONY', 500, 'FIND HARMONY & BE HAPPY !!', 1000]"
-            :loop="Infinity"
-            :wrapper="'h3'"
-          ></v-typical
-        ></span>
-
-        
+        </h3>
+        <v-typical
+          class="blink"
+          :steps="['FIND', 1000, 'FIND HARMONY', 500, 'FIND HARMONY & BE HAPPY !!', 1000]"
+          :loop="Infinity"
+          :wrapper="'h2'"
+        ></v-typical>
       </div>
     </div>
     <div class="section-3">
       <StartButton />
     </div>
-  
   </div>
 </template>
 <script lang="ts">
@@ -42,10 +37,10 @@ import VTypical from 'vue-typical'
 import type { Ref } from 'vue'
 
 interface ElementRefs {
-  background: HTMLElement | null;
-  foreground: HTMLElement | null;
-  first: HTMLElement | null;
-  second: HTMLElement | null;
+  background: HTMLElement | null
+  foreground: HTMLElement | null
+  first: HTMLElement | null
+  second: HTMLElement | null
 }
 
 export default {
@@ -59,27 +54,31 @@ export default {
     const first: Ref<HTMLElement | null> = ref(null)
     const second: Ref<HTMLElement | null> = ref(null)
 
-const handleScroll = (evt: Event) => {
-  const scrollY = window.scrollY;
-  if (first.value && second.value && background.value) {
-    // decreases as user scrolls
-    first.value.style.opacity =
-      (100 - (scrollY + window.innerHeight - first.value.offsetHeight)).toString();
-    // increases as user scrolls
-    second.value.style.opacity = (scrollY + window.innerHeight - second.value.offsetTop).toString();
+    const handleScroll = (evt: Event) => {
+      const scrollY = window.scrollY
+      if (first.value && second.value && background.value) {
+        // decreases as user scrolls
+        first.value.style.opacity = (
+          100 -
+          (scrollY + window.innerHeight - first.value.offsetHeight)
+        ).toString()
+        // increases as user scrolls
+        second.value.style.opacity = (
+          scrollY +
+          window.innerHeight -
+          second.value.offsetTop
+        ).toString()
 
-    const maxBackgroundSize = 120;
-    const backgroundSize = (scrollY / (maxBackgroundSize - 100)).toString();
+        const maxBackgroundSize = 120
+        const backgroundSize = (scrollY / (maxBackgroundSize - 100)).toString()
 
-    // zoom the background at a slower rate
-    background.value.style.transform = `scale(${(100 + Number(backgroundSize) * 0.4) / 100})`;
-    if (foreground.value) {
-      foreground.value.style.transform = `translateX(${scrollY}px)`;
+        // zoom the background at a slower rate
+        background.value.style.transform = `scale(${(100 + Number(backgroundSize) * 0.4) / 100})`
+        if (foreground.value) {
+          foreground.value.style.transform = `translateX(${scrollY}px)`
+        }
+      }
     }
-  }
-};
-
-
 
     onMounted(() => {
       document.addEventListener('scroll', handleScroll)
@@ -100,7 +99,6 @@ const handleScroll = (evt: Event) => {
 }
 </script>
 
-
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
@@ -115,7 +113,7 @@ h1 {
   color: #d1f23f;
 }
 
-h2 {
+h3 {
   font-family: 'Bungee Shade', sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -123,10 +121,10 @@ h2 {
   color: #d1f23f;
 }
 
-h3 {
+h2 {
   font-weight: 400;
   font-style: bold;
-  font-size: 2.5em ;
+  font-size: 2.5em;
   margin-bottom: 50px;
   font-family: 'Anton', sans-serif;
 }
@@ -173,10 +171,8 @@ img.background {
 }
 
 .section-2 div {
-  color: black;
   text-align: center;
   padding: 50px;
-  margin: auto;
   margin-top: 100px;
 }
 
@@ -190,19 +186,20 @@ img.background {
 }
 
 .section-3 {
-display: flex;
-flex-direction: row;
-justify-content: center;
-margin-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 50px;
 }
 
 @media screen and (max-width: 768px) {
-  h1, h2{
+  h1,
+  h2 {
     font-size: 60px;
   }
 
   .section-2 div {
-  margin-top: 0px;
-}
+    margin-top: 0px;
+  }
 }
 </style>
