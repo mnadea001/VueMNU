@@ -110,11 +110,12 @@ h3 {
 @media screen and (max-width: 768px) {
   h1 {
     font-size: 60px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
   h2 {
     font-size: 40px;
-    margin-left: 10px;
-    margin-right: 10px;
+ 
   }
 }
 </style>
