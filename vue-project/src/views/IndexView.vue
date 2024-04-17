@@ -68,7 +68,7 @@ watchEffect(() => {
         <button class="text-btn" @mouseover="rotateImage('left')" @click="openModal1">
           <p class="hover:text-orange">BODY</p>
         </button>
-        <img :src="elevateImageSrc" class="w-80 h-80" :style="{ transform: imageRotation.value }" />
+        <img :src="elevateImageSrc" class="w-80 h-80" :style="{ transform: imageRotation }" />
         <button class="text-btn" @mouseover="rotateImage('right')" @click="openModal2">
           <p class="hover:text-orange">MIND</p>
         </button>
