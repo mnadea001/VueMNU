@@ -119,7 +119,7 @@ h2,
     font-size: 60px;
   }
   h2{
-    font-size: 40px;
+    font-size: 36px;
   }
 }
 </style>

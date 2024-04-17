@@ -1,27 +1,24 @@
 <script setup lang="ts">
-import VTypical from "vue-typical";
-import { defineComponent } from "vue";
-import chillImg from "../assets/chill.gif";
-import BackButton from "@/components/BackButton.vue";
+import VTypical from 'vue-typical'
+import { defineComponent } from 'vue'
+import chillImg from '../assets/chill.gif'
+import BackButton from '@/components/BackButton.vue'
 
-const chillImageSrc: string = chillImg;
+const chillImageSrc: string = chillImg
 
 defineComponent({
   components: {
-    VTypical,
-  },
-});
-
+    VTypical
+  }
+})
 </script>
 
 <template>
   <main>
-    <BackButton/>
+    <BackButton />
     <div class="home-box">
-      <h1 class="text-center my-4">
-        Meditation
-      </h1>
-      <h2 class="text-center">to calm the mind</h2>
+      <h1 class="text-center my-4">Meditation</h1>
+      <h2>to calm the mind</h2>
       <div class="title-container">
         <v-typical
           class="blink"
@@ -31,7 +28,7 @@ defineComponent({
             'GET READY FOR AN',
             500,
             'GET READY FOR AN IMMERSIVE EXPERIENCE !!',
-            1000,
+            1000
           ]"
           :loop="Infinity"
           :wrapper="'h3'"
@@ -50,10 +47,9 @@ defineComponent({
 </template>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
-
 
 main {
   width: 100vw;
@@ -64,9 +60,10 @@ h1 {
   font-family: 'Bungee Shade', sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 4.5em ;
+  font-size: 4.5em;
   color: #d1f23f;
   line-height: 1.5;
+  word-wrap: break-word;
 }
 
 h2,
@@ -76,6 +73,7 @@ h3 {
   font-size: 2.5em !important;
   margin-bottom: 50px;
   font-family: 'Anton', sans-serif;
+  text-align: center;
 }
 
 .title-container {
@@ -94,7 +92,6 @@ h3 {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: 50px;
   align-items: center;
 }
 
@@ -111,10 +108,10 @@ h3 {
 }
 
 @media screen and (max-width: 768px) {
-  h1{
+  h1 {
     font-size: 60px;
   }
-  h2{
+  h2 {
     font-size: 40px;
   }
 }

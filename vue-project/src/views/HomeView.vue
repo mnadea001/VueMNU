@@ -202,7 +202,7 @@ margin-bottom: 50px;
   }
 
   .section-2 div {
-  margin-top: 40px;
+  margin-top: 0px;
 }
 }
 </style>

@@ -94,6 +94,7 @@ h1 {
   font-size: 4.5em;
   color: #d1f23f;
   line-height: 1.5;
+  word-wrap: break-word; 
 }
 
 h2 {
@@ -196,7 +197,7 @@ h2 {
     font-size: 40px;
   }
   h2{
-    font-size: 30px;
+    font-size: 24px;
   }
 }
 </style>
