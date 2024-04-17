@@ -60,25 +60,25 @@ export default {
     const second: Ref<HTMLElement | null> = ref(null)
 
 const handleScroll = (evt: Event) => {
-  const scrollY = window.scrollY
+  const scrollY = window.scrollY;
   if (first.value && second.value && background.value) {
     // decreases as user scrolls
     first.value.style.opacity =
-      (100 - (scrollY + window.innerHeight - first.value.offsetHeight)).toString(); // Explicitly cast to string
+      (100 - (scrollY + window.innerHeight - first.value.offsetHeight)).toString();
     // increases as user scrolls
-    second.value.style.opacity = (scrollY + window.innerHeight - second.value.offsetTop).toString(); // Explicitly cast to string
+    second.value.style.opacity = (scrollY + window.innerHeight - second.value.offsetTop).toString();
 
-    const maxBackgroundSize = 120
-    const backgroundSize = (scrollY / (maxBackgroundSize - 100)).toString(); // Explicitly cast to string
+    const maxBackgroundSize = 120;
+    const backgroundSize = (scrollY / (maxBackgroundSize - 100)).toString();
 
     // zoom the background at a slower rate
-    background.value.style.transform = `scale(${(100 + backgroundSize * 0.4) / 100})`;
-    // foreground.value.style.transform = 'scale(' + (100 + backgroundSize) / 100 + ')'
+    background.value.style.transform = `scale(${(100 + Number(backgroundSize) * 0.4) / 100})`;
     if (foreground.value) {
-      foreground.value.style.transform = `translateX(${scrollY}px)`; // Use template literal
+      foreground.value.style.transform = `translateX(${scrollY}px)`;
     }
   }
-}
+};
+
 
 
     onMounted(() => {
