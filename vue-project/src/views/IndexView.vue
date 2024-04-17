@@ -139,6 +139,8 @@ img {
 
   h1{
     font-size: 60px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   h2{
