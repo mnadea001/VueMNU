@@ -32,4 +32,9 @@ h3 {
     align-items: center;
     margin-bottom: 5px;
 }
+
+.category-card:hover {
+  background-color: #d1f23f;
+  color: black;
+}
 </style>

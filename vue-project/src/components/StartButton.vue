@@ -27,7 +27,6 @@ import { RouterLink } from 'vue-router'
 
 .btn-start:hover {
   background-color: rgb(10, 216, 48);
-  /* color: black; */
 }
 
 @media screen and (max-width: 768px) {
