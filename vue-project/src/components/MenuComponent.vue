@@ -73,6 +73,7 @@ const handleClose = () => {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.734);
 }
+
 .modal-container {
   width: 100%;
   height: 100vh;
@@ -116,7 +117,9 @@ const handleClose = () => {
   padding-right: 10px;
 }
 
-
+/* .image-menu {
+ margin-top: 50px;
+  } */
 
 /* ####RESPONSIVE###  */
 @media screen and (max-width: 768px) {
