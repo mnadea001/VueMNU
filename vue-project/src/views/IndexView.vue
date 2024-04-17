@@ -17,7 +17,7 @@ defineComponent({
 })
 const isModalOpened1 = ref(false)
 const isModalOpened2 = ref(false)
-const rotationDirection = ref('')
+const rotationDirection = ref<string>('');
 
 const openModal1 = () => {
   isModalOpened1.value = true
