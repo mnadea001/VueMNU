@@ -59,26 +59,27 @@ export default {
     const first: Ref<HTMLElement | null> = ref(null)
     const second: Ref<HTMLElement | null> = ref(null)
 
-    const handleScroll = (evt: Event) => {
-      const scrollY = window.scrollY
-      if (first.value && second.value && background.value) {
-        // decreases as user scrolls
-        first.value.style.opacity =
-          (100 - (scrollY + window.innerHeight - first.value.offsetHeight)) / 100
-        // increases as user scrolls
-        second.value.style.opacity = (scrollY + window.innerHeight - second.value.offsetTop) / 100
+const handleScroll = (evt: Event) => {
+  const scrollY = window.scrollY
+  if (first.value && second.value && background.value) {
+    // decreases as user scrolls
+    first.value.style.opacity =
+      (100 - (scrollY + window.innerHeight - first.value.offsetHeight)).toString(); // Explicitly cast to string
+    // increases as user scrolls
+    second.value.style.opacity = (scrollY + window.innerHeight - second.value.offsetTop).toString(); // Explicitly cast to string
 
-        const maxBackgroundSize = 120
-        const backgroundSize = scrollY / (maxBackgroundSize - 100) // increases as user scrolls
+    const maxBackgroundSize = 120
+    const backgroundSize = (scrollY / (maxBackgroundSize - 100)).toString(); // Explicitly cast to string
 
-        // zoom the background at a slower rate
-        background.value.style.transform = `scale(${(100 + backgroundSize * 0.4) / 100})`
-        // foreground.value.style.transform = 'scale(' + (100 + backgroundSize) / 100 + ')'
-  if (foreground.value) {
-  foreground.value.style.transform = `translateX(${scrollY}px)`; // Use template literal
-}
-      }
+    // zoom the background at a slower rate
+    background.value.style.transform = `scale(${(100 + backgroundSize * 0.4) / 100})`;
+    // foreground.value.style.transform = 'scale(' + (100 + backgroundSize) / 100 + ')'
+    if (foreground.value) {
+      foreground.value.style.transform = `translateX(${scrollY}px)`; // Use template literal
     }
+  }
+}
+
 
     onMounted(() => {
       document.addEventListener('scroll', handleScroll)
