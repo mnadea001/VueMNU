@@ -18,7 +18,7 @@ import { RouterLink } from 'vue-router'
   border: #d1f23f;
   cursor: pointer;
   background-color: rgb(1, 74, 34);
-  z-index: 640 !important;
+  /* z-index: 640 !important; */
   padding: 30px 65px;
   margin-bottom: 10px;
   color: white;
