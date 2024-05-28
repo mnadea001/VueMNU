@@ -1,22 +1,11 @@
 <template>
-  <div class="root">
-    <!-- <img class="background" ref="background" src="../assets/nature.jpg" />
-    <img class="foreground" ref="foreground" src="../assets/birds.png" />
-    <div class="section section-1" ref="first">
+  <main>
+ 
       <div>
-        <h1>
-          Welcome
-          <br />
-          new yogi
-        </h1>
-      </div>
-    </div> -->
-    <div class="section-2" ref="second">
-      <div>
-        <h3 class="text-center mb-4">
+        <h1 class="text-center mb-4">
           Yoga is the union <br />
           of body & mind
-        </h3>
+        </h1>
         <v-typical
           class="blink"
           :steps="['FIND', 1000, 'FIND HARMONY', 500, 'FIND HARMONY & BE HAPPY !!', 1000]"
@@ -24,79 +13,15 @@
           :wrapper="'h2'"
         ></v-typical>
       </div>
-    </div>
     <div class="section-3">
       <StartButton />
     </div>
-  </div>
+  </main>
 </template>
-<script lang="ts">
+<script setup lang="ts">
 import StartButton from '@/components/StartButton.vue'
-import { ref, onMounted, onUnmounted } from 'vue'
 import VTypical from 'vue-typical'
-import type { Ref } from 'vue'
 
-interface ElementRefs {
-  background: HTMLElement | null
-  foreground: HTMLElement | null
-  first: HTMLElement | null
-  second: HTMLElement | null
-}
-
-export default {
-  components: {
-    VTypical,
-    StartButton
-  },
-  setup() {
-    const foreground: Ref<HTMLElement | null> = ref(null)
-    const background: Ref<HTMLElement | null> = ref(null)
-    const first: Ref<HTMLElement | null> = ref(null)
-    const second: Ref<HTMLElement | null> = ref(null)
-
-    const handleScroll = (evt: Event) => {
-      const scrollY = window.scrollY
-      if (first.value && second.value && background.value) {
-        // decreases as user scrolls
-        first.value.style.opacity = (
-          100 -
-          (scrollY + window.innerHeight - first.value.offsetHeight)
-        ).toString()
-        // increases as user scrolls
-        second.value.style.opacity = (
-          scrollY +
-          window.innerHeight -
-          second.value.offsetTop
-        ).toString()
-
-        const maxBackgroundSize = 120
-        const backgroundSize = (scrollY / (maxBackgroundSize - 100)).toString()
-
-        // zoom the background at a slower rate
-        background.value.style.transform = `scale(${(100 + Number(backgroundSize) * 0.4) / 100})`
-        if (foreground.value) {
-          foreground.value.style.transform = `translateX(${scrollY}px)`
-        }
-      }
-    }
-
-    onMounted(() => {
-      document.addEventListener('scroll', handleScroll)
-    })
-
-    onUnmounted(() => {
-      document.removeEventListener('scroll', handleScroll)
-    })
-
-    return {
-      foreground,
-      background,
-      first,
-      second,
-      VTypical
-    }
-  }
-}
 </script>
 
 <style scoped>
@@ -105,21 +30,22 @@ export default {
 
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
-h1 {
-  font-family: 'Caprasimo', sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 1.5em;
-  color: #d1f23f;
+main {
+  width: 100vw;
+  height: 100%;
 }
 
-h3 {
+h1 {
   font-family: 'Bungee Shade', sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 4.5em !important;
+  font-size: 4.5em;
   color: #d1f23f;
+  line-height: 1.5;
+  margin-top: 100px;
 }
+
+
 
 h2 {
   font-weight: 400;
@@ -130,69 +56,23 @@ h2 {
   font-family: 'Anton', sans-serif;
 }
 
-/* .section {
-  height: 100vh;
-  position: relative;
-} */
 
-/* .img.foreground {
-  padding-top: 600px !important;
-}
-img.background,
-img.foreground {
-  min-height: 100%;
-  width: 100vw;
 
-  width: 100%;
-  height: auto;
-}
-
-img.background {
-  position: absolute;
-  top: 20;
-  left: 0;
-} */
-/* .section > div {
-  position: fixed;
-  color: white;
-  left: 50%;
-  top: 70%;
-  transform: translate(-50%, -50%);
-}
-
-.section-1 {
-  font-size: 4em;
-}
-.section-2 {
-  opacity: 0; 
-}
-
-.section-2 div {
-  text-align: center;
-  padding: 50px;
-  margin-top: 100px;
-} */
-
-.section-2 h2 {
-  font-size: 2em;
-  margin-bottom: 40px;
-}
-
-.section-2 p {
-  line-height: 150%;
-}
 
 .section-3 {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-bottom: 50px;
+  margin-top: 80px;
+  margin-bottom: 100px;
 }
 
 @media screen and (max-width: 768px) {
-  h1,
+  h1 {
+    font-size: 50px !important;
+  }
   h2 {
-    font-size: 60px;
+    font-size: 40px;
   }
 
   .section-2 div {
