@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { RouterView } from "vue-router";
+import { RouterView } from 'vue-router'
 
-import Footer from "../src/components/Footer.vue";
-import Header from "../src/components/Header.vue";
+import Footer from '../src/components/Footer.vue'
+import Header from '../src/components/Header.vue'
 </script>
 
 <template>
@@ -19,7 +19,7 @@ import Header from "../src/components/Header.vue";
   </div>
 </template>
 
-<style> 
+<style>
 .app-wrapper {
   width: 100%;
   height: 100%;
@@ -31,20 +31,20 @@ import Header from "../src/components/Header.vue";
 /* route transition  */
 
 .route-enter-from {
-opacity: 0;
-transform: translateX(100px )
+  opacity: 0;
+  transform: translateX(100px);
 }
 
 .route-enter-active {
-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
 }
 
 .route-leave-to {
   opacity: 1;
-transform: translateX(-100px )
+  transform: translateX(-100px);
 }
 
 .route-leave-active {
-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
 }
 </style>

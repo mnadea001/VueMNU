@@ -1,6 +1,6 @@
 <template>
   <div class="root">
-    <img class="background" ref="background" src="../assets/nature.jpg" />
+    <!-- <img class="background" ref="background" src="../assets/nature.jpg" />
     <img class="foreground" ref="foreground" src="../assets/birds.png" />
     <div class="section section-1" ref="first">
       <div>
@@ -10,7 +10,7 @@
           new yogi
         </h1>
       </div>
-    </div>
+    </div> -->
     <div class="section-2" ref="second">
       <div>
         <h3 class="text-center mb-4">
@@ -126,38 +126,35 @@ h2 {
   font-style: bold;
   font-size: 2.5em;
   margin-bottom: 50px;
+  text-align: center;
   font-family: 'Anton', sans-serif;
 }
 
-.section {
+/* .section {
   height: 100vh;
   position: relative;
-}
+} */
 
-.img.foreground {
+/* .img.foreground {
   padding-top: 600px !important;
 }
 img.background,
 img.foreground {
-  /* Fill background */
   min-height: 100%;
   width: 100vw;
 
-  /* Scale proportionately */
   width: 100%;
   height: auto;
 }
 
 img.background {
-  /* Positioning */
   position: absolute;
   top: 20;
   left: 0;
-}
-.section > div {
+} */
+/* .section > div {
   position: fixed;
   color: white;
-  /* centers this div */
   left: 50%;
   top: 70%;
   transform: translate(-50%, -50%);
@@ -167,14 +164,14 @@ img.background {
   font-size: 4em;
 }
 .section-2 {
-  opacity: 0; /* defaults to 0 because it's not visible */
+  opacity: 0; 
 }
 
 .section-2 div {
   text-align: center;
   padding: 50px;
   margin-top: 100px;
-}
+} */
 
 .section-2 h2 {
   font-size: 2em;
