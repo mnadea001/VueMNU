@@ -1,6 +1,6 @@
 <template>
   <div class="content-btn">
-    <RouterLink to="/index" class="btn-start">Let's start !!</RouterLink>
+    <RouterLink to="/index" class="btn-start">Start</RouterLink>
   </div>
 </template>
 
