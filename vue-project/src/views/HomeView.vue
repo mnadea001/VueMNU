@@ -2,16 +2,15 @@
   <main>
     <div class="container">
       <h1 class="text-center mobile-title mb-4">
-          Yoga is the union <br />
-          of body & mind
-        </h1>
+        Yoga is the union <br />
+        of body & mind
+      </h1>
       <img :src="movieSrc" class="lotus" ref="lotusImage" />
-      <div class="centered">
-        <h1 class="text-center desktop-title mb-4">
-          Yoga is the union <br />
-          of body & mind
-        </h1>
-      </div>
+      <!-- <div class="desktop-title"></div> -->
+      <h1 class="centered text-center mb-4 desktop-title">
+        Yoga is the union <br />
+        of body & mind
+      </h1>
     </div>
     <div class="mt-4">
       <v-typical
@@ -51,8 +50,8 @@ main {
 
 .centered {
   position: absolute;
-  top: 10%;
-  left: 40%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   display: block;
   max-width: 100%;
@@ -63,17 +62,10 @@ main {
 }
 h1 {
   font-family: 'Bungee Shade', sans-serif;
-
   font-weight: 400;
   font-style: normal;
   font-size: 4.5em;
   color: #0527ae;
-  /* color: #d1f23f; */
-  line-height: 1.5;
-  position: absolute;
-  top: 80;
-  left: 50;
-  z-index: 500;
 }
 
 h2 {
@@ -96,16 +88,26 @@ h2 {
 .mobile-title {
   display: none;
 }
+
+.desktop-title {
+  line-height: 1.5;
+  position: absolute;
+  z-index: 500;
+}
 @media screen and (max-width: 768px) {
   h1 {
-  font-size: 30px !important;
-}
-.mobile-title {
-  display: block;
-}
-.desktop-title {
-  display: none;
-}
+    font-size: 30px !important;
+  }
+  .mobile-title {
+    display: block;
+    line-height: 1.5;
+    position: relative;
+    bottom: 0;
+    left: 0;
+  }
+  .desktop-title {
+    display: none;
+  }
   h2 {
     font-size: 40px;
   }
@@ -114,29 +116,26 @@ h2 {
     margin-top: 0px;
   }
 }
-@media  only screen and (min-width: 769px) and (max-width: 980px)   {
+@media only screen and (min-width: 769px) and (max-width: 980px) {
   .mobile-title {
-  display: block;
+    display: block;
+  }
+  .desktop-title {
+    display: none;
+  }
+  h1 {
+    font-size: 35px !important;
+  }
 }
-.desktop-title {
-  display: none;
-}
-h1 {
-  font-size: 35px !important;
-}
-
-}
-@media  only screen and (min-width: 981px) and (max-width: 1268px) {
-
+@media only screen and (min-width: 981px) and (max-width: 1268px) {
   h1 {
     font-size: 40px !important;
   }
   .mobile-title {
-  display: block;
-}
-.desktop-title {
-  display: none;
-}
-
+    display: none;
+  }
+  .desktop-title {
+    display: block;
+  }
 }
 </style>
