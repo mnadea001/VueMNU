@@ -19,9 +19,11 @@
         <MealCard :img="meal.strMealThumb" :strMeal="meal.strMeal" />
       </RouterLink>
     </div>
-    <h2 class="text-3xl text-center mt-4 pt-5">4 main reasons for vegetarism:</h2>
-    <Carousel />
-    <div class="conclusion-food">
+    <div>
+      <VeganModal />
+    </div>
+
+    <!-- <div class="conclusion-food">
       <h3 class="text-center mb-4">
         In conclusion, vegetarian food holds immense importance for yogis, serving as a practical
         manifestation of yogic principles such as ahimsa, promoting mental clarity and inner peace,
@@ -29,7 +31,7 @@
         vegetarian diet, yogis not only nourish their bodies but also cultivate compassion,
         mindfulness, and harmony in their lives and the world around them.
       </h3>
-    </div>
+    </div> -->
   </main>
 </template>
 
@@ -38,7 +40,7 @@ import { onMounted, ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import MealCard from '../components/MealCard.vue'
 
-import Carousel from '@/components/Carousel.vue'
+import VeganModal from '../components/VeganModal.vue'
 import BackButton from '@/components/BackButton.vue'
 
 interface Meal {
@@ -78,7 +80,7 @@ h1 {
   font-family: 'Bungee Shade', sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 4.5em ;
+  font-size: 4.5em;
   color: #d1f23f;
   line-height: 1.5;
 }
@@ -86,6 +88,10 @@ h1 {
 h2 {
   color: #f537df;
   margin-top: 40px;
+}
+
+h3 {
+  font-family: 'Caprasimo', sans-serif;
 }
 h2,
 .scroll-text {
@@ -104,21 +110,50 @@ h2,
   scroll-snap-type: x mandatory;
 }
 
-.conclusion-food {
+/* .conclusion-food {
   margin: 100px;
 }
+.conclusion-food::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:245px;
+  background: #E8CBC0; 
+  background: -webkit-linear-gradient(to right, #636FA4, #E8CBC0);
+  background: linear-gradient(to right, #636FA4, #E8CBC0); 
+  transform-origin: top right;
+  transform: skewY(2.5deg);
+  z-index: -10;
+}
+
+.conclusion-food::after{
+  content:"";
+  width:100%;
+  height: 145px;
+  position:absolute;
+  bottom:0;
+  left:0;
+  background: #E8CBC0; 
+  background: -webkit-linear-gradient(to right, #636FA4, #E8CBC0); 
+  background: linear-gradient(to right, #636FA4, #E8CBC0); 
+  transform-origin: bottom left;
+  transform: skewY(2.5deg);
+  z-index:-10;
+} */
 
 @media screen and (max-width: 768px) {
   .title-container {
     margin: 10px;
   }
-  .conclusion-food {
-    margin: 10px;
+  .conclusion-food, h4 {
+    padding: 20px;
   }
-  h1{
+  h1 {
     font-size: 60px;
   }
-  h2{
+  h2 {
     font-size: 36px;
   }
 }

@@ -78,6 +78,7 @@ h2 {
 .slide-text {
   width: 50%;
   margin: 50px;
+  padding-right: 10px;
 }
 .div-img {
   width: 50%;
@@ -98,6 +99,10 @@ img {
     margin-bottom: 20px;
   }
 
+  .slide-text h2,
+  .slide-text p {
+    color: black;
+  }
   .content-box {
     width: 100%;
     margin: auto;
@@ -109,6 +114,7 @@ img {
   .slide-text {
     width: 80%;
     margin: auto;
+    padding-right:0
   }
 }
 </style>

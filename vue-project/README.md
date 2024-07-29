@@ -65,3 +65,9 @@ https://www.cleanpng.com/
 
 docu tailwind:
 https://tailwindcss.com/docs/background-color 
+
+
+
+Tuto diagonal backgrounds
+
+https://9elements.com/blog/create-diagonal-layouts-like-it-s-2020/
