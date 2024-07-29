@@ -44,16 +44,24 @@ async function fetchPoseData() {
 <template>
   <main class="dark:bg-white">
     <BackButton/>
+
+    <div class="diagonal-box-container">
+    <div class="diagonal-box bg-one">
+      <div class="content">
+        <h1 v-if="pose" class="text-center">{{ pose.english_name }}</h1>
+
+      </div>
+    </div>
+  </div>
     <div v-if="pose" class="m-2 max-w-4xl mx-auto card pose-details">
-      <h1 class="text-center">{{ pose.english_name }}</h1>
-      <span class="my-4">
         <p class="my-4"><strong>Sanskrit Name:</strong> {{ pose.sanskrit_name }}</p>
         <p class="my-4"><strong>Translation Name:</strong> {{ pose.translation_name }}</p>
         <p class="my-4"><strong>Description:</strong> {{ pose.pose_description }}</p>
         <p class="my-4"><strong>Benefits:</strong> {{ pose.pose_benefits }}</p>
-      </span>
       <div class="content">
-        <img class="img-pose" :src="pose.url_svg" alt="Pose Image" />
+        <img :src="pose.url_svg" class="w-80 h-80"  />
+
+
       </div>
     </div>
     <p v-else class="text-center">Loading...</p>
@@ -84,13 +92,59 @@ main {
   margin-top: 50px;
   align-items: center;
 }
-.pose-details {
+/* .pose-details {
   padding: 50px;
-}
+} */
 
-.img-pose {
+/* .img-pose {
   height: 250px;
   object-fit: contain !important;
+} */
+
+.diagonal-box-container {
+  display: flex;
+  justify-content: center;
+}
+.diagonal-box {
+  position: relative;
+  padding: 10px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  width: 100vw;
+}
+
+.diagonal-box:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  transform: skewy(1deg);
+  transform-origin: 50% 0;
+  outline: 1px solid transparent;
+  backface-visibility: hidden;
+}
+
+.bg-one:before {
+  background-image: linear-gradient(45deg, #636fa4, #e8cbc0);
+}
+
+.content {
+  margin-bottom: 200px;
+  padding-bottom: 200px;
+  margin: 0 auto;
+  padding: 1.5em;
+  position: relative;
+  color: black;
+}
+
+.content p {
+  font-family: 'Caprasimo', sans-serif;
+  font-weight: 200;
+  font-size: 1.2em;
+  color: rgb(63, 63, 63);
+  padding: 50px 80px;
 }
 
 </style>
