@@ -7,7 +7,7 @@
             <img :src="slide.image" :alt="'Slide ' + (index + 1)" />
           </div>
           <div class="slide-text">
-            <h2 class="text-2xl text-center my-4">{{ slide.title }}</h2>
+            <h2 class="text-2xl text-center my-4 font-medium">{{ slide.title }}</h2>
             <p class="font-regular text-center my-4">{{ slide.description }}</p>
           </div>
         </div>
@@ -62,15 +62,12 @@ defineComponent({
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 
 .content-box {
   width: 80%;
   margin: auto;
 }
-h2 {
-  font-family: 'Caprasimo', sans-serif;
-}
+
 .slide-content {
   display: flex;
   margin-top: 50px;
@@ -100,9 +97,7 @@ img {
   }
 
   .slide-text h2,
-  .slide-text p {
-    color: black;
-  }
+
   .content-box {
     width: 100%;
     margin: auto;

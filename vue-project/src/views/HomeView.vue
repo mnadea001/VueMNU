@@ -1,13 +1,15 @@
 <template>
   <main>
-    <div class="section-3">
-      <AnimationHome />
+    <div class="container">
+      <img :src="movieSrc" class="lotus" ref="lotusImage" />
+      <div class="centered">
+        <h1 class="text-center mb-4">
+          Yoga is the union <br />
+          of body & mind
+        </h1>
+      </div>
     </div>
-    <div>
-      <h1 class="text-center mb-4">
-        Yoga is the union <br />
-        of body & mind
-      </h1>
+    <div class="mt-4">
       <v-typical
         class="blink"
         :steps="['FIND', 1000, 'FIND HARMONY', 500, 'FIND HARMONY & BE HAPPY !!', 1000]"
@@ -22,8 +24,8 @@
 </template>
 <script setup lang="ts">
 import StartButton from '@/components/StartButton.vue'
-import AnimationHome from '@/components/AnimationHome.vue'
 import VTypical from 'vue-typical'
+import movieSrc from '../assets/movie.gif'
 </script>
 
 <style scoped>
@@ -36,14 +38,38 @@ main {
   height: 100%;
 }
 
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+margin: auto;
+}
+
+.centered {
+  position: absolute;
+  top: 10%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  display: block;
+  max-width: 100%;
+}
+.lotus {
+  width: 100vw;
+  filter: grayscale(100%);
+}
 h1 {
   font-family: 'Bungee Shade', sans-serif;
+  
   font-weight: 400;
   font-style: normal;
   font-size: 4.5em;
-  color: #d1f23f;
+  color: #0527ae;
+  /* color: #d1f23f; */
   line-height: 1.5;
-  margin-top: 100px;
+  position: absolute;
+  top: 80;
+  left: 50;
+  z-index: 500;
 }
 
 h2 {
@@ -61,6 +87,7 @@ h2 {
   justify-content: center;
   margin-top: 80px;
   margin-bottom: 100px;
+  position: relative;
 }
 
 @media screen and (max-width: 768px) {

@@ -1,11 +1,8 @@
 <template>
-  <div class="content">
+  <div class="box-content">
     <h2 class="text-3xl text-center mt-4 pt-5">4 main reasons for vegetarism:</h2>
     <Carousel />
   </div>
-
-  <section class="section_1"></section>
-
 
   <div class="diagonal-box bg-one">
     <div class="content">
@@ -18,7 +15,6 @@
       </p>
     </div>
   </div>
-  <section class="section_2"></section>
 </template>
 
 <script setup lang="ts">
@@ -26,70 +22,26 @@ import Carousel from '@/components/Carousel.vue'
 </script>
 
 <style scoped>
+
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+
+h2 {
+  font-family: 'Caprasimo', sans-serif;
+
+}
 .conclusion {
   padding: 100px;
 }
 
-.section_1::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 245px;
-  background: #e8cbc0;
-  background: -webkit-linear-gradient(to right, #636fa4, #e8cbc0);
-  background: linear-gradient(to right, #636fa4, #e8cbc0);
-  transform-origin: top right;
-  transform: skewY(2.5deg);
-  z-index: -10;
-}
-
-.section_1::after {
-  content: '';
-  width: 100%;
-  height: 145px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background: #e8cbc0;
-  background: -webkit-linear-gradient(to right, #636fa4, #e8cbc0);
-  background: linear-gradient(to right, #636fa4, #e8cbc0);
-  transform-origin: bottom left;
-  transform: skewY(2.5deg);
-  z-index: -10;
-}
-
-section {
-  width: 100%;
-}
-
-.conclusion-food {
-  width: 100%;
-  padding: 20px;
-  color: black;
-  /* transform: skewY(1deg); */
-  position: relative;
-}
-
-.conclusion-food:before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  transform: skewy(var(--angle));
-  transform-origin: 50% 0;
-  outline: 1px solid transparent;
-  backface-visibility: hidden;
-  background: lightblue;
+.box-content {
+  margin-top: 80px;
 }
 
 .diagonal-box {
   position: relative;
   padding: 10px;
-  margin-top: -1px;
+  margin-top: 80px;
+  margin-bottom: 80px;
 }
 
 .diagonal-box:before {
@@ -107,16 +59,26 @@ section {
 }
 
 .bg-one:before {
-  background-image: linear-gradient(45deg, #654ea3, #eaafc8);
+  background-image: linear-gradient(45deg, #636fa4, #e8cbc0);
 }
 
 .content {
+
   margin-bottom: 200px;
   padding-bottom: 200px;
   margin: 0 auto;
   padding: 1.5em;
   position: relative;
-  padding-top: 100px;
+  color: black;
+}
+
+
+.content p {
+  font-family: 'Caprasimo', sans-serif;
+  font-weight: 200;
+  font-size: 1.2em;
+  color: rgb(63, 63, 63);
+  padding: 50px 80px;
 }
 *,
 *:before,
@@ -124,9 +86,6 @@ section {
   box-sizing: border-box;
 }
 
-.section_2 {
-  margin-bottom: 200px;
-}
 
 @media screen and (max-width: 768px) {
   .content-btn {

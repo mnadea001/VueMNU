@@ -39,8 +39,7 @@ height:220px;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgb(253, 149, 59);
-    color: white;
+    background-color:#0527ae;
     opacity: 0;
     transition: opacity 0.3s;
     display: flex;
@@ -58,7 +57,7 @@ height:220px;
     font-size: 1.5rem;
     font-weight: bold;
     font-family: "Anton", sans-serif;
-    color: #28390f;
+    color: #ffffff;
     white-space: normal!important;;
   }
   </style>
