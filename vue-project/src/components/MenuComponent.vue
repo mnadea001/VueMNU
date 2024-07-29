@@ -31,7 +31,9 @@ const handleClose = () => {
         <div class="modal-body">
           <div class="content">
             <slot name="content">
-              <RouterLink @click.native="handleClose" to="/" class="nav-item">home</RouterLink>
+              <div class="home-btn hide-on-mobile">
+                <RouterLink @click.native="handleClose" to="/" class="nav-item">home</RouterLink>
+              </div>
               <RouterLink @click.native="handleClose" to="/index" class="nav-item"
                 >index</RouterLink
               >
@@ -134,6 +136,13 @@ color: rgb(255, 255, 255);
   }
 
   .image-menu {
+    display: none;
+  }
+
+  .home-btn {
+    display: none;
+  }
+  .hide-on-mobile {
     display: none;
   }
 }
