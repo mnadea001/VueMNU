@@ -66,11 +66,11 @@ watchEffect(() => {
       </div>
       <div class="image-btn">
         <button class="text-btn" @mouseover="rotateImage('left')" @click="openModal1">
-          <p class="hover:text-orange">BODY</p>
+          <p class="text-menu">body</p>
         </button>
         <img :src="elevateImageSrc" class="w-80 h-80" :style="{ transform: imageRotation }" />
         <button class="text-btn" @mouseover="rotateImage('right')" @click="openModal2">
-          <p class="hover:text-orange">MIND</p>
+          <p class="text-menu">mind</p>
         </button>
       </div>
       <MindModalComponent :isOpen="isModalOpened2" @modal-close="closeModal2" />
@@ -82,6 +82,7 @@ watchEffect(() => {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 
 main {
   width: 100vw;
@@ -107,6 +108,11 @@ h2 .text-btn {
   font-family: 'Anton', sans-serif;
 }
 
+.text-menu {
+  font-family: 'Caprasimo', sans-serif;
+
+}
+
 .text-btn {
   font-size: 2rem !important;
 }
@@ -116,7 +122,7 @@ h2 .text-btn {
 }
 
 img {
-  border-radius: 50% 50% 0% 0%;
+  border-radius: 50%;
 }
 
 .text-btn p:hover {

@@ -1,18 +1,20 @@
 <template>
   <main>
- 
-      <div>
-        <h1 class="text-center mb-4">
-          Yoga is the union <br />
-          of body & mind
-        </h1>
-        <v-typical
-          class="blink"
-          :steps="['FIND', 1000, 'FIND HARMONY', 500, 'FIND HARMONY & BE HAPPY !!', 1000]"
-          :loop="Infinity"
-          :wrapper="'h2'"
-        ></v-typical>
-      </div>
+    <div class="section-3">
+      <AnimationHome />
+    </div>
+    <div>
+      <h1 class="text-center mb-4">
+        Yoga is the union <br />
+        of body & mind
+      </h1>
+      <v-typical
+        class="blink"
+        :steps="['FIND', 1000, 'FIND HARMONY', 500, 'FIND HARMONY & BE HAPPY !!', 1000]"
+        :loop="Infinity"
+        :wrapper="'h2'"
+      ></v-typical>
+    </div>
     <div class="section-3">
       <StartButton />
     </div>
@@ -20,8 +22,8 @@
 </template>
 <script setup lang="ts">
 import StartButton from '@/components/StartButton.vue'
+import AnimationHome from '@/components/AnimationHome.vue'
 import VTypical from 'vue-typical'
-
 </script>
 
 <style scoped>
@@ -45,8 +47,6 @@ h1 {
   margin-top: 100px;
 }
 
-
-
 h2 {
   font-weight: 400;
   font-style: bold;
@@ -55,9 +55,6 @@ h2 {
   text-align: center;
   font-family: 'Anton', sans-serif;
 }
-
-
-
 
 .section-3 {
   display: flex;

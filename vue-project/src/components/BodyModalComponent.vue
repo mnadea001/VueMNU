@@ -26,10 +26,10 @@ onClickOutside(target, () => emit("modal-close"));
         <div class="modal-body">
           <slot name="content">
             <RouterLink to="/food" class="btn-home-start mt-3"
-              >FOOD</RouterLink
+              >food</RouterLink
             >
             <RouterLink to="/yoga" class="btn-home-start mt-3"
-              >ASANAS</RouterLink
+              >asanas</RouterLink
             >
           </slot>
         </div>
@@ -39,7 +39,6 @@ onClickOutside(target, () => emit("modal-close"));
 </template>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 
 .modal-mask {
@@ -73,7 +72,8 @@ margin-top: 50px;
   border: 1px solid black;
   text-align: center;
   margin-left: 20px;
-  font-family: "Anton", sans-serif;
+  font-family: 'Caprasimo', sans-serif;
+
   font-size: 3em;
 }
 .btn-home-start:hover {

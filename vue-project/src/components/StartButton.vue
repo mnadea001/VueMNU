@@ -1,12 +1,11 @@
 <template>
   <div class="content-btn">
-  <RouterLink to="/index" class="btn-start">Let's start !!</RouterLink>
-</div>
+    <RouterLink to="/index" class="btn-start">Let's start !!</RouterLink>
+  </div>
 </template>
 
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
-
 </script>
 
 <style scoped>
@@ -17,16 +16,16 @@ import { RouterLink } from 'vue-router'
   font-family: 'Caprasimo', sans-serif;
   border: #d1f23f;
   cursor: pointer;
-  background-color: rgb(1, 74, 34);
-  /* z-index: 640 !important; */
+  background-color: #d1f23f;
   padding: 30px 65px;
   margin-bottom: 10px;
-  color: white;
+  color: rgb(0, 0, 0);
   font-size: 2.5em !important;
 }
 
 .btn-start:hover {
-  background-color: rgb(10, 216, 48);
+  background-color: rgba(241, 148, 251, 0.671);
+  color: white;
 }
 
 @media screen and (max-width: 768px) {
