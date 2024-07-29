@@ -1,28 +1,28 @@
 <template>
   <main>
     <BackButton />
-
-    <div class="diagonal-box bg-one">
-      <div class="content">
-        <h1 class="text-center my-4">
-          Veggie <br />
-          is good !!!
-        </h1>
-        <h4 class="text-center my-4">
-          Vegetarianism holds a significant place in the lifestyle and philosophy of yoga, serving
-          as more than just a dietary choice but rather a cornerstone of spiritual and holistic
-          living. Yogis, practitioners of yoga, often adhere to a vegetarian diet for various
-          reasons, all of which align with the core principles of yoga practice.
-        </h4>
-      </div>
-      <p class="my-4 ml-5">Scroll vertically to see all meals:</p>
-      <div class="container-card my-4 pb-5">
-        <RouterLink v-for="(meal, index) in meals" :key="index" :to="`/meal/${meal.idMeal}`">
-          <MealCard :img="meal.strMealThumb" :strMeal="meal.strMeal" />
-        </RouterLink>
+    <div class="diagonal-box-container">
+      <div class="diagonal-box bg-one">
+        <div class="content">
+          <h1 class="text-center my-4">
+            Veggie <br />
+            is good !!!
+          </h1>
+          <h4 class="text-center my-4">
+            Vegetarianism holds a significant place in the lifestyle and philosophy of yoga, serving
+            as more than just a dietary choice but rather a cornerstone of spiritual and holistic
+            living. Yogis, practitioners of yoga, often adhere to a vegetarian diet for various
+            reasons, all of which align with the core principles of yoga practice.
+          </h4>
+        </div>
+        <p class="my-4 ml-5">Scroll vertically to see all meals:</p>
+        <div class="container-card my-4 pb-5">
+          <RouterLink v-for="(meal, index) in meals" :key="index" :to="`/meal/${meal.idMeal}`">
+            <MealCard :img="meal.strMealThumb" :strMeal="meal.strMeal" />
+          </RouterLink>
+        </div>
       </div>
     </div>
-
     <div>
       <VeganModal />
     </div>
@@ -87,6 +87,11 @@ h4 {
   padding: 50px 80px;
 }
 
+.diagonal-box-container {
+  display: flex;
+  justify-content: center;
+}
+
 .diagonal-box {
   position: relative;
   padding: 10px;
@@ -104,7 +109,7 @@ h4 {
   transform-origin: 50% 0;
   outline: 1px solid transparent;
   backface-visibility: hidden;
-  height: 850px;
+
 }
 
 .bg-one:before {
@@ -129,6 +134,7 @@ h4 {
   white-space: nowrap;
   object-fit: contain;
   scroll-snap-type: x mandatory;
+  margin-bottom: 50px;
 }
 
 @media screen and (max-width: 768px) {

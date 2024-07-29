@@ -7,7 +7,6 @@ import { defineComponent } from 'vue'
 import elevateImg from '../assets/elevate.gif'
 import BackButton from '@/components/BackButton.vue'
 
-
 const elevateImageSrc: string = elevateImg
 
 defineComponent({
@@ -17,7 +16,7 @@ defineComponent({
 })
 const isModalOpened1 = ref(false)
 const isModalOpened2 = ref(false)
-const rotationDirection = ref<string>('');
+const rotationDirection = ref<string>('')
 
 const openModal1 = () => {
   isModalOpened1.value = true
@@ -33,37 +32,39 @@ const closeModal2 = () => {
 }
 
 const rotateImage = (direction: string) => {
-  rotationDirection.value = direction === 'left' ? 'rotate(-6deg)' : 'rotate(6deg)';
-};
+  rotationDirection.value = direction === 'left' ? 'rotate(-6deg)' : 'rotate(6deg)'
+}
 
 const resetRotation = () => {
-  rotationDirection.value = '';
-};
+  rotationDirection.value = ''
+}
 // @ts-ignore
-const imageRotation = ref<string>('');
+const imageRotation = ref<string>('')
 // @ts-ignore
 watchEffect(() => {
-  imageRotation.value = rotationDirection.value;
-});
-
+  imageRotation.value = rotationDirection.value
+})
 </script>
 
 <template>
   <main>
-    <BackButton/>
-    <div class="home-box">
-      <h1 class="text-center my-4">
-        Elevate yourself <br />
-        with yoga
-      </h1>
-      <div class="title-container">
-        <v-typical
-          class="blink"
-          :steps="['CHOOSE', 1000, 'CHOOSE YOUR', 500, 'CHOOSE YOUR FIELD !!', 1000]"
-          :loop="Infinity"
-          :wrapper="'h2'"
-        ></v-typical>
-      </div>
+    <BackButton />
+    <div class="diagonal-box-container">
+    <div class="diagonal-box bg-one">
+      <div class="content">
+        <h1 class="text-center my-4">
+          Elevate yourself <br />
+          with yoga
+        </h1>
+        <div class="title-container">
+          <v-typical
+            class="blink"
+            :steps="['CHOOSE', 1000, 'CHOOSE YOUR', 500, 'CHOOSE YOUR FIELD !!', 1000]"
+            :loop="Infinity"
+            :wrapper="'h2'"
+          ></v-typical>
+        </div>
+        <div class="home-box">
       <div class="image-btn">
         <button class="text-btn" @mouseover="rotateImage('left')" @click="openModal1">
           <p class="text-menu">body</p>
@@ -76,6 +77,9 @@ watchEffect(() => {
       <MindModalComponent :isOpen="isModalOpened2" @modal-close="closeModal2" />
       <BodyModalComponent :isOpen="isModalOpened1" @modal-close="closeModal1" />
     </div>
+      </div>
+    </div>
+  </div>
   </main>
 </template>
 
@@ -94,7 +98,7 @@ h1 {
   font-weight: 400;
   font-style: normal;
   font-size: 4.5em;
-  color: #d1f23f;
+  color: #0527ae;
   line-height: 1.5;
 }
 
@@ -104,13 +108,10 @@ h2 {
   font-size: 2.5em;
   font-family: 'Anton', sans-serif;
 }
-h2 .text-btn {
-  font-family: 'Anton', sans-serif;
-}
+
 
 .text-menu {
   font-family: 'Caprasimo', sans-serif;
-
 }
 
 .text-btn {
@@ -126,7 +127,7 @@ img {
 }
 
 .text-btn p:hover {
-  font-weight: bolder;
+  text-decoration: underline;
 }
 .text-btn p:hover img {
   transform: rotate(50);
@@ -138,17 +139,61 @@ img {
   margin-top: 50px;
   align-items: center;
 }
+
+.diagonal-box-container {
+  display: flex;
+  justify-content: center;
+}
+.diagonal-box {
+  position: relative;
+  padding: 10px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  width: 100vw;
+}
+
+.diagonal-box:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  transform: skewy(1deg);
+  transform-origin: 50% 0;
+  outline: 1px solid transparent;
+  backface-visibility: hidden;
+}
+
+.bg-one:before {
+  background-image: linear-gradient(45deg, #636fa4, #e8cbc0);
+}
+
+.content {
+  margin-bottom: 200px;
+  padding-bottom: 200px;
+  margin: 0 auto;
+  padding: 1.5em;
+  position: relative;
+  color: black;
+}
+.content p {
+  font-family: 'Caprasimo', sans-serif;
+  font-weight: 200;
+  font-size: 1.2em;
+  color: rgb(0, 0, 0);
+  padding: 50px 80px;
+}
 @media screen and (max-width: 768px) {
   .image-btn {
     flex-direction: column;
   }
 
-  h1{
+  h1 {
     font-size: 50px;
-
   }
 
-  h2{
+  h2 {
     font-size: 40px;
   }
 }

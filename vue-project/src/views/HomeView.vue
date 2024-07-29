@@ -42,7 +42,7 @@ main {
   position: relative;
   text-align: center;
   color: white;
-margin: auto;
+  margin: auto;
 }
 
 .centered {
@@ -59,7 +59,7 @@ margin: auto;
 }
 h1 {
   font-family: 'Bungee Shade', sans-serif;
-  
+
   font-weight: 400;
   font-style: normal;
   font-size: 4.5em;
@@ -92,7 +92,7 @@ h2 {
 
 @media screen and (max-width: 768px) {
   h1 {
-    font-size: 50px !important;
+    font-size: 30px !important;
   }
   h2 {
     font-size: 40px;

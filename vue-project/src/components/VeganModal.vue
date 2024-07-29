@@ -65,7 +65,6 @@ h2 {
 }
 
 .content {
-
   margin-bottom: 200px;
   padding-bottom: 200px;
   margin: 0 auto;
@@ -73,7 +72,6 @@ h2 {
   position: relative;
   color: black;
 }
-
 
 .content p {
   font-family: 'Caprasimo', sans-serif;
