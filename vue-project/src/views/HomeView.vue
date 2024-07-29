@@ -1,9 +1,13 @@
 <template>
   <main>
     <div class="container">
+      <h1 class="text-center mobile-title mb-4">
+          Yoga is the union <br />
+          of body & mind
+        </h1>
       <img :src="movieSrc" class="lotus" ref="lotusImage" />
       <div class="centered">
-        <h1 class="text-center mb-4">
+        <h1 class="text-center desktop-title mb-4">
           Yoga is the union <br />
           of body & mind
         </h1>
@@ -89,10 +93,18 @@ h2 {
   margin-bottom: 100px;
   position: relative;
 }
-
+.mobile-title {
+  display: none;
+}
 @media screen and (max-width: 768px) {
   h1 {
   font-size: 30px !important;
+}
+.mobile-title {
+  display: block;
+}
+.desktop-title {
+  display: none;
 }
   h2 {
     font-size: 40px;
@@ -103,7 +115,12 @@ h2 {
   }
 }
 @media  only screen and (min-width: 769px) and (max-width: 980px)   {
-
+  .mobile-title {
+  display: block;
+}
+.desktop-title {
+  display: none;
+}
 h1 {
   font-size: 35px !important;
 }
@@ -114,6 +131,12 @@ h1 {
   h1 {
     font-size: 40px !important;
   }
+  .mobile-title {
+  display: block;
+}
+.desktop-title {
+  display: none;
+}
 
 }
 </style>
