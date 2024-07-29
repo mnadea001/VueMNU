@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { ref, onMounted,  } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import BackButton from '@/components/BackButton.vue'
-
 
 interface Pose {
   id: number
@@ -17,7 +16,6 @@ interface Pose {
 const pose = ref<Pose | null>(null)
 const error = ref<string | null>(null)
 const route = useRoute()
-
 
 onMounted(() => {
   fetchPoseData()
@@ -43,26 +41,23 @@ async function fetchPoseData() {
 </script>
 <template>
   <main class="dark:bg-white">
-    <BackButton/>
+    <BackButton />
 
     <div class="diagonal-box-container">
-    <div class="diagonal-box bg-one">
-      <div class="content">
-        <h1 v-if="pose" class="text-center">{{ pose.english_name }}</h1>
-
+      <div class="diagonal-box bg-one">
+        <div class="content">
+          <h1 v-if="pose" class="text-center">{{ pose.english_name }}</h1>
+          <div class="content">
+            <img :src="pose.url_svg" class="w-80 h-80" />
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-    <div v-if="pose" class="m-2 max-w-4xl mx-auto card pose-details">
-        <p class="my-4"><strong>Sanskrit Name:</strong> {{ pose.sanskrit_name }}</p>
-        <p class="my-4"><strong>Translation Name:</strong> {{ pose.translation_name }}</p>
-        <p class="my-4"><strong>Description:</strong> {{ pose.pose_description }}</p>
-        <p class="my-4"><strong>Benefits:</strong> {{ pose.pose_benefits }}</p>
-      <div class="content">
-        <img :src="pose.url_svg" class="w-80 h-80"  />
-
-
-      </div>
+    <div v-if="pose" class="m-2 p-5 max-w-4xl mx-auto card pose-details">
+      <p class="my-4"><strong>Sanskrit Name:</strong> {{ pose.sanskrit_name }}</p>
+      <p class="my-4"><strong>Translation Name:</strong> {{ pose.translation_name }}</p>
+      <p class="my-4"><strong>Description:</strong> {{ pose.pose_description }}</p>
+      <p class="my-4"><strong>Benefits:</strong> {{ pose.pose_benefits }}</p>
     </div>
     <p v-else class="text-center">Loading...</p>
     <p v-if="error" class="text-center text-red-500">{{ error }}</p>
@@ -146,5 +141,4 @@ main {
   color: rgb(63, 63, 63);
   padding: 50px 80px;
 }
-
 </style>

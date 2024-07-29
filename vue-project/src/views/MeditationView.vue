@@ -16,9 +16,29 @@ defineComponent({
 <template>
   <main>
     <BackButton />
-    <div class="home-box">
-      <h1 class="text-center my-4">Meditation</h1>
-      <h2>to calm the mind</h2>
+    <div class="diagonal-box-container">
+      <div class="diagonal-box bg-one">
+        <div class="content">
+          <h1 class="text-center my-4">Meditation</h1>
+          <div class="flex">
+            <div class="flex-1 w-50">
+              <img :src="chillImageSrc" class="h-80 rounded mt-5" />
+            </div>
+            <div class="flex-1 w-50">
+              <p>
+                Meditation offers numerous benefits for both the mind and body. Regular practice can
+                reduce stress, anxiety, and depression by promoting relaxation and mindfulness. It
+                enhances emotional health, increasing self-awareness and improving focus and
+                concentration. Meditation can also lead to better sleep, lower blood pressure, and a
+                strengthened immune system. By fostering a sense of calm and clarity, meditation
+                supports overall well-being and helps individuals navigate the challenges of daily
+                life with greater resilience and positivity.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
       <div class="title-container">
         <v-typical
           class="blink"
@@ -34,15 +54,10 @@ defineComponent({
           :wrapper="'h3'"
         ></v-typical>
       </div>
-      <div class="image-btn">
-        <img :src="chillImageSrc" class="h-80 rounded-full" />
-      </div>
+
       <div class="image-container">
-        <RouterLink to="/buddha" class="btn-home-start text-3xl my-3"
-          >Let's start now !!</RouterLink
-        >
+        <RouterLink to="/buddha" class="btn-home-start text-3xl mb-5">Start</RouterLink>
       </div>
-    </div>
   </main>
 </template>
 
@@ -61,7 +76,7 @@ h1 {
   font-weight: 400;
   font-style: normal;
   font-size: 4.5em;
-  color: #d1f23f;
+  color: #0527ae;
   line-height: 1.5;
   word-wrap: break-word;
 }
@@ -76,6 +91,51 @@ h3 {
   text-align: center;
 }
 
+.diagonal-box-container {
+  display: flex;
+  justify-content: center;
+}
+.diagonal-box {
+  position: relative;
+  padding: 10px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  width: 100vw;
+}
+
+.diagonal-box:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  transform: skewy(1deg);
+  transform-origin: 50% 0;
+  outline: 1px solid transparent;
+  backface-visibility: hidden;
+}
+
+.bg-one:before {
+  background-image: linear-gradient(45deg, #636fa4, #e8cbc0);
+}
+
+.content {
+  margin-bottom: 200px;
+  padding-bottom: 200px;
+  margin: 0 auto;
+  padding: 1.5em;
+  position: relative;
+  color: black;
+}
+
+.content p {
+  font-family: 'Caprasimo', sans-serif;
+  font-weight: 200;
+  font-size: 1.2em;
+  color: rgb(63, 63, 63);
+  padding: 50px 80px;
+}
 .title-container {
   display: grid;
   place-items: center;
@@ -115,7 +175,6 @@ h3 {
   }
   h2 {
     font-size: 40px;
- 
   }
 }
 </style>

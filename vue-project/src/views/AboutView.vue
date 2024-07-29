@@ -1,17 +1,21 @@
 <template>
   <main>
     <BackButton/>
-    <div class="dark:bg-white main-content">
+    <div class="diagonal-box-container">
+    <div class="diagonal-box bg-one">
       <div class="content">
         <h1 class="text-center my-4">Philosophy</h1>
-        <span class="text-center content-span">
-          <p class="text-center">
+        <p class="text-center">
             Yoga is an ancient practice that originated in India thousands of years ago. It is a
             holistic system that encompasses physical postures (asanas), breath control (pranayama),
             meditation, and ethical principles aimed at achieving harmony between mind, body, and
             spirit.
           </p>
-        </span>
+      </div>
+    </div>
+  </div>
+    <div class="dark:bg-white main-content">
+      <div class="content">
         <div class="container">
           <ul id="cards">
             <li class="card" id="card2">
@@ -92,7 +96,7 @@ h1 {
   font-weight: 400;
   font-style: normal;
   font-size: 4.5em;
-  color: #d1f23f;
+  color: #0527ae;
   line-height: 1.5;
   word-wrap: break-word; 
 }
@@ -188,6 +192,52 @@ h2 {
   }
 }
 
+
+.diagonal-box-container {
+  display: flex;
+  justify-content: center;
+}
+.diagonal-box {
+  position: relative;
+  padding: 10px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  width: 100vw;
+}
+
+.diagonal-box:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  transform: skewy(1deg);
+  transform-origin: 50% 0;
+  outline: 1px solid transparent;
+  backface-visibility: hidden;
+}
+
+.bg-one:before {
+  background-image: linear-gradient(45deg, #636fa4, #e8cbc0);
+}
+
+.content {
+  margin-bottom: 200px;
+  padding-bottom: 200px;
+  margin: 0 auto;
+  padding: 1.5em;
+  position: relative;
+  color: black;
+}
+
+.content p {
+  font-family: 'Caprasimo', sans-serif;
+  font-weight: 200;
+  font-size: 1.2em;
+  color: rgb(63, 63, 63);
+  padding: 50px 80px;
+}
 @media (max-width: 480px) {
   .content-span p {
     padding-left: 10px;
