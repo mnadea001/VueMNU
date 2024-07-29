@@ -25,7 +25,7 @@ defineComponent({
     <BackButton />
     <div class="box-docker">
       <div class="first-box">
-        <h2 class="text-center text-black me-5">scroll down the black box to see buddha</h2>
+        <h2 class="text-center text-black me-5">scroll down in the black box to see buddha</h2>
         <img :src="mouseScroll" class="w-10 h-10 ms-5 me-5" alt="" />
       </div>
       <div class="second-box">

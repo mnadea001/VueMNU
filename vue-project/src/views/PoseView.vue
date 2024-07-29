@@ -47,6 +47,7 @@ async function fetchPoseData() {
       <div class="diagonal-box bg-one">
         <div class="content">
           <h1 v-if="pose" class="text-center">{{ pose.english_name }}</h1>
+          <h1 v-else="pose" class="text-center">Loading..</h1>
           <div class="content">
             <img :src="pose.url_svg" class="w-80 h-80" />
           </div>
@@ -59,7 +60,6 @@ async function fetchPoseData() {
       <p class="my-4"><strong>Description:</strong> {{ pose.pose_description }}</p>
       <p class="my-4"><strong>Benefits:</strong> {{ pose.pose_benefits }}</p>
     </div>
-    <p v-else class="text-center">Loading...</p>
     <p v-if="error" class="text-center text-red-500">{{ error }}</p>
   </main>
 </template>
