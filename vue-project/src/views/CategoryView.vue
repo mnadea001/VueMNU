@@ -1,16 +1,30 @@
 <template>
   <main class="dark:bg-white">
     <div>
-      <BackButton/>
+      <BackButton />
+      <div class="diagonal-box-container">
+        <div class="diagonal-box bg-one">
+          <div class="content">
+            <div v-if="yoga">
+              <h1 >{{ yoga.category_name }}</h1>
+
+              <div class="flex mt-4">
+              <div class="flex-1 w-70">
+                <img :src="childPoseImageSrc" class="h-80 rounded mt-4" alt="Yoga Image"  />
+
+              </div>
+              <div class="flex-1 w-30 p-5">
+                <p>{{ yoga.category_description }}</p>
+              </div>
+            </div>
+        </div>
+          </div>
+        </div>
+      </div>
       <div v-if="yoga" class="p-6 m-2 max-w-4xl mx-auto rounded-xl category-detail">
-        <h1 class="text-center">{{ yoga.category_name }}</h1>
-        <div class="mt-4">
-          <div class="text-center">{{ yoga.category_description }}</div>
-        </div>
-        <div class="content">
-          <img :src="childPoseImageSrc" class="h-80 rounded-full mt-4" />
-        </div>
-        <p class="my-4 scroll-text">Scroll vertically to see all poses:</p>
+
+   
+        <p class="my-4">Scroll vertically to see all poses:</p>
         <div class="pose-content-box my-4">
           <div class="pose-content">
             <PoseCard v-for="(pose, index) in yoga.poses" :key="index" :pose="pose" />
@@ -29,7 +43,6 @@ import { useRoute } from 'vue-router'
 import PoseCard from '../components/PoseCard.vue'
 import childPoseImg from '../assets/childpose.gif'
 import BackButton from '@/components/BackButton.vue'
-
 
 const childPoseImageSrc: string = childPoseImg
 
@@ -73,8 +86,50 @@ onMounted(() => {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 
-.scroll-text {
+.diagonal-box-container {
+  display: flex;
+  justify-content: center;
+}
+.diagonal-box {
+  position: relative;
+  padding: 10px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  width: 100vw;
+}
+
+.diagonal-box:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  transform: skewy(1deg);
+  transform-origin: 50% 0;
+  outline: 1px solid transparent;
+  backface-visibility: hidden;
+}
+
+.bg-one:before {
+  background-image: linear-gradient(45deg, #636fa4, #e8cbc0);
+}
+
+.content {
+  margin-bottom: 200px;
+  padding-bottom: 200px;
+  margin: 0 auto;
+  padding: 1.5em;
+  position: relative;
+  color: black;
+}
+
+.content p {
   font-family: 'Caprasimo', sans-serif;
+  font-weight: 200;
+  font-size: 1.2em;
+  color: rgb(63, 63, 63);
+  padding: 50px 80px;
 }
 h1 {
   font-family: 'Caprasimo', sans-serif;
@@ -107,5 +162,4 @@ main {
 .pose-content {
   display: flex;
 }
-
 </style>

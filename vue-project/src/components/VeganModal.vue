@@ -3,16 +3,17 @@
     <h2 class="text-3xl text-center mt-4 pt-5">4 main reasons for vegetarism:</h2>
     <Carousel />
   </div>
-
-  <div class="diagonal-box bg-one">
-    <div class="content">
-      <p>
-        In conclusion, vegetarian food holds immense importance for yogis, serving as a practical
-        manifestation of yogic principles such as ahimsa, promoting mental clarity and inner peace,
-        enhancing pranic energy, and aligning with ethical and environmental values. By embracing a
-        vegetarian diet, yogis not only nourish their bodies but also cultivate compassion,
-        mindfulness, and harmony in their lives and the world around them.
-      </p>
+  <div class="diagonal-box-container">
+    <div class="diagonal-box bg-one">
+      <div class="content">
+        <p>
+          In conclusion, vegetarian food holds immense importance for yogis, serving as a practical
+          manifestation of yogic principles such as ahimsa, promoting mental clarity and inner
+          peace, enhancing pranic energy, and aligning with ethical and environmental values. By
+          embracing a vegetarian diet, yogis not only nourish their bodies but also cultivate
+          compassion, mindfulness, and harmony in their lives and the world around them.
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -22,14 +23,12 @@ import Carousel from '@/components/Carousel.vue'
 </script>
 
 <style scoped>
-
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 
 h2 {
   font-family: 'Caprasimo', sans-serif;
   font-size: 3em;
   color: #d1f23f;
-
 }
 .conclusion {
   padding: 100px;
@@ -39,6 +38,10 @@ h2 {
   margin-top: 80px;
 }
 
+.diagonal-box-container {
+  display: flex;
+  justify-content: center;
+}
 .diagonal-box {
   position: relative;
   padding: 10px;
@@ -57,7 +60,6 @@ h2 {
   transform-origin: 50% 0;
   outline: 1px solid transparent;
   backface-visibility: hidden;
-  height: 250px;
 }
 
 .bg-one:before {
@@ -85,7 +87,6 @@ h2 {
 *:after {
   box-sizing: border-box;
 }
-
 
 @media screen and (max-width: 768px) {
   .content-btn {

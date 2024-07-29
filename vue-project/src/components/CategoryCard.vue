@@ -13,28 +13,30 @@ const props = defineProps({
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+
 h3 {
-  font-family: 'Anton', sans-serif;
+  font-family: 'Caprasimo', sans-serif;
+
   margin-right: 10px;
   font-size: 1.2em;
 }
 .category-card {
   cursor: pointer;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 10px 15px;
-    margin-top: 30px;
-    margin-right: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 5px;
+  border-radius: 8px;
+  padding: 10px 15px;
+  margin-top: 30px;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+  background-color: #0527ae;
+  color: white;
 }
 
 .category-card:hover {
-  background-color: #d1f23f;
-  color: black;
+  background-color: #2f52e1;
 }
 </style>

@@ -6,8 +6,6 @@ import yogaImg from '../assets/yoga.gif'
 import VTypical from 'vue-typical'
 import BackButton from '@/components/BackButton.vue'
 
-
-
 const yogaImageSrc: string = yogaImg
 interface Pose {
   pose_name: string
@@ -40,31 +38,42 @@ onMounted(() => {
 
 <template>
   <main class="dark:bg-white">
-    <BackButton/>
-    <h1 class="text-3xl text-center my-4">Yoga is art</h1>
-    <div class="content">
-      <v-typical
-        class="blink"
-        :steps="[
-          'DISCOVER',
-          1000,
-          'DISCOVER DIFFERENT',
-          500,
-          'DISCOVER DIFFERENT YOGA STYLES !',
-          1000
-        ]"
-        :loop="Infinity"
-        :wrapper="'h2'"
-      ></v-typical>
-      <img :src="yogaImageSrc" class="w-80 h-80 rounded-full mt-4" />
-    </div>
-    <div class="slider-yoga">
-      <p class="my-4 ms-4 scroll-text">Scroll vertically to see all yoga styles:</p>
-      <div class="container my-4">
-        <div class="category-card my-4">
-          <RouterLink v-for="(yoga, index) in yogas" :key="index" :to="`/category/${yoga.id}`">
-            <CategoryCard :categoryName="yoga.category_name" />
-          </RouterLink>
+    <BackButton />
+
+    <div class="diagonal-box-container">
+      <div class="diagonal-box bg-one">
+        <div class="content">
+          <h1 class="text-3xl text-center my-4">Yoga is art</h1>
+          <v-typical
+            class="blink"
+            :steps="[
+              'DISCOVER',
+              1000,
+              'DISCOVER DIFFERENT',
+              500,
+              'DISCOVER DIFFERENT YOGA STYLES !',
+              1000
+            ]"
+            :loop="Infinity"
+            :wrapper="'h2'"
+          ></v-typical>
+          <div class="slider-yoga">
+            <p class="">Scroll vertically to see all yoga styles:</p>
+            <div class="container my-4">
+              <div class="category-card my-4">
+                <RouterLink
+                  v-for="(yoga, index) in yogas"
+                  :key="index"
+                  :to="`/category/${yoga.id}`"
+                >
+                  <CategoryCard :categoryName="yoga.category_name" />
+                </RouterLink>
+              </div>
+            </div>
+            <div class="content">
+              <img :src="yogaImageSrc" class="w-80 h-80 rounded-full mt-4" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -76,9 +85,6 @@ onMounted(() => {
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
 
-.scroll-text {
-  font-family: "Caprasimo", sans-serif;
-}
 main {
   max-width: 100vw;
 }
@@ -88,7 +94,7 @@ h1 {
   font-weight: 400;
   font-style: normal;
   font-size: 4.5em !important;
-  color: #d1f23f;
+  color: #0527ae;
   line-height: 1.5;
   white-space: normal;
 }
@@ -98,6 +104,7 @@ h2 {
   font-style: bold;
   font-size: 2.5em !important;
   font-family: 'Anton', sans-serif;
+  color: black;
 }
 .content {
   display: flex;
@@ -106,7 +113,6 @@ h2 {
   margin-top: 50px;
   align-items: center;
 }
-
 
 .slider-yoga {
   margin-right: 30px;
@@ -125,9 +131,48 @@ h2 {
   display: flex;
   flex-direction: row;
 }
-/* @media screen and (max-width: 768px) {
-  .content-img {
-    flex-direction: column-reverse;
-  }
-} */
+
+.diagonal-box-container {
+  display: flex;
+  justify-content: center;
+}
+.diagonal-box {
+  position: relative;
+  padding: 10px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  width: 100vw;
+}
+
+.diagonal-box:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  transform: skewy(1deg);
+  transform-origin: 50% 0;
+  outline: 1px solid transparent;
+  backface-visibility: hidden;
+}
+
+.bg-one:before {
+  background-image: linear-gradient(45deg, #636fa4, #e8cbc0);
+}
+
+.content {
+  margin-bottom: 200px;
+  padding-bottom: 200px;
+  margin: 0 auto;
+  padding: 1.5em;
+  position: relative;
+}
+
+.content p {
+  font-weight: 200;
+  font-size: 1.2em;
+  color: rgb(6, 6, 6);
+  padding: 50px 80px;
+}
 </style>
