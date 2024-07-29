@@ -48,7 +48,7 @@ async function fetchPoseData() {
         <div class="content">
           <h1 v-if="pose" class="text-center">{{ pose.english_name }}</h1>
           <h1 v-else="pose" class="text-center">Loading..</h1>
-          <div class="content">
+          <div v-if="pose" class="content">
             <img :src="pose.url_svg" class="w-80 h-80" />
           </div>
         </div>

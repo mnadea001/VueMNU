@@ -1,8 +1,11 @@
 <template>
   <main class="dark:bg-white">
-    <div class="main-content">
+    <div class="diagonal-box-container">
+    <div class="diagonal-box bg-one">
       <div class="content">
         <h1 class="text-3xl text-center my-4">About</h1>
+        <div class="main-content">
+      <div class="content">
 
         <div class="content-img my-4">
           <div class="text-source">
@@ -23,6 +26,10 @@
         </div>
       </div>
     </div>
+      </div>
+    </div>
+  </div>
+
   </main>
 </template>
 
@@ -38,7 +45,8 @@ main {
 }
 
 h1 {
-  font-family: 'Bungee Shade', sans-serif;
+  font-family: 'Caprasimo', sans-serif;
+
   font-weight: 400;
   font-style: normal;
   font-size: 4.5em ;
@@ -69,6 +77,47 @@ img {
 ul li {
   text-align: center;
 }
+
+
+.diagonal-box-container {
+  display: flex;
+  justify-content: center;
+}
+.diagonal-box {
+  position: relative;
+  padding: 10px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  width: 100vw;
+}
+
+
+.diagonal-box:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  transform: skewy(1deg);
+  transform-origin: 50% 0;
+  outline: 1px solid transparent;
+  backface-visibility: hidden;
+}
+
+.bg-one:before {
+  background-image: linear-gradient(45deg, #636fa4, #e8cbc0);
+}
+
+.content {
+  margin-bottom: 200px;
+  padding-bottom: 200px;
+  margin: 0 auto;
+  padding: 1.5em;
+  position: relative;
+  color: black;
+}
+
 
 @media screen and (max-width: 768px) {
   .content-img {
