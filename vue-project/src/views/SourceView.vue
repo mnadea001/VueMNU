@@ -46,7 +46,6 @@ main {
 
 h1 {
   font-family: 'Caprasimo', sans-serif;
-
   font-weight: 400;
   font-style: normal;
   font-size: 4.5em ;

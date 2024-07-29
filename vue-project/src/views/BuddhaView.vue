@@ -61,8 +61,7 @@ main {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background: rgb(209, 242, 63);
-  background: linear-gradient(90deg, rgba(209, 242, 63, 1) 0%, rgba(255, 220, 0, 1) 100%);
+  background-image: linear-gradient(45deg, #636fa4, #e8cbc0);
   border-radius: 10px;
   padding: 20px;
   margin: auto;
@@ -81,8 +80,7 @@ main {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background: rgb(209, 242, 63);
-  background: linear-gradient(90deg, rgba(209, 242, 63, 1) 0%, rgba(255, 220, 0, 1) 100%);
+  background-image: linear-gradient(45deg, #636fa4, #e8cbc0);
   border-radius: 10px;
   padding: 20px;
   margin: 20px;
@@ -92,8 +90,8 @@ main {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  background: rgb(209, 242, 63);
-  background: linear-gradient(90deg, rgba(209, 242, 63, 1) 0%, rgba(255, 220, 0, 1) 100%);
+  background-image: linear-gradient(45deg, #636fa4, #e8cbc0);
+
   border-radius: 10px;
   padding: 20px;
   margin: 20px;

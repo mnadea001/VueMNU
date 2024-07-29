@@ -25,7 +25,7 @@ import { RouterLink } from 'vue-router'
   display: flex;
   flex-direction: row;
   background: #d1f23f;
-  background: linear-gradient(90deg, rgba(209, 242, 63, 1) 0%, rgba(255, 220, 0, 1) 100%);
+  background-image: linear-gradient(45deg, #636fa4, #e8cbc0);
   justify-content: center;
   border-radius: 10px;
 }

@@ -31,22 +31,22 @@ const handleClose = () => {
         <div class="modal-body">
           <div class="content">
             <slot name="content">
-              <RouterLink @click.native="handleClose" to="/" class="nav-item">Home</RouterLink>
+              <RouterLink @click.native="handleClose" to="/" class="nav-item">home</RouterLink>
               <RouterLink @click.native="handleClose" to="/index" class="nav-item"
-                >Index</RouterLink
+                >index</RouterLink
               >
               <RouterLink @click.native="handleClose" to="/about" class="nav-item"
-                >Philosophy</RouterLink
+                >philosophy</RouterLink
               >
               <RouterLink @click.native="handleClose" to="/meditation" class="nav-item"
-                >Meditation</RouterLink
+                >meditation</RouterLink
               >
-              <RouterLink @click.native="handleClose" to="/food" class="nav-item">Food</RouterLink>
+              <RouterLink @click.native="handleClose" to="/food" class="nav-item">food</RouterLink>
               <RouterLink @click.native="handleClose" to="/yoga" class="nav-item"
-                >Asanas</RouterLink
+                >asanas</RouterLink
               >
               <RouterLink @click.native="handleClose" to="/source" class="nav-item"
-                >About</RouterLink
+                >about</RouterLink
               >
             </slot>
           </div>
