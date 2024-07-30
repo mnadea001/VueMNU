@@ -67,8 +67,8 @@ onMounted(() => {
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
 
 main {
-  width: 100%;
-  height: 100%;
+  max-width: 100vw;
+  /* height: 100%; */
 }
 h1 {
   font-family: 'Bungee Shade', sans-serif;
