@@ -68,6 +68,7 @@ onMounted(() => {
 
 main {
   max-width: 100vw;
+  box-sizing: border-box;
   /* height: 100%; */
 }
 h1 {
