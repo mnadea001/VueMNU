@@ -9,7 +9,7 @@
               <h1 >{{ yoga.category_name }}</h1>
 
               <div class="flex mt-4">
-              <div class="flex-1 w-70">
+              <div class="flex-1 w-70 yoga-img">
                 <img :src="childPoseImageSrc" class="h-80 rounded mt-4" alt="Yoga Image"  />
 
               </div>
@@ -162,4 +162,11 @@ main {
 .pose-content {
   display: flex;
 }
+
+@media screen and (max-width: 768px) {
+  .yoga-img {
+  display: none;
+}
+}
+
 </style>
