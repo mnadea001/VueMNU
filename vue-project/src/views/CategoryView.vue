@@ -6,24 +6,21 @@
         <div class="diagonal-box bg-one">
           <div class="content">
             <div v-if="yoga">
-              <h1 >{{ yoga.category_name }}</h1>
+              <h1>{{ yoga.category_name }}</h1>
 
               <div class="flex mt-4">
-              <div class="flex-1 w-70 yoga-img">
-                <img :src="childPoseImageSrc" class="h-80 rounded mt-4" alt="Yoga Image"  />
-
-              </div>
-              <div class="flex-1 w-30 p-5">
-                <p>{{ yoga.category_description }}</p>
+                <div class="flex-1 w-70 yoga-img">
+                  <img :src="childPoseImageSrc" class="h-80 rounded mt-4" alt="Yoga Image" />
+                </div>
+                <div class="flex-1 w-30 p-5">
+                  <p>{{ yoga.category_description }}</p>
+                </div>
               </div>
             </div>
-        </div>
           </div>
         </div>
       </div>
       <div v-if="yoga" class="p-6 m-2 max-w-4xl mx-auto rounded-xl category-detail">
-
-   
         <p class="my-4">Scroll vertically to see all poses:</p>
         <div class="pose-content-box my-4">
           <div class="pose-content">
@@ -165,8 +162,11 @@ main {
 
 @media screen and (max-width: 768px) {
   .yoga-img {
-  display: none;
+    display: none;
+  }
+  h1 {
+    font-size: 2.5em !important;
+    margin-left: 10px;
+  }
 }
-}
-
 </style>
