@@ -100,10 +100,7 @@ h2 {
   }
   .mobile-title {
     display: block;
-    line-height: 1.5;
-    position: relative;
-    bottom: 0;
-    left: 0;
+    text-align: center;
   }
   .desktop-title {
     display: none;
