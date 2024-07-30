@@ -117,6 +117,8 @@ h2 {
 @media only screen and (min-width: 769px) and (max-width: 980px) {
   .mobile-title {
     display: block;
+    position: relative;
+    text-align: center;
   }
   .desktop-title {
     display: none;
