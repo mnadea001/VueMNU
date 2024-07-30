@@ -116,6 +116,12 @@ h4 {
   background-image: linear-gradient(45deg, #636fa4, #e8cbc0);
 }
 
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
 .content {
   margin-bottom: 200px;
   margin: 0 auto;
