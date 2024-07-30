@@ -67,7 +67,7 @@ onMounted(() => {
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
 
 main {
-  width: 100vw;
+  width: 100%;
   height: 100%;
 }
 h1 {
@@ -109,7 +109,6 @@ h4 {
   transform-origin: 50% 0;
   outline: 1px solid transparent;
   backface-visibility: hidden;
-
 }
 
 .bg-one:before {
