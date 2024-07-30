@@ -91,12 +91,17 @@ h4 {
 .diagonal-box-container {
   display: flex;
   justify-content: center;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0 10px; /* Ajout de padding pour éviter que le contenu touche les bords de l'écran */
 }
 
 .diagonal-box {
   position: relative;
   padding: 10px;
   margin-top: 80px;
+  max-width: 100%; /* S'assurer que la boîte ne dépasse pas la largeur de l'écran */
+  box-sizing: border-box;
 }
 
 .diagonal-box:before {
@@ -127,6 +132,7 @@ h4 {
   margin: 0 auto;
   padding: 1.5em;
   position: relative;
+  max-width: 100%;
 }
 
 .title-container {
@@ -156,6 +162,12 @@ h4 {
   }
   h2 {
     font-size: 36px;
+  }
+  .diagonal-box-container {
+    padding: 0 5px; /* Réduire le padding pour les écrans plus petits */
+  }
+  .content {
+    padding: 1em; /* Ajuster le padding pour les petits écrans */
   }
 }
 </style>
