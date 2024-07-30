@@ -69,7 +69,6 @@ onMounted(() => {
 main {
   max-width: 100vw;
   box-sizing: border-box;
-  /* height: 100%; */
 }
 h1 {
   font-family: 'Bungee Shade', sans-serif;
@@ -93,14 +92,14 @@ h4 {
   justify-content: center;
   max-width: 100%;
   overflow: hidden;
-  padding: 0 10px; /* Ajout de padding pour éviter que le contenu touche les bords de l'écran */
+  padding: 0 10px; 
 }
 
 .diagonal-box {
   position: relative;
   padding: 10px;
   margin-top: 80px;
-  max-width: 100%; /* S'assurer que la boîte ne dépasse pas la largeur de l'écran */
+  max-width: 100%; 
   box-sizing: border-box;
 }
 
@@ -164,10 +163,10 @@ h4 {
     font-size: 36px;
   }
   .diagonal-box-container {
-    padding: 0 5px; /* Réduire le padding pour les écrans plus petits */
+    padding: 0 5px; 
   }
   .content {
-    padding: 1em; /* Ajuster le padding pour les petits écrans */
+    padding: 1em; 
   }
 }
 </style>

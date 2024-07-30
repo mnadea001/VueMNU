@@ -58,7 +58,7 @@ onMounted(() => {
             :wrapper="'h2'"
           ></v-typical>
           <div class="slider-yoga">
-            <p class="">Scroll vertically to see all yoga styles:</p>
+            <p class="text-scroll">Scroll vertically to see all yoga styles:</p>
             <div class="container my-4">
               <div class="category-card my-4">
                 <RouterLink
@@ -87,6 +87,7 @@ onMounted(() => {
 
 main {
   max-width: 100vw;
+  overflow-x: hidden; /* Empêche les débordements horizontaux */
 }
 
 h1 {
@@ -135,13 +136,18 @@ h2 {
 .diagonal-box-container {
   display: flex;
   justify-content: center;
+  max-width: 100%; /* Limite la largeur du conteneur */
+  padding: 0 10px; /* Ajoute un padding pour éviter les débordements */
+  overflow: hidden; /* Empêche les débordements horizontaux */
 }
 .diagonal-box {
   position: relative;
   padding: 10px;
   margin-top: 80px;
   margin-bottom: 80px;
-  width: 100vw;
+  width: 100%;
+  /* max-width: 1200px; */
+  box-sizing: border-box;
 }
 
 .diagonal-box:before {
@@ -174,5 +180,35 @@ h2 {
   font-size: 1.2em;
   color: rgb(6, 6, 6);
   padding: 50px 80px;
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2.5em !important;
+  }
+  h2 {
+    font-size: 1.5em !important;
+  }
+  .diagonal-box-container {
+    padding: 0 5px;
+  }
+  .content p {
+    padding: 20px;
+  }
+  .slider-yoga {
+    margin: 0 10px;
+  }
+  .category-card {
+    flex-direction: column;
+    align-items: center;
+  }
+  .content img {
+    width: 60%;
+    height: auto;
+  }
+
+  .text-scroll {
+    display:none;
+  }
 }
 </style>
