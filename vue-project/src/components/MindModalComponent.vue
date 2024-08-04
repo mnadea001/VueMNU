@@ -19,7 +19,9 @@ onClickOutside(target, () => emit("modal-close"));
         <div class="modal-header">
           <slot name="header" class="text-3xl font-semibold text-center my-4">
             <div>
-              <button class="close-btn" @click.stop="emit('modal-close')">close</button>
+              <button 
+              class="text-lg text-white-500 dark:text-black mb-4 flex rounded-full border px-4 py-1 hover:bg-black hover:text-white"
+              @click.stop="emit('modal-close')">close</button>
             </div>
           </slot>
         </div>
