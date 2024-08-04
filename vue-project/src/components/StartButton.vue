@@ -12,21 +12,34 @@ import { RouterLink } from 'vue-router'
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 
 .btn-start {
-  border-radius: 80px;
-  font-family: 'Caprasimo', sans-serif;
-  border: #0527ae;
-  cursor: pointer;
-  background-color: #0527ae;
-  padding: 30px 65px;
-  margin-bottom: 10px;
-  color: rgb(255, 255, 255);
-  font-size: 2.5em !important;
+  font-size: 3em !important;
+  color: #d1f23f;
+  position: relative;
+  text-decoration: none;
 }
 
-.btn-start:hover {
-  background-color: #2349e3;
-  color: white;
+.btn-start::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #d1f23f;
+  bottom: 0;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform .3s ease-in-out;
 }
+
+.btn-start:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+/* .btn-start:hover {
+  color: #fff;
+  box-shadow: inset 200px 0 0 0 #54b3d6;;
+} */
 
 @media screen and (max-width: 768px) {
   .content-btn {

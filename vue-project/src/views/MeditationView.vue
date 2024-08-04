@@ -54,7 +54,7 @@ defineComponent({
       </div>
 
       <div class="image-container">
-        <RouterLink to="/buddha" class="btn-home-start text-3xl mb-5">Start</RouterLink>
+        <RouterLink to="/buddha" class="btn-home-start mb-5">start</RouterLink>
       </div>
   </main>
 </template>
@@ -154,17 +154,30 @@ h3 {
 }
 
 .btn-home-start {
-  background-color: blue;
-  border-radius: 35px;
-  padding: 10px 15px;
-  font-family: 'Caprasimo', sans-serif;
-  color: white;
+  font-size: 3em !important;
+  color: #d1f23f;
+  position: relative;
+  text-decoration: none;
 }
 
-.btn-home-start:hover {
-  background-color: rgb(134, 134, 244);
+.btn-home-start::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #d1f23f;
+  bottom: 0;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform .3s ease-in-out;
 }
 
+.btn-home-start:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
 @media screen and (max-width: 768px) {
   h1 {
     font-size: 60px;
