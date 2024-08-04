@@ -42,7 +42,7 @@ h3 {
 }
 .pose-card {
   cursor: pointer;
-  border: 1px solid #ccc;
+  border: 1px solid #000000;
   border-radius: 8px;
   padding: 10px 15px;
   margin-top: 30px;
@@ -56,7 +56,7 @@ h3 {
 
 .pose-card:hover {
   background-color:#0527ae;
-
+  border: transparent;
   color: rgb(255, 255, 255);
 }
 </style>

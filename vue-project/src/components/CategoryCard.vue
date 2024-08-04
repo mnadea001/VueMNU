@@ -17,7 +17,6 @@ const props = defineProps({
 
 h3 {
     font-family: "Anton", sans-serif;
-    color: #ffffff;
   margin-right: 10px;
   font-size: 1.2em;
 }
@@ -32,11 +31,14 @@ h3 {
   justify-content: center;
   align-items: center;
   margin-bottom: 5px;
-  background-color: #0527ae;
-  color: white;
+  border: 1px solid #000000;
+  color: rgb(7, 7, 7);
 }
 
 .category-card:hover {
-  background-color: #2f52e1;
+  background-color:#0527ae;
+  color: rgb(255, 255, 255);
+  border: transparent;
+
 }
 </style>

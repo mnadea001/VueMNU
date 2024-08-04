@@ -129,7 +129,7 @@ h2 {
 }
 .category-card {
   display: flex;
-  flex-wrap: nowrap;
+  /* flex-wrap: nowrap; */
 }
 
 .diagonal-box-container {
@@ -197,12 +197,12 @@ h2 {
   .slider-yoga {
     margin: 0 10px;
   }
-  .container {
+  /* .container {
     overflow-y: auto;
-  }
-  .category-card {
+  } */
+  /* .category-card {
     display: flex;
     flex-direction: row;
-  }
+  } */
 }
 </style>

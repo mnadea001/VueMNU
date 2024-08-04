@@ -168,5 +168,10 @@ main {
     font-size: 2.5em !important;
     margin-left: 10px;
   }
+
+  .content {
+    padding: 20px 30px;
+
+  }
 }
 </style>
