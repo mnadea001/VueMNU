@@ -58,7 +58,8 @@ height:220px;
     font-weight: bold;
     font-family: "Anton", sans-serif;
     color: #ffffff;
-    white-space: normal!important;;
+    white-space: normal!important;
+    padding-left: 10px;
   }
   </style>
   

@@ -15,7 +15,7 @@
     <div class="mt-4">
       <v-typical
         class="blink"
-        :steps="['FIND', 1000, 'FIND HARMONY', 500, 'FIND HARMONY & BE HAPPY !!', 1000]"
+        :steps="['FIND', 500, 'FIND HARMONY & BE HAPPY !!', 1000]"
         :loop="Infinity"
         :wrapper="'h2'"
       ></v-typical>
@@ -33,6 +33,7 @@ import movieSrc from '../assets/movie.gif'
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
@@ -58,14 +59,19 @@ main {
 }
 .lotus {
   width: 100vw;
-  filter: grayscale(100%);
+  filter: grayscale(100%) blur(5px) contrast(200%) brightness(0.4);
+  /* filter: blur(5px); */
 }
 h1 {
-  font-family: 'Bungee Shade', sans-serif;
+  /* font-family: 'Bungee Shade', sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 4.5em;
-  color: #0527ae;
+  color: #0527ae; */
+  font-family: 'Caprasimo', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #d1f23f;
 }
 
 h2 {
@@ -93,6 +99,8 @@ h2 {
   line-height: 1.5;
   position: absolute;
   z-index: 500;
+  font-size: 6.5em;
+
 }
 @media screen and (max-width: 768px) {
   h1 {

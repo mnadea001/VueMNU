@@ -76,8 +76,7 @@ h2 {
 }
 
 .content p {
-  font-family: 'Caprasimo', sans-serif;
-  font-weight: 200;
+  font-weight: 400;
   font-size: 1.2em;
   color: rgb(63, 63, 63);
   padding: 50px 80px;

@@ -44,8 +44,6 @@ defineComponent({
           class="blink"
           :steps="[
             'GET READY',
-            1000,
-            'GET READY FOR AN',
             500,
             'GET READY FOR AN IMMERSIVE EXPERIENCE !!',
             1000
@@ -72,13 +70,13 @@ main {
 }
 
 h1 {
-  font-family: 'Bungee Shade', sans-serif;
+  font-family: 'Caprasimo', sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 4.5em;
-  color: #0527ae;
+  color: #d1f23f;
+  font-size: 5.5em;
   line-height: 1.5;
-  word-wrap: break-word;
+  word-wrap: break-word; 
 }
 
 h2,
@@ -130,8 +128,8 @@ h3 {
 }
 
 .content p {
-  font-family: 'Caprasimo', sans-serif;
-  font-weight: 200;
+  /* font-family: 'Caprasimo', sans-serif; */
+  font-weight: 400;
   font-size: 1.2em;
   color: rgb(63, 63, 63);
   padding: 50px 80px;

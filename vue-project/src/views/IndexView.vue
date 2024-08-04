@@ -59,7 +59,7 @@ watchEffect(() => {
         <div class="title-container">
           <v-typical
             class="blink"
-            :steps="['CHOOSE', 1000, 'CHOOSE YOUR', 500, 'CHOOSE YOUR FIELD !!', 1000]"
+            :steps="['CHOOSE', 1000, 'CHOOSE YOUR FIELD !!', 1000]"
             :loop="Infinity"
             :wrapper="'h2'"
           ></v-typical>
@@ -94,12 +94,11 @@ main {
 }
 
 h1 {
-  font-family: 'Bungee Shade', sans-serif;
+  font-family: 'Caprasimo', sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 4.5em;
-  color: #0527ae;
-  line-height: 1.5;
+  font-size: 3.5em;
+  color: #d1f23f;
 }
 
 h2 {
@@ -127,7 +126,19 @@ img {
 }
 
 .text-btn p:hover {
-  text-decoration: underline;
+  /* text-decoration: underline; */
+  /* background-color: black; */
+  color: #636fa4;
+  /* padding: 0; */
+  margin:0;
+}
+.text-btn:hover {
+  /* text-decoration: underline; */
+  background-color: black;
+  /* border-radius: 40%; */
+  /* color: #636fa4; */
+  /* padding: 0; */
+  margin:0;
 }
 .text-btn p:hover img {
   transform: rotate(50);

@@ -1,3 +1,46 @@
+<template>
+  <main class="dark:bg-white">
+    <BackButton />
+
+    <div class="diagonal-box-container">
+      <div class="diagonal-box bg-one">
+        <div class="content">
+          <h1 class="text-3xl text-center my-4">Yoga is art</h1>
+          <v-typical
+            class="blink"
+            :steps="[
+              'DISCOVER',
+              500,
+        
+              'DISCOVER DIFFERENT YOGA STYLES !',
+              1000
+            ]"
+            :loop="Infinity"
+            :wrapper="'h2'"
+          ></v-typical>
+          <div class="slider-yoga">
+            <p class="text-scroll">Scroll vertically to see all yoga styles:</p>
+            <div class="container my-4">
+              <div class="category-card my-4">
+                <RouterLink
+                  v-for="(yoga, index) in yogas"
+                  :key="index"
+                  :to="`/category/${yoga.id}`"
+                >
+                  <CategoryCard :categoryName="yoga.category_name" />
+                </RouterLink>
+              </div>
+            </div>
+            <div class="content">
+              <img :src="yogaImageSrc" class="w-80 h-80 rounded-full mt-4" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</template>
+
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { RouterLink, useRouter } from 'vue-router'
@@ -36,50 +79,6 @@ onMounted(() => {
 })
 </script>
 
-<template>
-  <main class="dark:bg-white">
-    <BackButton />
-
-    <div class="diagonal-box-container">
-      <div class="diagonal-box bg-one">
-        <div class="content">
-          <h1 class="text-3xl text-center my-4">Yoga is art</h1>
-          <v-typical
-            class="blink"
-            :steps="[
-              'DISCOVER',
-              1000,
-              'DISCOVER DIFFERENT',
-              500,
-              'DISCOVER DIFFERENT YOGA STYLES !',
-              1000
-            ]"
-            :loop="Infinity"
-            :wrapper="'h2'"
-          ></v-typical>
-          <div class="slider-yoga">
-            <p class="text-scroll">Scroll vertically to see all yoga styles:</p>
-            <div class="container my-4">
-              <div class="category-card my-4">
-                <RouterLink
-                  v-for="(yoga, index) in yogas"
-                  :key="index"
-                  :to="`/category/${yoga.id}`"
-                >
-                  <CategoryCard :categoryName="yoga.category_name" />
-                </RouterLink>
-              </div>
-            </div>
-            <div class="content">
-              <img :src="yogaImageSrc" class="w-80 h-80 rounded-full mt-4" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
-</template>
-
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
@@ -91,13 +90,12 @@ main {
 }
 
 h1 {
-  font-family: 'Bungee Shade', sans-serif;
+  font-family: 'Caprasimo', sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 4.5em !important;
-  color: #0527ae;
+  color: #d1f23f;
+  font-size: 5.5em;
   line-height: 1.5;
-  white-space: normal;
 }
 
 h2 {
@@ -125,12 +123,11 @@ h2 {
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
-  object-fit: contain;
   scroll-snap-type: x mandatory;
 }
 .category-card {
   display: flex;
-  flex-direction: row;
+  flex-wrap: nowrap;
 }
 
 .diagonal-box-container {
@@ -198,17 +195,12 @@ h2 {
   .slider-yoga {
     margin: 0 10px;
   }
+  .container {
+    overflow-y: auto;
+  }
   .category-card {
-    flex-direction: column;
-    align-items: center;
-  }
-  .content img {
-    width: 60%;
-    height: auto;
-  }
-
-  .text-scroll {
-    display:none;
+    display: flex;
+    flex-direction: row;
   }
 }
 </style>

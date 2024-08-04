@@ -8,12 +8,12 @@
             Veggie <br />
             is good !!!
           </h1>
-          <h4 class="text-center my-4">
+          <p class="text-center text-intro my-4">
             Vegetarianism holds a significant place in the lifestyle and philosophy of yoga, serving
             as more than just a dietary choice but rather a cornerstone of spiritual and holistic
             living. Yogis, practitioners of yoga, often adhere to a vegetarian diet for various
             reasons, all of which align with the core principles of yoga practice.
-          </h4>
+          </p>
         </div>
         <p class="my-4 ml-5">Scroll vertically to see all meals:</p>
         <div class="container-card my-4 pb-5">
@@ -71,17 +71,16 @@ main {
   box-sizing: border-box;
 }
 h1 {
-  font-family: 'Bungee Shade', sans-serif;
+  font-family: 'Caprasimo', sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 4.5em;
-  color: #0527ae;
+  color: #d1f23f;
+  font-size: 5.5em;
   line-height: 1.5;
 }
 
-h4 {
-  font-family: 'Caprasimo', sans-serif;
-  font-weight: 200;
+.text-intro {
+  font-weight: 400;
   font-size: 1.2em;
   color: rgb(63, 63, 63);
   padding: 50px 80px;

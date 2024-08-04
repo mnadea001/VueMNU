@@ -92,11 +92,11 @@ main {
 }
 
 h1 {
-  font-family: 'Bungee Shade', sans-serif;
+  font-family: 'Caprasimo', sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 4.5em;
-  color: #0527ae;
+  color: #d1f23f;
+  font-size: 5.5em;
   line-height: 1.5;
   word-wrap: break-word; 
 }
@@ -154,7 +154,6 @@ h2 {
 
 .card-body {
   margin: 50px;
-
   background: rgb(209, 242, 63);
   background: linear-gradient(90deg, #636fa4, #e8cbc0);
   box-sizing: border-box;
@@ -232,8 +231,8 @@ h2 {
 }
 
 .content p {
-  font-family: 'Caprasimo', sans-serif;
-  font-weight: 200;
+  /* font-family: 'Caprasimo', sans-serif; */
+  font-weight: 400;
   font-size: 1.2em;
   color: rgb(63, 63, 63);
   padding: 50px 80px;

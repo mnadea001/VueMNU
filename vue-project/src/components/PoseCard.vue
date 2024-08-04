@@ -55,7 +55,8 @@ h3 {
 }
 
 .pose-card:hover {
-  background-color: #d1f23f;
-  color: black;
+  background-color:#0527ae;
+
+  color: rgb(255, 255, 255);
 }
 </style>
