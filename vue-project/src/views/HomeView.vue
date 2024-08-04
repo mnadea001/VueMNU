@@ -1,11 +1,10 @@
 <template>
   <main>
-    <div class="container">
-      <h1 class="text-center mb-4">
-        Yoga is the union <br />
-        of body & mind
-      </h1>
-   <div class="mt-4">
+    <h1 class="text-center my-4">
+      Yoga is the union <br />
+      of body & mind
+    </h1>
+    <div class="my-4">
       <v-typical
         class="blink"
         :steps="['FIND', 500, 'FIND HARMONY & BE HAPPY !!', 1000]"
@@ -15,8 +14,6 @@
     </div>
     <img :src="namasteImageSrc" class="img-yoga h-80 my-4" />
 
-    </div>
- 
     <div class="section-3">
       <StartButton />
     </div>
@@ -39,9 +36,7 @@ main {
   height: 100%;
 }
 
-.container {
-
-  color: white;
+.img-yoga {
   margin: auto;
 }
 
@@ -59,6 +54,7 @@ h1 {
   font-weight: 400;
   font-style: normal;
   color: #d1f23f;
+  font-size: 4em;
 }
 
 h2 {
@@ -78,29 +74,9 @@ h2 {
   margin-bottom: 100px;
   position: relative;
 }
-.mobile-title {
-  display: none;
-}
-
-.desktop-title {
-  line-height: 1.5;
-  position: absolute;
-  z-index: 500;
-  font-size: 6.5em;
-}
 @media screen and (max-width: 768px) {
   h1 {
     font-size: 30px !important;
-  }
-  .mobile-title {
-    display: block;
-    margin-left: 10px;
-
-    /* position: relative;
-    text-align: center; */
-  }
-  .desktop-title {
-    display: none;
   }
   h2 {
     font-size: 40px;
@@ -111,15 +87,6 @@ h2 {
   }
 }
 @media only screen and (min-width: 769px) and (max-width: 980px) {
-  .mobile-title {
-    display: block;
-    /* position: relative;
-    text-align: center; */
-    margin-left: 10px;
-  }
-  .desktop-title {
-    display: none;
-  }
   h1 {
     font-size: 35px !important;
   }
@@ -127,12 +94,6 @@ h2 {
 @media only screen and (min-width: 981px) and (max-width: 1268px) {
   h1 {
     font-size: 40px !important;
-  }
-  .mobile-title {
-    display: none;
-  }
-  .desktop-title {
-    display: block;
   }
 }
 </style>

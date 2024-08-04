@@ -21,7 +21,7 @@
           <div class="slider-yoga">
             <p class="text-scroll">Scroll vertically to see all yoga styles:</p>
             <div class="container my-4">
-              <div class="category-card my-4">
+              <div v-if="yogas" class="category-card my-4">
                 <RouterLink
                   v-for="(yoga, index) in yogas"
                   :key="index"
@@ -29,6 +29,9 @@
                 >
                   <CategoryCard :categoryName="yoga.category_name" />
                 </RouterLink>
+              </div>
+              <div v-else>
+                <p>Loading...</p>
               </div>
             </div>
             <div class="content">

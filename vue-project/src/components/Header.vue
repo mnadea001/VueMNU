@@ -69,4 +69,12 @@ header {
   padding-left: 10px;
   padding-right: 10px;
 }
+
+
+
+@media screen and (max-width: 768px) {
+  .home-link {
+    display: none;
+  }
+}
 </style>
