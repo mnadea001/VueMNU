@@ -1,19 +1,21 @@
 <template>
   <main>
-    <BackButton/>
+    <BackButton />
     <div class="diagonal-box-container">
-    <div class="diagonal-box bg-one">
-      <div class="content">
-        <h1 class="text-center my-4">Philosophy</h1>
-        <p class="text-center">
-            Yoga is an ancient practice that originated in India thousands of years ago. It is a
-            holistic system that encompasses physical postures (asanas), breath control (pranayama),
-            meditation, and ethical principles aimed at achieving harmony between mind, body, and
-            spirit.
+      <div class="diagonal-box bg-one">
+        <div class="content">
+          <h1 class="text-center my-4">Philosophy</h1>
+          <p class="text-center">
+            Yoga is an ancient practice that originated in <b>India</b> thousands of years ago. It
+            is a holistic system that encompasses physical postures (asanas), breath control
+            (pranayama), meditation, and ethical principles aimed at achieving harmony between
+            <b>mind, body, and spirit</b> .
           </p>
+          <img :src="yogaImg" class="w-80 h-80 rounded-full image" />
+        </div>
       </div>
     </div>
-  </div>
+
     <div class="dark:bg-white main-content">
       <div class="content">
         <div class="container">
@@ -22,22 +24,22 @@
               <div class="card-body">
                 <h2 class="text-black mb-5">Origin</h2>
                 <p class="text-black text-center">
-                  The origins of yoga can be traced back to ancient texts known as the Vedas,
-                  particularly the Rigveda, which dates back over 5,000 years. Yoga evolved over
-                  centuries, with the systematic compilation of yoga teachings found in the Yoga
-                  Sutras of Patanjali, written around 400 CE. Over time, various schools of yoga
-                  emerged, each emphasizing different aspects of the practice.
+                  The origins of yoga can be traced back to ancient texts known as the
+                  <b>Vedas</b> , particularly the Rigveda, which dates back over 5,000 years. Yoga
+                  evolved over centuries, with the systematic compilation of yoga teachings found in
+                  the Yoga Sutras of <b>Patanjali</b>, written around 400 CE. Over time, various
+                  schools of yoga emerged, each emphasizing different aspects of the practice.
                 </p>
               </div>
             </li>
             <li class="card" id="card3">
               <div class="card-body">
-                <h2 class="text-black mb-5 ">Definition</h2>
+                <h2 class="text-black mb-5">Definition</h2>
                 <p class="text-black text-center">
                   Yoga, derived from the Sanskrit word "yuj," means to unite or join. At its core,
                   yoga is about the union of individual consciousness with the universal
                   consciousness. It involves the integration of physical, mental, and spiritual
-                  practices to achieve a state of balance and inner peace.
+                  practices to achieve a state of <b>balance and inner peace</b>.
                 </p>
               </div>
             </li>
@@ -45,13 +47,13 @@
               <div class="card-body">
                 <h2 class="text-black mb-5">Benefits</h2>
                 <p class="text-black text-center">
-                  The practice of yoga offers a myriad of benefits for both the body and mind.
-                  Physically, yoga improves flexibility, strength, and balance. It helps to
-                  alleviate tension in the muscles and promotes overall relaxation. Mentally, yoga
-                  cultivates mindfulness and reduces stress, anxiety, and depression. It enhances
-                  concentration, clarity of thought, and emotional well-being. Additionally, regular
-                  yoga practice can boost immune function, improve sleep quality, and contribute to
-                  overall health and longevity.
+                  The practice of yoga offers a myriad of benefits for both the
+                  <b>body and mind</b>. Physically, yoga improves flexibility, strength, and
+                  balance. It helps to alleviate tension in the muscles and promotes overall
+                  relaxation. Mentally, yoga cultivates mindfulness and reduces stress, anxiety, and
+                  depression. It enhances concentration, clarity of thought, and emotional
+                  well-being. Additionally, regular yoga practice can boost immune function, improve
+                  sleep quality, and contribute to overall health and longevity.
                 </p>
               </div>
             </li>
@@ -59,7 +61,7 @@
         </div>
         <span class="text-center content-span">
           <p class="text-xl">
-            In summary, yoga is a profound and transformative practice that promotes physical
+            In summary, yoga is a <b>profound and transformative practice</b> that promotes physical
             health, mental clarity, and spiritual growth. Its rich history, diverse teachings, and
             numerous benefits make it a valuable tool for holistic well-being in today's fast-paced
             world.
@@ -72,14 +74,11 @@
 
 <script setup lang="ts">
 import BackButton from '@/components/BackButton.vue'
-
-
-
+import yogaImg from '../assets/pray.gif'
 </script>
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
 
 main {
   width: 100vw;
@@ -98,12 +97,14 @@ h1 {
   color: #d1f23f;
   font-size: 5.5em;
   line-height: 1.5;
-  word-wrap: break-word; 
+  word-wrap: break-word;
 }
 
 h2 {
   font-family: 'Caprasimo', sans-serif;
   font-size: 2em;
+  color: rgb(63, 63, 63);
+
 }
 .content {
   padding: 15px;
@@ -120,6 +121,10 @@ h2 {
 .container {
   margin: 0 auto;
   margin-bottom: 50px;
+}
+
+.image {
+  margin: auto;
 }
 
 #cards {
@@ -191,7 +196,6 @@ h2 {
   }
 }
 
-
 .diagonal-box-container {
   display: flex;
   justify-content: center;
@@ -227,11 +231,9 @@ h2 {
   margin: 0 auto;
   padding: 1.5em;
   position: relative;
-  color: black;
 }
 
 .content p {
-  /* font-family: 'Caprasimo', sans-serif; */
   font-weight: 400;
   font-size: 1.2em;
   color: rgb(63, 63, 63);
@@ -242,10 +244,10 @@ h2 {
     padding-left: 10px;
     padding-right: 10px;
   }
-  h1{
+  h1 {
     font-size: 40px;
   }
-  h2{
+  h2 {
     font-size: 24px;
   }
 }

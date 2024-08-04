@@ -1,18 +1,11 @@
 <template>
   <main>
     <div class="container">
-      <h1 class="text-center mobile-title mb-4">
+      <h1 class="text-center mb-4">
         Yoga is the union <br />
         of body & mind
       </h1>
-      <img :src="movieSrc" class="lotus" ref="lotusImage" />
-      <!-- <div class="desktop-title"></div> -->
-      <h1 class="centered text-center mb-4 desktop-title">
-        Yoga is the union <br />
-        of body & mind
-      </h1>
-    </div>
-    <div class="mt-4">
+   <div class="mt-4">
       <v-typical
         class="blink"
         :steps="['FIND', 500, 'FIND HARMONY & BE HAPPY !!', 1000]"
@@ -20,19 +13,23 @@
         :wrapper="'h2'"
       ></v-typical>
     </div>
+    <img :src="namasteImageSrc" class="img-yoga h-80 my-4" />
+
+    </div>
+ 
     <div class="section-3">
       <StartButton />
     </div>
   </main>
 </template>
 <script setup lang="ts">
+import namasteImageSrc from '../assets/meditation.gif'
+
 import StartButton from '@/components/StartButton.vue'
 import VTypical from 'vue-typical'
-import movieSrc from '../assets/movie.gif'
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
@@ -43,8 +40,7 @@ main {
 }
 
 .container {
-  position: relative;
-  text-align: center;
+
   color: white;
   margin: auto;
 }
@@ -57,17 +53,8 @@ main {
   display: block;
   max-width: 100%;
 }
-.lotus {
-  width: 100vw;
-  filter: grayscale(100%) blur(5px) contrast(200%) brightness(0.4);
-  /* filter: blur(5px); */
-}
+
 h1 {
-  /* font-family: 'Bungee Shade', sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 4.5em;
-  color: #0527ae; */
   font-family: 'Caprasimo', sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -100,7 +87,6 @@ h2 {
   position: absolute;
   z-index: 500;
   font-size: 6.5em;
-
 }
 @media screen and (max-width: 768px) {
   h1 {

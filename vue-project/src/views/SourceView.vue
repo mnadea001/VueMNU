@@ -1,43 +1,37 @@
 <template>
   <main class="dark:bg-white">
     <div class="diagonal-box-container">
-    <div class="diagonal-box bg-one">
-      <div class="content">
-        <h1 class="text-3xl text-center my-4">About</h1>
-        <div class="main-content">
-      <div class="content">
-
-        <div class="content-img my-4">
-          <div class="text-source">
-            <h2 class="text-xl text-center my-4">To create this app, I used:</h2>
-            <ul>
-              <li>Vue.js 3 with TypeScript</li>
-              <li>APIs themealdb, yoga-api from alexcumplido</li>
-              <li>Librairies vue-typical, tailwindcss, vueuse</li>
-              <li>Threejs, Troisjs</li>
-              <li>GIFs on Tenor and Giphy</li>
-              <li>3D model on SketchFab</li>
-            </ul>
-            <br />
-            <p class="text-center">Created By Mathilde NADEAU - April 2024</p>
+      <div class="diagonal-box bg-one">
+        <div class="content">
+          <h1 class="text-3xl text-center mt-4">About</h1>
+          <div class="main-content">
+            <div class="content">
+              <div class="content-img">
+                <div class="text-source">
+                  <h2 class="text-xl mb-4">To create this app, I used:</h2>
+                  <ul>
+                    <li>- Vue.js 3 with TypeScript</li>
+                    <li>- APIs: themealdb, yoga-api from alexcumplido</li>
+                    <li>- Librairies: vue-typical, tailwindcss, vueuse</li>
+                    <li>- Threejs, Troisjs</li>
+                    <li>- GIFs from Tenor and Giphy</li>
+                    <li>- Images from Unsplash</li>
+                    <li>- 3D model on SketchFab</li>
+                  </ul>
+                  <br />
+                  <p class="text-center">Developed By Mathilde NADEAU - August 2024</p>
+                </div>
+              </div>
+            </div>
           </div>
-
-          <img :src="namasteImageSrc" class="img-yoga h-80 my-4" />
         </div>
       </div>
     </div>
-      </div>
-    </div>
-  </div>
-
   </main>
 </template>
 
-<script setup lang="ts">
-import namasteImageSrc from '../assets/meditation.gif'
-</script>
+<script setup lang="ts"></script>
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
 
 main {
   max-width: 100vw;
@@ -48,7 +42,7 @@ h1 {
   font-family: 'Caprasimo', sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 4.5em ;
+  font-size: 4.5em;
   color: #d1f23f;
   line-height: 1.5;
 }
@@ -73,9 +67,6 @@ img {
   width: 70%;
   padding: 15px;
 }
-ul li {
-  text-align: center;
-}
 
 
 .diagonal-box-container {
@@ -89,7 +80,6 @@ ul li {
   margin-bottom: 80px;
   width: 100vw;
 }
-
 
 .diagonal-box:before {
   content: '';
@@ -116,7 +106,6 @@ ul li {
   position: relative;
   color: black;
 }
-
 
 @media screen and (max-width: 768px) {
   .content-img {

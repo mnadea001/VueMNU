@@ -3,7 +3,6 @@ import { defineProps, defineEmits, ref } from 'vue'
 import { onClickOutside } from '@vueuse/core'
 import { RouterLink } from 'vue-router'
 
-import SmilingFlower from './SmilingFlower.vue'
 const props = defineProps({
   isOpen: Boolean
 })
@@ -24,16 +23,19 @@ const handleClose = () => {
         <div class="modal-header">
           <slot name="header" class="text-3xl font-semibold text-center my-4">
             <div>
-              <button class="close-btn" @click.stop="emit('modal-close')">close</button>
+              <button
+                class="text-lg text-white-500 dark:text-black mb-4 flex rounded-full border px-4 py-1 hover:bg-black hover:text-white"
+                @click.stop="emit('modal-close')"
+              >
+                close
+              </button>
             </div>
           </slot>
         </div>
         <div class="modal-body">
           <div class="content">
             <slot name="content">
-              <div class="home-btn hide-on-mobile">
-                <RouterLink @click.native="handleClose" to="/" class="nav-item">home</RouterLink>
-              </div>
+              <RouterLink @click.native="handleClose" to="/" class="nav-item">home</RouterLink>
               <RouterLink @click.native="handleClose" to="/index" class="nav-item"
                 >index</RouterLink
               >
@@ -51,10 +53,6 @@ const handleClose = () => {
                 >about</RouterLink
               >
             </slot>
-          </div>
-
-          <div class="image-menu">
-            <SmilingFlower />
           </div>
         </div>
       </div>
@@ -113,16 +111,10 @@ const handleClose = () => {
 }
 
 .nav-item:hover {
-background-color: black;
-color: rgb(255, 255, 255);
+  background-color: black;
+  color: rgb(255, 255, 255);
 }
 
-.close-btn {
-  font-family: 'Caprasimo', sans-serif;
-  font-size: 1.5em;
-  padding-left: 10px;
-  padding-right: 10px;
-}
 
 
 /* ####RESPONSIVE###  */
