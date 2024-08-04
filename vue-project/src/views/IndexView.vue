@@ -111,11 +111,12 @@ h2 {
 
 .text-menu {
   font-family: 'Caprasimo', sans-serif;
-}
-
-.text-btn {
+  position: relative;
+  text-decoration: none;
   font-size: 2rem !important;
 }
+
+
 .title-container {
   display: grid;
   place-items: center;
@@ -125,20 +126,25 @@ img {
   border-radius: 50%;
 }
 
-.text-btn p:hover {
-  /* text-decoration: underline; */
-  /* background-color: black; */
-  color: #636fa4;
-  /* padding: 0; */
-  margin:0;
-}
-.text-btn:hover {
-  /* text-decoration: underline; */
+
+
+.text-menu::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 4px;
   background-color: black;
-  /* border-radius: 40%; */
-  /* color: #636fa4; */
-  /* padding: 0; */
-  margin:0;
+  bottom: 0;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform .3s ease-in-out;
+}
+
+.text-menu:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
 }
 .text-btn p:hover img {
   transform: rotate(50);
@@ -184,7 +190,7 @@ img {
   margin-bottom: 200px;
   padding-bottom: 200px;
   margin: 0 auto;
-  padding: 1.5em;
+  padding: 50px 80px;
   position: relative;
   color: black;
 }
@@ -193,7 +199,6 @@ img {
   font-weight: 200;
   font-size: 1.2em;
   color: rgb(0, 0, 0);
-  padding: 50px 80px;
 }
 @media screen and (max-width: 768px) {
   .image-btn {
