@@ -132,9 +132,6 @@ h1 {
   max-width: 100%;
 }
 
-.title-container {
-  margin: 120px;
-}
 .container-card {
   width: 100%;
   margin: auto;
@@ -147,24 +144,21 @@ h1 {
 }
 
 @media screen and (max-width: 768px) {
-  .title-container {
-    margin: 10px;
-  }
-  .conclusion-food,
-  h4 {
-    padding: 20px;
-  }
+
   h1 {
     font-size: 60px;
   }
-  h2 {
-    font-size: 36px;
-  }
+
   .diagonal-box-container {
     padding: 0 5px; 
   }
   .content {
     padding: 1em; 
+  }
+
+  .text-intro {
+    padding: 20px 30px;
+
   }
 }
 </style>

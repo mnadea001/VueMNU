@@ -97,7 +97,6 @@ h2 {
   }
 
   .content p {
-  font-family: 'Caprasimo', sans-serif;
   font-weight: 200;
   font-size: 1em;
   color: rgb(63, 63, 63);
