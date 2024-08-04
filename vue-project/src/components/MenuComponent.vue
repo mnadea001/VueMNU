@@ -108,11 +108,17 @@ const handleClose = () => {
   padding: 10px;
   font-family: 'Anton', sans-serif;
   font-size: 1.5rem;
+  -webkit-transition: background-color 0.2s ease-out;
+  -moz-transition: background-color 0.2s ease-out;
+  -o-transition: background-color 0.2s ease-out;
+  transition: background-color 0.2s ease-out;
 }
 
 .nav-item:hover {
   background-color: black;
   color: rgb(255, 255, 255);
+  transition: 0.5s;
+  transition-timing-function: ease;
 }
 
 
