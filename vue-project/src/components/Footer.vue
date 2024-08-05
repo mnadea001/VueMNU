@@ -4,8 +4,8 @@
       <nav>
         <RouterLink to="/" class="nav-item">Home</RouterLink>
         <RouterLink to="/index" class="nav-item">Index</RouterLink>
-        <RouterLink to="/about" class="nav-item">Philo'</RouterLink>
-        <RouterLink to="/meditation" class="nav-item">Medit'</RouterLink>
+        <RouterLink to="/about" class="nav-item">Philosophy</RouterLink>
+        <RouterLink to="/meditation" class="nav-item">Meditation</RouterLink>
         <RouterLink to="/food" class="nav-item">Food</RouterLink>
         <RouterLink to="/yoga" class="nav-item">Asanas</RouterLink>
         <RouterLink to="/source" class="nav-item">About</RouterLink>
@@ -68,23 +68,11 @@ nav a {
   padding-right: 10px;
 }
 
-.nav-item {
-  position: relative;
-}
 
-.nav-item::after {
-  content: url('../assets/hover-link.png');
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: 50%; 
-  transform: translate(-50%, -50%);
+.nav-item:hover {
+background-color: #020202;
+color: #636fa4;
 }
-
-.nav-item:hover::after {
-  display: inline-block;
-}
-
 nav a:first-of-type {
   border: 0;
 }
