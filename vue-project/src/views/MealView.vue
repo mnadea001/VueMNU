@@ -51,12 +51,12 @@ onMounted(() => {
         <div v-if="meal">
           <div class="content">
             <h1 class="mb-4">{{ meal.strMeal }}</h1>
-            <div class="flex mt-4">
-              <div class="flex-1 w-50">
+            <div class="flex flex-col md:flex-row mt-4">
+              <div class="w-full md:w-1/2 flex justify-center mb-4 md:mb-0">
                 <img class="img-meal rounded" :src="meal.strMealThumb" alt="Meal Image" />
               </div>
-              <div class="flex-1 w-50 p-5">
-                <p><b>{{ meal.strCategory }} | {{ meal.strArea }} </b></p>
+              <div class="w-full md:w-1/2 p-5">
+                <p><b>{{ meal.strCategory }} | {{ meal.strArea }}</b></p>
                 <div v-if="meal.strTags">
                   <p class="text-lg font-medium"><b>Tags:</b> {{ meal.strTags }}</p>
                 </div>
@@ -78,6 +78,7 @@ onMounted(() => {
   </main>
 </template>
 
+
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 
@@ -93,9 +94,8 @@ h1 {
   color: #d1f23f;
 }
 
-
 .img-meal {
-  max-width: 80%;
+  max-width: 100%; /* Adapter à la largeur du conteneur parent */
 }
 
 .diagonal-box-container {
@@ -143,9 +143,11 @@ h1 {
   font-size: 1.2em;
   color: rgb(63, 63, 63);
 }
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5em;
+  }
 }
 </style>
+
