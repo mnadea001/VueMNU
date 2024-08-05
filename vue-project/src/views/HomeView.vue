@@ -79,7 +79,7 @@ h2 {
     font-size: 30px !important;
   }
   h2 {
-    font-size: 40px;
+    font-size: 40px !important;
   }
 
   .section-2 div {
@@ -87,12 +87,12 @@ h2 {
   }
 }
 @media only screen and (min-width: 769px) and (max-width: 980px) {
-  h1 {
+  h1, h2 {
     font-size: 35px !important;
   }
 }
 @media only screen and (min-width: 981px) and (max-width: 1268px) {
-  h1 {
+  h1, h2 {
     font-size: 40px !important;
   }
 }
