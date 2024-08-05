@@ -5,23 +5,19 @@
         <div class="content">
           <h1 class="text-3xl text-center mt-4">About</h1>
           <div class="main-content">
-            <div class="content">
-              <div class="content-img">
-                <div class="text-source">
-                  <h2 class="text-xl mb-4">To create this app, I used:</h2>
-                  <ul>
-                    <li>- Vue.js 3 with TypeScript</li>
-                    <li>- APIs: themealdb, yoga-api from alexcumplido</li>
-                    <li>- Librairies: vue-typical, tailwindcss, vueuse</li>
-                    <li>- Threejs, Troisjs</li>
-                    <li>- GIFs from Tenor and Giphy</li>
-                    <li>- Images from Unsplash</li>
-                    <li>- 3D model on SketchFab</li>
-                  </ul>
-                  <br />
-                  <p class="text-center">Developed By Mathilde NADEAU - August 2024</p>
-                </div>
-              </div>
+            <div class="content-img">
+              <h2 class="text-xl mb-4">To create this app, I used:</h2>
+              <ul>
+                <li>- Vue.js 3 with TypeScript</li>
+                <li>- APIs: themealdb, yoga-api from alexcumplido</li>
+                <li>- Librairies: vue-typical, tailwindcss, vueuse</li>
+                <li>- Threejs, Troisjs</li>
+                <li>- GIFs from Tenor and Giphy</li>
+                <li>- Images from Unsplash</li>
+                <li>- 3D model on SketchFab</li>
+              </ul>
+              <br />
+              <p class="text-center">Developed By Mathilde NADEAU - August 2024</p>
             </div>
           </div>
         </div>
@@ -32,7 +28,6 @@
 
 <script setup lang="ts"></script>
 <style scoped>
-
 main {
   max-width: 100vw;
   height: 100%;
@@ -47,27 +42,14 @@ h1 {
   line-height: 1.5;
 }
 
-.main-content {
-  display: flex;
-  justify-content: center;
-}
-
-img {
-  margin-bottom: 50px;
-}
 .content-img {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   padding-top: 50px;
   align-items: center;
   margin-bottom: 50px;
 }
-.content {
-  width: 70%;
-  padding: 15px;
-}
-
 
 .diagonal-box-container {
   display: flex;
@@ -105,11 +87,5 @@ img {
   padding: 1.5em;
   position: relative;
   color: black;
-}
-
-@media screen and (max-width: 768px) {
-  .content-img {
-    flex-direction: column-reverse;
-  }
 }
 </style>
