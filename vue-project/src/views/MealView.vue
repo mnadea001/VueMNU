@@ -64,7 +64,7 @@ onMounted(() => {
                 <a
                   :href="meal.strYoutube"
                   target="_blank"
-                  class="text-lg font-medium text-blue-800 hover:underline mt-4"
+                  class="text-lg text-black mb-4 border-black rounded-full border px-4 py-1 hover:bg-black hover:text-white"
                   >Watch on YouTube</a
                 >
               </div>

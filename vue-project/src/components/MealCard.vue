@@ -39,7 +39,7 @@ height:220px;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color:#0527ae;
+    background-color:#000000;
     opacity: 0;
     transition: opacity 0.3s;
     display: flex;

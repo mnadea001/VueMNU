@@ -1,5 +1,8 @@
 <template>
-  <div class="category-card">
+  <div 
+  class="text-lg text-black mx-2 mb-4 flex border-black rounded-full border px-4 py-1 hover:bg-black hover:text-white"
+
+  >
     <h3 class="text-center">{{ props.categoryName }}</h3>
   </div>
 </template>
@@ -20,7 +23,7 @@ h3 {
   margin-right: 10px;
   font-size: 1.2em;
 }
-.category-card {
+/* .category-card {
   cursor: pointer;
   border-radius: 8px;
   padding: 10px 15px;
@@ -33,12 +36,12 @@ h3 {
   margin-bottom: 5px;
   border: 1px solid #000000;
   color: rgb(7, 7, 7);
-}
+} */
 
-.category-card:hover {
+/* .category-card:hover {
   background-color:#0527ae;
   color: rgb(255, 255, 255);
   border: transparent;
 
-}
+} */
 </style>

@@ -1,5 +1,8 @@
 <template>
-  <div class="pose-card" @click="navigateToPose">
+  <div 
+  class="text-lg mx-1 text-black mb-4 border-black rounded-full border px-4 py-1 hover:bg-black hover:text-white"
+
+  @click="navigateToPose">
     <h3 class="text-center">{{ pose?.english_name }}</h3>
   </div>
 </template>
