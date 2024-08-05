@@ -69,7 +69,7 @@ watchEffect(() => {
         <button class="text-btn" @mouseover="rotateImage('left')" @click="openModal1">
           <p class="text-menu">body</p>
         </button>
-        <img :src="elevateImageSrc" class="w-80 h-80" :style="{ transform: imageRotation }" />
+        <img :src="elevateImageSrc" class="w-80 h-80 rounded-full" :style="{ transform: imageRotation }" />
         <button class="text-btn" @mouseover="rotateImage('right')" @click="openModal2">
           <p class="text-menu">mind</p>
         </button>
@@ -205,11 +205,11 @@ img {
   }
 
   h1 {
-    font-size: 50px;
+    font-size: 50px !important;
   }
 
   h2 {
-    font-size: 40px;
+    font-size: 40px !important;
   }
 }
 </style>
