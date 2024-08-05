@@ -4,7 +4,7 @@
       <SplideSlide v-for="(slide, index) in slides" :key="index">
         <div class="slide-content">
           <div class="div-img">
-            <img :src="slide.image" :alt="'Slide ' + (index + 1)" />
+            <img :src="slide.image" :alt="'Slide ' + (index + 1)" class="rounded-lg sepia hover:sepia-0"/>
           </div>
           <div class="slide-text">
             <h2 class="text-2xl text-center my-4 font-medium">{{ slide.title }}</h2>
@@ -14,7 +14,7 @@
       </SplideSlide>
     </Splide>
   </div>
-</template>
+</template> 
 
 <script setup lang="ts">
 import '@splidejs/vue-splide/css'

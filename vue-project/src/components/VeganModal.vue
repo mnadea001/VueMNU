@@ -28,7 +28,7 @@ import Carousel from '@/components/Carousel.vue'
 h2 {
   font-family: 'Caprasimo', sans-serif;
   font-size: 3em;
-  color: #d1f23f;
+  /* color: #d1f23f; */
 }
 .conclusion {
   padding: 100px;
