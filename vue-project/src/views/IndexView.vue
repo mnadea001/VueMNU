@@ -59,7 +59,7 @@ watchEffect(() => {
         <div class="title-container">
           <v-typical
             class="blink"
-            :steps="['CHOOSE', 1000, 'CHOOSE YOUR FIELD !!', 1000]"
+            :steps="['choose', 1000, 'choose your field !!', 1000]"
             :loop="Infinity"
             :wrapper="'h2'"
           ></v-typical>
@@ -84,7 +84,6 @@ watchEffect(() => {
 </template>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 
 main {
@@ -105,7 +104,6 @@ h2 {
   font-style: bold;
   font-size: 2.5em;
   text-align: center;
-  font-family: 'Anton', sans-serif;
 }
 
 
@@ -125,8 +123,6 @@ h2 {
 img {
   border-radius: 50%;
 }
-
-
 
 .text-menu::before {
   content: '';

@@ -1,13 +1,13 @@
 <template>
   <main>
     <h1 class="text-center my-4">
-      Yoga is the union <br />
+      yoga is the union <br />
       of body & mind
     </h1>
     <div class="my-4">
       <v-typical
         class="blink"
-        :steps="['FIND', 500, 'FIND HARMONY & BE HAPPY !!', 1000]"
+        :steps="['find', 500, 'find harmony & be happy !!', 1000]"
         :loop="Infinity"
         :wrapper="'h2'"
       ></v-typical>
@@ -29,7 +29,6 @@ import VTypical from 'vue-typical'
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 main {
   width: 100vw;
@@ -63,7 +62,6 @@ h2 {
   font-size: 2.5em;
   margin-bottom: 50px;
   text-align: center;
-  font-family: 'Anton', sans-serif;
 }
 
 .section-3 {

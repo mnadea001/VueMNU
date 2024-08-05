@@ -1,9 +1,9 @@
 <template>
   <div 
-  class="text-lg mx-1 text-black mb-4 border-black rounded-full border px-4 py-1 hover:bg-black hover:text-white"
+  class="text-lg mx-2 mb-4 bg-white text-black flex rounded-full border px-4 py-1 hover:bg-black hover:text-white cursor-pointer"
 
   @click="navigateToPose">
-    <h3 class="text-center">{{ pose?.english_name }}</h3>
+    <h3 class="text-center ">{{ pose?.english_name }}</h3>
   </div>
 </template>
 

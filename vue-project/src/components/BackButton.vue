@@ -2,7 +2,7 @@
   <div class="content-btn">
     <button
       @click="goBack"
-      class="text-lg text-black mb-4 flex rounded-full border px-4 py-1 hover:bg-black hover:text-white"
+      class="text-lg  dark:bg-white dark:text-black mb-4 flex rounded-full border px-4 py-1 dark:hover:bg-black hover:bg-white hover:text-black dark:hover:text-white"
     >
     back
     </button>

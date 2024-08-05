@@ -54,7 +54,7 @@ defineComponent({
       </div>
 
       <div class="image-container">
-        <RouterLink to="/buddha" class="btn-home-start mb-5">start</RouterLink>
+        <RouterLink to="/buddha" class="btn-home-start mb-5">start meditation</RouterLink>
       </div>
   </main>
 </template>
