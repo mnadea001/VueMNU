@@ -186,21 +186,6 @@ h2 {
   h2 {
     font-size: 1.5em !important;
   }
-  .diagonal-box-container {
-    padding: 0 5px;
-  }
-  .content p {
-    padding: 20px;
-  }
-  .slider-yoga {
-    margin: 0 10px;
-  }
-  /* .container {
-    overflow-y: auto;
-  } */
-  /* .category-card {
-    display: flex;
-    flex-direction: row;
-  } */
+
 }
 </style>

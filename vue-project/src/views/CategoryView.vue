@@ -122,12 +122,12 @@ onMounted(() => {
 }
 
 .content p {
-  /* font-family: 'Caprasimo', sans-serif; */
   font-weight: 400;
   font-size: 1.2em;
   color: rgb(63, 63, 63);
   padding: 50px 80px;
 }
+
 h1 {
   font-family: 'Caprasimo', sans-serif;
   font-weight: 400;
@@ -170,8 +170,10 @@ main {
   }
 
   .content {
-    padding: 20px 30px;
-
+    padding: 0;
+  }
+  .content p {
+    padding: 10px 20px;
   }
 }
 </style>

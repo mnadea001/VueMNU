@@ -21,7 +21,7 @@ defineComponent({
         <div class="content">
           <h1 class="text-center my-4">Meditation</h1>
           <div class="flex">
-            <div class="flex-1 w-50">
+            <div class="flex-1 w-50 yoga-img">
               <img :src="chillImageSrc" class="h-80 rounded mt-5" />
             </div>
             <div class="flex-1 w-50">
@@ -184,5 +184,16 @@ h3 {
   h2 {
     font-size: 40px;
   }
+  .yoga-img {
+    display: none;
+  }
+
+  .content {
+    padding: 0;
+
+  }
+  .content p {
+  padding: 50px 40px;
+}
 }
 </style>

@@ -249,5 +249,10 @@ h2 {
   h2 {
     font-size: 24px;
   }
+
+  .content p {
+    padding: 10px 20px;
+
+  }
 }
 </style>
