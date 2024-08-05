@@ -43,9 +43,9 @@ defineComponent({
         <v-typical
           class="blink"
           :steps="[
-            'GET READY',
+            'get ready',
             500,
-            'GET READY FOR AN IMMERSIVE EXPERIENCE !!',
+            'get ready for an immersive experience !!',
             1000
           ]"
           :loop="Infinity"
@@ -60,7 +60,6 @@ defineComponent({
 </template>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 
 main {
@@ -84,7 +83,6 @@ h3 {
   font-style: bold;
   font-size: 2.5em !important;
   margin-bottom: 50px;
-  font-family: 'Anton', sans-serif;
   text-align: center;
 }
 

@@ -64,7 +64,6 @@ window.handleQuoteResponse = (data: any) => {
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 
 main {
   width: 100vw;
@@ -72,9 +71,7 @@ main {
   display: block;
 }
 
-h1 {
-  font-family: "Anton", sans-serif;
-}
+
 
 .content-btn {
   margin-left: 80px;

@@ -61,7 +61,6 @@ const handleClose = () => {
 </template>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 
 .modal-mask {
@@ -100,18 +99,17 @@ const handleClose = () => {
   border: 1px solid black;
   text-align: center;
   margin-left: 20px;
-  font-family: 'Anton', sans-serif;
   font-size: 3em;
 }
 
 .nav-item {
   padding: 10px;
-  font-family: 'Anton', sans-serif;
   font-size: 1.5rem;
   -webkit-transition: background-color 0.2s ease-out;
   -moz-transition: background-color 0.2s ease-out;
   -o-transition: background-color 0.2s ease-out;
   transition: background-color 0.2s ease-out;
+  border-radius: 10px;
 }
 
 .nav-item:hover {

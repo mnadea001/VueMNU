@@ -9,10 +9,10 @@
           <v-typical
             class="blink"
             :steps="[
-              'DISCOVER',
+              'discover',
               500,
         
-              'DISCOVER DIFFERENT YOGA STYLES !',
+              'discover different yoga styles !',
               1000
             ]"
             :loop="Infinity"
@@ -83,7 +83,6 @@ onMounted(() => {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 
 main {
@@ -104,7 +103,6 @@ h2 {
   font-weight: 400;
   font-style: bold;
   font-size: 2.5em !important;
-  font-family: 'Anton', sans-serif;
   color: black;
 }
 .content {

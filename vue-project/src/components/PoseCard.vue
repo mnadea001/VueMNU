@@ -36,10 +36,8 @@ function navigateToPose() {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 h3 {
-  font-family: 'Anton', sans-serif;
   margin-right: 10px;
   font-size: 1.2em;
 }

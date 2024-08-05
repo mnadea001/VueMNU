@@ -20,7 +20,6 @@
   
   <style scoped>
 
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
   .meal-image {
     position: relative;
     overflow: hidden;
@@ -28,6 +27,8 @@
   
   .meal-card {
     display: inline-block;
+    margin-left:2px;
+
   }
 
   .img-meal {
@@ -40,6 +41,7 @@ height:220px;
     right: 0;
     bottom: 0;
     background-color:#000000;
+    border-radius: 10px;
     opacity: 0;
     transition: opacity 0.3s;
     display: flex;
@@ -56,7 +58,6 @@ height:220px;
   .text {
     font-size: 1.5rem;
     font-weight: bold;
-    font-family: "Anton", sans-serif;
     color: #ffffff;
     white-space: normal!important;
     padding-left: 10px;
