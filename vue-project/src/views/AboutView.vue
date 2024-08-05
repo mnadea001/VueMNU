@@ -5,7 +5,7 @@
       <div class="diagonal-box bg-one">
         <div class="content">
           <h1 class="text-center my-4">Philosophy</h1>
-          <p class="text-center">
+          <p class="text-center text-black">
             Yoga is an ancient practice that originated in <b>India</b> thousands of years ago. It
             is a holistic system that encompasses physical postures (asanas), breath control
             (pranayama), meditation, and ethical principles aimed at achieving harmony between
@@ -60,7 +60,7 @@
           </ul>
         </div>
         <span class="text-center content-span">
-          <p class="text-xl dark:text-white text-black">
+          <p class="text-xl dark:text-black text-white">
             In summary, yoga is a <b>profound and transformative practice</b> that promotes physical
             health, mental clarity, and spiritual growth. Its rich history, diverse teachings, and
             numerous benefits make it a valuable tool for holistic well-being in today's fast-paced
@@ -178,22 +178,7 @@ h2 {
   --cardMargin: 4vw;
 }
 
-@media (max-width: 768px) {
-  .content {
-    width: 90%; 
-    margin: auto;
-  }
 
-  .content-span p {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .card-body {
-    margin: 20px;
-    height: auto; 
-  }
-}
 
 .diagonal-box-container {
   display: flex;
@@ -235,7 +220,7 @@ h2 {
 .content p {
   font-weight: 400;
   font-size: 1.2em;
-  color: rgb(63, 63, 63);
+  /* color: rgb(63, 63, 63); */
   padding: 50px 80px;
 }
 @media (max-width: 480px) {
@@ -253,6 +238,22 @@ h2 {
   .content p {
     padding: 10px 20px;
 
+  }
+}
+@media (max-width: 768px) {
+  .content {
+    width: 90%; 
+    margin: auto;
+  }
+
+  .content-span p {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .card-body {
+    margin: 20px;
+    height: auto; 
   }
 }
 </style>
