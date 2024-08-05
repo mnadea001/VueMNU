@@ -8,36 +8,23 @@
           <h1 class="text-3xl text-center my-4">Yoga is art</h1>
           <v-typical
             class="blink"
-            :steps="[
-              'discover',
-              500,
-        
-              'discover different yoga styles !',
-              1000
-            ]"
+            :steps="['discover', 500, 'discover different yoga styles !', 1000]"
             :loop="Infinity"
             :wrapper="'h2'"
           ></v-typical>
-          <div class="slider-yoga">
-            <p class="text-scroll">Scroll vertically to see all yoga styles:</p>
-            <div class="container my-4">
-              <div v-if="yogas" class="category-card my-4">
-                <RouterLink
-                  v-for="(yoga, index) in yogas"
-                  :key="index"
-                  :to="`/category/${yoga.id}`"
-                >
-                  <CategoryCard :categoryName="yoga.category_name" />
-                </RouterLink>
-              </div>
-              <div v-else>
-                <p>Loading...</p>
-              </div>
-            </div>
-            <div class="content">
-              <img :src="yogaImageSrc" class="w-80 h-80 rounded-full mt-4" />
-            </div>
+          <div class="content">
+            <img :src="yogaImageSrc" class="w-80 h-80 rounded-full mt-4" />
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="slider-yoga">
+      <p class="my-4 mr-4">Scroll vertically to see all yoga styles:</p>
+      <div class="container my-4">
+        <div class="category-card my-4">
+          <RouterLink v-for="(yoga, index) in yogas" :key="index" :to="`/category/${yoga.id}`">
+            <CategoryCard :categoryName="yoga.category_name" />
+          </RouterLink>
         </div>
       </div>
     </div>
@@ -123,11 +110,12 @@ h2 {
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
+  object-fit: contain;
   scroll-snap-type: x mandatory;
 }
 .category-card {
   display: flex;
-  /* flex-wrap: nowrap; */
+  flex-direction: row;
 }
 
 .diagonal-box-container {
@@ -186,6 +174,5 @@ h2 {
   h2 {
     font-size: 1.5em !important;
   }
-
 }
 </style>

@@ -1,9 +1,9 @@
 <template>
-  <div 
-  class="text-lg mx-2 mb-4 bg-white text-black flex rounded-full border px-4 py-1 hover:bg-black hover:text-white cursor-pointer"
-
-  @click="navigateToPose">
-    <h3 class="text-center ">{{ pose?.english_name }}</h3>
+  <div
+    class="text-lg mx-2 mb-4 text-white flex rounded-full border px-4 py-1 hover:bg-white hover:text-black cursor-pointer dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white"
+    @click="navigateToPose"
+  >
+    <h3 class="text-center">{{ pose?.english_name }}</h3>
   </div>
 </template>
 
@@ -36,28 +36,8 @@ function navigateToPose() {
 </script>
 
 <style scoped>
-
 h3 {
   margin-right: 10px;
   font-size: 1.2em;
-}
-.pose-card {
-  cursor: pointer;
-  border: 1px solid #000000;
-  border-radius: 8px;
-  padding: 10px 15px;
-  margin-top: 30px;
-  margin-right: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 5px;
-}
-
-.pose-card:hover {
-  background-color:#0527ae;
-  border: transparent;
-  color: rgb(255, 255, 255);
 }
 </style>

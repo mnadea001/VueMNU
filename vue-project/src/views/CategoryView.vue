@@ -20,7 +20,7 @@
           </div>
         </div>
       </div>
-      <div v-if="yoga" class="p-6 m-2 max-w-4xl mx-auto rounded-xl category-detail">
+      <div v-if="yoga" class="p-6 m-2 max-w-4xl mx-auto rounded-xl">
         <p class="my-4">Scroll vertically to see all poses:</p>
         <div class="pose-content-box my-4">
           <div class="pose-content">
