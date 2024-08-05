@@ -11,7 +11,7 @@
             (pranayama), meditation, and ethical principles aimed at achieving harmony between
             <b>mind, body, and spirit</b> .
           </p>
-          <img :src="yogaImg" class="w-80 h-80 rounded-full image" />
+          <!-- <img :src="yogaImg" class="w-80 h-80 rounded-full image" /> -->
         </div>
       </div>
     </div>
@@ -60,7 +60,7 @@
           </ul>
         </div>
         <span class="text-center content-span">
-          <p class="text-xl">
+          <p class="text-xl dark:text-white text-black">
             In summary, yoga is a <b>profound and transformative practice</b> that promotes physical
             health, mental clarity, and spiritual growth. Its rich history, diverse teachings, and
             numerous benefits make it a valuable tool for holistic well-being in today's fast-paced
@@ -74,7 +74,7 @@
 
 <script setup lang="ts">
 import BackButton from '@/components/BackButton.vue'
-import yogaImg from '../assets/pray.gif'
+// import yogaImg from '../assets/pray.gif'
 </script>
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
@@ -180,7 +180,7 @@ h2 {
 
 @media (max-width: 768px) {
   .content {
-    width: 90%; /* Adjust width for smaller screens */
+    width: 90%; 
     margin: auto;
   }
 
@@ -191,7 +191,7 @@ h2 {
 
   .card-body {
     margin: 20px;
-    height: auto; /* Adjust height for smaller screens */
+    height: auto; 
   }
 }
 

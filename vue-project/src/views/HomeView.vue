@@ -4,6 +4,8 @@
       yoga is the union <br />
       of body & mind
     </h1>
+    <img :src="namasteImageSrc" class="img-yoga h-80 my-4" />
+
     <div class="my-4">
       <v-typical
         class="blink"
@@ -12,7 +14,6 @@
         :wrapper="'h2'"
       ></v-typical>
     </div>
-    <img :src="namasteImageSrc" class="img-yoga h-80 my-4" />
 
     <div class="section-3">
       <StartButton />
@@ -28,7 +29,6 @@ import VTypical from 'vue-typical'
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
-
 
 main {
   width: 100vw;
@@ -85,12 +85,14 @@ h2 {
   }
 }
 @media only screen and (min-width: 769px) and (max-width: 980px) {
-  h1, h2 {
+  h1,
+  h2 {
     font-size: 35px !important;
   }
 }
 @media only screen and (min-width: 981px) and (max-width: 1268px) {
-  h1, h2 {
+  h1,
+  h2 {
     font-size: 40px !important;
   }
 }
