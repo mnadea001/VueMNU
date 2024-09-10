@@ -109,7 +109,7 @@ const handleClose = () => {
   -moz-transition: background-color 0.2s ease-out;
   -o-transition: background-color 0.2s ease-out;
   transition: background-color 0.2s ease-out;
-  border-radius: 10px;
+  border-radius: 3px;
 }
 
 .nav-item:hover {

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import MindModalComponent from '../components/MindModalComponent.vue'
 import BodyModalComponent from '../components/BodyModalComponent.vue'
-import { ref, watchEffect } from 'vue'
+import { ref } from 'vue'
 import VTypical from 'vue-typical'
 import { defineComponent } from 'vue'
 import elevateImg from '../assets/elevate.gif'
@@ -16,7 +16,6 @@ defineComponent({
 })
 const isModalOpened1 = ref(false)
 const isModalOpened2 = ref(false)
-const rotationDirection = ref<string>('')
 
 const openModal1 = () => {
   isModalOpened1.value = true
@@ -31,19 +30,6 @@ const closeModal2 = () => {
   isModalOpened2.value = false
 }
 
-const rotateImage = (direction: string) => {
-  rotationDirection.value = direction === 'left' ? 'rotate(-6deg)' : 'rotate(6deg)'
-}
-
-const resetRotation = () => {
-  rotationDirection.value = ''
-}
-// @ts-ignore
-const imageRotation = ref<string>('')
-// @ts-ignore
-watchEffect(() => {
-  imageRotation.value = rotationDirection.value
-})
 </script>
 
 <template>
@@ -66,11 +52,11 @@ watchEffect(() => {
         </div>
         <div class="home-box">
       <div class="image-btn">
-        <button class="text-btn" @mouseover="rotateImage('left')" @click="openModal1">
+        <button class="text-btn"  @click="openModal1">
           <p class="text-menu">body</p>
         </button>
-        <img :src="elevateImageSrc" class="w-80 h-80 rounded-full" :style="{ transform: imageRotation }" />
-        <button class="text-btn" @mouseover="rotateImage('right')" @click="openModal2">
+        <img :src="elevateImageSrc" class="w-80 h-80 rounded-full ms-4 me-4"  />
+        <button class="text-btn"  @click="openModal2">
           <p class="text-menu">mind</p>
         </button>
       </div>
