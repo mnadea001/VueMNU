@@ -16,6 +16,8 @@ import { RouterLink } from 'vue-router'
   color: #d1f23f;
   position: relative;
   text-decoration: none;
+  font-family: 'Caprasimo', sans-serif;
+
 }
 
 .btn-start::before {
@@ -36,10 +38,7 @@ import { RouterLink } from 'vue-router'
   transform-origin: left;
   transform: scaleX(1);
 }
-/* .btn-start:hover {
-  color: #fff;
-  box-shadow: inset 200px 0 0 0 #54b3d6;;
-} */
+
 
 @media screen and (max-width: 768px) {
   .content-btn {

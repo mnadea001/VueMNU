@@ -155,6 +155,8 @@ h3 {
   color: #d1f23f;
   position: relative;
   text-decoration: none;
+  font-family: 'Caprasimo', sans-serif;
+
 }
 
 .btn-home-start::before {

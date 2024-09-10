@@ -21,7 +21,7 @@
   </main>
 </template>
 <script setup lang="ts">
-import namasteImageSrc from '../assets/meditation.gif'
+import namasteImageSrc from '../assets/ghost.gif'
 
 import StartButton from '@/components/StartButton.vue'
 import VTypical from 'vue-typical'
@@ -37,6 +37,7 @@ main {
 
 .img-yoga {
   margin: auto;
+  border-radius: 10px;
 }
 
 .centered {
