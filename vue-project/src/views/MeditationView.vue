@@ -125,7 +125,6 @@ h3 {
 }
 
 .content p {
-  /* font-family: 'Caprasimo', sans-serif; */
   font-weight: 400;
   font-size: 1.2em;
   color: rgb(63, 63, 63);
@@ -140,8 +139,7 @@ h3 {
   margin-left: 80px;
 }
 .image-container {
-  display: grid;
-  place-items: center;
+justify-content: center;
 }
 .image-btn {
   display: flex;
@@ -196,6 +194,11 @@ h3 {
   }
   .content p {
   padding: 50px 40px;
+}
+
+.btn-home-start {
+  font-size: 2em !important;
+
 }
 }
 </style>
