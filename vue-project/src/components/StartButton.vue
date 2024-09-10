@@ -39,10 +39,13 @@ import { RouterLink } from 'vue-router'
   transform: scaleX(1);
 }
 
+.content-btn {
+  justify-content: center;
+}
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .content-btn {
     margin-left: 10px;
   }
-}
+} */
 </style>
