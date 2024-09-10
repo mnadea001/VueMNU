@@ -139,7 +139,8 @@ h3 {
   margin-left: 80px;
 }
 .image-container {
-justify-content: center;
+text-align: center;
+margin-bottom: 30px;
 }
 .image-btn {
   display: flex;
